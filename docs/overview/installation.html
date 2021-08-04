@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" />
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - Installation</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
+        <link href="/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet" />
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"></div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview active">
+                    <a href="/docs/overview">Overview</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/overview/why-nant">Why NAnt</a></li>
+                <li><a href="/docs/overview/system-requirements">System Requirements</a></li>
+                <li class="selected"><a href="/docs/overview/installation">Installation</a></li>
+                <li><a href="/docs/overview/getting-started">Getting started</a></li>
+                <li><a href="/docs/overview/ant-users">Ant users</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/fundamentals">Fundamentals</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/fundamentals/running-nant">Running NAnt</a></li>
+                <li><a href="/docs/fundamentals/build-files">Build files</a></li>
+                <li><a href="/docs/fundamentals/projects">Projects</a></li>
+                <li><a href="/docs/fundamentals/targets">Targets</a></li>
+                <li><a href="/docs/fundamentals/tasks">Tasks</a></li>
+                <li><a href="/docs/fundamentals/properties">Properties</a></li>
+                <li><a href="/docs/fundamentals/loggers-and-listeners">Loggers and listeners</a></li>
+                <li><a href="/docs/fundamentals/expressions">Expressions</a></li>
+                <li><a href="/docs/fundamentals/functions">Functions</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/contributing">Contributing</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/contributing/development-guide">Development guide</a></li>
+                <li><a href="/docs/contributing/release-guide">Release guide</a></li>
+                <li><a href="/docs/contributing/release-plan">Release plan</a></li>
+                <li><a href="/docs/contributing/external">External resources</a></li>
+                <li><a href="/docs/contributing/contributors">Contributors</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/docs/faq">Frequently Asked Questions</a></li>
+                <li class="treeview">
+                    <a href="/docs/nant">NAnt - legacy</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/nant/development-guide">NAnt development guide</a></li>
+                <li><a href="/docs/nant/release-guide">NAnt release guide</a></li>
+                <li><a href="/docs/nant/release-plan">NAnt release plan</a></li>
+                <li><a href="/docs/nant/external">NAnt external resources</a></li>
+                <li><a href="/docs/nant/contributors">NAnt/NAntContrib contributors</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Installation</h1>
+		</section>
+	<section class="content">
+		<p>NAnt is available in either a source or binary distribution. The binary distribution is all you need to use NAnt to build your projects, including creating your own custom tasks, types and functions.</p>
+<p>If you are upgrading NAnt from a previous version, you must never install over the top of your previous installation. Delete or rename the existing installation directory before installing the new version of NAnt.</p>
+<h2 id="installing-from-binaries">Installing from binaries</h2>
+<ol>
+<li><p>Download the binary distribution archive. Either <em>nant-bin.zip</em> or <em>nant-bin.tar.gz</em> will work, the contents of each archive are the same.</p>
+</li>
+<li><p>Remove any previous versions of NAnt you may have installed.</p>
+</li>
+<li><p>Extract the contents of the archive to the location you wish to install NAnt (eg: C:\Program Files\NAnt in windows, or /usr/local/nant in Linux)</p>
+</li>
+<li><p>Depending on your environment, create a wrapper script to run NAnt:</p>
+<ul>
+<li><p><strong>Run NAnt using Microsoft.NET</strong></p>
+<ul>
+<li>Create a file called <em>nant.bat</em> in a directory that is included in the <em>PATH</em> system environment variable. (eg. C:\WINDOWS).</li>
+<li>Add the following to <em>nant.bat</em>:
+<pre><code>&#64;echo off
+&quot;C:\Program Files\NAnt\bin\NAnt.exe&quot; %*
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>Run NAnt using Mono</strong></p>
+<ul>
+<li><p><strong>Windows</strong></p>
+<ul>
+<li>Create a file called <em>nant.bat</em> in a directory that is included in the <em>PATH</em> system environment variable. (eg. C:\WINDOWS).</li>
+<li>Add the following to nant.bat:
+<pre><code>&#64;echo off
+mono &quot;C:\Program Files\NAnt\bin\NAnt.exe&quot; %*
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>Linux / Cygwin</strong></p>
+<ul>
+<li><p>Create a file called <em>nant</em> in a suitable location in your filesystem (eg. /usr/local/bin).</p>
+</li>
+<li><p>Add the following to <em>nant</em>:</p>
+<pre><code>#!/bin/sh
+exec mono /usr/local/nant/bin/NAnt.exe &quot;$&#64;&quot;
+</code></pre>
+</li>
+<li><p>Ensure <em>nant</em> has permission to execute, eg: <code>chmod a+x /usr/local/bin/nant</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Open a new command prompt (shell) and type <em>nant -help</em>. If successful, you should see a usage message displaying available command line options.</p>
+</li>
+<li><p>(optional) Download and install NAnt-contrib or other third party extensions to NAnt.</p>
+</li>
+</ol>
+<h2 id="installing-from-source">Installing from source</h2>
+<ol>
+<li><p>Download the source distribution archive. Either nant-src.zip or nant-src.tar.gz will work, the contents of each archive are the same.</p>
+</li>
+<li><p>Remove any previous versions of NAnt you may have installed.</p>
+</li>
+<li><p>Extract the contents of the archive to a temporary location. This should not be the location you wish to install NAnt to.</p>
+</li>
+<li><p>Open a command prompt and change into the folder you extracted the archive to.</p>
+</li>
+<li><p>Depending on your environment, build the NAnt distribution:</p>
+<ul>
+<li><strong>Install NAnt using Microsoft .NET</strong>
+<ul>
+<li><strong>GNU Make</strong>
+<pre><code>make install MONO= MCS=csc prefix=installation-path
+#eg. make install MONO= MCS=csc prefix=&quot;C:\Program Files&quot;
+</code></pre>
+</li>
+<li><strong>NMake</strong>
+<pre><code>nmake -f Makefile.nmake install prefix=installation-path
+#eg. nmake -f Makefile.nmake install prefix=&quot;C:\Program Files&quot;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Install NAnt using Mono</strong>
+<ul>
+<li><strong>GNU Make</strong>
+<pre><code>make install prefix=installation-path
+#eg. make install prefix=&quot;C:\Program Files&quot;
+</code></pre>
+</li>
+<li><strong>NMake</strong>
+<pre><code>nmake -f Makefile.nmake install MONO=mono CSC=mcs prefix=installation-path
+#eg. nmake -f Makefile.nmake install MONO=mono CSC=mcs prefix=/usr/local/
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>This will first build a bootstrap version of NAnt, and then use that to build and install the full version to installation-path/NAnt.</p>
+</li>
+<li><p>Follow the instructions as for a binary release from step 5.</p>
+</li>
+</ol>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br/>
+    Copyright &copy; 2001-2021 NAnt2 contributors.
+    <br/>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

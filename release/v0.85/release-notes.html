@@ -1,0 +1,1716 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - Release Notes</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li class="active"><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#october-14-2006">0.85 - October 14, 2006</a></p>
+<p><a href="#rc4-june-2-2006">0.85-rc4 - June 2, 2006</a></p>
+<p><a href="#rc3-april-16-2005">0.85-rc3 - April 16, 2005</a></p>
+<p><a href="#rc2-february-12-2005">0.85-rc2 - February 12, 2005</a></p>
+<p><a href="#rc1-november-28-2004">0.85-rc1 - November 28, 2004</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/release/latest">Latest</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/latest/release-notes">Release Notes</a></li>
+                <li><a href="/release/latest/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.92">v0.92</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.92/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.92-rc1">v0.92-rc1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.92-rc1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92-rc1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.92-beta1">v0.92-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.92-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.92-alpha1">v0.92-alpha1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.92-alpha1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92-alpha1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91">v0.91</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-rc1">v0.91-rc1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-rc1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-rc1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-beta1">v0.91-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-alpha2">v0.91-alpha2</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-alpha2/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-alpha2/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-alpha1">v0.91-alpha1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-alpha1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-alpha1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90">v0.90</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90-rc1">v0.90-rc1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90-rc1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90-rc1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90-beta1">v0.90-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90-alpha1">v0.90-alpha1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90-alpha1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90-alpha1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.86-beta1">v0.86-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.86-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.86-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/release/v0.85">v0.85</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li class="selected"><a href="/release/v0.85/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.85/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Release Notes</h1>
+		</section>
+	<section class="content">
+		<h1 id="october-14-2006" v0.85="">0.85 - October 14, 2006</h1>
+<h2 id="nant">NAnt</h2>
+<hr>
+<h3 id="bug-fixes"><strong>Bug fixes</strong></h3>
+<p><strong>Framework support</strong></p>
+<ul>
+<li><p><strong>.NET Compact Framework 2.0</strong></p>
+<ul>
+<li>Embedded resource files cannot be compiled when targeting .NET Compact Framework 2.0 (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1533924&amp;group_id=31650&amp;atid=4028680">#1533924</a>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Functions</strong></p>
+<ul>
+<li><p><strong>file::is-assembly</strong></p>
+<ul>
+<li>Function call fails when a file name that does not correspond with an assembly is specified as argument.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;aximp&gt;</strong></p>
+<ul>
+<li>The value of the "rcw" attribute should be ignored when targeting .NET 1.0.</li>
+</ul>
+</li>
+<li><p><strong>&lt;csc&gt;</strong></p>
+<ul>
+<li>Output is always rebuilt when "keyfile" attribute is set (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1550736&amp;group_id=31650">#1550736</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;regen&gt;</strong></p>
+<ul>
+<li>Assembly reference are not taken into account to determine if the maximum length of the command line is exceeded (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1415272&amp;group_id=31650&amp;atid=402868">#1415272</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;solution&gt;</strong></p>
+<ul>
+<li>Runtime callable wrapper is not used when generating Windows Forms control for ActiveX component that has no Primary Interop Assembly.</li>
+<li>When importing a type library, [out, retval] parameters of methods on dispatch-only interfaces (dispinterfaces) are not transformed into return values (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1527210&amp;group_id=31650&amp;atid=402868">#1527210</a>).</li>
+<li>Dependencies are not handled properly for Enterprise Template projects in Visual Studio .NET 2003 solutions (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1534864&amp;group_id=31650&amp;atid=402868">#1534864</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;unzip&gt;</strong></p>
+<ul>
+<li>Zip file containing zero-length files fails to extract (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1503678&amp;group_id=31650&amp;atid=402868">#1503678</a>).</li>
+</ul>
+</li>
+</ul>
+<h3 id="changes"><strong>Changes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;tlbimp&gt;</strong></p>
+<ul>
+<li>Added "transform" attribute which sets the name of transform to use for transforming the metadata. [.NET 1.1 or higher]</li>
+</ul>
+</li>
+<li><p><strong>&lt;vbc&gt;</strong></p>
+<ul>
+<li>Added "nostdlib" attribute which can be used to instruct the compiler not to reference standard libraries (system.dll and VBC.RSP). [.NET 2.0 or higher]</li>
+</ul>
+</li>
+</ul>
+<h2 id="nantcontrib">NAntContrib</h2>
+<hr>
+<h3 id="changes-1"><strong>Changes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;sql&gt;</strong></p>
+<ul>
+<li>Introduced "encoding" attribute to allow the encoding of files containing SQL statements to be specified. The default is the the system's current ANSI code page.</li>
+</ul>
+</li>
+</ul>
+<h1 id="rc4-june-2-2006" v0.85-rc4="">0.85-rc4 - June 2, 2006</h1>
+<h2 id="nant-1">NAnt</h2>
+<hr>
+<h3 id="framework-support"><strong>Framework support</strong></h3>
+<ul>
+<li>Added support for .NET Framework 2.0 (except for <em :="" class="text-primary">&lt;solution&gt;</em> task).</li>
+</ul>
+<h3 id="breaking-changes"><strong>Breaking changes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;delete&gt;</strong></p>
+<ul>
+<li>Attempting to delete a file or directory that does not exist, no longer results in a build failure.</li>
+</ul>
+</li>
+</ul>
+<h3 id="bug-fixes-1"><strong>Bug fixes</strong></h3>
+<p><strong>Core</strong></p>
+<ul>
+<li><p><strong>XmlLogger</strong></p>
+<ul>
+<li>XmlLogger produced invalid XML for elements that are not closed (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1220439&amp;group_id=31650&amp;atid=402868">#1220439</a>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Filters</strong></p>
+<ul>
+<li><p><strong>&lt;replacetokens&gt;</strong></p>
+<ul>
+<li>Empty value is not supported for token (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1192677&amp;group_id=31650">#1192677</a>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;cl&gt;</strong></p>
+<ul>
+<li>Logic for determining whether compilation is necessary is not correct when PCH file is specified (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1191185&amp;group_id=31650&amp;atid=402868">#1191185</a>).</li>
+<li>All sources are compiled if any of the specified sources is not up-to-date (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1191285&amp;group_id=31650&amp;atid=402868">#1191285</a>).</li>
+<li>Macro definitions specified using the <em :="" class="text-primary">&lt;defines&gt;</em> collection are passed to the compiler, regardless of the value of the "if" and "unless" attributes (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1221945&amp;group_id=31650&amp;atid=402868">#1221945</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;rc&gt;</strong></p>
+<ul>
+<li>Modification of an external file does not trigger a rebuilt of the resource (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1195320&amp;group_id=31650&amp;atid=402868">#1195320</a>).</li>
+<li>Macro definitions specified using the <em :="" class="text-primary">&lt;defines&gt;</em> collection are passed to the compiler, regardless of the value of the "if" and "unless" attributes (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1221945&amp;group_id=31650&amp;atid=402868">#1221945</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;script&gt;</strong></p>
+<ul>
+<li>Defining custom extensions (eg. tasks) using multiple <em :="" class="text-primary">&lt;script&gt;</em> instances results in an INTERNAL ERROR (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1187957&amp;group_id=31650&amp;atid=402868">#1187957</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;solution&gt;</strong></p>
+<ul>
+<li>Compilation of embedded resources is slow.</li>
+<li>Assembly signing fails for web projects.</li>
+<li>Build fails if XML Documentation File does not exist (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1188394&amp;group_id=31650&amp;atid=402868">#1188394</a>).</li>
+<li>Satellite assemblies of reference projects are not copied to the output directory of referencing projects (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1212909&amp;group_id=31650&amp;atid=402868">#1212909</a>).</li>
+<li>Changes in project file are not detected (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1209741&amp;group_id=31650&amp;atid=402868">#1209741</a>).</li>
+<li>Error message that is output when a project does not exist, is misleading (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1396124&amp;group_id=31650&amp;atid=402868">#1396124</a>).</li>
+<li>Large number of localized resources causes build failure (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1425251&amp;group_id=31650&amp;atid=402868">#1425251</a>).</li>
+<li>Registering a project for COM interop fails for projects which reference other local assembly or projects (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1477827&amp;group_id=31650">#1477827</a>).</li>
+<li>Unused assembly reference that cannot be resolved or does not exist results in build failure (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1186176&amp;group_id=31650&amp;atid=402868">#1186176</a>).</li>
+<li>Visual C++
+<ul>
+<li>File-level option to enable Managed Extensions is ignored (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1190966&amp;group_id=31650&amp;atid=402868">#1190966</a>).</li>
+<li>Linking fails if object file name is explictly set for a specific source file (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1205728&amp;group_id=31650&amp;atid=402868">#1205728</a>).</li>
+<li>Delay loaded DLLs option is ignored.</li>
+<li>Output files of dependent or referenced projects are not included when linking (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1186838&amp;group_id=31650&amp;atid=402868">#1186838</a> and <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1124296&amp;group_id=31650&amp;atid=402868">#1124296</a>).</li>
+<li>References to COM components are now supported (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1437970&amp;group_id=31650&amp;atid=402868">#1437970</a>).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="additions"><strong>Additions</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;regasm&gt;</strong></p>
+<ul>
+<li>Registers an assembly, or set of assemblies for use from COM clients.</li>
+</ul>
+</li>
+</ul>
+<h3 id="changes-2"><strong>Changes</strong></h3>
+<p><strong>Core</strong></p>
+<ul>
+<li><p><strong>log4net</strong></p>
+<ul>
+<li>Upgraded to log4net 1.2.9.</li>
+</ul>
+</li>
+<li><p><strong>MailLogger</strong></p>
+<ul>
+<li>Added "MailLogger.success.attachments" and "MailLogger.failure.attachments" properties to allow a set of files to be attached to the message that is sent.</li>
+</ul>
+</li>
+<li><p><strong>Define types in task containers</strong></p>
+<ul>
+<li>Global types can now be (re)defined in task containers (such a <em :="" class="text-primary">&lt;if&gt;</em> , <em :="" class="text-primary">&lt;foreach&gt;</em>).</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-xml">&lt;project name="container-type" default="build"&gt;
+    &lt;if test="${platform::is-win32()}"&gt;
+        &lt;fileset id="sources"&gt;
+            &lt;include name="**/*.cs" /&gt;
+            &lt;!-- exclude Unix-specific classes --&gt;
+            &lt;exclude name="**/Unix/*.cs" /&gt;
+        &lt;/fileset&gt;
+    &lt;/if&gt;
+    &lt;if test="${platform::is-unix()}"&gt;
+        &lt;fileset id="sources"&gt;
+            &lt;include name="**/*.cs" /&gt;
+            &lt;!-- exclude Win32-specific classes --&gt;
+            &lt;exclude name="**/Win32/*.cs" /&gt;
+        &lt;/fileset&gt;
+    &lt;/if&gt;
+    &lt;target name="build"&gt;
+        &lt;csc output="IvsController.dll"&gt;
+            &lt;sources refid="sources" /&gt;
+            &lt;references&gt;
+                &lt;include name="System.dll" /&gt;
+                &lt;include name="System.Data.dll" /&gt;
+                &lt;include name="System.Xml.dll" /&gt;
+            &lt;/references&gt;
+        &lt;/csc&gt;
+    &lt;/target&gt;
+&lt;/project&gt;
+</code></pre>
+<p>Up until now, only tasks could be executed in these containers.</p>
+</li>
+</ul>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;csc&gt;</strong></p>
+<ul>
+<li>The <em :="" class="text-primary">/langversion</em> and <em :="" class="text-primary">/platform</em> commandline options of the C# compiler are now exposed as attributes.</li>
+<li>Added support for <em :="" class="text-primary">/keycontainer</em> and <em :="" class="text-primary">/keyfile</em> commandline options [Mono / .NET 2.0 or higher].</li>
+</ul>
+</li>
+<li><p><strong>&lt;jsc&gt;</strong></p>
+<ul>
+<li>The <em :="" class="text-primary">/platform</em> commandline option of the JScript.NET compiler is now exposed using the "platform" attribute.</li>
+</ul>
+</li>
+<li><p><strong>&lt;link&gt;</strong></p>
+<ul>
+<li>Introduced support for delay loaded DLLs.</li>
+</ul>
+</li>
+<li><p><strong>&lt;nunit2&gt;</strong></p>
+<ul>
+<li>Upgraded to NUnit 2.2.8.</li>
+</ul>
+</li>
+<li><p><strong>&lt;unzip&gt;</strong></p>
+<ul>
+<li>The character encoding that has been used for file names inside the zip file can now be set using the "encoding" parameter.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vbc&gt;</strong></p>
+<ul>
+<li>The <em :="" class="text-primary">/platform</em> commandline option of the VB.NET compiler is now exposed using the "platform" attribute. [.NET 2.0 or higher]</li>
+<li>Added support for <em :="" class="text-primary">/keycontainer</em> and <em :="" class="text-primary">/keyfile</em> commandline options. [.NET 2.0 or higher]</li>
+</ul>
+</li>
+<li><p><strong>&lt;vjc&gt;</strong></p>
+<ul>
+<li>Added support for <em :="" class="text-primary">/keycontainer</em> and <em :="" class="text-primary">/keyfile</em> commandline options.</li>
+</ul>
+</li>
+<li><p><strong>&lt;zip&gt;</strong></p>
+<ul>
+<li>Added "duplicate" parameter to allow build authors to control how duplicate file entries are to be processed.</li>
+<li>Introduced "encoding" parameter for setting the encoding to be used for file names.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Types</strong></p>
+<ul>
+<li><p><strong>&lt;arg&gt;</strong></p>
+<ul>
+<li>Added "dir" attribute for directory-based command-line arguments. (feature request <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1193982&amp;group_id=31650&amp;atid=402871">#1193982</a>).</li>
+</ul>
+</li>
+</ul>
+<h2 id="nantcontrib-1">NAntContrib</h2>
+<hr>
+<h3 id="bug-fixes-2"><strong>Bug fixes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;msi&gt; / &lt;msm&gt;</strong></p>
+<ul>
+<li>Defining "failonerror" attribute results in validation error. (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=474851&amp;aid=1227294&amp;group_id=54790">#1227294</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;vb6&gt;</strong></p>
+<ul>
+<li>Type library and component references are not parsed correctly (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1184630&amp;group_id=54790&amp;atid=474851">#1184630</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;vssdelete&gt;</strong></p>
+<ul>
+<li>A file or project was destroyed if "destroy" was <strong>false</strong>, and deleted if "destroy" was <strong>true</strong>.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vssget&gt;</strong></p>
+<ul>
+<li>Setting the "removedeleted" attribute for a "path" that refers to a file results in a COMException (This command only works on projects).</li>
+</ul>
+</li>
+</ul>
+<h3 id="changes-3"><strong>Changes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;fxcop&gt;</strong></p>
+<ul>
+<li>Added failOnAnalysisError attribute - Fail the task if analysis errors are generated by FxCop.</li>
+</ul>
+</li>
+<li><p><strong>&lt;regasm&gt;</strong></p>
+<ul>
+<li>Moved to NAnt project.</li>
+</ul>
+</li>
+</ul>
+<h3 id="additions-1"><strong>Additions</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;btsdeploy&gt;</strong></p>
+<ul>
+<li>Deploys an assembly to a given BizTalk configuration database.</li>
+</ul>
+</li>
+<li><p><strong>&lt;btsexport&gt;</strong></p>
+<ul>
+<li>Exports bindings for a BizTalk assembly to an assembly binding information file.</li>
+</ul>
+</li>
+<li><p><strong>&lt;btshost&gt;</strong></p>
+<ul>
+<li>Allows BizTalk (in-process) host instances to be controlled.</li>
+</ul>
+</li>
+<li><p><strong>&lt;btsimport&gt;</strong></p>
+<ul>
+<li>Imports bindings from a given assembly binding information file into the specified BizTalk configuration database.</li>
+</ul>
+</li>
+<li><p><strong>&lt;btsorchestration&gt;</strong></p>
+<ul>
+<li>Performs a set of actions on a given orchestration.</li>
+</ul>
+</li>
+<li><p><strong>&lt;btsreset&gt;</strong></p>
+<ul>
+<li>Allows stopping, starting and resetting of BizTalk in-process host instances on the specified server.</li>
+</ul>
+</li>
+<li><p><strong>&lt;btssendport&gt;</strong></p>
+<ul>
+<li>Allows BizTalk send ports to be controlled.</li>
+</ul>
+</li>
+<li><p><strong>&lt;btsunbind&gt;</strong></p>
+<ul>
+<li>Removes all bindings for a given assembly from a BizTalk configuration database.</li>
+</ul>
+</li>
+<li><p><strong>&lt;btsundeploy&gt;</strong></p>
+<ul>
+<li>Removes a given assembly from a BizTalk configuration database.</li>
+</ul>
+</li>
+<li><p><strong>&lt;cccatcs&gt;</strong></p>
+<ul>
+<li>Displays a ClearCase config spec.</li>
+</ul>
+</li>
+<li><p><strong>&lt;cccheckin&gt;</strong></p>
+<ul>
+<li>Checks files into a ClearCase VOB.</li>
+</ul>
+</li>
+<li><p><strong>&lt;cccheckout&gt;</strong></p>
+<ul>
+<li>Checks files out of a ClearCase VOB.</li>
+</ul>
+</li>
+<li><p><strong>&lt;cclock&gt;</strong></p>
+<ul>
+<li>Locks ClearCase elements.</li>
+</ul>
+</li>
+<li><p><strong>&lt;ccmkelem&gt;</strong></p>
+<ul>
+<li>Creates elements in a ClearCase VOB.</li>
+</ul>
+</li>
+<li><p><strong>&lt;ccmklabel&gt;</strong></p>
+<ul>
+<li>Applies a ClearCase label.</li>
+</ul>
+</li>
+<li><p><strong>&lt;ccmklbtype&gt;</strong></p>
+<ul>
+<li>Creates a label object in a ClearCase VOB.</li>
+</ul>
+</li>
+<li><p><strong>&lt;ccrmtype&gt;</strong></p>
+<ul>
+<li>Removes elements from a ClearCase VOB.</li>
+</ul>
+</li>
+<li><p><strong>&lt;ccuncheckout&gt;</strong></p>
+<ul>
+<li>Uncheckout ClearCase elements.</li>
+</ul>
+</li>
+<li><p><strong>&lt;ccunlock&gt;</strong></p>
+<ul>
+<li>Unlocks ClearCase elements.</li>
+</ul>
+</li>
+<li><p><strong>&lt;ccupdate&gt;</strong></p>
+<ul>
+<li>Updates a ClearCase view.</li>
+</ul>
+</li>
+<li><p><strong>&lt;cd&gt;</strong></p>
+<ul>
+<li>Changes the current working directory.</li>
+</ul>
+</li>
+<li><p><strong>&lt;choose&gt;</strong></p>
+<ul>
+<li>Executes an alternate set of tasks depending on conditions that are individually set on each group of tasks.</li>
+</ul>
+</li>
+<li><p><strong>&lt;iisapppool&gt;</strong></p>
+<ul>
+<li>Allows an IIS application pool to be controlled.</li>
+</ul>
+</li>
+<li><p><strong>&lt;msbuild&gt;</strong></p>
+<ul>
+<li>Builds the specified targets in the project file using MSBuild.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vssdelete&gt;</strong></p>
+<ul>
+<li>Used to delete or Destroy files or projects in Visual Source Safe. Submitted by Richard Adleta.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Functions</strong></p>
+<ul>
+<li><p><strong>fileset functions</strong></p>
+<ul>
+<li>Provides methods for interrogating filesets.</li>
+</ul>
+</li>
+<li><p><strong>service functions</strong></p>
+<ul>
+<li>Allow information on a Windows service to be retrieved.</li>
+</ul>
+</li>
+</ul>
+<h1 id="rc3-april-16-2005" v0.85-rc3="">0.85-rc3 - April 16, 2005</h1>
+<h2 id="nant-2">NAnt</h2>
+<hr>
+<h3 id="breaking-changes-1"><strong>Breaking changes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;nant&gt;</strong></p>
+<ul>
+<li>References are no longer copied to the new projects by default. This is now controlled using the "inheritrefs" attribute.</li>
+</ul>
+</li>
+</ul>
+<h3 id="bug-fixes-3"><strong>Bug fixes</strong></h3>
+<p><strong>Core</strong></p>
+<ul>
+<li><p><strong>XML Schema</strong></p>
+<ul>
+<li>"if" and "unless" attributes of <em :="" class="text-primary">&lt;target&gt;</em> element are not documented (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1168170&amp;group_id=31650&amp;atid=402868">#1168170</a>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;copy&gt; / &lt;move&gt;</strong></p>
+<ul>
+<li>If "flatten" is set to <strong>true</strong> and multiple source files are selected to be copied / moved to the same destination file, only the source file that was last written to should actually be copied / moved (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1165252&amp;group_id=31650&amp;atid=402868">#1165252</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;link&gt;</strong></p>
+<ul>
+<li>Additional include directory containing spaces leads to build failures (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1117794&amp;group_id=31650&amp;atid=402868">#1117794</a>). This bug also affects the <em :="" class="text-primary">&lt;solution&gt;</em> task.</li>
+</ul>
+</li>
+<li><p><strong>&lt;nant&gt;</strong></p>
+<ul>
+<li>Default value of "inheritall" attribute does not match documentation (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1146121&amp;group_id=31650&amp;atid=402868">#1146121</a>).</li>
+<li>Documentation does not describe behavior of <em :="" class="text-primary">&lt;nant&gt;</em> task for references (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1146176&amp;group_id=31650&amp;atid=402868">#1146176</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;ndoc&gt;</strong></p>
+<ul>
+<li>When executing the <em :="" class="text-primary">&lt;ndoc&gt;</em> task multiple times, the properties are not expanded again after the first execution (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1124113&amp;group_id=31650&amp;atid=402868">#1124113</a>).</li>
+<li>Additional directories specified (using the <em :="" class="text-primary">&lt;referencepaths&gt;</em> element) to search for assembly references were not correctly consumed.</li>
+</ul>
+</li>
+<li><p><strong>&lt;resgen&gt;</strong></p>
+<ul>
+<li>The "dynamicprefix" attribute is not honored when determining the name of the compiled resource file (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1150186&amp;group_id=31650&amp;atid=402868">#1150186</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;script&gt;</strong></p>
+<ul>
+<li>Now supports any CodeDom provider, not just the built in languages (C#, VB, etc).</li>
+<li>Allow lower case values ( c# and vb ) for the Language attribute.</li>
+</ul>
+</li>
+<li><p><strong>&lt;servicecontroller&gt;</strong></p>
+<ul>
+<li>Resources are leaked (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1163461&amp;group_id=31650">#1163461</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;call&gt;</strong></p>
+<ul>
+<li>Added a "cascade" attribute to allow calling a single task without cascading all the dependencies. (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1077323&amp;group_id=31650&amp;atid=402868">#1077323</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;solution&gt;</strong></p>
+<ul>
+<li>A relative path specified in the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.reflection.assemblykeyfileattribute">AssemblyKeyFile</a> attribute must be resolved using either the solution directory or the intermediate output directory.</li>
+<li>Configurations containing dashes are skipped (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1184173&amp;group_id=31650">#1184173</a>).</li>
+<li>Check for existance of specified solution file is performed even if task is not to be executed (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1178810&amp;group_id=31650&amp;atid=402868">#1178810</a>).</li>
+<li>Project configurations with names that do not match the solution configuration are skipped (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=947214&amp;group_id=31650&amp;atid=402868">#947214</a>).</li>
+<li>Projects are not always properly excluded (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1143845&amp;group_id=31650&amp;atid=402868">#1143845</a> and <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1182510&amp;group_id=31650&amp;atid=402868">#1182510</a>).</li>
+<li>Stack overflow in case of circular project references (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1145670&amp;group_id=31650&amp;atid=402868">#1145670</a>).</li>
+<li>BaseAddress not correctly passed to compilers (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1164709&amp;group_id=31650&amp;atid=402868">#1164709</a>).</li>
+<li>Project dependencies that are no longer included in the solution file result in a circular dependency error.</li>
+<li>VB.NET
+<ul>
+<li>Referencing the same assembly multiple times results in an ambiguous reference (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1178862&amp;group_id=31650&amp;atid=402868">#1178862</a>).</li>
+</ul>
+</li>
+<li>Visual C++
+<ul>
+<li>Changes to source files or headers do not trigger a recompile (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1155919&amp;group_id=31650&amp;atid=402868">#1155919</a>).</li>
+<li>Additional dependencies and library directory are ignored for static libraries (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1173529&amp;group_id=31650&amp;atid=402868">#1173529</a>).</li>
+<li>IDL files without a type library are not supported (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1160647&amp;group_id=31650">#1160647</a>).</li>
+<li>Target macros are not correctly expanded if output file is not set (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1170100&amp;group_id=31650&amp;atid=402868">#1170100</a>).</li>
+<li>References to Static Library projects are ignored when linking, and passed to the compiler as Forced Using assemblies.</li>
+<li>"Inherit project defaults" setting is ignored for Additional Dependencies of Linker (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1178007&amp;group_id=31650">#1178007</a>).</li>
+<li>Additional project-level include directories are not merged with file-level include directories (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1160647&amp;group_id=31650">#1160043</a>).</li>
+<li>Projects using precompiled header are always recompiled.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Types</strong></p>
+<ul>
+<li><p><strong>&lt;fileset&gt;</strong></p>
+<ul>
+<li>Patterns are read from file specified using <em :="" class="text-primary">&lt;includesfile&gt;</em> element regardless of the value of conditional attributes ("if" and "unless").</li>
+</ul>
+</li>
+</ul>
+<h3 id="changes-4"><strong>Changes</strong></h3>
+<p><strong>Core</strong></p>
+<ul>
+<li><p><strong>MailLogger</strong></p>
+<ul>
+<li>Added "MailLogger.body.encoding" property to allow the encoding of the body of the message to be set.</li>
+</ul>
+</li>
+<li><p><strong>Response File</strong></p>
+<ul>
+<li>NAnt now supports the use of a response file. Passing <em :="" class="text-primary">@&lt;file&gt;</em> on the command line will cause the contents of <em :="" class="text-primary">&lt;file&gt;</em> to be read as part of the command line. Multiple <em :="" class="text-primary">@&lt;file&gt;</em> arguments may be used.</li>
+</ul>
+</li>
+<li><p><strong>XmlLogger</strong></p>
+<ul>
+<li>Project, target and task timing information is now output in a <em :="" class="text-primary">&lt;duration&gt;</em> element in milliseconds (patch <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1122583&amp;group_id=31650&amp;atid=402870">#1122583</a>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;csc&gt; / &lt;vbc&gt; / &lt;vjc&gt;</strong></p>
+<ul>
+<li>Changed "debug" attribute from boolean to <a href="latest/reference/enums/NAnt.DotNet.Types.DebugOutput.html">DebugOutput</a> enum to allow more control over the type of debugging information generated by the compiler.</li>
+</ul>
+</li>
+<li><p><strong>&lt;lib&gt;</strong></p>
+<ul>
+<li>Add "moduledefinition" attribute.</li>
+</ul>
+</li>
+<li><p><strong>&lt;midl&gt;</strong></p>
+<ul>
+<li>"tlb" attribute is no longer required.</li>
+</ul>
+</li>
+</ul>
+<h3 id="developer-information"><strong>Developer information</strong></h3>
+<p><strong>API</strong></p>
+<ul>
+<li><p><strong>FileSetAttribute</strong></p>
+<ul>
+<li>The NAnt.Core.Attributes.FileSetAttribute is obsolete. Task developers should use the NAnt.Core.Attributes.BuildElementAttribute instead.</li>
+</ul>
+<p>For example:</p>
+<pre><code class="language-csharp">[~~FileSet~~BuildElement("fileset")]
+public <a href="/api/NAnt.Core.Types/FileSet">FileSet</a> CopyFileSet {
+    get { return _fileset; }
+    set { _fileset = value; }
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="nantcontrib-2">NAntContrib</h2>
+<hr>
+<h3 id="bug-fixes-4"><strong>Bug fixes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;msi&gt; / &lt;msm&gt;</strong></p>
+<ul>
+<li>Directories containing spaces result in error 1639 during installation (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=474851&amp;aid=1107112&amp;group_id=54790">#1107112</a>).</li>
+<li>Removed dependency of <em :="" class="text-primary">&lt;properties&gt;</em> element (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1149861&amp;group_id=54790&amp;atid=474851">#1149861</a>).</li>
+<li>Cabarc process would fail with spaces in filename (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=474851&amp;aid=1153718&amp;group_id=54790">#1153718</a>).</li>
+<li>OCX's are not registered for self-registration (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1165416&amp;group_id=54790&amp;atid=474851">#1165416</a>).</li>
+</ul>
+</li>
+</ul>
+<h3 id="changes-5"><strong>Changes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;codestats&gt;</strong></p>
+<ul>
+<li>Added support for multiple line counters (patch <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1108543&amp;group_id=54790&amp;atid=474853">#1108543</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;msi&gt; / &lt;msm&gt;</strong></p>
+<ul>
+<li>Added support for fileset references.</li>
+<li>Added <em :="" class="text-primary">&lt;summaryinformation&gt;</em> element to specify information for the summary information stream (associated bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=474851&amp;aid=1149861&amp;group_id=54790">#1149861</a>).</li>
+<li>FeatureComponents table is not removed from merge modules (even when empty)</li>
+<li>Added support for file, ini, and component searches. Depreciated the old syntax for registry searches. (associated bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=474851&amp;aid=1149948&amp;group_id=54790">#1149948</a>).</li>
+</ul>
+</li>
+</ul>
+<h1 id="rc2-february-12-2005" v0.85-rc2="">0.85-rc2 - February 12, 2005</h1>
+<h2 id="nant-3">NAnt</h2>
+<hr>
+<h3 id="general-changes"><strong>General changes</strong></h3>
+<p><strong>Building NAnt</strong></p>
+<ul>
+<li>The source distribution of NAnt no longer contains pre-built binaries to build a full version of NAnt. Instead, we now include GNU Make and NMake make files to build a bootstrap version of NAnt, which is then used to build the full version of NAnt.</li>
+</ul>
+<p><strong>License</strong></p>
+<ul>
+<li>The special exception that is part of the NAnt license has been modified to avoid confusion.</li>
+</ul>
+<h3 id="bug-fixes-5"><strong>Bug fixes</strong></h3>
+<p><strong>Core</strong></p>
+<ul>
+<li><p><strong>XML Schema</strong></p>
+<ul>
+<li>NAnt XML Schema definition for collection based elements was incorrect (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1076620&amp;group_id=31650&amp;atid=402868">#1076620</a>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Functions</strong></p>
+<ul>
+<li><p><strong>target::get-current-target()</strong></p>
+<ul>
+<li>Current target is incorrect after execution of target using <em :="" class="text-primary">&lt;call&gt;</em> task (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1090260&amp;group_id=31650&amp;atid=402868">#1090260</a>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;cl&gt;</strong></p>
+<ul>
+<li><em :="" class="text-primary">&lt;cl&gt;</em> does not recompile although headers have been updated (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1079377&amp;group_id=31650&amp;atid=402868">#1079377</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;mail&gt;</strong></p>
+<ul>
+<li>Names containing comma's are not supported (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=961627&amp;group_id=31650&amp;atid=402868">#961627</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;midl&gt;</strong></p>
+<ul>
+<li><em :="" class="text-primary">&lt;midl&gt;</em> fails on second run if "header" or "iid" attributes are not specified (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1078558&amp;group_id=31650&amp;atid=402868">#1078558</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;solution&gt;</strong></p>
+<ul>
+<li>Manifest resource names of resources in J# projects do not match those generated by Microsoft Visual Studio.NET.</li>
+<li>For embedded resources that are dependent on a source file, namespace prefixing is wrong when a namespace declaration is not present in the source file (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1077253&amp;group_id=31650&amp;atid=402868">#1077253</a>).</li>
+<li>Users should be warned about possible issues with resx files when building a project for a down-level target framework (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1077254&amp;group_id=31650&amp;atid=402868">#1077254</a>).</li>
+<li>"App.config" should not be considered an output file for Class Library projects.</li>
+<li>Win32 resources in Visual C++ projects are not compiled (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1077712&amp;group_id=31650&amp;atid=402868">#1077712</a>).</li>
+<li>Improve error reporting when a referenced component cannot be resolved (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1079777&amp;group_id=31650&amp;atid=402868">#1079777</a>).</li>
+<li>MFC and ATL shared linking is not supported for Visual C++ projects (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1078636&amp;group_id=31650&amp;atid=402868">#1078636</a>).</li>
+<li><em :="" class="text-primary">&lt;solution&gt;</em> task doesn't support COM, OCX apps built in Visual C++ (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1078641&amp;group_id=31650&amp;atid=402868">#1078641</a>).</li>
+<li>Support for some compile and link arguments is missing (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1080237&amp;group_id=31650&amp;atid=402868">#1080237</a>).</li>
+<li>Project dependencies are not re-evaluated when assembly reference is converted to project reference (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1076015&amp;group_id=31650&amp;atid=402868">#1076015</a>).</li>
+<li>Resolution of assembly references does not match Visual Studio .NET (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1077869&amp;group_id=31650&amp;atid=402868">#1077869</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;style&gt;</strong></p>
+<ul>
+<li>Relative URI specified as argument for <em :="" class="text-primary">document()</em> function is not considered to be relative to the base URI of stylesheet containing the function call (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1078896&amp;group_id=31650&amp;atid=402868">#1078896</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;sysinfo&gt;</strong></p>
+<ul>
+<li>Document behavior when environment variable is defined with a name that is not a valid property name (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1082225&amp;group_id=31650&amp;atid=402868">#1082225</a>).</li>
+</ul>
+</li>
+</ul>
+<h3 id="additions-2"><strong>Additions</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;gunzip&gt;</strong></p>
+<ul>
+<li>Expands a file packed using GZip compression.</li>
+</ul>
+</li>
+<li><p><strong>&lt;setenv&gt;</strong></p>
+<ul>
+<li>Sets environment variables.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Types</strong></p>
+<ul>
+<li><p><strong>&lt;categories&gt;</strong></p>
+<ul>
+<li>Controls the categories of tests to execute using the <em :="" class="text-primary">&lt;nunit2&gt;</em> task.</li>
+</ul>
+</li>
+</ul>
+<h3 id="changes-6"><strong>Changes</strong></h3>
+<p><strong>Expressions</strong></p>
+<ul>
+<li><p><strong>Data Type support</strong></p>
+<ul>
+<li>Added support for "long" data type for both relational and mathematical expressions.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;al&gt;</strong></p>
+<ul>
+<li>Added numerous attributes. Eg. "version", "evidence", ... .</li>
+</ul>
+</li>
+<li><p><strong>&lt;cl&gt;</strong></p>
+<ul>
+<li><p>Added "pchthroughfile" and "pchmode" attributes to allow more control over precompiled header files.</p>
+</li>
+<li><p>Added "objectfile" and "pdbfile" attributes.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>&lt;csc&gt;</strong></p>
+<ul>
+<li>Added "baseaddress" and "filealign" attributes.</li>
+</ul>
+</li>
+<li><p><strong>&lt;lc&gt;</strong></p>
+<ul>
+<li>Deprecated "licensetarget" attribute in favor of "target" attribute.</li>
+</ul>
+</li>
+<li><p><strong>&lt;exec&gt;</strong></p>
+<ul>
+<li>Deprecated nested <em :="" class="text-primary">&lt;option&gt;</em> element in favor of <em :="" class="text-primary">&lt;variable&gt;</em> element for setting environment variables for the spawned process.</li>
+</ul>
+</li>
+<li><p><strong>&lt;link&gt;</strong></p>
+<ul>
+<li>Added "debug" and "pdbfile" attributes.</li>
+<li>Added <em :="" class="text-primary">&lt;modules&gt;</em> child element to link modules in the assembly.</li>
+<li>Added <em :="" class="text-primary">&lt;embeddedresources&gt;</em> child element to embed resources in the assembly.</li>
+</ul>
+</li>
+<li><p><strong>&lt;mail&gt;</strong></p>
+<ul>
+<li>"tolist" is no longer a required attribute.</li>
+<li>The "tolist", "cclist" and "bcclist" attributes are now semicolon-separated lists. The comma is no longer considered a separator character.</li>
+</ul>
+</li>
+<li><p><strong>&lt;ndoc&gt;</strong></p>
+<ul>
+<li>Upgraded to NDoc 1.3.1 Release.</li>
+</ul>
+</li>
+<li><p><strong>&lt;nunit2&gt;</strong></p>
+<ul>
+<li>Added support including or excluding specific categories of test cases or fixtures.</li>
+</ul>
+</li>
+<li><p><strong>&lt;resgen&gt;</strong></p>
+<ul>
+<li>Added "usesourcepath" attribute to allow the source file's directory to be used as current directory for resolving relative file paths. [.NET 2.0 or higher]</li>
+<li>Improved dependency scanning for resx files.</li>
+</ul>
+</li>
+<li><p><strong>&lt;solution&gt;</strong></p>
+<ul>
+<li>Improved support for precompiled header files.</li>
+<li>Added support for project-level build events.</li>
+</ul>
+</li>
+<li><p><strong>&lt;style&gt;</strong></p>
+<ul>
+<li>Added support for extension objects.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Types</strong></p>
+<ul>
+<li><p><strong>&lt;import&gt;</strong></p>
+<ul>
+<li>The "name" attribute of the <em :="" class="text-primary">&lt;import&gt;</em> element has been deprecated, and replaced by a "namespace" attribute. This change affects the following tasks: <em :="" class="text-primary">&lt;asminfo&gt;</em>, <em :="" class="text-primary">&lt;script&gt;</em> and <em :="" class="text-primary">&lt;vbc&gt;</em>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="nantcontrib-3">NAntContrib</h2>
+<hr>
+<h3 id="general-changes-1"><strong>General changes</strong></h3>
+<ul>
+<li><p><strong>License</strong></p>
+<ul>
+<li>The special exception that is part of the NAntContrib license has been modified to avoid confusion.</li>
+</ul>
+</li>
+<li><p><strong>Build Script(s)</strong></p>
+<ul>
+<li>Removed single quotes around path variable in NAnt install (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=474851&amp;aid=1153721&amp;group_id=54790">#1153721</a>).</li>
+</ul>
+</li>
+</ul>
+<h3 id="bug-fixes-6"><strong>Bug fixes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;vb6&gt;</strong></p>
+<ul>
+<li>Fixed issue with scanning references to determine if a project needs compiling (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=474851&amp;aid=1082302&amp;group_id=54790">#1082302</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;msi&gt; / &lt;msm&gt;</strong></p>
+<ul>
+<li>Fixed issue that caused error when invoking the same <em :="" class="text-primary">&lt;msi&gt;</em> task multiple times (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1040963&amp;group_id=54790&amp;atid=474851">#1040963</a>).</li>
+<li>Allow schema-generated tasks to work in build files with namespace (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1077447&amp;group_id=54790&amp;atid=474851">#1077447</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;p4sync&gt;</strong></p>
+<ul>
+<li>Invalid command-line is generated when "force" is <strong>true</strong> (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=474851&amp;aid=1081430&amp;group_id=54790">#1081430</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;sql&gt;</strong></p>
+<ul>
+<li>Avoid outputting separator line for empty rows.</li>
+</ul>
+</li>
+<li><p><strong>&lt;svn-checkout&gt;</strong></p>
+<ul>
+<li>Added '.' operator during checkout to fix issue with incorrect destination directory (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1078255&amp;group_id=54790&amp;atid=474851">#1078255</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;vsscheckout&gt;</strong></p>
+<ul>
+<li>Checking out single file causes error.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vssget&gt;</strong></p>
+<ul>
+<li>Getting single file causes error (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1019972&amp;group_id=54790&amp;atid=474851">#1019972</a>).</li>
+</ul>
+</li>
+</ul>
+<h3 id="additions-3"><strong>Additions</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;fxcop&gt;</strong></p>
+<ul>
+<li>Analyzes managed code assemblies and reports information about the assemblies, such as possible design, localization, performance, and security improvements.</li>
+</ul>
+</li>
+<li><p><strong>&lt;mkschanges&gt;</strong></p>
+<ul>
+<li>Generates an XML file containing the differences between the sandbox and the project in the MKS database.</li>
+</ul>
+</li>
+<li><p><strong>&lt;mkscheckpoint&gt;</strong></p>
+<ul>
+<li>Checkpoints a project in an MKS Source Integrity database.</li>
+</ul>
+</li>
+<li><p><strong>&lt;mksget&gt;</strong></p>
+<ul>
+<li>Retrieves an item or project from MKS Source Integrity.</li>
+</ul>
+</li>
+<li><p><strong>&lt;trycatch&gt;</strong></p>
+<ul>
+<li>Executes a set of tasks, and optionally catches a build exception to allow recovery or rollback steps to be taken, or to define some steps to be taken regardless if the tasks succeed or fail, or both.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vsshistory&gt;</strong></p>
+<ul>
+<li>Generates an XML file showing all changes made to a Visual SourceSafe project/file between specified labels or dates (by a given user).</li>
+</ul>
+</li>
+</ul>
+<h3 id="changes-7"><strong>Changes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;deliisdir&gt;</strong></p>
+<ul>
+<li>Added "website" attribute which allows for targeting a specific virtual site.</li>
+</ul>
+</li>
+<li><p><strong>&lt;iisdirinfo&gt;</strong></p>
+<ul>
+<li>Added "website" attribute which allows for targeting a specific virtual site.</li>
+</ul>
+</li>
+<li><p><strong>&lt;mkiisdir&gt;</strong></p>
+<ul>
+<li>Improved documentation.</li>
+<li>Added "uncusername" and "uncpassword" attributes.</li>
+<li>Added "website" attribute which allows for targeting a specific virtual site.</li>
+</ul>
+</li>
+<li><p><strong>&lt;version&gt;</strong></p>
+<ul>
+<li>Uses enums for the "buildtype" and "revisiontype" parameters.</li>
+<li>The calculated version number and its indivual components are now also exposed to build authors as properties.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vssadd&gt;</strong></p>
+<ul>
+<li>The "user" attribute is deprecated, and has been superceded by a "username" attribute.</li>
+<li>The "user"/"username" attribute is no longer required. When no username is specified and "Use network name for automatic user log in" is enabled for the Visual SourceSafe database, then the current Windows username will be used to log in.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vsscheckin&gt;</strong></p>
+<ul>
+<li>The "user" attribute is deprecated, and has been superceded by a "username" attribute.</li>
+<li>The "user"/"username" attribute is no longer required. When no username is specified and "Use network name for automatic user log in" is enabled for the Visual SourceSafe database, then the current Windows username will be used to log in.</li>
+<li>If "localpath" is not an absolute path, it will now be considered as a path relative to the project base directory.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vsscheckout&gt;</strong></p>
+<ul>
+<li>The "user" attribute is deprecated, and has been superceded by a "username" attribute.</li>
+<li>The "user"/"username" attribute is no longer required. When no username is specified and "Use network name for automatic user log in" is enabled for the Visual SourceSafe database, then the current Windows username will be used to log in.</li>
+<li>Added "filetimestamp" attribute that allows the behavior for timestamps of local files to be set.</li>
+<li>If "localpath" is not an absolute path, it will now be considered as a path relative to the project base directory.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vssdiff&gt;</strong></p>
+<ul>
+<li>The "user" attribute is deprecated, and has been superceded by a "username" attribute.</li>
+<li>The "user"/"username" attribute is no longer required. When no username is specified and "Use network name for automatic user log in" is enabled for the Visual SourceSafe database, then the current Windows username will be used to log in.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vssget&gt;</strong></p>
+<ul>
+<li>The "user" attribute is deprecated, and has been superceded by a "username" attribute.</li>
+<li>The "user"/"username" attribute is no longer required. When no username is specified and "Use network name for automatic user log in" is enabled for the Visual SourceSafe database, then the current Windows username will be used to log in.</li>
+<li>Added "filetimestamp" attribute that allows the behavior for timestamps of local files to be set.</li>
+<li>If "localpath" is not an absolute path, it will now be considered as a path relative to the project base directory.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vsslabel&gt;</strong></p>
+<ul>
+<li>The "user" attribute is deprecated, and has been superceded by a "username" attribute.</li>
+<li>The "user"/"username" attribute is no longer required. When no username is specified and "Use network name for automatic user log in" is enabled for the Visual SourceSafe database, then the current Windows username will be used to log in.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vssundocheckout&gt;</strong></p>
+<ul>
+<li>The "user" attribute is deprecated, and has been superceded by a "username" attribute.</li>
+<li>The "user"/"username" attribute is no longer required. When no username is specified and "Use network name for automatic user log in" is enabled for the Visual SourceSafe database, then the current Windows username will be used to log in.</li>
+<li>If "localpath" is not an absolute path, it will now be considered as a path relative to the project base directory.</li>
+</ul>
+</li>
+</ul>
+<h1 id="rc1-november-28-2004" v0.85-rc1="">0.85-rc1 - November 28, 2004</h1>
+<h2 id="nant-4">NAnt</h2>
+<hr>
+<h3 id="framework-support-1"><strong>Framework support</strong></h3>
+<ul>
+<li>NAnt 0.85 adds support for the following frameworks (both as runtime and as target framework):
+<ul>
+<li>Mono (both 1.0 and 2.0 profile)</li>
+<li>.NET 2.0 Beta 1</li>
+</ul>
+</li>
+<li>By default, NAnt will now target the framework on which its running. For example, if NAnt is running on .NET 2.0, the assemblies built using the <em :="" class="text-primary">&lt;csc&gt;</em> task will target .NET 2.0. Previous versions of NAnt would target .NET 1.0 by default.</li>
+<li>Information on how to override the target framework, can be found <a href="/faq/#change-targetframework">here</a>.</li>
+</ul>
+<h3 id="breaking-changes-2"><strong>Breaking changes</strong></h3>
+<ul>
+<li>In previous version of NAnt, the <em :="" class="text-primary">&lt;arg&gt;</em> element (used by, for example, the <em :="" class="text-primary">&lt;exec&gt;</em> task) would automatically add quotes for both "file" and "value" attributes in the command line generated by the task. That automatic quoting has been removed for "value" attributes (but not for "file" attributes). This change may break build files that assume that both arguments specified using the "file" and "value" attributes will automatically be quoted.</li>
+<li>Overwriting of read-only properties in tasks other than the <em :="" class="text-primary">&lt;property&gt;</em> task will now result in a build failure. * Previous versions of NAnt would silently ignore an update of a read-only property.</li>
+<li>The <em :="" class="text-primary">&lt;nunit2&gt;</em> task been updated to support <a href="https://sourceforge.net/projects/nunit/files/NUnit%20Version%202/V2.2/">NUnit 2.2</a>. Assemblies built using previous versions of NUnit should either be rebuilt using <a href="https://sourceforge.net/projects/nunit/files/NUnit%20Version%202/V2.2/">NUnit 2.2</a> or a <a href="https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/redirect-assembly-versions">binding redirect</a> should be configured in the application configuration file of the test assembly.</li>
+</ul>
+<h3 id="general-changes-2"><strong>General changes</strong></h3>
+<ul>
+<li>Improved error reporting when invalid values are specified for attibutes representing files or directories.</li>
+<li>This release of NAnt introduces support for expressions. More information is available <a href="/docs/fundamentals/expressions">here</a>.</li>
+<li><a href="latest/reference/types/filterchain.html">FilterChain</a> support has been introduced to NAnt.</li>
+<li>Enums that are used in tasks or types now have their own doc pages.</li>
+<li>The default logger will now also output the number non-fatal errors and warnings.</li>
+<li>Output of the <a href="/docs/fundamentals/loggers-and-listeners#xml-logger">XmlLogger</a> is now buffered until build has finished, and <a href="/docs/fundamentals/loggers-and-listeners#xml-logger">XmlLogger</a> can now also be used as a listener.</li>
+<li>Added support for <a href="/docs/fundamentals/targets#wild-targets">wild targets</a>.</li>
+<li>Lots of built-in properties have been deprecated, and replaced by functions. More information is available <a href="/docs/fundamentals/properties">here</a>.</li>
+<li>NAnt will now report unknown attributes and child elements when initializing build elements.</li>
+</ul>
+<h3 id="commandline-changes"><strong>Commandline changes</strong></h3>
+<ul>
+<li>Added "-e[macs]" option, which can be used to produce logging information without adornments.</li>
+<li>Added "-ext[ension]" option to allow loading of external assemblies. As a result, third party loggers or listeners no longer have to reside in the NAnt bin directory or the GAC in order to be used by NAnt.</li>
+<li>Deprecated -[defaultframewor]k option in favor of -t[argetframework].</li>
+</ul>
+<h3 id="new-tasks"><strong>New Tasks</strong></h3>
+<p><strong>&lt;aximp&gt;</strong></p>
+<ul>
+<li>Generates a Windows Forms Control that wraps ActiveX Controls defined in an OCX.</li>
+</ul>
+<p><strong>&lt;cvs-pass&gt;</strong></p>
+<ul>
+<li>Creates or updates an entry in the specified .cvspass file. This should be used instead of the password attribute.</li>
+</ul>
+<p><strong>&lt;cvs-changelog&gt;</strong></p>
+<ul>
+<li>Produces an XML report that represents the cvs changes from the given start day, to a given end date.</li>
+</ul>
+<p><strong>&lt;cvs-export&gt;</strong></p>
+<ul>
+<li>Exports a cvs module in preperation for a release.</li>
+</ul>
+<p><strong>&lt;cvs-tag&gt;</strong></p>
+<ul>
+<li>Tags all local sources with the specified tag.</li>
+</ul>
+<p><strong>&lt;ilasm&gt;</strong></p>
+<ul>
+<li>Compiles ILASM programs.</li>
+</ul>
+<p><strong>&lt;ildasm&gt;</strong></p>
+<ul>
+<li>Disassembles any portable executable (PE) file that contains intermediate language (IL) code.</li>
+</ul>
+<p><strong>&lt;loadfile&gt;</strong></p>
+<ul>
+<li>Loads a text file into a property.</li>
+</ul>
+<p><strong>&lt;tar&gt;</strong></p>
+<ul>
+<li>Creates a tar file from the specified filesets.</li>
+</ul>
+<h3 id="task-changes">Task changes</h3>
+<ul>
+<li><p><strong>&lt;asminfo&gt;</strong></p>
+<ul>
+<li>Use hash implementation to check whether AssemblyInfo needs to be rebuilt.</li>
+</ul>
+</li>
+<li><p><strong>&lt;attrib&gt;</strong></p>
+<ul>
+<li>Support setting attributes on directories.</li>
+</ul>
+</li>
+<li><p><strong>&lt;available&gt;</strong></p>
+<ul>
+<li>Deprecated in favor of expression support.</li>
+</ul>
+</li>
+<li><p><strong>&lt;cl&gt;</strong></p>
+<ul>
+<li>Added support for passing character set to compiler.</li>
+</ul>
+</li>
+<li><p><strong>&lt;csc&gt;</strong></p>
+<ul>
+<li>Added "rebuild" attribute, which instructs NAnt to recompile the output file regardless of the file timestamps.
+"nowarn" attribute has been deprecated in favor of the <em :="" class="text-primary">&lt;nowarn&gt;</em> child element.</li>
+<li>Added support for suppressing/reporting specific warnings as errors using the <em :="" class="text-primary">&lt;warnaserror&gt;</em> child element. [.NET 2.0 or higher]</li>
+<li>Added support for package references. [Mono]</li>
+<li>&lt;lib&gt; element is obsolete, in favor of <em :="" class="text-primary">&lt;lib&gt;</em> child element on <em :="" class="text-primary">&lt;references&gt;</em> and <em :="" class="text-primary">&lt;modules&gt;</em> element.</li>
+<li>Added support for /baseaddress compiler option.</li>
+</ul>
+</li>
+<li><p><strong>&lt;copy&gt;</strong></p>
+<ul>
+<li>Added support for <a href="/latest/reference/types/filterchain">filterchains</a>.</li>
+</ul>
+</li>
+<li><p><strong>&lt;cvs&gt;</strong></p>
+<ul>
+<li>Several bugs have been fixed in the <em :="" class="text-primary">&lt;cvs&gt;</em> tasks.</li>
+<li>Documentation updates.</li>
+<li>Added "passfile" attribute.</li>
+</ul>
+</li>
+<li><p><strong>&lt;exec&gt;</strong></p>
+<ul>
+<li>Fixed internal error when "program" attribute was assigned invalid file name.</li>
+<li>Added "resultproperty" attribute, which can be set to a name of a property in which the exit code of the program can be stored.</li>
+<li>The <em :="" class="text-primary">&lt;arg&gt;</em> element now supports line and PATH-like command-line arguments.</li>
+</ul>
+</li>
+<li><p><strong>&lt;get&gt;</strong></p>
+<ul>
+<li>Added support for client certificates (for HTTP requests) by means of the <em :="" class="text-primary">&lt;certificates&gt;</em> elements.</li>
+</ul>
+</li>
+<li><p><strong>&lt;jsc&gt;</strong></p>
+<ul>
+<li>Added support for package references. [Mono]</li>
+<li>Added "rebuild" attribute, which instructs NAnt to recompile the output file regardless of the file timestamps.</li>
+</ul>
+</li>
+<li><p><strong>&lt;license&gt;</strong></p>
+<ul>
+<li>Uses the lc.exe commandline tool to compile license files whenever available.</li>
+</ul>
+</li>
+<li><p><strong>&lt;link&gt;</strong></p>
+<ul>
+<li>Allow <em :="" class="text-primary">&lt;fileset&gt;</em> reference to be set for the <em :="" class="text-primary">&lt;sources&gt;</em> element.</li>
+</ul>
+</li>
+<li><p><strong>&lt;move&gt;</strong></p>
+<ul>
+<li>Added support for <a href="/latest/reference/types/filterchain">filterchains</a>.</li>
+</ul>
+</li>
+<li><p><strong>&lt;nant&gt;</strong></p>
+<ul>
+<li>Added <em :="" class="text-primary">&lt;fileset&gt;</em> support for specifiying build files to execute.</li>
+</ul>
+</li>
+<li><p><strong>&lt;ndoc&gt;</strong></p>
+<ul>
+<li>Upgraded to NDoc 1.3 Release Candidate 1.</li>
+<li>Added support for reference paths.</li>
+</ul>
+</li>
+<li><p><strong>&lt;nunit&gt;</strong></p>
+<ul>
+<li>The <em :="" class="text-primary">&lt;nunit&gt;</em> task has been deprecated, and will be moved to NAntContrib in a future release. NUnit 1.0 test assemblies will remain supported through NAntContrib, but we strongly advise you to upgrade to NUnit 2.x.</li>
+</ul>
+</li>
+<li><p><strong>&lt;nunit2&gt;</strong></p>
+<ul>
+<li>Upgraded to support <a href="https://sourceforge.net/projects/nunit/files/NUnit%20Version%202/V2.2/">NUnit 2.2</a>.</li>
+<li>If no explicit application configuration file is specified, a configuration file matching the name of the test assembly with extension ".config" will be used for the test domain.</li>
+<li>Minor bug fixes.</li>
+</ul>
+</li>
+<li><p><strong>&lt;regex&gt;</strong></p>
+<ul>
+<li>Added "options" attribute that takes a comma-separated list of options to pass to the regex engine.</li>
+</ul>
+</li>
+<li><p><strong>&lt;resgen&gt;</strong></p>
+<ul>
+<li>Added support for assembly references, in order to be abel to compile .resx file that reference assemblies that are not located in the GAC.</li>
+</ul>
+</li>
+<li><p><strong>&lt;script&gt;</strong></p>
+<ul>
+<li>Simplified definition of custom functions with the <em :="" class="text-primary">&lt;script&gt;</em> task.</li>
+<li>Added support for Visual J# (where available), and third party CodeDOM providers.</li>
+<li><em :="" class="text-primary">&lt;script&gt;</em> task is now supported on <a href="http://www.mono-project.com/">Mono</a>.</li>
+<li>Assemblies emitted by the <em :="" class="text-primary">&lt;script&gt;</em> task will now also be scanned for functions and filters.</li>
+</ul>
+</li>
+<li><p><strong>&lt;solution&gt;</strong></p>
+<ul>
+<li>Added support for Visual J# projects.</li>
+<li>WebMaps are now case-insensitive (and added attribute to enable case-sensitivity).</li>
+<li>Added "enablewebdav" attribute to allow WebDAV access for web projects.</li>
+<li>Added a few unit tests to reduce the likelyhood of regressions.</li>
+<li>Fixed some minor issues with regards to Visual C++ support.</li>
+<li>General performance has been improved, except for project with loads of resources.</li>
+<li>Added support for exclusion of source files for Visual C++ projects.</li>
+<li>No longer stop loading projects, when the first excluded project is encountered (bug #982685).</li>
+<li>No longer automatically use Primary Interop Assemblies for references to type libraries, but output warning instead.</li>
+<li>Added support for satellite assemblies.</li>
+<li>Respect project build order set in VS.NET.</li>
+<li>VB.NET specific settings are now processed.</li>
+<li>Improved support for precompiled headers, better grouping of files that should be compiled in one go.</li>
+<li>Added support for empty projects.</li>
+<li>No longer attempt to build ignored projects.</li>
+<li>Match behaviour of VS.NET when resolving assembly references.</li>
+<li>Fixed lookup of type libraries in the registry.</li>
+<li>Expansion of macros is now case-insensitive.</li>
+<li>Zero-byte resx files are now skipped to match VS.NET.</li>
+<li>Introduced support for nmake projects.</li>
+<li>Added support for web projects nested in Enterprise * Template Projects.</li>
+<li>Compiled resource file are now stored in the <em :="" class="text-primary">obj&amp;lt;configuration&gt;</em> directory relative to project directory. The compiled resource files will not be removed when the task finishes, by doing this resource files will now only be recompiled if the compiled resource file in the object directory is no longer up-to-date. This matches the behaviour of VS.NET.</li>
+<li>Added support for deploying App.config to output directory.</li>
+</ul>
+</li>
+<li><p><strong>&lt;sysinfo&gt;</strong></p>
+<ul>
+<li>If "failonerror" is <strong>false</strong>, the <em :="" class="text-primary">&lt;sysinfo&gt;</em> task will output a warning message in the build log when a certain environment variable cannot be exposed as a property (because of, for example, more strict naming rules for properties) and continue processing other environment variables. In previous versions of NAnt, execution of the <em :="" class="text-primary">&lt;sysinfo&gt;</em> task would halt on the first error.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vbc&gt;</strong></p>
+<ul>
+<li>Added support for suppressing specific warnings using the <em :="" class="text-primary">&lt;nowarn&gt;</em> child element. [.NET 2.0 or higher]</li>
+<li>Added support for suppressing/reporting specific warnings as errors using the <em :="" class="text-primary">&lt;warnaserror&gt;</em> child element. [.NET 2.0 or higher]</li>
+<li>Added support for generating XML documentation files, using "doc" attribute. [.NET 2.0 or higher]</li>
+<li>Added support for package references. [Mono]</li>
+<li>Added "rebuild" attribute, which instructs NAnt to recompile the output file regardless of the file timestamps.</li>
+<li>Added <em :="" class="text-primary">&lt;imports&gt;</em> child element, and deprecated "imports" attribute.</li>
+<li><em :="" class="text-primary">&lt;lib&gt;</em> element is obsolete, in favor of <em :="" class="text-primary">&lt;lib&gt;</em> child element on <em :="" class="text-primary">&lt;references&gt;</em> and <em :="" class="text-primary">&lt;modules&gt;</em> element.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vjc&gt;</strong></p>
+<ul>
+<li>Added support for suppressing specific warnings using the <em :="" class="text-primary">&lt;nowarn&gt;</em> child element. [.NET 2.0 or higher]</li>
+<li><em :="" class="text-primary">&lt;lib&gt;</em> element is obsolete, in favor of <em :="" class="text-primary">&lt;lib&gt;</em> child element on <em :="" class="text-primary">&lt;references&gt;</em> and <em :="" class="text-primary">&lt;modules&gt;</em> element.</li>
+<li>Added "rebuild" attribute, which instructs NAnt to recompile the output file regardless of the file timestamps.</li>
+<li>Added support for /baseaddress compiler option.</li>
+</ul>
+</li>
+<li><p><strong>&lt;xmlpeek&gt; / &lt;xmlpoke&gt;</strong></p>
+<ul>
+<li>Added support for XPath expressions with namespace prefixes.</li>
+</ul>
+</li>
+<li><p><strong>&lt;zip&gt; / &lt;unzip&gt;</strong></p>
+<ul>
+<li>Added support for multiple filesets.</li>
+<li>A top level directory prefix can be set on individual filesets.</li>
+<li>Upgraded <a href="https://github.com/icsharpcode/SharpZipLib">#ziplib</a> to v0.83.</li>
+</ul>
+</li>
+</ul>
+<h3 id="new-types"><strong>New types</strong></h3>
+<ul>
+<li><p><strong>&lt;assemblyfileset&gt;</strong></p>
+<ul>
+<li>Specialized <em :="" class="text-primary">&lt;fileset&gt;</em> for managing assembly files.</li>
+</ul>
+</li>
+<li><p><strong>&lt;warnaserror&gt;</strong></p>
+<ul>
+<li>Controls the behaviour of a compiler with regards to the reporting of warnings.</li>
+</ul>
+</li>
+</ul>
+<h3 id="type-changes"><strong>Type changes</strong></h3>
+<ul>
+<li><p><strong>&lt;fileset&gt;</strong></p>
+<ul>
+<li>Deprecated <em :="" class="text-primary">&lt;includes&gt;</em> and <em :="" class="text-primary">&lt;excludes&gt;</em> elements in favor of <em :="" class="text-primary">&lt;include&gt;</em> and <em :="" class="text-primary">&lt;exclude&gt;</em> elements.</li>
+<li>Deprecated <em :="" class="text-primary">&lt;includesList&gt;</em> element in favor of <em :="" class="text-primary">&lt;includesfile&gt;</em>.</li>
+<li>Added <em :="" class="text-primary">&lt;excludesfile&gt;</em> element.</li>
+</ul>
+</li>
+</ul>
+<h3 id="developer-information-1"><strong>Developer information</strong></h3>
+<ul>
+<li>The <em :="" class="text-primary">Task.LogPrefix</em> property has been deprecated. Messages that are written to build log by a given task, will now automatically get prefixed with the task name. This behaviour can be disabled by the new -e[macs] commandline option.</li>
+</ul>
+<h2 id="nantcontrib-4">NAntContrib</h2>
+<hr>
+<h3 id="new-tasks-1"><strong>New tasks</strong></h3>
+<ul>
+<li><p><strong>&lt;depends&gt;</strong></p>
+<ul>
+<li>Guarantees that listed dependencies are resolved before continuing.</li>
+</ul>
+</li>
+<li><p><strong>&lt;grep&gt;</strong></p>
+<ul>
+<li>Searches files for a regular-expression and produces an XML report of the matches.</li>
+</ul>
+</li>
+<li><p><strong>&lt;PVCS&gt;</strong></p>
+<ul>
+<li>Support for <a href="https://www.microfocus.com/en-us/products/pvcs/overview">PVCS</a> has been added.</li>
+</ul>
+</li>
+<li><p><strong>&lt;Surround SCM&gt;</strong></p>
+<ul>
+<li>Support for <a href="https://www.perforce.com/products/surround-scm">Surround SCM</a> has been added.</li>
+</ul>
+</li>
+<li><p><strong>&lt;Subversion&gt;</strong></p>
+<ul>
+<li>Support for <a href="https://subversion.apache.org/">Subversion</a> has been introduced.</li>
+</ul>
+</li>
+<li><p>**&lt;Perforce&gt;</p>
+<ul>
+<li>Support for <a href="https://www.perforce.com/">Perforce SCM</a> has been added.</li>
+</ul>
+</li>
+</ul>
+<h3 id="task-changes-1"><strong>Task changes</strong></h3>
+<ul>
+<li><p><strong>&lt;aximp&gt;</strong></p>
+<ul>
+<li>Moved to NAnt project.</li>
+</ul>
+</li>
+<li><p><strong>&lt;comregister&gt;</strong></p>
+<ul>
+<li>Minor fix to prevent file locking.</li>
+<li>Added support for unregistering type libraries.</li>
+<li>Prevented failure message boxes from being displayed when (un)registering a DLL server.</li>
+<li>Improved reporting of error conditions.</li>
+</ul>
+</li>
+<li><p><strong>&lt;gac&gt;</strong></p>
+<ul>
+<li>Documentation has been improved.</li>
+<li>Several issues have been fixed.</li>
+</ul>
+</li>
+<li><p><strong>&lt;mkiisdir&gt;</strong></p>
+<ul>
+<li>The hostname specified in the "iisserver" attribute is now taken into account when determining which site to target.</li>
+<li>Only those IIS-properties explicitly specified will be set.</li>
+<li>Added "appcreate" attribute to contol the creation of applications.</li>
+<li>The root directory of a site is now configurable.</li>
+</ul>
+</li>
+<li><p><strong>&lt;msi&gt; / &lt;msm&gt;</strong></p>
+<ul>
+<li>Added automatic parsing of subdirectories of components.</li>
+<li>Added support for registry components.</li>
+<li>Documentation has been improved.</li>
+<li>Added support for configurable merge modules.</li>
+<li>Several issues have been fixed.</li>
+<li>Added support for installing assemblies to the GAC.</li>
+</ul>
+</li>
+<li><p><strong>&lt;sql&gt;</strong></p>
+<ul>
+<li>Added "append" attribute that indicates whether to overwrite output file.</li>
+<li>Added "showheaders" attribute that specifies whether or not to display schema information.</li>
+<li>Column separator is changed from " " (two spaces) to ", ".</li>
+<li>Added "quotechar" attribute which specified the character(s) to place arround column values to prevent collisions with for instance the comma character.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vb6&gt;</strong></p>
+<ul>
+<li>Several issues have been fixed.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vssadd&gt;</strong></p>
+<ul>
+<li>Added support for recursive add.</li>
+</ul>
+</li>
+<li><p><strong>&lt;xsd&gt;</strong></p>
+<ul>
+<li>Documentation has been improved.</li>
+<li>Several issues have been fixed.</li>
+</ul>
+</li>
+</ul>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

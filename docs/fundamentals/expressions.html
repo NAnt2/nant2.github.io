@@ -1,0 +1,1622 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - Expressions</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#introduction">Introduction</a></p>
+<p><a href="#expression-syntax">Expression Syntax</a></p>
+<p><a href="#data-types">Data types</a></p>
+<p><a href="#operators">Operators</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/docs/overview">Overview</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/overview/why-nant">Why NAnt</a></li>
+                <li><a href="/docs/overview/system-requirements">System Requirements</a></li>
+                <li><a href="/docs/overview/installation">Installation</a></li>
+                <li><a href="/docs/overview/getting-started">Getting started</a></li>
+                <li><a href="/docs/overview/ant-users">Ant users</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/docs/fundamentals">Fundamentals</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/fundamentals/running-nant">Running NAnt</a></li>
+                <li><a href="/docs/fundamentals/build-files">Build files</a></li>
+                <li><a href="/docs/fundamentals/projects">Projects</a></li>
+                <li><a href="/docs/fundamentals/targets">Targets</a></li>
+                <li><a href="/docs/fundamentals/tasks">Tasks</a></li>
+                <li><a href="/docs/fundamentals/properties">Properties</a></li>
+                <li><a href="/docs/fundamentals/loggers-and-listeners">Loggers and listeners</a></li>
+                <li class="selected"><a href="/docs/fundamentals/expressions">Expressions</a></li>
+                <li><a href="/docs/fundamentals/functions">Functions</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/contributing">Contributing</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/contributing/development-guide">Development guide</a></li>
+                <li><a href="/docs/contributing/release-guide">Release guide</a></li>
+                <li><a href="/docs/contributing/release-plan">Release plan</a></li>
+                <li><a href="/docs/contributing/external">External resources</a></li>
+                <li><a href="/docs/contributing/contributors">Contributors</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/docs/faq">Frequently Asked Questions</a></li>
+                <li class="treeview">
+                    <a href="/docs/nant">NAnt - legacy</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/nant/development-guide">NAnt development guide</a></li>
+                <li><a href="/docs/nant/release-guide">NAnt release guide</a></li>
+                <li><a href="/docs/nant/release-plan">NAnt release plan</a></li>
+                <li><a href="/docs/nant/external">NAnt external resources</a></li>
+                <li><a href="/docs/nant/contributors">NAnt/NAntContrib contributors</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Expressions</h1>
+		</section>
+	<section class="content">
+		<p>[//]: # (TOC Begin)</p>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#expression-syntax">Expression syntax</a></li>
+<li><a href="#data-types">Data types</a></li>
+<li><a href="#operators">Operators</a>
+<ul>
+<li><a href="#operator-precedence">Operator precedence</a></li>
+<li><a href="#operators-on-numeric-values">Operators on numeric values</a>
+<ul>
+<li><a href="#add">Add</a></li>
+<li><a href="#subtract">Subtract</a></li>
+<li><a href="#multiply">Multiply</a></li>
+<li><a href="#divide">Divide</a></li>
+<li><a href="#mod">Mod</a></li>
+<li><a href="#equal">Equal</a></li>
+<li><a href="#inequal">Inequal</a></li>
+<li><a href="#greater-than">Greater than</a></li>
+<li><a href="#greater-than-or-equal">Greater than or equal</a></li>
+<li><a href="#less-than">Less than</a></li>
+<li><a href="#less-than-or-equal">Less than or equal</a></li>
+<li><a href="#unary-plus">Unary plus</a></li>
+<li><a href="#unary-minus">Unary minus</a></li>
+</ul>
+</li>
+<li><a href="#operators-on-boolean-values">Operators on boolean values</a>
+<ul>
+<li><a href="#equal-1">Equal</a></li>
+<li><a href="#inequal-1">Inequal</a></li>
+<li><a href="#greater-than-1">Greater than</a></li>
+<li><a href="#greater-than-or-equal-1">Greater than or equal</a></li>
+<li><a href="#less-than-1">Less than</a></li>
+<li><a href="#less-than-or-equal-1">Less than or equal</a></li>
+<li><a href="#logical-and">Logical and</a></li>
+<li><a href="#logical-or">Logical or</a></li>
+</ul>
+</li>
+<li><a href="#operators-on-string-values">Operators on string values</a>
+<ul>
+<li><a href="#concat">Concat</a></li>
+<li><a href="#equal-2">Equal</a></li>
+<li><a href="#inequal-2">Inequal</a></li>
+<li><a href="#greater-than-2">Greater than</a></li>
+<li><a href="#greater-than-or-equal-2">Greater than or equal</a></li>
+<li><a href="#less-than-2">Less than</a></li>
+<li><a href="#less-than-or-equal-2">Less than or equal</a></li>
+</ul>
+</li>
+<li><a href="#operators-on-timespan-and-datetime-values">Operators on TimeSpan and DateTime values</a>
+<ul>
+<li><a href="#add-1">Add</a></li>
+<li><a href="#subtract-1">Subtract</a></li>
+<li><a href="#equal-3">Equal</a></li>
+<li><a href="#inequal-3">Inequal</a></li>
+<li><a href="#greater-than-3">Greater than</a></li>
+<li><a href="#greater-than-or-equal-3">Greater than or equal</a></li>
+<li><a href="#less-than-3">Less than</a></li>
+<li><a href="#less-than-or-equal-3">Less than or equal</a></li>
+</ul>
+</li>
+<li><a href="#">Operators on Version values</a>
+<ul>
+<li><a href="#equal-4">Equal</a></li>
+<li><a href="#inequal-4">Inequal</a></li>
+<li><a href="#greater-than-4">Greater than</a></li>
+<li><a href="#greater-than-or-equal-4">Greater than or equal</a></li>
+<li><a href="#less-than-4">Less than</a></li>
+<li><a href="#less-than-or-equal-4">Less than or equal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>[//]: # (TOC End)</p>
+<h1 id="introduction">Introduction</h1>
+<p>Expressions are simple, yet powerful mechanism that allows you to write advanced formulas to be used in task arguments and conditions that direct the build process. Expressions can access project <a href="http://nant.sourceforge.net/release/latest/help/fundamentals/properties.html">properties</a> and call builtin or user-defined <a href="http://nant.sourceforge.net/release/latest/help/functions/index.html">functions</a>.</p>
+<p>NAnt provides a rich set of bulitin functions, that allow you to:</p>
+<ul>
+<li>manipulate strings</li>
+<li>manipulate date/time values</li>
+<li>manipulate path names</li>
+<li>read the properties of files/directories</li>
+<li>access current build information and more</li>
+<li>and more</li>
+</ul>
+<p>For a full list of supported functions, click <a href="http://nant.sourceforge.net/release/latest/help/functions/index.html">here</a>.</p>
+<h1 id="expression-syntax">Expression Syntax</h1>
+<p class="..">Expressions can be used in all task arguments, by using <em :="" class="text-primary">$</em> notation. You may use standard syntax for arithmetical (addition, subtraction, multiplication, division, modulus), logical (negation, conjunction, alternative) and relational operators (equality, inequality). To call functions, use <em :="" class="text-primary">prefix::function-name(argument1, ..., argumentN)</em> syntax. To access properties, you simply use their names without any prefix or suffix. See the examples section below for more information.</p>
+<p :="" class="bg-info"><strong>NOTE:</strong> Expressions are often used in XML attributes. The grammar specified in this section applies to the attribute value after XML 1.0 normalization. So, for example, if the grammar uses the character <em :="" class="text-primary">&lt;</em>, this must not appear in the XML source as <em :="" class="text-primary">&lt;</em> but must be quoted according to XML 1.0 rules by, for example, entering it as <em :="" class="text-primary">&amp;lt;</em>.</p>
+<p><strong>Examples:</strong></p>
+<ol>
+<li><p>Accessing a property:</p>
+<pre><code class="language-xml">    &lt;property name="build.version" value="3" /&gt;
+    &lt;echo message="The current date is: ${build.version}" /&gt;
+</code></pre>
+<p>This will output the current value of <em :="" class="text-primary">build.version</em> property.</p>
+</li>
+<li><p>Calling a function</p>
+<pre><code class="language-xml">    &lt;echo message="The current date is: ${datetime::now()}" /&gt;
+</code></pre>
+<p>This will output the current date and time.</p>
+</li>
+<li><p>Storing the result of an expression</p>
+<p>To store the result of an expression in a property, use the <em :="" class="text-primary">&lt;property&gt;</em> task:</p>
+<pre><code class="language-xml">    &lt;property name="autoexec-present" value="${file::exists('c:\autoexec.bat')}" /&gt;
+</code></pre>
+<p>This will set the property <em :="" class="text-primary">autoexec-present</em> to either <strong>true</strong> or <strong>false</strong> depending on whether the specified file exists or not.</p>
+</li>
+<li><p>Real-life expression use</p>
+<pre><code class="language-xml">    &lt;property name="myprj.basedir" value="c:\" /&gt;
+    &lt;property name="filename" value="${path::combine(myprj.basedir,'version.txt')}" /&gt;
+
+    &lt;if test="${not file::exists(filename) or file::get-length(filename) = 0}"&gt;
+        &lt;echo message="The version file ${filename} doesn't exist or is empty!" /&gt;
+    &lt;/if&gt;
+</code></pre>
+<p>This will check for the existence of a file version.txt in a directory specified by myprj.basedir. Note that this makes use of the short-circuit evaluation supported by NAnt, so you can test for the existence of the file and check its length in the same expression. ( ie like C, NAnt will not evaluate the second part of an 'or' expression if the first evaluates to <strong>true</strong> )</p>
+</li>
+<li><p>Using expressions to conditionally execute tasks</p>
+<p>All tasks support <em :="" class="text-primary">if</em> and <em :="" class="text-primary">unless</em> attributes. Expressions can be used there to control which tasks get executed:</p>
+<pre><code class="language-xml">    &lt;property name="myprj.basedir" value="c:\" unless="property::exists('myprj.basedir')" /&gt;
+    &lt;csc target="library" output="out.dll" ...
+        if="${datetime::now() - file::get-last-write-time('out.dll')) &gt; timespan::from-hours(1)}"&gt;
+    ...
+    &lt;/csc&gt;
+</code></pre>
+<p>This will rebuild the C# library only if it was last rebuilt more than an hour ago.</p>
+</li>
+</ol>
+<h1 id="data-types">Data types</h1>
+<p>Expressions can access, pass and return values of the following types:</p>
+<table class="table">
+<thead>
+<tr>
+<th>Type</th>
+<th>Allowed values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>32-bit signed integer value</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64-bit signed integer value</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64-bit signed double precision floating point value</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>true or false</td>
+</tr>
+<tr>
+<td>string</td>
+<td>strings of characters of any length.</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>values represeting date &amp; time (range is from 00:00:00, January 1, 1 AD to 23:59:59, December 31, 9999 AD)</td>
+</tr>
+<tr>
+<td>timespan</td>
+<td>represents a time interval.</td>
+</tr>
+<tr>
+<td>version</td>
+<td>represents a version number consisting of two to four components.</td>
+</tr>
+</tbody>
+</table>
+<p>In addition, the expression evaluation engine allows you to return and pass values of any CLI type through the use of <a href="http://nant.sourceforge.net/release/latest/help/fundamentals/functions.html#custom">custom functions</a>. Note that there's no support for implicit type conversions.</p>
+<h1 id="operators">Operators</h1>
+<h2 id="operator-precedence">Operator precedence</h2>
+<p>NAnt expressions support standard ( c style ) operator precedence, that we're accustomed to:</p>
+<ul>
+<li><em :="" class="text-primary">and</em> is evaluated before <em :="" class="text-primary">or</em>, left to right. For example <em :="" class="text-primary">false or true and true and false</em> evaluates as <em :="" class="text-primary">false or ((true and true) and false)</em></li>
+<li>multiplication,division and modulus are evaluated before addition and subtraction, left to right. For example <em :="" class="text-primary">1 + 2 * 3 / 4</em> evaluates as <em :="" class="text-primary">1 + ((2 * 3) / 4)</em></li>
+<li>parentheses can be used to override the default operator precedence. For example <em :="" class="text-primary">(1 + 2) * 3</em> evaluates as written, even though the multiplication has precedence over addition</li>
+</ul>
+<p :="" class="bg-info"><strong>NOTE:</strong> Because NAnt supports properties whose names can contain dashes, there's a possible ambiguity between the subtraction of two properties and accessing a single property with a name containing a dash:      <br>
+<em :="" class="text-primary">aaa-bbb</em> - this is ambiguous. It could either be property "<em :="" class="text-primary">aaa</em> MINUS property <em :="" class="text-primary">bbb</em>" or property "<em :="" class="text-primary">aaa-bbb</em>".</p>
+<p>To avoid confusion, it's recommended to surround the subtraction operator (or even better, all binary operators) with spaces. The expression <em :="" class="text-primary">aaa - bbb</em> always evaluates as a subtraction.</p>
+<h2 id="operators-on-numeric-values">Operators on Numeric Values</h2>
+<p>The following operators are supported on numeric values:</p>
+<ul>
+<li>+ operator</li>
+<li>- operator</li>
+<li>* operator</li>
+<li>/ operator</li>
+<li>% operator</li>
+<li>== operator</li>
+<li>!= operator</li>
+<li>&gt; operator</li>
+<li>&gt;= operator</li>
+<li>&lt; operator</li>
+<li>&lt;= operator</li>
+<li>unary plus</li>
+<li>unary minus (negation)</li>
+</ul>
+<h3 id="add">Add</h3>
+<p><strong>Summary</strong></p>
+<p>Returns the arithmetic sum of its operands.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>1 + 5 evaluates to 6</td>
+</tr>
+<tr>
+<td>int</td>
+<td>long</td>
+<td>1 + 6666666667 evaluates to 6666666668</td>
+</tr>
+<tr>
+<td>int</td>
+<td>double</td>
+<td>1 + 5.0 evaluates to 6.0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>long</td>
+<td>6666666667 + 11111111111 evaluates to 17777777778</td>
+</tr>
+<tr>
+<td>long</td>
+<td>int</td>
+<td>6666666667 + 1 evaluates to 6666666668</td>
+</tr>
+<tr>
+<td>long</td>
+<td>double</td>
+<td>6666666667 + 1.5 evaluates to 6666666668.5</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double</td>
+<td>1.5 + 5.0 evaluates to 6.5</td>
+</tr>
+<tr>
+<td>double</td>
+<td>int</td>
+<td>1.0 + 5 evaluates to 6.0</td>
+</tr>
+<tr>
+<td>double</td>
+<td>long</td>
+<td>1.5 + 6666666667 evaluates to 6666666668.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="subtract">Subtract</h3>
+<p><strong>Summary</strong></p>
+<p>Returns the arithmetic difference of its operands.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>5 - 1 evaluates to 4</td>
+</tr>
+<tr>
+<td>int</td>
+<td>long</td>
+<td>5 - 6666666667 evaluates to -6666666662</td>
+</tr>
+<tr>
+<td>int</td>
+<td>double</td>
+<td>5.0 - 1 evaluates to 4.0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>long</td>
+<td>11111111111 - 6666666667 evaluates to 4444444444</td>
+</tr>
+<tr>
+<td>long</td>
+<td>int</td>
+<td>6666666667 - 5 evaluates to 6666666662</td>
+</tr>
+<tr>
+<td>long</td>
+<td>double</td>
+<td>6666666667 - 1.5 evaluates to 6666666665.5</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double</td>
+<td>5.0 - 1.0 evaluates to 4.0</td>
+</tr>
+<tr>
+<td>double</td>
+<td>int</td>
+<td>5.0 - 1 evaluates to 4.0</td>
+</tr>
+<tr>
+<td>double</td>
+<td>long</td>
+<td>1.5 - 6666666667 evaluates to -6666666665.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="multiply">Multiply</h3>
+<p><strong>Summary</strong></p>
+<p>Returns the arithmetic product of its operands.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>5 * 2 evaluates to 10</td>
+</tr>
+<tr>
+<td>int</td>
+<td>long</td>
+<td>2 * 6666666667 evaluates to 13333333334</td>
+</tr>
+<tr>
+<td>int</td>
+<td>double</td>
+<td>5 * 2.0 evaluates to 10.0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>long</td>
+<td>6666666667 * long::parse('2') evaluates to 13333333334</td>
+</tr>
+<tr>
+<td>long</td>
+<td>int</td>
+<td>6666666667 * 2 evaluates to 13333333334</td>
+</tr>
+<tr>
+<td>long</td>
+<td>double</td>
+<td>6666666667 * 1.7 evaluates to 11333333333.9</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double</td>
+<td>5.0 * 2.0 evaluates to 10.0</td>
+</tr>
+<tr>
+<td>double</td>
+<td>int</td>
+<td>5.0 * 2 evaluates to 10.0</td>
+</tr>
+<tr>
+<td>double</td>
+<td>long</td>
+<td>1.7 * 6666666667 evaluates to 11333333333.9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="divide">Divide</h3>
+<p><strong>Summary</strong></p>
+<p>Returns the arithmetic quotient of its operands.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>10 / 2 evaluates to 5</td>
+</tr>
+<tr>
+<td>int</td>
+<td>long</td>
+<td>10 / 10000000000 evaluates to 0.000000001</td>
+</tr>
+<tr>
+<td>int</td>
+<td>double</td>
+<td>8 / 2.0 evaluates to 4.0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>long</td>
+<td>13333333334 / 6666666667 evaluates to 2</td>
+</tr>
+<tr>
+<td>long</td>
+<td>int</td>
+<td>13333333334 / 2 evaluates to 6666666667</td>
+</tr>
+<tr>
+<td>long</td>
+<td>double</td>
+<td>13333333334 / 2.0 evaluates to 6666666667.0</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double</td>
+<td>9.0 / 2.0 evaluates to 4.5</td>
+</tr>
+<tr>
+<td>double</td>
+<td>int</td>
+<td>6.0 / 3 evaluates to 2.0</td>
+</tr>
+<tr>
+<td>double</td>
+<td>long</td>
+<td>20000000000.0 / 10000000000 evaluates to 2.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>If the divisor is zero, then an error is raised.</p>
+<h3 id="mod">Mod</h3>
+<p><strong>Summary</strong></p>
+<p>Returns the remainder after dividing its first operand by its second.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>5 % 3 evaluates to 2</td>
+</tr>
+<tr>
+<td>int</td>
+<td>long</td>
+<td>10 % 6666666667 evaluates to 10</td>
+</tr>
+<tr>
+<td>int</td>
+<td>double</td>
+<td>5 % 3.5 evaluates to 1.5</td>
+</tr>
+<tr>
+<td>long</td>
+<td>long</td>
+<td>13333333334 % 6666666667 evaluates to 0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>int</td>
+<td>6666666667 % 10 evaluates to 7</td>
+</tr>
+<tr>
+<td>long</td>
+<td>double</td>
+<td>6666666667 % 3.5 evaluates to 3.0</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double</td>
+<td>9.0 % 4.7 evaluates to 4.3</td>
+</tr>
+<tr>
+<td>double</td>
+<td>int</td>
+<td>8.5 % 2 evaluates to 0.5</td>
+</tr>
+<tr>
+<td>double</td>
+<td>long</td>
+<td>20000000000.0 % 6666666667 evaluates to 6666666666.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>If the divisor is zero, then an error is raised.</p>
+<h3 id="equal">Equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if and only if the value of the first operand is equal to the value of the second operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>5 == 3 evaluates to false</td>
+</tr>
+<tr>
+<td>int</td>
+<td>long</td>
+<td>5 == 6666666667 evaluates to false</td>
+</tr>
+<tr>
+<td>int</td>
+<td>double</td>
+<td>6 == 6.0 evaluates to true</td>
+</tr>
+<tr>
+<td>long</td>
+<td>long</td>
+<td>6666666667 == 6666666667 evaluates to true</td>
+</tr>
+<tr>
+<td>long</td>
+<td>int</td>
+<td>6666666667 == 665 evaluates to false</td>
+</tr>
+<tr>
+<td>long</td>
+<td>double</td>
+<td>6666666667 == 6666666667.0 evaluates to true</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double</td>
+<td>9.5 == 6.7 evaluates to false</td>
+</tr>
+<tr>
+<td>double</td>
+<td>int</td>
+<td>8.5 == 8 evaluates to false</td>
+</tr>
+<tr>
+<td>double</td>
+<td>long</td>
+<td>8.5 == 6666666667 evaluates to false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inequal">Inequal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if and only if the value of the first operand is not equal to the value of the second operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>5 != 3 evaluates to true</td>
+</tr>
+<tr>
+<td>int</td>
+<td>long</td>
+<td>5 != 6666666667 evaluates to true</td>
+</tr>
+<tr>
+<td>int</td>
+<td>double</td>
+<td>6 != 6.0 evaluates to false</td>
+</tr>
+<tr>
+<td>long</td>
+<td>long</td>
+<td>6666666667 != 6666666667 evaluates to false</td>
+</tr>
+<tr>
+<td>long</td>
+<td>int</td>
+<td>6666666667 != 665 evaluates to true</td>
+</tr>
+<tr>
+<td>long</td>
+<td>double</td>
+<td>6666666667 != 6666666667.0 evaluates to false</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double</td>
+<td>9.5 != 6.7 evaluates to true</td>
+</tr>
+<tr>
+<td>double</td>
+<td>int</td>
+<td>8.5 != 8 evaluates to true</td>
+</tr>
+<tr>
+<td>double</td>
+<td>long</td>
+<td>8.5 != 6666666667 evaluates to true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="greater-than">Greater than</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if and only if the first operand is greater than the second operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>5 &gt; 3 evaluates to false</td>
+</tr>
+<tr>
+<td>int</td>
+<td>long</td>
+<td>5 &gt; 6666666667 evaluates to false</td>
+</tr>
+<tr>
+<td>int</td>
+<td>double</td>
+<td>6 &gt; 4.0 evaluates to true</td>
+</tr>
+<tr>
+<td>long</td>
+<td>long</td>
+<td>6666666667 &gt; 6666666667 evaluates to false</td>
+</tr>
+<tr>
+<td>long</td>
+<td>int</td>
+<td>6666666667 &gt; 665 evaluates to true</td>
+</tr>
+<tr>
+<td>long</td>
+<td>double</td>
+<td>6666666667 &gt; 6666666667.0 evaluates to false</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double</td>
+<td>9.5 &gt; 9.5 evaluates to false</td>
+</tr>
+<tr>
+<td>double</td>
+<td>int</td>
+<td>8.3 &gt; 9 evaluates to false</td>
+</tr>
+<tr>
+<td>double</td>
+<td>long</td>
+<td>8.5 &gt; 6666666667 evaluates to false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="greater-than-or-equal">Greater than or equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if and only if the first operand is greater than or equal to second operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>5 &gt;= 3 evaluates to false</td>
+</tr>
+<tr>
+<td>int</td>
+<td>long</td>
+<td>5 &gt;= 6666666667 evaluates to false</td>
+</tr>
+<tr>
+<td>int</td>
+<td>double</td>
+<td>6 &gt;= 4.0 evaluates to true</td>
+</tr>
+<tr>
+<td>long</td>
+<td>long</td>
+<td>6666666667 &gt;= 6666666667 evaluates to true</td>
+</tr>
+<tr>
+<td>long</td>
+<td>int</td>
+<td>6666666667 &gt;= 665 evaluates to true</td>
+</tr>
+<tr>
+<td>long</td>
+<td>double</td>
+<td>6666666667 &gt;= 6666666667.0 evaluates to true</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double</td>
+<td>9.5 &gt;= 9.5 evaluates to true</td>
+</tr>
+<tr>
+<td>double</td>
+<td>int</td>
+<td>8.3 &gt;= 9 evaluates to false</td>
+</tr>
+<tr>
+<td>double</td>
+<td>long</td>
+<td>8.5 &gt;= 6666666667 evaluates to false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="less-than">Less than</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if and only if the first operand is less than the second operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>5 &lt; 3 evaluates to false</td>
+</tr>
+<tr>
+<td>int</td>
+<td>long</td>
+<td>5 &lt; 6666666667 evaluates to true</td>
+</tr>
+<tr>
+<td>int</td>
+<td>double</td>
+<td>6 &lt; 7.0 evaluates to true</td>
+</tr>
+<tr>
+<td>long</td>
+<td>long</td>
+<td>6666666667 &lt; 6666666667 evaluates to false</td>
+</tr>
+<tr>
+<td>long</td>
+<td>int</td>
+<td>6666666667 &lt; 665 evaluates to false</td>
+</tr>
+<tr>
+<td>long</td>
+<td>double</td>
+<td>6666666667 &lt; 6666666667.0 evaluates to false</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double</td>
+<td>9.5 &lt; 9.5 evaluates to false</td>
+</tr>
+<tr>
+<td>double</td>
+<td>int</td>
+<td>8.3 &lt; 9 evaluates to true</td>
+</tr>
+<tr>
+<td>double</td>
+<td>long</td>
+<td>8.5 &lt; 6666666667 evaluates to true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="less-than-or-equal">Less than or equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if and only if the first operand is less than or equal to second operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>int</td>
+<td>5 &lt;= 3 evaluates to false</td>
+</tr>
+<tr>
+<td>int</td>
+<td>long</td>
+<td>5 &lt;= 6666666667 evaluates to true</td>
+</tr>
+<tr>
+<td>int</td>
+<td>double</td>
+<td>6 &lt;= 7.0 evaluates to true</td>
+</tr>
+<tr>
+<td>long</td>
+<td>long</td>
+<td>6666666667 &lt;= 6666666667 evaluates to true</td>
+</tr>
+<tr>
+<td>long</td>
+<td>int</td>
+<td>6666666667 &lt;= 665 evaluates to false</td>
+</tr>
+<tr>
+<td>long</td>
+<td>double</td>
+<td>6666666667 &lt;= 6666666667.0 evaluates to true</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double</td>
+<td>9.5 &lt;= 9.5 evaluates to true</td>
+</tr>
+<tr>
+<td>double</td>
+<td>int</td>
+<td>8.3 &lt;= 9 evaluates to true</td>
+</tr>
+<tr>
+<td>double</td>
+<td>long</td>
+<td>8.5 &lt;= 6666666667 evaluates to true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unary-plus">Unary plus</h3>
+<p><strong>Summary</strong></p>
+<p>Returns its operand with the sign unchanged. Semantically, this operation performs no operation.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>(+1) evaluates to 1</td>
+</tr>
+<tr>
+<td>long</td>
+<td>(+6666666667) evaluates to 6666666667</td>
+</tr>
+<tr>
+<td>double</td>
+<td>(+1.5) evaluates to 1.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unary-minus">Unary minus</h3>
+<p><strong>Summary</strong></p>
+<p>Returns its operand with the sign reversed.</p>
+<p>If the operand is positive, its negative is returned; if it is negative, its positive is returned.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>(-1) evaluates to -1</td>
+</tr>
+<tr>
+<td>long</td>
+<td>(-6666666667) evaluates to -6666666667</td>
+</tr>
+<tr>
+<td>double</td>
+<td>(-9.6) evaluates to -9.6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="operators-on-boolean-values">Operators on Boolean Values</h2>
+<p>The following operators are supported on boolean values:</p>
+<ul>
+<li>== operator</li>
+<li>!= operator</li>
+<li>&gt; operator</li>
+<li>&gt;= operator</li>
+<li>&lt; operator</li>
+<li>&lt;= operator</li>
+<li>and operator</li>
+<li>or operator</li>
+</ul>
+<h3 id="equal-1">Equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if both operands are true or if both operands are false.</p>
+<p><strong>Examples</strong></p>
+<h3 id="inequal-1">Inequal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the first operand is true and the second operand is false, or the first operand is false and the second operand is true.</p>
+<p><strong>Examples</strong></p>
+<h3 id="greater-than-1">Greater than</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the first operand is true and the second operand is false; otherwise, returns false.</p>
+<p><strong>Examples</strong></p>
+<h3 id="greater-than-or-equal-1">Greater than or equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the first operand is true and the second operand is false, or both operands are either true or false.</p>
+<p><strong>Examples</strong></p>
+<h3 id="less-than-1">Less than</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the first operand is false and the second operand is true; otherwise, returns false.</p>
+<p><strong>Examples</strong></p>
+<h3 id="less-than-or-equal-1">Less than or equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the first operand is false and the second operand is true, or both operands are either true or false.</p>
+<p><strong>Examples</strong></p>
+<h3 id="logical-and">Logical and</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if both operands are true, otherwise returns false.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="language-xml">&lt;if test="${A and B}"&gt;
+</code></pre>
+<h3 id="logical-or">Logical or</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if either operand is true, otherwise returns false.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="language-xml">&lt;if test="${A or B}"&gt;
+</code></pre>
+<h2 id="operators-on-string-values">Operators on String Values</h2>
+<p>The following operators are supported on string values:</p>
+<ul>
+<li>+ operator</li>
+<li>== operator</li>
+<li>!= operator</li>
+<li>&gt; operator</li>
+<li>&gt;= operator</li>
+<li>&lt; operator</li>
+<li>&lt;= operator</li>
+</ul>
+<h3 id="concat">Concat</h3>
+<p><strong>Summary</strong></p>
+<p>Returns the concatenation of both string operands.</p>
+<p><strong>Examples</strong></p>
+<h3 id="equal-2">Equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is the same as the value of the right operand.</p>
+<p><strong>Remarks</strong></p>
+<p>The comparison is case-sensitive and culture-insensitive.</p>
+<h3 id="inequal-2">Inequal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the first operand is not the same as the value of the second operand.</p>
+<p><strong>Remarks</strong></p>
+<p>The comparison is case-sensitive and culture-insensitive.</p>
+<h3 id="greater-than-2">Greater than</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the first operand is greater than the seconds operand.</p>
+<p><strong>Remarks</strong></p>
+<p>The comparison is case-sensitive and culture-insensitive.</p>
+<h3 id="greater-than-or-equal-2">Greater than or equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the first operand is greater than or equal to the seconds operand.</p>
+<p><strong>Remarks</strong></p>
+<p>The comparison is case-sensitive and culture-insensitive.</p>
+<h3 id="less-than-2">Less than</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the first operand is less than the seconds operand.</p>
+<p><strong>Remarks</strong></p>
+<p>The comparison is case-sensitive and culture-insensitive.</p>
+<h3 id="less-than-or-equal-2">Less than or equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the first operand is less than or equal to the seconds operand.</p>
+<p><strong>Remarks</strong></p>
+<p>The comparison is case-sensitive and culture-insensitive.</p>
+<h2 id="operators-on-timespan-and-datetime-values">Operators on TimeSpan and DateTime Values</h2>
+<p>The following operators are supported on timespan and datetime values:</p>
+<ul>
+<li>+ operator</li>
+<li>- operator</li>
+<li>== operator</li>
+<li>!= operator</li>
+<li>&gt; operator</li>
+<li>&gt;= operator</li>
+<li>&lt; operator</li>
+<li>&lt;= operator</li>
+</ul>
+<h3 id="add-1">Add</h3>
+<p><strong>Summary</strong></p>
+<p>Returns the result of adding the value of the left operand to the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datetime</td>
+<td>timespan</td>
+<td>datetime<span>now() + timespan</span>from-days(10)                  evaluates to a datetime 10 days in the future</td>
+</tr>
+<tr>
+<td>timespan</td>
+<td>timespan</td>
+<td>timespan<span>from-seconds(30) + timespan</span>from-minutes(10)    evaluates to a timespan representing a duratio of 10 minutes and 30 seconds</td>
+</tr>
+</tbody>
+</table>
+<h3 id="subtract-1">Subtract</h3>
+<p><strong>Summary</strong></p>
+<p>Returns the result of subtracting the value of the right operand from the value of the left operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datetime</td>
+<td>datetime</td>
+<td>(datetime<span>now() + timespan</span>from-days(10)) - datetime::now          evaluates to a timespan representing a duration of 10 days</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>timespan</td>
+<td>datetime<span>now() - timespan</span>from-days(3) evaluates                   to a datetime 3 days in the past</td>
+</tr>
+<tr>
+<td>timespan</td>
+<td>timespan</td>
+<td>timespan<span>from-minutes(15) - timespan</span>from-minutes(10) evaluates    to a timespan representing 5 minutes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="equal-3">Equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is the same as the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datetime</td>
+<td>datetime</td>
+<td>datetime<span>now() == (datetime</span>now() + timespan::from-days(10)) evaluates to false</td>
+</tr>
+<tr>
+<td>timespan</td>
+<td>timespan</td>
+<td>timespan<span>from-seconds(30) == timespan</span>from-seconds(30) evaluates to true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inequal-3">Inequal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is not the same as the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datetime</td>
+<td>datetime</td>
+<td>datetime<span>now() != (datetime</span>now() + timespan::from-days(10)) evaluates to true</td>
+</tr>
+<tr>
+<td>timespan</td>
+<td>timespan</td>
+<td>timespan<span>from-seconds(30) != timespan</span>from-seconds(30) evaluates to false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="greater-than-3">Greater than</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is greater than the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datetime</td>
+<td>datetime</td>
+<td>datetime<span>now() &gt; (datetime</span>now() + timespan::from-days(10)) evaluates to false</td>
+</tr>
+<tr>
+<td>timespan</td>
+<td>timespan</td>
+<td>timespan<span>from-seconds(30) &gt; timespan</span>from-seconds(30) evaluates to false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="greater-than-or-equal-3">Greater than or equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is greater than or equal to the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datetime</td>
+<td>datetime</td>
+<td>datetime<span>now() &gt;= (datetime</span>now() + timespan::from-days(10)) evaluates to false</td>
+</tr>
+<tr>
+<td>timespan</td>
+<td>timespan</td>
+<td>timespan<span>from-seconds(30) &gt;= timespan</span>from-seconds(30) evaluates to true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="less-than-3">Less than</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is less than the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datetime</td>
+<td>datetime</td>
+<td>datetime<span>now() &lt; (datetime</span>now() + timespan::from-days(10)) evaluates to true</td>
+</tr>
+<tr>
+<td>timespan</td>
+<td>timespan</td>
+<td>timespan<span>from-seconds(30) &lt; timespan</span>from-seconds(30) evaluates to false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="less-than-or-equal-3">Less than or equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is less than the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datetime</td>
+<td>datetime</td>
+<td>datetime<span>now() &lt;= (datetime</span>now() + timespan::from-days(10)) evaluates to true</td>
+</tr>
+<tr>
+<td>timespan</td>
+<td>timespan</td>
+<td>timespan<span>from-seconds(30) &lt;= timespan</span>from-seconds(30) evaluates to true</td>
+</tr>
+</tbody>
+</table>
+<h2 id="operators-on-version-values">Operators on Version Values</h2>
+<p>The following operators are supported on version values:</p>
+<ul>
+<li>== operator</li>
+<li>!= operator</li>
+<li>&gt; operator</li>
+<li>&gt;= operator</li>
+<li>&lt; operator</li>
+<li>&lt;= operator</li>
+</ul>
+<h3 id="equal-4">Equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is the same as the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>version</td>
+<td>version<span>parse('1.2') == version</span>parse('1.2') evaluates to true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inequal-4">Inequal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is not the same as the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>version</td>
+<td>version<span>parse('1.2') != version</span>parse('1.3.1') evaluates to true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="greater-than-4">Greater than</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is greater than the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>version</td>
+<td>version<span>parse('1.2') &gt; version</span>parse('1.3.1') evaluates to false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="greater-than-or-equal-4">Greater than or equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is greater than or equal to the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>version</td>
+<td>version<span>parse('1.2') &gt;= version</span>parse('1.2') evaluates to true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="less-than-4">Less than</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is less than the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>version</td>
+<td>version<span>parse('1.2') &lt; version</span>parse('1.3.1') evaluates to true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="less-than-or-equal-4">Less than or equal</h3>
+<p><strong>Summary</strong></p>
+<p>Returns true if the value of the left operand is less than or equal to the value of the right operand.</p>
+<p><strong>Operands</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Right Operand</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>version</td>
+<td>version<span>parse('1.2') &lt;= version</span>parse('1.2') evaluates to true</td>
+</tr>
+</tbody>
+</table>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

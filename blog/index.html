@@ -1,0 +1,470 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" />
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - Blog</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
+        <link href="/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet" />
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li class="active"><a href="/blog">Blog</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"></div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+        <li class="header"><i class="fa fa-bookmark"></i> Categories</li>    
+            <li><a href="/blog/license">license</a></li>
+            <li><a href="/blog/release">release</a></li>
+            <li><a href="/blog/update">update</a></li>
+    
+    <li class="header"><i class="fa fa-calendar"></i> Archive</li>    
+        <li><a href="/blog/archive/2012/06">June, 2012</a></li>
+        <li><a href="/blog/archive/2012/05">May, 2012</a></li>
+        <li><a href="/blog/archive/2012/04">April, 2012</a></li>
+        <li><a href="/blog/archive/2011/10">October, 2011</a></li>
+        <li><a href="/blog/archive/2011/09">September, 2011</a></li>
+        <li><a href="/blog/archive/2010/08">August, 2010</a></li>
+        <li><a href="/blog/archive/2010/05">May, 2010</a></li>
+        <li><a href="/blog/archive/2010/04">April, 2010</a></li>
+        <li><a href="/blog/archive/2007/12">December, 2007</a></li>
+        <li><a href="/blog/archive/2006/10">October, 2006</a></li>
+        <li><a href="/blog/archive/2006/06">June, 2006</a></li>
+        <li><a href="/blog/archive/2005/04">April, 2005</a></li>
+        <li><a href="/blog/archive/2005/02">February, 2005</a></li>
+        <li><a href="/blog/archive/2004/11">November, 2004</a></li>
+        <li><a href="/blog/archive/2003/12">December, 2003</a></li>
+        <li><a href="/blog/archive/2003/09">September, 2003</a></li>
+        <li><a href="/blog/archive/2003/07">July, 2003</a></li>
+        <li><a href="/blog/archive/2003/05">May, 2003</a></li>
+        <li><a href="/blog/archive/2003/04">April, 2003</a></li>
+        <li><a href="/blog/archive/2003/02">February, 2003</a></li>
+        <li><a href="/blog/archive/2002/06">June, 2002</a></li>
+        <li><a href="/blog/archive/2002/01">January, 2002</a></li>
+        <li><a href="/blog/archive/2001/09">September, 2001</a></li>
+        <li><a href="/blog/archive/2001/08">August, 2001</a></li>
+        <li><a href="/blog/archive/2001/07">July, 2001</a></li>
+    
+        <li class="header"><i class="fa fa-user"></i> Authors</li>    
+            <li><a href="/blog/author/Gerry-Shaw">Gerry Shaw</a></li>
+            <li><a href="/blog/author/Gert-Driesen">Gert Driesen</a></li>
+            <li><a href="/blog/author/Ian-MacLean">Ian MacLean</a></li>
+            <li><a href="/blog/author/Ryan-Boggs">Ryan Boggs</a></li>
+            <li><a href="/blog/author/Scott-Hernandez">Scott Hernandez</a></li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Blog</h1>
+		</section>
+	<section class="content">
+		
+
+        <h2><a href="/blog/2012/06/nant-nantcontrib-v0.92-released">Announcing NAnt/NAntContrib 0.92 Final Release</a></h2>
+
+<dl class="dl-horizontal" style="margin-bottom: 12px;">
+    <dt style="text-align: left;"><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Tuesday, June 12, 2012</dd>
+        <dt style="text-align: left;"><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/release">release</a></dd>
+            <dt style="text-align: left;"><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/Ryan-Boggs">Ryan Boggs</a></dd>
+</dl>
+            <div>
+                <p>We are proud to announce the final release of NAnt/NAntContrib 0.92.</p>
+<p>This release focuses on extending our already strong support for multiple target frameworks, bringing improved flexibility and performance. A number of outstanding issues have been fixed as well.</p>
+<p>As of this release, framework support chart looks like this:</p>
+<table class="table">
+<thead>
+<tr>
+<th>Framework</th>
+<th style="text-align: center;">Target</th>
+<th style="text-align: center;">Runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.NET Framework 1.0</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>.NET Framework 1.1</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>.NET Framework 2.0</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;">&amp;#10003</td>
+</tr>
+<tr>
+<td>.NET Framework 3.5</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;">&amp;#10003</td>
+</tr>
+<tr>
+<td>.NET Framework 4.0</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;">&amp;#10003</td>
+</tr>
+<tr>
+<td>.NET Compact Framework 1.0</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>.NET Compact Framework 2.0</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Mono 1.0 Profile</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Mono 2.0 Profile</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;">&amp;#10003</td>
+</tr>
+<tr>
+<td>Mono 3.5 Profile</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;">&amp;#10003</td>
+</tr>
+<tr>
+<td>Mono 4.0 Profile</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;">&amp;#10003</td>
+</tr>
+<tr>
+<td>Monolight 2.0</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Shared Source CLI 1.0</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Silverlight 2.0</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Silverlight 3.0</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Silverlight 4.0</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>Silverlight 5.0</td>
+<td style="text-align: center;">&amp;#10003</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>This release focuses on fixing issues on both projects while
+introducing new features that we feel add greater flexibility and
+performance.  Details of these changes may be found in the release
+notes of each project's homepage.</p>
+<p>Binary and source distributions are available for immediate download from:
+NAnt:
+<a href="https://sourceforge.net/projects/nant/files/nant/0.92/">https://sourceforge.net/projects/nant/files/nant/0.92/</a></p>
+<p>NAntContrib:
+<a href="https://sourceforge.net/projects/nantcontrib/files/nantcontrib/0.92/">https://sourceforge.net/projects/nantcontrib/files/nantcontrib/0.92/</a></p>
+<p>The GIT tag for NAnt/NAntContrib 0.92 Release is:
+rel-0-92</p>
+<p>Discussion of NAnt occurs on the mailing list at
+nant-users&#64;...</p>
+<p>For those who would like to contribute, please see the
+NAnt/NAntContrib Develoment guide which can be found here:
+<a href="https://github.com/nant/nant/wiki/Development-Guide">https://github.com/nant/nant/wiki/Development-Guide</a></p>
+<p>Bugs can be reported using Github.com's issue tracker at:
+NAnt:
+<a href="https://github.com/nant/nant/issues">https://github.com/nant/nant/issues</a></p>
+<p>NAntContrib:
+<a href="https://github.com/nant/nantcontrib/issues">https://github.com/nant/nantcontrib/issues</a></p>
+<p>For more detailed progress on the inner workings of NAnt and
+NAntContrib, check out the NAnt Blog at
+<a href="https://sourceforge.net/apps/wordpress/nant/">https://sourceforge.net/apps/wordpress/nant/</a></p>
+<p>NAnt/NAntContrib is now on twitter.  Check here for announcements and
+the latest github.com commits for each project:
+<a href="https://twitter.com/#!/nantproject">https://twitter.com/#!/nantproject</a></p>
+<p>About NAnt:
+NAnt is a free .NET build tool, allowing applications to be built
+targeting both Microsoft .NET and Mono while supporting both Windows
+and Linux platforms.
+Check the NAnt homepage for additional info at <a href="http://nant.sourceforge.net">http://nant.sourceforge.net</a>.
+<a href="https://github.com/nant/nant">https://github.com/nant/nant</a></p>
+<p>About NAntContrib:
+NAntContrib is the project for tasks and tools that haven't made it
+into the main NAnt distribution yet or for whatever reason don't
+belong there.
+Check the NAntContrib homepage for additional info at
+<a href="http://nantcontrib.sourceforge.net">http://nantcontrib.sourceforge.net</a>.
+<a href="https://github.com/nant/nantcontrib">https://github.com/nant/nantcontrib</a></p>
+
+            </div>
+        <hr />
+        <h2><a href="/blog/2012/05/nant-nantcontrib-v0.92-rc1-released">Announcing NAnt/NAntContrib 0.92 RC1</a></h2>
+
+<dl class="dl-horizontal" style="margin-bottom: 12px;">
+    <dt style="text-align: left;"><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Thursday, May 24, 2012</dd>
+        <dt style="text-align: left;"><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/release">release</a></dd>
+            <dt style="text-align: left;"><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/Ryan-Boggs">Ryan Boggs</a></dd>
+</dl>
+            <div>
+                <p>We are proud to announce the final release of NAnt/NAntContrib 0.92 Release Candidate 1.</p>
+                <a href="/blog/2012/05/nant-nantcontrib-v0.92-rc1-released">Read more...</a>
+            </div>
+        <hr />
+        <h2><a href="/blog/2012/05/nant-nantcontrib-v0.92-beta1-released">Announcing NAnt/NAntContrib 0.92 Beta1</a></h2>
+
+<dl class="dl-horizontal" style="margin-bottom: 12px;">
+    <dt style="text-align: left;"><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Monday, May 7, 2012</dd>
+        <dt style="text-align: left;"><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/release">release</a></dd>
+            <dt style="text-align: left;"><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/Ryan-Boggs">Ryan Boggs</a></dd>
+</dl>
+            <div>
+                <p>We are proud to announce the release of NAnt/NAntContrib 0.92 Beta1.</p>
+                <a href="/blog/2012/05/nant-nantcontrib-v0.92-beta1-released">Read more...</a>
+            </div>
+        <hr />
+        <h2><a href="/blog/2012/04/nant-nantcontrib-v0.92-alpha1-released">Announcing NAnt/NAntContrib 0.92 Alpha1</a></h2>
+
+<dl class="dl-horizontal" style="margin-bottom: 12px;">
+    <dt style="text-align: left;"><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Monday, April 23, 2012</dd>
+        <dt style="text-align: left;"><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/release">release</a></dd>
+            <dt style="text-align: left;"><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/Ryan-Boggs">Ryan Boggs</a></dd>
+</dl>
+            <div>
+                <p>We are proud to announce the final release of NAnt/NAntContrib 0.92 Alpha1.</p>
+                <a href="/blog/2012/04/nant-nantcontrib-v0.92-alpha1-released">Read more...</a>
+            </div>
+        <hr />
+        <h2><a href="/blog/2011/10/nant-nantcontrib-v0.91-released">Announcing NAnt/NAntContrib 0.91 Final</a></h2>
+
+<dl class="dl-horizontal" style="margin-bottom: 12px;">
+    <dt style="text-align: left;"><i class="fa fa-calendar"></i> Published</dt>
+    <dd>Sunday, October 23, 2011</dd>
+        <dt style="text-align: left;"><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/release">release</a></dd>
+            <dt style="text-align: left;"><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/Ryan-Boggs">Ryan Boggs</a></dd>
+</dl>
+            <div>
+                <p>Sorry for the year long wait….</p>
+                <a href="/blog/2011/10/nant-nantcontrib-v0.91-released">Read more...</a>
+            </div>
+        <hr />
+    <nav>
+        <ul class="pager">
+            <li class="previous">                
+            </li>
+            <li class="next">
+                    <a href="/blog/page2">Older <span aria-hidden="true">&rarr;</span></a>
+            </li>
+        </ul>
+    </nav>
+
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br/>
+    Copyright &copy; 2001-2021 NAnt2 contributors.
+    <br/>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

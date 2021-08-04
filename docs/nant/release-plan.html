@@ -1,0 +1,826 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - NAnt release plan</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#nant-release-plan">NAnt release plan</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/docs/overview">Overview</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/overview/why-nant">Why NAnt</a></li>
+                <li><a href="/docs/overview/system-requirements">System Requirements</a></li>
+                <li><a href="/docs/overview/installation">Installation</a></li>
+                <li><a href="/docs/overview/getting-started">Getting started</a></li>
+                <li><a href="/docs/overview/ant-users">Ant users</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/fundamentals">Fundamentals</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/fundamentals/running-nant">Running NAnt</a></li>
+                <li><a href="/docs/fundamentals/build-files">Build files</a></li>
+                <li><a href="/docs/fundamentals/projects">Projects</a></li>
+                <li><a href="/docs/fundamentals/targets">Targets</a></li>
+                <li><a href="/docs/fundamentals/tasks">Tasks</a></li>
+                <li><a href="/docs/fundamentals/properties">Properties</a></li>
+                <li><a href="/docs/fundamentals/loggers-and-listeners">Loggers and listeners</a></li>
+                <li><a href="/docs/fundamentals/expressions">Expressions</a></li>
+                <li><a href="/docs/fundamentals/functions">Functions</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/contributing">Contributing</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/contributing/development-guide">Development guide</a></li>
+                <li><a href="/docs/contributing/release-guide">Release guide</a></li>
+                <li><a href="/docs/contributing/release-plan">Release plan</a></li>
+                <li><a href="/docs/contributing/external">External resources</a></li>
+                <li><a href="/docs/contributing/contributors">Contributors</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/docs/faq">Frequently Asked Questions</a></li>
+                <li class="treeview active">
+                    <a href="/docs/nant">NAnt - legacy</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/nant/development-guide">NAnt development guide</a></li>
+                <li><a href="/docs/nant/release-guide">NAnt release guide</a></li>
+                <li class="selected"><a href="/docs/nant/release-plan">NAnt release plan</a></li>
+                <li><a href="/docs/nant/external">NAnt external resources</a></li>
+                <li><a href="/docs/nant/contributors">NAnt/NAntContrib contributors</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>NAnt release plan</h1>
+		</section>
+	<section class="content">
+		<h1 id="nant-release-plan">NAnt release plan</h1>
+<h2 id="v1.1">v1.1</h2>
+<table>
+    <colgroup>
+        <col style="width: 65%; text-align: left">
+        <col style="width: 15%; text-align: center">
+        <col style="width: 10%; text-align: center">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Volunteers</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <p>
+                    Add additional optional but useful tasks (<code>&lt;sql&gt;</code>, <code>&lt;grep&gt;</code>).
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>pending</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="v1.0">v1.0</h2>
+<table>
+    <colgroup>
+        <col style="width: 65%; text-align: left">
+        <col style="width: 15%; text-align: center">
+        <col style="width: 10%; text-align: center">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>
+                Description</th>
+            <th>
+                Volunteers</th>
+            <th>
+                Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <p>
+                    Ensure unit tests are available for all core classes.
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>pending</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Ensure code xml docs are complete and accurate for all non private members.
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>pending</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Update and add developer docs (code conventions, high level design).
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>pending</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="v0.9">v0.9</h2>
+<table>
+    <colgroup>
+        <col style="width: 65%; text-align: left">
+        <col style="width: 15%; text-align: center">
+        <col style="width: 10%; text-align: center">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>
+                Description</th>
+            <th>
+                Volunteers</th>
+            <th>
+                Status</th>
+        </tr>
+    </thead>
+    
+        <tbody><tr>
+            <td>
+                <p>
+                    Move to an <a href="http://www.apache.org/LICENSE">Apache</a> or <a href="http://www.opensource.org/licenses/bsd-license.php">
+                        BSD</a>-style license.
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>pending</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add <a href="http://ant.apache.org/manual/CoreTypes/filterchain.html">FilterChain</a>
+                    support.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/rogerdahlman/">Roger</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Refactor <code>&lt;solution&gt;</code> task to use <code>&lt;csc&gt;</code> and <code>
+                        &lt;vbc&gt;</code> tasks to compile assemblies.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/ianm74/">Ian</a>, <a href="http://sourceforge.net/users/drieseng/">
+                    Gert</a>
+            </td>
+            <td>pending</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Validate all static html for XHTML 1.1 compliance as part of the build process.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a>
+            </td>
+            <td>pending</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add support for <a href="http://nunit.sourceforge.net">NUnit</a> 2.1.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/ianm74/">Ian</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add support for <a href="http://www.mail-archive.com/nant-developers%40lists.sourceforge.net/msg02785.html">
+                        expression evaluator</a> in all places where it makes sense. Support
+                    embedded expressions in strings.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/jkowalski/">Jarek</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add <code>&lt;uptodate&gt;</code> task to replace deprecated <code>uptodatefiles</code>
+                    and <code>comparefiles</code> attributes of <code>&lt;if&gt;</code> task.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/jkowalski/">Jarek</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add <code>file::up-to-date</code> function to replace deprecated <code>uptodatefile</code>
+                    and <code>comparefile</code> attributes of <code>&lt;if&gt;</code> task.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add support for deprecating tasks/types/functions and named attributes.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>85%</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add <code>&lt;ftp&gt;</code> task.
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>pending</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Get <code>MailTest</code> added to test suite.
+                </p>
+            </td>
+            <td>
+            </td>
+            <td>pending</td>
+        </tr>
+    </tbody>
+</table>
+<h2 id="v0.8.x">v0.8.x</h2>
+<table>
+    <colgroup>
+        <col style="width: 65%; text-align: left">
+        <col style="width: 15%; text-align: center">
+        <col style="width: 10%; text-align: center">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Volunteers</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    
+        <tbody><tr>
+            <td>
+                <p>
+                    Replace log class and BuildListener/Event support.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add support for loading loggers/listeners from third party assemblies.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add assembly references support to <code>&lt;resgen&gt;</code> task. For all
+                    but .NET 2.0, we need to implement this by copying the resgen tool, and all
+                    referenced assemblies to a temp directory, and launch resgen from there.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Use mechanism of <code>&lt;resgen&gt;</code> task for <code>&lt;license&gt;</code>
+                    task.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add support for package references to the following tasks:
+                </p>
+                <ul>
+                    <li>
+                        <code>&lt;csc&gt;</code>
+                    (done)
+                    </li>
+                    <li>
+                        <code>&lt;vbc&gt;</code>
+                    (done)
+                    </li>
+                    <li>
+                        <code>&lt;resgen&gt;</code>?</li>
+                </ul>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>75%</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Added <code>version</code> functions, and remove version functions from <code>assembly</code>
+                    namespace.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Depreciate the following built-in properties:
+                </p>
+                <ul>
+                    <li>
+                    nant.filename
+                    </li>
+                    <li>
+                    nant.version
+                    </li>
+                    <li>
+                    nant.location
+                    </li>
+                    <li>
+                    nant.project.name
+                    </li>
+                    <li>
+                    nant.project.basedir
+                    </li>
+                    <li>
+                    nant.project.buildfile
+                    </li>
+                    <li>
+                    nant.project.default
+                    </li>
+                    <li>
+                    nant.platform.name
+                    </li>
+                    <li>
+                    nant.platform.win32
+                    </li>
+                    <li>
+                    nant.platform.unix
+                    </li>
+                    <li>
+                    nant.settings.currentframework.description
+                    </li>
+                    <li>
+                    nant.settings.currentframework.frameworkdirectory
+                    </li>
+                    <li>
+                    nant.settings.currentframework.sdkdirectory
+                    </li>
+                    <li>
+                    nant.settings.currentframework.frameworkassemblydirectory
+                    </li>
+                    <li>
+                    nant.settings.currentframework.runtimeengine
+                    </li>
+                    <li>
+                    nant.tasks.*
+                    </li>
+                </ul>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Support better logging.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Support configuration to enable targeting specific versions of the .NET
+                    Framework and additions like the .NET Compact Framework.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/ianm74/">Ian</a>, <a href="http://sourceforge.net/users/drieseng/">
+                    Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Think about project event model.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Drop SourceForge from the namespace identifier.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Rename FileSet xml elements: includes =&gt; include, excludes = &gt; exclude,
+                    name = &gt; pattern.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add schema generation and validation for tasks.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/skot/">Scott</a></td>
+            <td>70%</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add named filesets.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/ianm74/">Ian</a></td>
+            <td>70%</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add <code>&lt;cvs&gt;</code> tasks.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drakmar/">Clayton</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Generate docs for build types.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/ianm74/">Ian</a>, <a href="http://sourceforge.net/users/skot/">
+                    Scott</a>, <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>85%</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Make sure the examples included in the distribution build. Currently some
+                    examples fail.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/jawn/">Bernard</a>, <a href="http://sourceforge.net/users/drieseng/">
+                    Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add support for linked resources to the compiler tasks and the <code>&lt;al&gt;</code>
+                    task.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>pending</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add support for multiple filesets to the <code>&lt;zip&gt;</code> task.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Move <code>&lt;aximp&gt;</code> task from <a href="http://NAntContrib.sourceforge.net">
+                        NAntContrib</a> to the <code>NAnt.Win32Tasks</code> assembly, so we can use
+                    it in the <code>&lt;solution&gt;</code> task.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a>
+            </td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add support for registering an assembly for <a href="http://www.codeproject.com/dotnet/nettocom.asp">
+                        COM interop</a> to the <code>&lt;solution&gt;</code> task. We could
+                    delegate this to NAntContrib's <code>&lt;regasm&gt;</code> task.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/"></a>
+            </td>
+            <td>pending</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add <code>&lt;choose&gt;</code> task, similar to XSLT's choose pattern.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Add <code>&lt;trycatch&gt;</code> task.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td><a href="http://nantcontrib.sourceforge.net/release/latest/help/tasks/trycatch.html">done</a></td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Have the <code>&lt;solution&gt;</code> task use <code>TlbImpTask</code> and <code>AxImpTask</code>
+                    instead of directly executing the corresponding commandline tools.
+                </p>
+            </td>
+            <td>
+                <a href="http://sourceforge.net/users/drieseng/">Gert</a></td>
+            <td>done</td>
+        </tr>
+        <tr>
+            <td>
+                <p>
+                    Modify <code><a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></code> and <code><a href="/api/NAnt.DotNet.Tasks/AssemblyLinkerTask">AssemblyLinkerTask</a></code> to pass
+                    localized resources to <code>al.exe</code> using the response file instead of
+                    passing arguments directly on the commandline.
+                </p>
+            </td>
+            <td></td>
+            <td>pending</td>
+        </tr>
+    </tbody>
+</table>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

@@ -1,0 +1,720 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - API - Element Class</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Remarks">Remarks</a></p>
+<p><a href="#Attributes">Attributes</a></p>
+<p><a href="#Constructors">Constructors</a></p>
+<p><a href="#Properties">Properties</a></p>
+<p><a href="#Methods">Methods</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/NAnt.Core.dll">NAnt<wbr>.Core<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/NAnt.Core">NAnt<wbr>.Core</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/api/NAnt.Core/BuildEventArgs">BuildEventArgs</a></li>
+				<li><a href="/api/NAnt.Core/BuildException">BuildException</a></li>
+				<li><a href="/api/NAnt.Core/BuildListenerCollection">Build<wbr>Listener<wbr>Collection</a></li>
+				<li><a href="/api/NAnt.Core/BuildListenerEnumerator">Build<wbr>Listener<wbr>Enumerator</a></li>
+				<li><a href="/api/NAnt.Core/BuildReport">BuildReport</a></li>
+				<li><a href="/api/NAnt.Core/CommandLineOptions">CommandLineOptions</a></li>
+				<li><a href="/api/NAnt.Core/ConfigurationSection">ConfigurationSection</a></li>
+				<li><a href="/api/NAnt.Core/ConsoleDriver">ConsoleDriver</a></li>
+				<li><a href="/api/NAnt.Core/DataTypeBase">DataTypeBase</a></li>
+				<li><a href="/api/NAnt.Core/DataTypeBaseBuilder">DataTypeBaseBuilder</a></li>
+				<li><a href="/api/NAnt.Core/DataTypeBaseBuilderCollection">Data<wbr>Type<wbr>Base<wbr>Builder<wbr>Collection</a></li>
+				<li><a href="/api/NAnt.Core/DataTypeBaseBuilderEnumerator">Data<wbr>Type<wbr>Base<wbr>Builder<wbr>Enumerator</a></li>
+				<li><a href="/api/NAnt.Core/DataTypeBaseDictionary">Data<wbr>Type<wbr>Base<wbr>Dictionary</a></li>
+				<li><a href="/api/NAnt.Core/DataTypeBaseDictionaryEnumerator">Data<wbr>Type<wbr>Base<wbr>Dictionary<wbr>Enumerator</a></li>
+				<li><a href="/api/NAnt.Core/DefaultLogger">DefaultLogger</a></li>
+				<li><a href="/api/NAnt.Core/DirectoryScanner">DirectoryScanner</a></li>
+				<li class="selected"><a href="/api/NAnt.Core/Element">Element</a></li>
+				<li><a href="/api/NAnt.Core/ElementContainer">ElementContainer</a></li>
+				<li><a href="/api/NAnt.Core/ExpressionEvalBase">ExpressionEvalBase</a></li>
+				<li><a href="/api/NAnt.Core/ExpressionEvaluator">ExpressionEvaluator</a></li>
+				<li><a href="/api/NAnt.Core/ExpressionParseException">Expression<wbr>Parse<wbr>Exception</a></li>
+				<li><a href="/api/NAnt.Core/ExpressionTokenizer">ExpressionTokenizer</a></li>
+				<li><a href="/api/NAnt.Core/FrameworkInfo">FrameworkInfo</a></li>
+				<li><a href="/api/NAnt.Core/FrameworkInfoDictionary">Framework<wbr>Info<wbr>Dictionary</a></li>
+				<li><a href="/api/NAnt.Core/FrameworkInfoDictionaryEnumerator">Framework<wbr>Info<wbr>Dictionary<wbr>Enumerator</a></li>
+				<li><a href="/api/NAnt.Core/FunctionSetBase">FunctionSetBase</a></li>
+				<li><a href="/api/NAnt.Core/Location">Location</a></li>
+				<li><a href="/api/NAnt.Core/LogWriter">LogWriter</a></li>
+				<li><a href="/api/NAnt.Core/MailLogger">MailLogger</a></li>
+				<li><a href="/api/NAnt.Core/PathScanner">PathScanner</a></li>
+				<li><a href="/api/NAnt.Core/PlatformHelper">PlatformHelper</a></li>
+				<li><a href="/api/NAnt.Core/Project">Project</a></li>
+				<li><a href="/api/NAnt.Core/PropertyDictionary">PropertyDictionary</a></li>
+				<li><a href="/api/NAnt.Core/Target">Target</a></li>
+				<li><a href="/api/NAnt.Core/TargetCollection">TargetCollection</a></li>
+				<li><a href="/api/NAnt.Core/Task">Task</a></li>
+				<li><a href="/api/NAnt.Core/TaskBuilder">TaskBuilder</a></li>
+				<li><a href="/api/NAnt.Core/TaskBuilderCollection">Task<wbr>Builder<wbr>Collection</a></li>
+				<li><a href="/api/NAnt.Core/TaskBuilderEnumerator">Task<wbr>Builder<wbr>Enumerator</a></li>
+				<li><a href="/api/NAnt.Core/TaskContainer">TaskContainer</a></li>
+				<li><a href="/api/NAnt.Core/TypeFactory">TypeFactory</a></li>
+				<li><a href="/api/NAnt.Core/ValidationException">ValidationException</a></li>
+				<li><a href="/api/NAnt.Core/XmlLogger">XmlLogger</a></li>
+			<li class="header">Enum Types</li>
+				<li><a href="/api/NAnt.Core/ClrType">ClrType</a></li>
+				<li><a href="/api/NAnt.Core/FrameworkTypes">FrameworkTypes</a></li>
+				<li><a href="/api/NAnt.Core/Level">Level</a></li>
+				<li><a href="/api/NAnt.Core/VendorType">VendorType</a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/api/NAnt.Core/IBuildListener">IBuildListener</a></li>
+				<li><a href="/api/NAnt.Core/IBuildLogger">IBuildLogger</a></li>
+				<li><a href="/api/NAnt.Core/IConditional">IConditional</a></li>
+			<li class="header">Delegate Types</li>
+				<li><a href="/api/NAnt.Core/BuildEventHandler">BuildEventHandler</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>Element <small>Class</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Models a NAnt XML element in the build file.
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/api/NAnt.Core.dll">NAnt<wbr>.Core<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/api/NAnt.Core">NAnt<wbr>.Core</a></dd>
+											
+							
+								<dt>Base Types</dt>
+								<dd>
+									<ul class="list-unstyled">										
+											<li>Object</li>								
+									</ul>
+								</dd>				
+							
+								<dt>Derived Types</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li><a href="/api/NAnt.DotNet.Types/Package">Package</a></li>								
+											<li><a href="/api/NAnt.Core.Types/PathElement">PathElement</a></li>								
+											<li><a href="/api/NAnt.Core.Types/Exclude">FileSet<wbr>.Exclude</a></li>								
+											<li><a href="/api/NAnt.Core.Types/ExcludesFile">FileSet<wbr>.ExcludesFile</a></li>								
+											<li><a href="/api/NAnt.Core.Types/Argument">Argument</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/InElement">InElement</a></li>								
+											<li><a href="/api/NAnt.Core.Types/XsltExtensionObject">XsltExtensionObject</a></li>								
+											<li><a href="/api/NAnt.Core.Types/Formatter">Formatter</a></li>								
+											<li><a href="/api/NAnt.Core.Types/XmlNamespace">XmlNamespace</a></li>								
+											<li><a href="/api/NAnt.DotNet.Types/AssemblyAttribute">AssemblyAttribute</a></li>								
+											<li><a href="/api/NAnt.DotNet.Types/CompilerWarning">CompilerWarning</a></li>								
+											<li><a href="/api/NAnt.Core.Types/Pattern">Pattern</a></li>								
+											<li><a href="/api/NAnt.Core/DataTypeBase">DataTypeBase</a></li>								
+											<li><a href="/api/NAnt.Core.Types/Option">Option</a></li>								
+											<li><a href="/api/NAnt.Core/Target">Target</a></li>								
+											<li><a href="/api/NAnt.Core.Types/Token">Token</a></li>								
+											<li><a href="/api/NAnt.Core/ElementContainer">ElementContainer</a></li>								
+											<li><a href="/api/NAnt.DotNet.Types/Module">Module</a></li>								
+											<li><a href="/api/NAnt.Core.Filters/ChainableReader">ChainableReader</a></li>								
+											<li><a href="/api/NAnt.Core.Types/EnvironmentSet">EnvironmentSet</a></li>								
+											<li><a href="/api/NAnt.DotNet.Types/NamespaceImport">NamespaceImport</a></li>								
+											<li><a href="/api/NAnt.Core.Types/EnvironmentVariable">EnvironmentVariable</a></li>								
+											<li><a href="/api/NAnt.Core.Types/XsltParameter">XsltParameter</a></li>								
+											<li><a href="/api/NAnt.Core/Task">Task</a></li>								
+											<li><a href="/api/NAnt.Core.Types/RawXml">RawXml</a></li>								
+									</ul>
+								</dd>			
+							
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph BT
+	Type--&gt;Base0["Object"]
+	Type["Element"]
+class Type type-node
+	Derived0["Package"]--&gt;Type
+	click Derived0 "/api/NAnt.DotNet.Types/Package"
+	Derived1["PathElement"]--&gt;Type
+	click Derived1 "/api/NAnt.Core.Types/PathElement"
+	Derived2["FileSet.Exclude"]--&gt;Type
+	click Derived2 "/api/NAnt.Core.Types/Exclude"
+	Derived3["FileSet.ExcludesFile"]--&gt;Type
+	click Derived3 "/api/NAnt.Core.Types/ExcludesFile"
+	Derived4["Argument"]--&gt;Type
+	click Derived4 "/api/NAnt.Core.Types/Argument"
+	Derived5["InElement"]--&gt;Type
+	click Derived5 "/api/NAnt.Core.Tasks/InElement"
+	Derived6["XsltExtensionObject"]--&gt;Type
+	click Derived6 "/api/NAnt.Core.Types/XsltExtensionObject"
+	Derived7["Formatter"]--&gt;Type
+	click Derived7 "/api/NAnt.Core.Types/Formatter"
+	Derived8["XmlNamespace"]--&gt;Type
+	click Derived8 "/api/NAnt.Core.Types/XmlNamespace"
+	Derived9["AssemblyAttribute"]--&gt;Type
+	click Derived9 "/api/NAnt.DotNet.Types/AssemblyAttribute"
+	Derived10["CompilerWarning"]--&gt;Type
+	click Derived10 "/api/NAnt.DotNet.Types/CompilerWarning"
+	Derived11["Pattern"]--&gt;Type
+	click Derived11 "/api/NAnt.Core.Types/Pattern"
+	Derived12["DataTypeBase"]--&gt;Type
+	click Derived12 "/api/NAnt.Core/DataTypeBase"
+	Derived13["Option"]--&gt;Type
+	click Derived13 "/api/NAnt.Core.Types/Option"
+	Derived14["Target"]--&gt;Type
+	click Derived14 "/api/NAnt.Core/Target"
+	Derived15["Token"]--&gt;Type
+	click Derived15 "/api/NAnt.Core.Types/Token"
+	Derived16["ElementContainer"]--&gt;Type
+	click Derived16 "/api/NAnt.Core/ElementContainer"
+	Derived17["Module"]--&gt;Type
+	click Derived17 "/api/NAnt.DotNet.Types/Module"
+	Derived18["ChainableReader"]--&gt;Type
+	click Derived18 "/api/NAnt.Core.Filters/ChainableReader"
+	Derived19["EnvironmentSet"]--&gt;Type
+	click Derived19 "/api/NAnt.Core.Types/EnvironmentSet"
+	Derived20["NamespaceImport"]--&gt;Type
+	click Derived20 "/api/NAnt.DotNet.Types/NamespaceImport"
+	Derived21["EnvironmentVariable"]--&gt;Type
+	click Derived21 "/api/NAnt.Core.Types/EnvironmentVariable"
+	Derived22["XsltParameter"]--&gt;Type
+	click Derived22 "/api/NAnt.Core.Types/XsltParameter"
+	Derived23["Task"]--&gt;Type
+	click Derived23 "/api/NAnt.Core/Task"
+	Derived24["RawXml"]--&gt;Type
+	click Derived24 "/api/NAnt.Core.Types/RawXml"
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>[Serializable()]
+public abstract class Element</code></pre>
+
+
+	<h1 id="Remarks">Remarks</h1>
+	<div>
+    <p>
+    Automatically validates attributes in the element based on attributes 
+    applied to members in derived classes.
+    </p>
+    </div>
+
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>Serializable<wbr>Attribute</td>
+						<td></td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+
+
+			<h1 id="Constructors">Constructors</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Core/Element/1A054708">Element<wbr>()<wbr></a></td>
+									<td>
+    Initializes a new instance of the <code class="cs">NAnt.Core.Element</code> class.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/D1318949">Element<wbr>(Element)<wbr></a></td>
+									<td>
+    Initializes a new instance of the <code class="cs">NAnt.Core.Element</code> class
+    from the specified element.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+			<h1 id="Properties">Properties</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Core/Element/B804EFCC">CustomXmlProcessing</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets a value indicating whether the element is performing additional
+    processing using the <code class="cs">NAnt.Core.Element.XmlNode</code> that was used to 
+    initialize the element.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/FE2F272F">Location</a></td>
+								<td><a href="/api/NAnt.Core/Location">Location</a></td>
+								<td>
+									<div>
+    Gets or sets the location in the build file where the element is 
+    defined.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/54440AD1">Name</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Gets the name of the XML element used to initialize this element.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/9EB6A4F0">NamespaceManager</a></td>
+								<td>XmlNamespaceManager</td>
+								<td>
+									<div>
+    Gets or sets the <code class="cs">System.Xml.XmlNamespaceManager</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/02090F73">Parent</a></td>
+								<td>Object</td>
+								<td>
+									<div>
+    Gets or sets the parent of the element.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/AA6C9027">Project</a></td>
+								<td><a href="/api/NAnt.Core/Project">Project</a></td>
+								<td>
+									<div>
+    Gets or sets the <code class="cs">NAnt.Core.Element.Project</code> to which this element belongs.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/1584471A">Properties</a></td>
+								<td><a href="/api/NAnt.Core/PropertyDictionary">PropertyDictionary</a></td>
+								<td>
+									<div>
+    Gets the properties local to this <code class="cs">NAnt.Core.Element</code> and the 
+    <code class="cs">NAnt.Core.Element.Project</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/D9E369A6">XmlNode</a></td>
+								<td>XmlNode</td>
+								<td>
+									<div>
+    Gets or sets the XML node of the element.
+    </div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Core/Element/D571E875">CopyTo<wbr>(Element)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Copies all instance data of the <code class="cs">NAnt.Core.Element</code> to a given
+    <code class="cs">NAnt.Core.Element</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/3082E72D">Get<wbr>Attribute<wbr>Configuration<wbr>Node<wbr>(FrameworkInfo, <wbr>string)<wbr></a></td>
+								<td>XmlNode</td>
+								<td>
+									<div>
+    Locates the XML node for the specified attribute in the project 
+    configuration node.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/C0D5B3EB">Get<wbr>Attribute<wbr>Configuration<wbr>Node<wbr>(XmlNode, <wbr>FrameworkInfo, <wbr>string)<wbr></a></td>
+								<td>XmlNode</td>
+								<td>
+									<div></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/0EEC5A8E">GetLocation<wbr>()<wbr></a></td>
+								<td><a href="/api/NAnt.Core/Location">Location</a></td>
+								<td>
+									<div>
+    Retrieves the location in the build file where the element is 
+    defined.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/7B16F0C0">Initialize<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Derived classes should override to this method to provide extra 
+    initialization and validation not covered by the base class.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/DAE0362A">Initialize<wbr>(XmlNode)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Performs default initialization.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/83397033">Initialize<wbr>Build<wbr>Element<wbr>(Element, <wbr>XmlNode, <wbr>Element, <wbr>Type)<wbr></a></td>
+								<td><a href="/api/NAnt.Core/Element">Element</a></td>
+								<td>
+									<div>
+    Initializes the build element.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/08741BFC">InitializeElement<wbr>(XmlNode)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Derived classes should override to this method to provide extra 
+    initialization and validation not covered by the base class.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/83381393">InitializeXml<wbr>(XmlNode, <wbr>PropertyDictionary, <wbr>FrameworkInfo)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Initializes all build attributes and child elements.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/0C095557">Log<wbr>(Level, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Logs a message with the given priority.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/1A9356EA">Log<wbr>(Level, <wbr>string, <wbr>Object[])<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Logs a message with the given priority.
+    </div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

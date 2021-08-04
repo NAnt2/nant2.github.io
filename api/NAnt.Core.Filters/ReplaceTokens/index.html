@@ -1,0 +1,781 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - API - ReplaceTokens Class</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
+<p><a href="#Remarks">Remarks</a></p>
+<p><a href="#Attributes">Attributes</a></p>
+<p><a href="#Properties">Properties</a></p>
+<p><a href="#Methods">Methods</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/NAnt.Core.dll">NAnt<wbr>.Core<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/NAnt.Core.Filters">NAnt<wbr>.Core<wbr>.Filters</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/api/NAnt.Core.Filters/ChainableReader">ChainableReader</a></li>
+				<li><a href="/api/NAnt.Core.Filters/ExpandProperties">ExpandProperties</a></li>
+				<li><a href="/api/NAnt.Core.Filters/Filter">Filter</a></li>
+				<li><a href="/api/NAnt.Core.Filters/FilterBuilder">FilterBuilder</a></li>
+				<li><a href="/api/NAnt.Core.Filters/FilterBuilderCollection">Filter<wbr>Builder<wbr>Collection</a></li>
+				<li><a href="/api/NAnt.Core.Filters/FilterBuilderEnumerator">Filter<wbr>Builder<wbr>Enumerator</a></li>
+				<li><a href="/api/NAnt.Core.Filters/FilterChain">FilterChain</a></li>
+				<li><a href="/api/NAnt.Core.Filters/FilterCollection">FilterCollection</a></li>
+				<li><a href="/api/NAnt.Core.Filters/FilterEnumerator">FilterEnumerator</a></li>
+				<li><a href="/api/NAnt.Core.Filters/ReplaceString">ReplaceString</a></li>
+				<li class="selected"><a href="/api/NAnt.Core.Filters/ReplaceTokens">ReplaceTokens</a></li>
+				<li><a href="/api/NAnt.Core.Filters/TabsToSpaces">TabsToSpaces</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>ReplaceTokens <small>Class</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Replaces tokens in the original input with user-supplied values.
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/api/NAnt.Core.dll">NAnt<wbr>.Core<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/api/NAnt.Core.Filters">NAnt<wbr>.Core<wbr>.Filters</a></dd>
+											
+								<dt>Interfaces</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li>IDisposable</li>								
+									</ul>
+								</dd>
+							
+								<dt>Base Types</dt>
+								<dd>
+									<ul class="list-unstyled">										
+											<li>Object</li>								
+											<li><a href="/api/NAnt.Core/Element">Element</a></li>								
+											<li><a href="/api/NAnt.Core.Filters/ChainableReader">ChainableReader</a></li>								
+											<li><a href="/api/NAnt.Core.Filters/Filter">Filter</a></li>								
+									</ul>
+								</dd>				
+							
+							
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph BT
+	Type--&gt;Base0["Filter"]
+	click Base0 "/api/NAnt.Core.Filters/Filter"
+	Base0--&gt;Base1["ChainableReader"]
+	click Base1 "/api/NAnt.Core.Filters/ChainableReader"
+	Base1--&gt;Base2["Element"]
+	click Base2 "/api/NAnt.Core/Element"
+	Base2--&gt;Base3["Object"]
+	Type-.-&gt;Interface0["IDisposable"]
+	Type["ReplaceTokens"]
+class Type type-node
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>[ElementName("replacetokens")]
+public class ReplaceTokens : Filter, IDisposable</code></pre>
+
+	<h1 id="Examples">Examples</h1>
+	<div>
+      <p>
+      Replace all occurrences of the string @DATE@ with the value of property
+      "TODAY".
+      </p>
+      <pre><code class="cs">    &lt;replacetokens&gt;
+    &lt;token key="DATE" value="${TODAY}" /&gt;
+&lt;/replacetokens&gt;</code></pre>
+    
+
+      <p>
+      Replace all occurrences of the string &lt;DATE&gt; with the value of 
+      property "TODAY".
+      </p>
+      <pre><code class="cs">    &lt;replacetokens begintoken="&amp;lt;" endtoken="&amp;gt;"&gt;
+    &lt;token key="DATE" value="${TODAY}" /&gt;
+&lt;/replacetokens&gt;</code></pre>
+    </div>
+
+	<h1 id="Remarks">Remarks</h1>
+	<div>
+    <p>
+    This filter replaces all token surrounded by a beginning and ending
+    token. The default beginning and ending tokens both default to '@'. The 
+    optional <code class="cs">NAnt.Core.Filters.ReplaceTokens.BeginToken</code> and <code class="cs">NAnt.Core.Filters.ReplaceTokens.EndToken</code> attributes
+    can be specified to change either token. By default string 
+    comparisons are case sensitive but this can be changed by setting the 
+    optional <code class="cs">NAnt.Core.Filters.ReplaceTokens.IgnoreCase</code> attribute to <code class="cs">true</code>.
+    </p>
+    <p>
+    Tokens are specified by using the <code class="cs">NAnt.Core.Types.Token</code> element. It is 
+    possible to specify from 1 to n tokens and replacement values. Values can 
+    be any valid NAnt expression.
+    </p>
+    <p>
+    Filters are intended to be used as a element of a <code class="cs">NAnt.Core.Filters.FilterChain</code>.
+    </p>
+    </div>
+
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td><a href="/api/NAnt.Core.Attributes/ElementNameAttribute">ElementNameAttribute</a></td>
+						<td>
+    Indicates that class should be treated as a NAnt element.
+    </td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+
+
+
+
+
+			<h1 id="Properties">Properties</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Core.Filters/ChainableReader/5A5EE7FE">Base</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets a value indicating if the reader is backed by a stream in the 
+    chain.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Filters/ChainableReader">ChainableReader</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/ReplaceTokens/B044D32C">BeginToken</a></td>
+								<td>char</td>
+								<td>
+									<div>
+    Marks the beginning of a token. The default is "@".
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/B804EFCC">CustomXmlProcessing</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets a value indicating whether the element is performing additional
+    processing using the <code class="cs">NAnt.Core.Element.XmlNode</code> that was used to 
+    initialize the element.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/ReplaceTokens/331F9F75">EndToken</a></td>
+								<td>char</td>
+								<td>
+									<div>
+    Marks the end of a token. The default is "@".
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/Filter/C62AF37B">IfDefined</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    If <code class="cs">true</code> then the filter will be used; otherwise, 
+    skipped. The default is <code class="cs">true</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Filters/Filter">Filter</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/ReplaceTokens/09133602">IgnoreCase</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Determines if case will be ignored.
+    The default is <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/FE2F272F">Location</a></td>
+								<td><a href="/api/NAnt.Core/Location">Location</a></td>
+								<td>
+									<div>
+    Gets or sets the location in the build file where the element is 
+    defined.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/54440AD1">Name</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Gets the name of the XML element used to initialize this element.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/9EB6A4F0">NamespaceManager</a></td>
+								<td>XmlNamespaceManager</td>
+								<td>
+									<div>
+    Gets or sets the <code class="cs">System.Xml.XmlNamespaceManager</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/02090F73">Parent</a></td>
+								<td>Object</td>
+								<td>
+									<div>
+    Gets or sets the parent of the element.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/AA6C9027">Project</a></td>
+								<td><a href="/api/NAnt.Core/Project">Project</a></td>
+								<td>
+									<div>
+    Gets or sets the <code class="cs">NAnt.Core.Element.Project</code> to which this element belongs.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/1584471A">Properties</a></td>
+								<td><a href="/api/NAnt.Core/PropertyDictionary">PropertyDictionary</a></td>
+								<td>
+									<div>
+    Gets the properties local to this <code class="cs">NAnt.Core.Element</code> and the 
+    <code class="cs">NAnt.Core.Element.Project</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/ReplaceTokens/3557DF54">Tokens</a></td>
+								<td>Token[]</td>
+								<td>
+									<div>
+    Tokens and replacement values.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/Filter/18CB03E7">UnlessDefined</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Opposite of <code class="cs">NAnt.Core.Filters.Filter.IfDefined</code>. If <code class="cs">false</code> 
+    then the filter will be executed; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Filters/Filter">Filter</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/D9E369A6">XmlNode</a></td>
+								<td>XmlNode</td>
+								<td>
+									<div>
+    Gets or sets the XML node of the element.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Core.Filters/ReplaceTokens/EFCBBCEE">Chain<wbr>(ChainableReader)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Construct that allows this filter to be chained to the one
+    in the parameter chainedReader.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/ChainableReader/B3CF7D25">Chain<wbr>(TextReader)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Makes it so all calls to Read and Peek are passed the TextReader
+    passed as a parameter.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Filters/ChainableReader">ChainableReader</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/ChainableReader/F341162B">Close<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Closes the reader.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Filters/ChainableReader">ChainableReader</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/D571E875">CopyTo<wbr>(Element)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Copies all instance data of the <code class="cs">NAnt.Core.Element</code> to a given
+    <code class="cs">NAnt.Core.Element</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/ChainableReader/F5BA0169">Dispose<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Calls close and supresses the finalizer for the object.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Filters/ChainableReader">ChainableReader</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/3082E72D">Get<wbr>Attribute<wbr>Configuration<wbr>Node<wbr>(FrameworkInfo, <wbr>string)<wbr></a></td>
+								<td>XmlNode</td>
+								<td>
+									<div>
+    Locates the XML node for the specified attribute in the project 
+    configuration node.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/C0D5B3EB">Get<wbr>Attribute<wbr>Configuration<wbr>Node<wbr>(XmlNode, <wbr>FrameworkInfo, <wbr>string)<wbr></a></td>
+								<td>XmlNode</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/0EEC5A8E">GetLocation<wbr>()<wbr></a></td>
+								<td><a href="/api/NAnt.Core/Location">Location</a></td>
+								<td>
+									<div>
+    Retrieves the location in the build file where the element is 
+    defined.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/ReplaceTokens/26F530BD">Initialize<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Initialize the filter by setting its parameters.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/DAE0362A">Initialize<wbr>(XmlNode)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Performs default initialization.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/83397033">Initialize<wbr>Build<wbr>Element<wbr>(Element, <wbr>XmlNode, <wbr>Element, <wbr>Type)<wbr></a></td>
+								<td><a href="/api/NAnt.Core/Element">Element</a></td>
+								<td>
+									<div>
+    Initializes the build element.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/08741BFC">InitializeElement<wbr>(XmlNode)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Derived classes should override to this method to provide extra 
+    initialization and validation not covered by the base class.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/Filter/61EF01D7">InitializeFilter<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Called after construction and after properties are set. Allows
+    for filter initialization.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Filters/Filter">Filter</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/83381393">InitializeXml<wbr>(XmlNode, <wbr>PropertyDictionary, <wbr>FrameworkInfo)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Initializes all build attributes and child elements.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/0C095557">Log<wbr>(Level, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Logs a message with the given priority.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/1A9356EA">Log<wbr>(Level, <wbr>string, <wbr>Object[])<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Logs a message with the given priority.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/ReplaceTokens/1AFAAB91">Peek<wbr>()<wbr></a></td>
+								<td>int</td>
+								<td>
+									<div>
+     Reads the next character applying the filter logic without
+     advancing the current position in the stream.
+    
+     Peek currently is not supported.
+     </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters/ReplaceTokens/04EA71CF">Read<wbr>()<wbr></a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Reads the next character applying the filter logic.
+    </div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

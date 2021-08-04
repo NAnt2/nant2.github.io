@@ -1,0 +1,1656 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - API - VbcTask Class</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
+<p><a href="#Remarks">Remarks</a></p>
+<p><a href="#Attributes">Attributes</a></p>
+<p><a href="#fields">Fields</a></p>
+<p><a href="#Properties">Properties</a></p>
+<p><a href="#Methods">Methods</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/NAnt.DotNet.dll">NAnt<wbr>.DotNet<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/NAnt.DotNet.Tasks">NAnt<wbr>.DotNet<wbr>.Tasks</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/api/NAnt.DotNet.Tasks/AssemblyInfoTask">AssemblyInfoTask</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/AssemblyLinkerTask">AssemblyLinkerTask</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/CscTask">CscTask</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/DelaySignTask">DelaySignTask</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/IlasmTask">IlasmTask</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/JscTask">JscTask</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/LicenseTask">LicenseTask</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/NDocTask">NDocTask</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/QualifiedResource">QualifiedResource</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/RegsvcsTask">RegsvcsTask</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/ResGenTask">ResGenTask</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/ScriptTask">ScriptTask</a></li>
+				<li class="selected"><a href="/api/NAnt.DotNet.Tasks/VbcTask">VbcTask</a></li>
+				<li><a href="/api/NAnt.DotNet.Tasks/VjcTask">VjcTask</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>VbcTask <small>Class</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Compiles Visual Basic.NET programs.
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/api/NAnt.DotNet.dll">NAnt<wbr>.DotNet<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/api/NAnt.DotNet.Tasks">NAnt<wbr>.DotNet<wbr>.Tasks</a></dd>
+											
+								<dt>Interfaces</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li><a href="/api/NAnt.Core/IConditional">IConditional</a></li>								
+									</ul>
+								</dd>
+							
+								<dt>Base Types</dt>
+								<dd>
+									<ul class="list-unstyled">										
+											<li>Object</li>								
+											<li><a href="/api/NAnt.Core/Element">Element</a></li>								
+											<li><a href="/api/NAnt.Core/Task">Task</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></li>								
+											<li><a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></li>								
+									</ul>
+								</dd>				
+							
+							
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph BT
+	Type--&gt;Base0["CompilerBase"]
+	click Base0 "/api/NAnt.DotNet.Tasks/CompilerBase"
+	Base0--&gt;Base1["ExternalProgramBase"]
+	click Base1 "/api/NAnt.Core.Tasks/ExternalProgramBase"
+	Base1--&gt;Base2["Task"]
+	click Base2 "/api/NAnt.Core/Task"
+	Base2--&gt;Base3["Element"]
+	click Base3 "/api/NAnt.Core/Element"
+	Base3--&gt;Base4["Object"]
+	Type-.-&gt;Interface0["IConditional"]
+	click Interface0 "/api/NAnt.Core/IConditional"
+	Type["VbcTask"]
+class Type type-node
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>[TaskName("vbc")]
+[ProgramLocation(LocationType.FrameworkDir)]
+public class VbcTask : CompilerBase, IConditional</code></pre>
+
+	<h1 id="Examples">Examples</h1>
+	<div>
+      <p>Example build file using this task.</p>
+      <pre><code class="cs">    &lt;project name="Hello World" default="build" basedir="."&gt;
+  &lt;property name="basename" value="HelloWorld" /&gt;
+  &lt;target name="clean"&gt;
+     &lt;delete file="${basename}-vb.exe" failonerror="false" /&gt;
+     &lt;delete file="${basename}-vb.pdb" failonerror="false" /&gt;
+  &lt;/target&gt;
+  &lt;target name="build"&gt;
+     &lt;vbc target="exe" output="${basename}-vb.exe" rootnamespace="${basename}"&gt;
+        &lt;imports&gt;
+            &lt;import namespace="System" /&gt;
+            &lt;import namespace="System.Data" /&gt;
+        &lt;/imports&gt;
+        &lt;sources&gt;
+           &lt;include name="${basename}.vb" /&gt;
+        &lt;/sources&gt;
+        &lt;resources prefix="${basename}" dynamicprefix="true"&gt;
+            &lt;include name="**/*.resx" /&gt;
+        &lt;/resources&gt;
+        &lt;references&gt;
+            &lt;include name="System.dll" /&gt;
+            &lt;include name="System.Data.dll" /&gt;
+        &lt;/references&gt;
+     &lt;/vbc&gt;
+  &lt;/target&gt;
+  &lt;target name="rebuild" depends="clean, build" /&gt;
+&lt;/project&gt;</code></pre>
+    </div>
+
+	<h1 id="Remarks">Remarks</h1>
+	<div>
+    <div class="note">
+    In order to have <code class="cs">NAnt.DotNet.Tasks.VbcTask</code> generate manifest resource names
+    that match those generated by Microsoft Visual Studio.NET, the value of
+    the <code class="cs">NAnt.DotNet.Types.ResourceFileSet.Prefix</code> attribute of the &lt;<code class="cs">NAnt.DotNet.Tasks.CompilerBase.ResourcesList</code>&gt;
+    element should match the "Root namespace" of the VB.NET project, and the 
+    value of the <code class="cs">NAnt.DotNet.Types.ResourceFileSet.DynamicPrefix</code> attribute 
+    should be set to "<code class="cs">false</code>".
+    </div>
+    </div>
+
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td><a href="/api/NAnt.Core.Attributes/TaskNameAttribute">TaskNameAttribute</a></td>
+						<td>
+    Indicates that class should be treated as a task.
+    </td>
+					</tr>
+					<tr>
+						<td><a href="/api/NAnt.Core.Attributes/ProgramLocationAttribute">Program<wbr>Location<wbr>Attribute</a></td>
+						<td>
+    Indicates the location that a task executable can be located in.
+    </td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+
+
+
+
+			<h1 id="fields">Fields</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Constant Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/BE3E9478">CodebehindExtensions</a></td>
+								<td></td>
+								<td>
+									<div>
+    Contains a list of extensions for all file types that should be treated as
+    'code-behind' when looking for resources.  Ultimately this will determine
+    if we use the "namespace+filename" or "namespace+classname" algorithm, since
+    code-behind will use the "namespace+classname" algorithm.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/46282EC0">CultureNames</a></td>
+								<td></td>
+								<td>
+									<div>
+    Case-insensitive list of valid culture names for this platform.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/058B1767">UnknownExitCode</a></td>
+								<td>-1000</td>
+								<td>
+									<div>
+    Defines the exit code that will be returned by <code class="cs">NAnt.Core.Tasks.ExternalProgramBase.ExitCode</code>
+    if the process could not be started, or did not exit (in time).
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Properties">Properties</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/231BDC9B">Arguments</a></td>
+								<td><a href="/api/NAnt.Core.Types/ArgumentCollection">ArgumentCollection</a></td>
+								<td>
+									<div>
+    The command-line arguments for the external program.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/1C161DB8">BaseAddress</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The preferred base address at which to load a DLL. The default base 
+    address for a DLL is set by the .NET Framework common language 
+    runtime.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/6ACEC2D4">BaseDirectory</a></td>
+								<td>DirectoryInfo</td>
+								<td>
+									<div>
+    Gets the working directory for the application.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/96AB10C9">ClassNameRegex</a></td>
+								<td>Regex</td>
+								<td>
+									<div>
+    Gets the class name regular expression for the language of the 
+    current compiler.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/378306C0">CommandLine</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Gets the command-line arguments, separated by spaces.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/B804EFCC">CustomXmlProcessing</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets a value indicating whether the element is performing additional
+    processing using the <code class="cs">NAnt.Core.Element.XmlNode</code> that was used to 
+    initialize the element.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/44002BA6">Debug</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    No longer expose this to build authors. Use <code class="cs">NAnt.DotNet.Tasks.VbcTask.DebugOutput</code>
+    instead.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/3F507DF5">DebugOutput</a></td>
+								<td><a href="/api/NAnt.DotNet.Types/DebugOutput">DebugOutput</a></td>
+								<td>
+									<div>
+    Specifies the type of debugging information generated by the 
+    compiler. The default is <code class="cs">NAnt.DotNet.Types.DebugOutput.None</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/600F8742">Define</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Define conditional compilation symbol(s).
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/6068C1CB">DelaySign</a></td>
+								<td><a href="/api/NAnt.DotNet.Types/DelaySign">DelaySign</a></td>
+								<td>
+									<div>
+    Specifies whether to delay sign the assembly using only the public
+    portion of the strong name key. The default is 
+    <code class="cs">NAnt.DotNet.Types.DelaySign.NotSet</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/3AFFA755">DocFile</a></td>
+								<td>FileInfo</td>
+								<td>
+									<div>
+    The name of the XML documentation file to generate. Only supported
+    when targeting .NET 2.0 (or higher).
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/C64869B2">ErrorWriter</a></td>
+								<td>TextWriter</td>
+								<td>
+									<div>
+    Gets or sets the <code class="cs">System.IO.TextWriter</code> to which error output
+    of the external program will be written.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/7D5FFA5F">ExeName</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The name of the executable that should be used to launch the 
+    external program.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/426FC64D">ExitCode</a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Gets the value that the process specified when it terminated.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/8FD619F0">Extension</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Gets the file extension required by the current compiler.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/268D243C">FailOnError</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Determines if task failure stops the build, or is just reported. 
+    The default is <code class="cs">true</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/B69F1C9E">ForceRebuild</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Instructs NAnt to recompile the output file regardless of the file timestamps.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/27BC05C6">IfDefined</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    If <code class="cs">true</code> then the task will be executed; otherwise, 
+    skipped. The default is <code class="cs">true</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/8E537EE5">Imports</a></td>
+								<td><a href="/api/NAnt.DotNet.Types/NamespaceImportCollection">Namespace<wbr>Import<wbr>Collection</a></td>
+								<td>
+									<div>
+    The namespaces to import.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/C8B2D2E6">ImportsString</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Specifies whether the <code class="cs">/imports</code> option gets passed to the 
+    compiler.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/3237B2D3">KeyContainer</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Specifies the key pair container used to strongname the assembly.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/13FE0E9A">KeyFile</a></td>
+								<td>FileInfo</td>
+								<td>
+									<div>
+    Specifies a strong name key file.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/0CFCBA5F">Lib</a></td>
+								<td><a href="/api/NAnt.Core.Types/FileSet">FileSet</a></td>
+								<td>
+									<div>
+    Additional directories to search in for assembly references.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/FE2F272F">Location</a></td>
+								<td><a href="/api/NAnt.Core/Location">Location</a></td>
+								<td>
+									<div>
+    Gets or sets the location in the build file where the element is 
+    defined.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/5D9B2E50">LogPrefix</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The prefix used when sending messages to the log.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/43D9A084">MainType</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Specifies which type contains the Main method that you want to use
+    as the entry point into the program.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/1C0A1E7C">Managed</a></td>
+								<td><a href="/api/NAnt.Core.Types/ManagedExecution">ManagedExecution</a></td>
+								<td>
+									<div>
+    Specifies whether the external program should be treated as a managed
+    application, possibly forcing it to be executed under the currently
+    targeted version of the CLR.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/C0207601">Modules</a></td>
+								<td><a href="/api/NAnt.DotNet.Types/AssemblyFileSet">AssemblyFileSet</a></td>
+								<td>
+									<div>
+    Link the specified modules into this assembly.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/565A7102">Name</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The name of the task.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/9EB6A4F0">NamespaceManager</a></td>
+								<td>XmlNamespaceManager</td>
+								<td>
+									<div>
+    Gets or sets the <code class="cs">System.Xml.XmlNamespaceManager</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/A79843CC">NamespaceRegex</a></td>
+								<td>Regex</td>
+								<td>
+									<div>
+    Gets the namespace regular expression for the language of the 
+    current compiler.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/06B02E9F">NoStdLib</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Instructs the compiler not to reference standard libraries
+    (system.dll and VBC.RSP). The default is <code class="cs">false</code>.
+    Only supported when targeting .NET 2.0 (or higher).
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/0E7E8D9E">NoWarn</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Specifies a comma-separated list of warnings that should be suppressed
+    by the compiler.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/3238FBC3">OptionCompare</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Specifies whether <code class="cs">/optioncompare</code> option gets passed to the 
+    compiler.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/B59ED547">OptionExplicit</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Specifies whether the <code class="cs">/optionexplicit</code> option gets passed to 
+    the compiler. The default is <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/9D72213F">OptionOptimize</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Specifies whether the <code class="cs">/optimize</code> option gets passed to the 
+    compiler. The default is <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/375FE22C">OptionStrict</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Specifies whether the <code class="cs">/optionstrict</code> option gets passed to 
+    the compiler. The default is <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/58652325">Output</a></td>
+								<td>FileInfo</td>
+								<td>
+									<div>
+    Gets the file to which the standard output should be redirected.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/E6249825">OutputAppend</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets a value indicating whether output will be appended to the 
+    <code class="cs">NAnt.Core.Tasks.ExternalProgramBase.Output</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/871DAE5C">OutputFile</a></td>
+								<td>FileInfo</td>
+								<td>
+									<div>
+    The output file created by the compiler.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/501AD3D4">OutputTarget</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Output type. Possible values are <code class="cs">exe</code>, <code class="cs">winexe</code>,
+    <code class="cs">library</code> or <code class="cs">module</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/C82B02AD">OutputWriter</a></td>
+								<td>TextWriter</td>
+								<td>
+									<div>
+    Gets or sets the <code class="cs">System.IO.TextWriter</code> to which standard output
+    messages of the external program will be written.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/03844918">Packages</a></td>
+								<td><a href="/api/NAnt.DotNet.Types/PackageCollection">PackageCollection</a></td>
+								<td>
+									<div>
+    Specifies list of packages to reference.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/02090F73">Parent</a></td>
+								<td>Object</td>
+								<td>
+									<div>
+    Gets or sets the parent of the element.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/1DC9CE27">Platform</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Specifies which platform version of common language runtime (CLR)
+    can run the output file.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/285CC07E">ProcessId</a></td>
+								<td>int</td>
+								<td>
+									<div>
+    Gets the unique identifier for the spawned application.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/E4A787DC">ProgramArguments</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Gets the command-line arguments for the external program.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/3BC72805">ProgramFileName</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Gets the filename of the external program to start.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/AA6C9027">Project</a></td>
+								<td><a href="/api/NAnt.Core/Project">Project</a></td>
+								<td>
+									<div>
+    Gets or sets the <code class="cs">NAnt.Core.Element.Project</code> to which this element belongs.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/1584471A">Properties</a></td>
+								<td><a href="/api/NAnt.Core/PropertyDictionary">PropertyDictionary</a></td>
+								<td>
+									<div>
+    Gets the properties local to this <code class="cs">NAnt.Core.Element</code> and the 
+    <code class="cs">NAnt.Core.Element.Project</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/0452C424">References</a></td>
+								<td><a href="/api/NAnt.DotNet.Types/AssemblyFileSet">AssemblyFileSet</a></td>
+								<td>
+									<div>
+    Reference metadata from the specified assembly files.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/D34F588D">RemoveIntChecks</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Specifies whether the <code class="cs">/removeintchecks</code> option gets passed to 
+    the compiler. The default is <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/99824AD2">ResourcesList</a></td>
+								<td><a href="/api/NAnt.DotNet.Types/ResourceFileSetCollection">Resource<wbr>File<wbr>Set<wbr>Collection</a></td>
+								<td>
+									<div>
+    Resources to embed.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/D42A61EF">RootNamespace</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Specifies whether the <code class="cs">/rootnamespace</code> option gets passed to 
+    the compiler.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/E5069CFD">Sources</a></td>
+								<td><a href="/api/NAnt.Core.Types/FileSet">FileSet</a></td>
+								<td>
+									<div>
+    The set of source files for compilation.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/E13CDA0E">Spawn</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets or sets a value indicating whether the application should be
+    spawned. If you spawn an application, its output will not be logged
+    by NAnt. The default is <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/B220DE54">SupportsDelaySign</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Indicates whether the compiler for a given target framework supports
+    the "delaysign" option. The default is <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/FA6F5D53">Supports<wbr>Doc<wbr>Generation</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Specifies whether the compiler for the active target framework
+    supports generation of XML Documentation file. The default is 
+    <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/0B1E17E8">SupportsKeyContainer</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Indicates whether the compiler for a given target framework supports
+    the "keycontainer" option. The default is <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/F3C09B3C">SupportsKeyFile</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Indicates whether the compiler for a given target framework supports
+    the "keyfile" option. The default is <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/5368F72F">SupportsNoStdLib</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Specifies whether the compiler for the active target framework
+    supports NOT referencing standard libraries (system.dll and VBC.RSP).
+    The default is <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/BA9192AB">SupportsNoWarnList</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Indicates whether the compiler for a given target framework supports
+    a command line option that allows a list of warnings to be
+    suppressed. The default is <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/46215E8A">Supports<wbr>Package<wbr>References</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Indicates whether package references are supported by compiler for 
+    a given target framework. The default is <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/48111797">SupportsPlatform</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Specifies whether the compiler for the active target framework
+    supports limiting the platform on which the compiled code can run.
+    The default is <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/F8ACE368">Supports<wbr>Warn<wbr>As<wbr>Error<wbr>List</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Indicates whether the compiler for a given target framework supports
+    the "warnaserror" option that takes a list of warnings. The default 
+    is <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/D3F3BFBD">SuppressWarnings</a></td>
+								<td><a href="/api/NAnt.DotNet.Types/CompilerWarningCollection">Compiler<wbr>Warning<wbr>Collection</a></td>
+								<td>
+									<div>
+    Specifies a list of warnings that you want the compiler to suppress.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/B2350F85">Threshold</a></td>
+								<td><a href="/api/NAnt.Core/Level">Level</a></td>
+								<td>
+									<div>
+    Gets or sets the log threshold for this <code class="cs">NAnt.Core.Task</code>. By
+    default the threshold of a task is <code class="cs">NAnt.Core.Level.Debug</code>,
+    causing no messages to be filtered in the task itself.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/86A9E2CB">TimeOut</a></td>
+								<td>int</td>
+								<td>
+									<div>
+    The maximum amount of time the application is allowed to execute, 
+    expressed in milliseconds.  Defaults to no time-out.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/0DA06887">UnlessDefined</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Opposite of <code class="cs">NAnt.Core.Task.IfDefined</code>. If <code class="cs">false</code> 
+    then the task will be executed; otherwise, skipped. The default is 
+    <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/298CAD22">UseRuntimeEngine</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Specifies whether the external program is a managed application
+    which should be executed using a runtime engine, if configured. 
+    The default is <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/CCE4A03A">Verbose</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Determines whether the task should report detailed build log messages. 
+    The default is <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/CB641452">WarnAsError</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Instructs the compiler to treat all warnings as errors. The default
+    is <code class="cs">false</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/9FD91B11">WarningAsError</a></td>
+								<td><a href="/api/NAnt.DotNet.Types/WarningAsError">WarningAsError</a></td>
+								<td>
+									<div>
+    Controls which warnings should be reported as errors.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/336A330A">Win32Icon</a></td>
+								<td>FileInfo</td>
+								<td>
+									<div>
+    Icon to associate with the application.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/9ED3866E">Win32Res</a></td>
+								<td>FileInfo</td>
+								<td>
+									<div>
+    Specifies a Win32 resource file (.res).
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/D9E369A6">XmlNode</a></td>
+								<td>XmlNode</td>
+								<td>
+									<div>
+    Gets or sets the XML node of the element.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/27ABAFB1">CompileResxResources<wbr>(StringCollection)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Compiles a set of resx files to a .resources files.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/D571E875">CopyTo<wbr>(Element)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Copies all instance data of the <code class="cs">NAnt.Core.Element</code> to a given
+    <code class="cs">NAnt.Core.Element</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/B75717A2">Execute<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Executes the task unless it is skipped.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/799FF472">ExecuteTask<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Compiles the sources and resources.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/B3C397B8">Get<wbr>Attribute<wbr>Configuration<wbr>Node<wbr>(FrameworkInfo, <wbr>string)<wbr></a></td>
+								<td>XmlNode</td>
+								<td>
+									<div>
+    Locates the XML node for the specified attribute in either the
+    configuration section of the extension assembly or the.project.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/C0D5B3EB">Get<wbr>Attribute<wbr>Configuration<wbr>Node<wbr>(XmlNode, <wbr>FrameworkInfo, <wbr>string)<wbr></a></td>
+								<td>XmlNode</td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/0EEC5A8E">GetLocation<wbr>()<wbr></a></td>
+								<td><a href="/api/NAnt.Core/Location">Location</a></td>
+								<td>
+									<div>
+    Retrieves the location in the build file where the element is 
+    defined.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/40EB2330">Get<wbr>Manifest<wbr>Resource<wbr>Name<wbr>(ResourceFileSet, <wbr>string)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Determines the manifest resource name of the given resource file.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/C766677C">Get<wbr>Manifest<wbr>Resource<wbr>Name<wbr>(ResourceFileSet, <wbr>string, <wbr>string, <wbr>string)<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Determines the manifest resource name of the given resource file.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/54321B5D">GetResourceCulture<wbr>(string, <wbr>string)<wbr></a></td>
+								<td>CultureInfo</td>
+								<td>
+									<div>
+    Determines the culture associated with a given resource file by
+    scanning the filename for valid culture names.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/82186677">GetResourceLinkage<wbr>(string, <wbr>CultureInfo)<wbr></a></td>
+								<td><a href="/api/NAnt.DotNet.Tasks/ResourceLinkage">CompilerBase<wbr>.ResourceLinkage</a></td>
+								<td>
+									<div>
+    Finds the correct namespace/classname for a resource file from the 
+    given dependent source file, and ensure the <code class="cs">NAnt.DotNet.Tasks.VbcTask.RootNamespace</code>
+    is prefixed.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/97725B77">Initialize<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Initializes the task.</div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/DAE0362A">Initialize<wbr>(XmlNode)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Performs default initialization.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/83397033">Initialize<wbr>Build<wbr>Element<wbr>(Element, <wbr>XmlNode, <wbr>Element, <wbr>Type)<wbr></a></td>
+								<td><a href="/api/NAnt.Core/Element">Element</a></td>
+								<td>
+									<div>
+    Initializes the build element.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/08741BFC">InitializeElement<wbr>(XmlNode)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Derived classes should override to this method to provide extra 
+    initialization and validation not covered by the base class.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/9F2F1A7C">InitializeTask<wbr>(XmlNode)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>Initializes the task.</div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/B179B3A0">Initialize<wbr>Task<wbr>Configuration<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Initializes the configuration of the task using configuration 
+    settings retrieved from the NAnt configuration file.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element/83381393">InitializeXml<wbr>(XmlNode, <wbr>PropertyDictionary, <wbr>FrameworkInfo)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Initializes all build attributes and child elements.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Element">Element</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/C3BACFA5">IsLogEnabledFor<wbr>(Level)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Determines whether build output is enabled for the given 
+    <code class="cs">NAnt.Core.Level</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/83C81200">LinkResourceAssembly<wbr>(Hashtable, <wbr>FileInfo, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Link a list of files into a resource assembly.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/F09AAFBE">Log<wbr>(Level, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Logs a message with the given priority.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task/2F685047">Log<wbr>(Level, <wbr>string, <wbr>Object[])<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Logs a formatted message with the given priority.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core/Task">Task</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/3AA21057">NeedsCompiling<wbr>()<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Determines whether compilation is needed.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/7C1B5EB6">Perform<wbr>Search<wbr>For<wbr>Resource<wbr>Linkage<wbr>(TextReader)<wbr></a></td>
+								<td><a href="/api/NAnt.DotNet.Tasks/ResourceLinkage">CompilerBase<wbr>.ResourceLinkage</a></td>
+								<td>
+									<div>
+    Extracts the associated namespace/classname linkage found in the 
+    given stream.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/CD82816E">PrepareProcess<wbr>(Process)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Updates the <code class="cs">System.Diagnostics.ProcessStartInfo</code> of the specified 
+    <code class="cs">System.Diagnostics.Process</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/3F5C8486">StartProcess<wbr>()<wbr></a></td>
+								<td>Process</td>
+								<td>
+									<div>
+    Starts the process and handles errors.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/AABFCDF4">Write<wbr>Conditional<wbr>Compilation<wbr>Constants<wbr>(TextWriter)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Writes conditional compilation constants to the specified
+    <code class="cs">System.IO.TextWriter</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/881ED540">Write<wbr>Module<wbr>References<wbr>(TextWriter)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Writes module references to the specified <code class="cs">System.IO.TextWriter</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/D51B4237">WriteNoWarnList<wbr>(TextWriter)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Writes list of warnings to suppress to the specified 
+    <code class="cs">System.IO.TextWriter</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/AF6F7BA6">WriteOption<wbr>(TextWriter, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Writes an option using the default output format.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/1BB9E3FF">WriteOption<wbr>(TextWriter, <wbr>string, <wbr>string)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Writes an option and its value using the default output format.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/VbcTask/17F83800">WriteOptions<wbr>(TextWriter)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Writes the compiler options to the specified <code class="cs">System.IO.TextWriter</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/BE6F808D">Write<wbr>Package<wbr>References<wbr>(TextWriter)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Writes package references to the specified <code class="cs">System.IO.TextWriter</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.DotNet.Tasks/CompilerBase/A2F684DA">WriteWarningsAsError<wbr>(TextWriter)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Writes list of warnings to (not) treat as errors to the specified 
+    <code class="cs">System.IO.TextWriter</code>.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

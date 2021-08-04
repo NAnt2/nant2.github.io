@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" />
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - Frequently Asked Questions</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
+        <link href="/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet" />
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"></div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/docs/overview">Overview</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/overview/why-nant">Why NAnt</a></li>
+                <li><a href="/docs/overview/system-requirements">System Requirements</a></li>
+                <li><a href="/docs/overview/installation">Installation</a></li>
+                <li><a href="/docs/overview/getting-started">Getting started</a></li>
+                <li><a href="/docs/overview/ant-users">Ant users</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/fundamentals">Fundamentals</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/fundamentals/running-nant">Running NAnt</a></li>
+                <li><a href="/docs/fundamentals/build-files">Build files</a></li>
+                <li><a href="/docs/fundamentals/projects">Projects</a></li>
+                <li><a href="/docs/fundamentals/targets">Targets</a></li>
+                <li><a href="/docs/fundamentals/tasks">Tasks</a></li>
+                <li><a href="/docs/fundamentals/properties">Properties</a></li>
+                <li><a href="/docs/fundamentals/loggers-and-listeners">Loggers and listeners</a></li>
+                <li><a href="/docs/fundamentals/expressions">Expressions</a></li>
+                <li><a href="/docs/fundamentals/functions">Functions</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/contributing">Contributing</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/contributing/development-guide">Development guide</a></li>
+                <li><a href="/docs/contributing/release-guide">Release guide</a></li>
+                <li><a href="/docs/contributing/release-plan">Release plan</a></li>
+                <li><a href="/docs/contributing/external">External resources</a></li>
+                <li><a href="/docs/contributing/contributors">Contributors</a></li>
+
+                    </ul>
+                </li>
+                <li class="selected"><a href="/docs/faq">Frequently Asked Questions</a></li>
+                <li class="treeview">
+                    <a href="/docs/nant">NAnt - legacy</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/nant/development-guide">NAnt development guide</a></li>
+                <li><a href="/docs/nant/release-guide">NAnt release guide</a></li>
+                <li><a href="/docs/nant/release-plan">NAnt release plan</a></li>
+                <li><a href="/docs/nant/external">NAnt external resources</a></li>
+                <li><a href="/docs/nant/contributors">NAnt/NAntContrib contributors</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Frequently Asked Questions</h1>
+		</section>
+	<section class="content">
+		<p>[//]: # (TOC Begin)</p>
+<ul>
+<li><a href="#running-nant">Running NAnt</a>
+<ul>
+<li><a href="#security-exception">Security exception</a></li>
+</ul>
+</li>
+<li><a href="#building-nant">Building NAnt</a>
+<ul>
+<li><a href="#nullreferenceexception-when-building-nant-on-mono">NullReferenceException when building NAnt on Mono</a></li>
+</ul>
+</li>
+<li><a href="#debugging-nant">Debugging NAnt</a>
+<ul>
+<li><a href="#debug-nant-in-visual-studio">Debug NAnt in Visual Studio</a></li>
+</ul>
+</li>
+<li><a href="#general">General</a>
+<ul>
+<li><a href="#default-framework-targeted-by-nant">Default framework targeted by NAnt</a></li>
+<li><a href="#change-targetframework">Changing the target framework</a></li>
+<li><a href="#configure-visual-studio-to-recognize-build-files-as-xml-files">Configure Visual Studio to recognize .build files as XML files</a></li>
+<li><a href="#enable-intellisense-for-build-files">Enable intellisense for .build files</a></li>
+</ul>
+</li>
+</ul>
+<p>[//]: # (TOC End)</p>
+<h2 id="running-nant">Running NAnt</h2>
+<h3 id="security-exception">Security exception</h3>
+<p>Q: I am getting the following security exception when I try to run NAnt:</p>
+<p><img src="https://cloud.githubusercontent.com/assets/7837837/3226348/10083990-f06b-11e3-8955-263c885a5ffa.jpg" class="img-fluid" alt="error msg" /></p>
+<p>A: This issue is well documented on <a href="http://surfjungle.blogspot.com/2011/11/tip-running-nant-091-on-windows-7.html">Surfjungle's Build &amp; Release Management Blog</a> and other places online. The summary of this issue is that zip files downloaded from the internet are saved as blocked files on Windows machines starting with Vista/7. When you unzip a blocked zip file and try to run any binary program that was extracted, this kind of error can appear.  To prevent this error from happening, perform the following steps:</p>
+<ol>
+<li>Right-click on the zip file</li>
+<li>Select &quot;Properties&quot;</li>
+<li>Click the &quot;Unblock&quot; button in the zip file properties window and hit ok</li>
+<li>Unzip the zip file and run NAnt as normal</li>
+</ol>
+<p>NAnt should now run as normal without the above exception.</p>
+<p>This is done via the packages.config file at the root of the tools folder.  See this <a href="https://cakebuild.net/docs/tutorials/pinning-cake-version">tutorial</a> for more information.</p>
+<h2 id="building-nant">Building NAnt</h2>
+<h3 id="nullreferenceexception-when-building-nant-on-mono">NullReferenceException when building NAnt on Mono</h3>
+<p>There are currently some regressions in Mono CVS (<a href="http://bugzilla.ximian.com/show_bug.cgi?id=55996">bug #55996</a>) with regards to AppDomain unloading which cause a NullReferenceException when building NAnt.</p>
+<p>Zoltan Varga implemented a workaround for this issue: set the environment variable <code>MONO_NO_UNLOAD</code> to any value before running NAnt:</p>
+<pre><code>$ export MONO_NO_UNLOAD=1
+$ make clean
+$ make
+$ mono bin/NAnt.exe clean build
+</code></pre>
+<h2 id="debugging-nant">Debugging NAnt</h2>
+<h3 id="debug-nant-in-visual-studio">Debug NAnt in Visual Studio</h3>
+<p>NAnt cannot be built using VS.NET, as VS.NET (prior to VS.NET 2005) is unable to handle dependencies between projects very well.</p>
+<p>However, you can compile NAnt using the NAnt build scripts, and then debug NAnt using VS.NET. To do this, open the NAnt solution file in VS.NET and change the following debugging properties of the <em>NAnt.Console</em> project (using Project -&gt; Properties -&gt; Configuration Properties -&gt; Debugging):</p>
+<ul>
+<li>Debug Mode: Program</li>
+<li>Start Application: </li>
+</ul>
+<p>Finally, just run NAnt in VS.NET (using Debug -&gt; Start or just F5), and when VS.NET informs you that there were build errors, and asks whether you still want to continue : select <em>Yes</em>.</p>
+<h2 id="general">General</h2>
+<h3 id="default-framework-targeted-by-nant">Default framework targeted by NAnt</h3>
+<p>As from NAnt 0.85, NAnt by default targets the framework on which its running.</p>
+<h3 id="change-targetframework">Changing the target framework</h3>
+<p>NAnt supports three ways for changing the target framework:</p>
+<p>From the command line, using the -t[argetframework] argument:</p>
+<p><code>   NAnt.exe -t:net-1.0</code></p>
+<p>By changing the default target framework in the NAnt configuration file:</p>
+<pre><code class="language-xml">    &lt;frameworks&gt;
+        &lt;platform name=&quot;win32&quot; default=&quot;net-1.0&quot;&gt;
+            ...
+        &lt;/platform&gt;
+    &lt;/frameworks&gt;
+</code></pre>
+<p>By changing the value of the system property <code>nant.settings.currentframework</code>:</p>
+<pre><code class="language-xml">&lt;property name=&quot;nant.settings.currentframework&quot; value=&quot;net-1.0&quot; /&gt; 
+</code></pre>
+<h3 id="configure-visual-studio-to-recognize-build-files-as-xml-files">Configure Visual Studio to recognize .build files as XML files</h3>
+<ol>
+<li>In &quot;Solution Explorer&quot;, right-click a .build file and choose &quot;Open With&quot;.</li>
+<li>In the &quot;Open With&quot; dialog, select &quot;HTML/XML Editor&quot; and click the &quot;Set as Default&quot; button.</li>
+</ol>
+<h3 id="enable-intellisense-for-build-files">Enable intellisense for .build files</h3>
+<p>Copy the schema for your version of NAnt from the schema folder in the NAnt distribution to:</p>
+<ul>
+<li>Visual Studio .NET 2003
+<ul>
+<li>The &quot;Common7\Packages\schemas\xml&quot; subdirectory of your Visual Studio.NET installation.</li>
+</ul>
+</li>
+<li>Visual Studio 2005
+<ul>
+<li>The &quot;Xml\Schemas&quot; subdirectory of your Visual Studio 2005 installation.</li>
+</ul>
+</li>
+</ul>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br/>
+    Copyright &copy; 2001-2021 NAnt2 contributors.
+    <br/>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

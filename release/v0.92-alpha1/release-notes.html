@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - Release Notes</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li class="active"><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#alpha1-april-22-2012">0.92-alpha1 - April 22, 2012</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/release/latest">Latest</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/latest/release-notes">Release Notes</a></li>
+                <li><a href="/release/latest/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.92">v0.92</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.92/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.92-rc1">v0.92-rc1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.92-rc1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92-rc1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.92-beta1">v0.92-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.92-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/release/v0.92-alpha1">v0.92-alpha1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li class="selected"><a href="/release/v0.92-alpha1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92-alpha1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91">v0.91</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-rc1">v0.91-rc1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-rc1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-rc1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-beta1">v0.91-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-alpha2">v0.91-alpha2</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-alpha2/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-alpha2/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-alpha1">v0.91-alpha1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-alpha1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-alpha1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90">v0.90</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90-rc1">v0.90-rc1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90-rc1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90-rc1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90-beta1">v0.90-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90-alpha1">v0.90-alpha1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90-alpha1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90-alpha1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.86-beta1">v0.86-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.86-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.86-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.85">v0.85</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.85/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.85/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Release Notes</h1>
+		</section>
+	<section class="content">
+		<h1 id="alpha1-april-22-2012" v0.92-alpha1="">0.92-alpha1 - April 22, 2012</h1>
+<h2 id="nant">NAnt</h2>
+<hr>
+<h3 id="changes"><strong>Changes</strong></h3>
+<p><strong>Framework support</strong></p>
+<ul>
+<li>Removed runtime support for .NET/Mono 1.* Frameworks (target support for .NET/Mono 1.* Frameworks still remains)</li>
+</ul>
+<p><strong>Core</strong></p>
+<ul>
+<li><p><strong>NAnt Project Files</strong></p>
+<ul>
+<li>Updated NAnt project files to VS2010 format.</li>
+</ul>
+</li>
+<li><p><strong>NUnit</strong></p>
+<ul>
+<li>Upgraded to NUnit 2.6.</li>
+</ul>
+</li>
+<li><p><strong>App.Config</strong></p>
+<ul>
+<li>Added initial support for Silverlight 5</li>
+</ul>
+</li>
+<li><p><strong>Command Line</strong></p>
+<ul>
+<li>Added pause option to pause nant before exit.</li>
+</ul>
+</li>
+<li><p><strong>Type Factory</strong></p>
+<ul>
+<li>Added detailed error messages when type loading exception occurs.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>Mail</strong></p>
+<ul>
+<li><p>Updated <em :="" class="text-primary">&lt;mail&gt;</em> task to reference System.Net.Mail namespace instead of System.Web.Mail.</p>
+</li>
+<li><p>Added additional attritbutes for greater control of the <em :="" class="text-primary">&lt;mail&gt;</em> task. Such as:</p>
+<ul>
+<li>mailport</li>
+<li>ssl</li>
+<li>user</li>
+<li>password</li>
+<li>replyto</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Zip</strong></p>
+<ul>
+<li>Added flatten attribute to <em :="" class="text-primary">&lt;zip&gt;</em> task.</li>
+</ul>
+</li>
+<li><p><strong>Tar</strong></p>
+<ul>
+<li>Added flatten attribute to <em :="" class="text-primary">&lt;tar&gt;</em> task.</li>
+</ul>
+</li>
+</ul>
+<h3 id="bug-fixes"><strong>Bug fixes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>Copy/Move tasks</strong></p>
+<ul>
+<li>Fixed issues with <em :="" class="text-primary">&lt;copy&gt;</em> and <em :="" class="text-primary">&lt;move&gt;</em> tasks when trying to relocate directories. (<a href="https://github.com/nant/nant/issues/11">Issue #11</a>)</li>
+</ul>
+</li>
+<li><p><strong>Asminfo</strong></p>
+<ul>
+<li>Fixed issue with <em :="" class="text-primary">&lt;asminfo&gt;</em> task when trying to add assembly attributes with default constructors. (<a href="https://github.com/nant/nant/issues/41">Issue #41</a>)</li>
+</ul>
+</li>
+<li><p><strong>Style</strong></p>
+<ul>
+<li>Updated <em :="" class="text-primary">&lt;style&gt;</em> task to preserve singleton tags whenever possible. (<a href="https://github.com/nant/nant/issues/17">Issue #17</a>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="nantcontrib">NAntContrib</h2>
+<hr>
+<h3 id="changes-1"><strong>Changes</strong></h3>
+<p><strong>Core</strong></p>
+<ul>
+<li><p><strong>NAntContrib Project Files</strong></p>
+<ul>
+<li>Updated NAntContrib project files to VS2010 format.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Functions</strong></p>
+<ul>
+<li><p><strong>Array functions</strong></p>
+<ul>
+<li>Added Array functions to sort and reverse a string array.</li>
+</ul>
+</li>
+</ul>
+<h3 id="bug-fixes-1"><strong>Bug fixes</strong></h3>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;iisapppool&gt;</strong></p>
+<ul>
+<li>Fixed issue with <em :="" class="text-primary">&lt;iisapppool&gt;</em> encountering access denied error when executing on remote machine. <a href="https://github.com/nant/nantcontrib/issues/6">Issue #6</a></li>
+</ul>
+</li>
+</ul>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

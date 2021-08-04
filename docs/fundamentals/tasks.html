@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - Tasks</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#introduction">Introduction</a></p>
+<p><a href="#loading-custom-extensions">Loading custom extensions</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/docs/overview">Overview</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/overview/why-nant">Why NAnt</a></li>
+                <li><a href="/docs/overview/system-requirements">System Requirements</a></li>
+                <li><a href="/docs/overview/installation">Installation</a></li>
+                <li><a href="/docs/overview/getting-started">Getting started</a></li>
+                <li><a href="/docs/overview/ant-users">Ant users</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/docs/fundamentals">Fundamentals</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/fundamentals/running-nant">Running NAnt</a></li>
+                <li><a href="/docs/fundamentals/build-files">Build files</a></li>
+                <li><a href="/docs/fundamentals/projects">Projects</a></li>
+                <li><a href="/docs/fundamentals/targets">Targets</a></li>
+                <li class="selected"><a href="/docs/fundamentals/tasks">Tasks</a></li>
+                <li><a href="/docs/fundamentals/properties">Properties</a></li>
+                <li><a href="/docs/fundamentals/loggers-and-listeners">Loggers and listeners</a></li>
+                <li><a href="/docs/fundamentals/expressions">Expressions</a></li>
+                <li><a href="/docs/fundamentals/functions">Functions</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/contributing">Contributing</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/contributing/development-guide">Development guide</a></li>
+                <li><a href="/docs/contributing/release-guide">Release guide</a></li>
+                <li><a href="/docs/contributing/release-plan">Release plan</a></li>
+                <li><a href="/docs/contributing/external">External resources</a></li>
+                <li><a href="/docs/contributing/contributors">Contributors</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/docs/faq">Frequently Asked Questions</a></li>
+                <li class="treeview">
+                    <a href="/docs/nant">NAnt - legacy</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/nant/development-guide">NAnt development guide</a></li>
+                <li><a href="/docs/nant/release-guide">NAnt release guide</a></li>
+                <li><a href="/docs/nant/release-plan">NAnt release plan</a></li>
+                <li><a href="/docs/nant/external">NAnt external resources</a></li>
+                <li><a href="/docs/nant/contributors">NAnt/NAntContrib contributors</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Tasks</h1>
+		</section>
+	<section class="content">
+		<p>[//]: # (TOC Begin)</p>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#loading-custom-extensions">Loading custom extensions</a>
+<ul>
+<li><a href="#automatic-discovery">Automatic discovery</a>
+<ul>
+<li><a href="#operating-system">Operating system</a></li>
+<li><a href="#runtime-framework">Runtime framework</a></li>
+<li><a href="#project">Project</a></li>
+</ul>
+</li>
+<li><a href="#forced-scan">Forced scan</a></li>
+</ul>
+</li>
+</ul>
+<p>[//]: # (TOC End)</p>
+<h1 id="introduction">Introduction</h1>
+<p>A task is a piece of code that can be executed.</p>
+<p>A task can have multiple attributes (or arguments, if you prefer). The value of an attribute may contain references to a <a href="properties">property</a>.  These references will be resolved before the task is executed.</p>
+<p>Tasks have a common structure:</p>
+<pre><code class="language-xml">    &lt;name attribute1="value1" attribute2="value2" ... /&gt;
+</code></pre>
+<p>where name is the name of the task, attribute# is the attribute name, and value# is the value for this attribute.</p>
+<p><strong>Note:</strong> For more information see the <a href="http://nant.sourceforge.net/release/latest/help/tasks/index.html">Task Reference</a>.</p>
+<h1 id="loading-custom-extensions">Loading custom extensions</h1>
+<p>Extensions can be devided in the following categories:</p>
+<ul>
+<li>Tasks</li>
+<li>Filters</li>
+<li>Functions</li>
+<li>Global Types</li>
+</ul>
+<p>NAnt currently provides two mechanisms to make third-party extensions available for use in build scripts:</p>
+<ul>
+<li>Automatic discovery</li>
+<li>Forced scan</li>
+</ul>
+<p>Both mechanisms use .NET reflection to scan one or more assemblies for the presence of extensions. When found, these extensions are registered in the NAnt type system, and from then on these are available for all build scripts (in the current NAnt instance).</p>
+<h2 id="automatic-discovery">Automatic discovery</h2>
+<p>To facilitate registration of extensions that are used in multiple (or even all) build scripts, NAnt supports automatic discovery of extensions.</p>
+<p>In this context, automatic discovery means scanning a predefined set of directories and files for extensions.</p>
+<p>The actual set of directories and files that is scanned is determined by:</p>
+<ul>
+<li>Operating system</li>
+<li>Runtime framework</li>
+<li>Project</li>
+</ul>
+<h2 id="operating-system">Operating system</h2>
+<p>When starting NAnt, all assemblies matching the following patterns will be scanned for extensions:</p>
+<p><strong>Windows</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th style="text-align: left;">Pattern</th>
+<th style="text-align: center;">Action</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">*Tasks.dll</td>
+<td style="text-align: center;">include</td>
+<td style="text-align: left;">NAnt Core assemblies</td>
+</tr>
+<tr>
+<td style="text-align: left;">*Tests.dll</td>
+<td style="text-align: center;">include</td>
+<td style="text-align: left;">NAnt test assemblies</td>
+</tr>
+<tr>
+<td style="text-align: left;">extensions/common/neutral/**/*.dll</td>
+<td style="text-align: center;">include</td>
+<td style="text-align: left;">Framework and version-neutral assemblies</td>
+</tr>
+<tr>
+<td style="text-align: left;">NAnt.MSNetTasks.dll</td>
+<td style="text-align: center;">exclude</td>
+<td style="text-align: left;">Microsoft.NET specific assembly</td>
+</tr>
+<tr>
+<td style="text-align: left;">NAnt.MSNet.Tests.dll</td>
+<td style="text-align: center;">exclude</td>
+<td style="text-align: left;">Microsoft.NET specific test assembly</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Unix</strong></p>
+<table class="table">
+<thead>
+<tr>
+<th style="text-align: left;">Pattern</th>
+<th style="text-align: center;">Action</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">*Tasks.dll</td>
+<td style="text-align: center;">include</td>
+<td style="text-align: left;">NAnt Core assemblies</td>
+</tr>
+<tr>
+<td style="text-align: left;">*Tests.dll</td>
+<td style="text-align: center;">include</td>
+<td style="text-align: left;">NAnt test assemblies</td>
+</tr>
+<tr>
+<td style="text-align: left;">extensions/common/neutral/**/*.dll</td>
+<td style="text-align: center;">include</td>
+<td style="text-align: left;">Framework and version-neutral assemblies</td>
+</tr>
+<tr>
+<td style="text-align: left;">NAnt.MSNetTasks.dll</td>
+<td style="text-align: center;">exclude</td>
+<td style="text-align: left;">Microsoft.NET specific assembly</td>
+</tr>
+<tr>
+<td style="text-align: left;">NAnt.MSNet.Tests.dll</td>
+<td style="text-align: center;">exclude</td>
+<td style="text-align: left;">Microsoft.NET specific test assembly</td>
+</tr>
+<tr>
+<td style="text-align: left;">NAnt.Win32Tasks.dll</td>
+<td style="text-align: center;">exclude</td>
+<td style="text-align: left;">Win32 specific assembly</td>
+</tr>
+<tr>
+<td style="text-align: left;">NAnt.Win32.Tests.dll</td>
+<td style="text-align: center;">exclude</td>
+<td style="text-align: left;">Win32 specific test assembly</td>
+</tr>
+</tbody>
+</table>
+<p :="" class="bg-info"><strong>NOTE:</strong> all patterns are matched relative to the NAnt base directory, which is the directory in which NAnt.exe is located.</p>
+<h3 id="runtime-framework">Runtime framework</h3>
+<p>Depending on the runtime framework on which NAnt is running, some additional directories are scanned.</p>
+<p>In general, the following include patterns are applied:</p>
+<ul>
+<li>extensions/common/&lt;CLR version&gt;/**/*.dll</li>
+<li>extensions/&lt;framework family&gt;/neutral/**/*.dll</li>
+<li>extensions/&lt;framework family&gt;/&lt;framework version&gt;/**/*.dll</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>When running NAnt on Microsoft .NET Framework 1.0, assemblies matching the following pattern would be scanned:</p>
+<ul>
+<li>extensions/common/1.0/**/*.dll</li>
+<li>extensions/net/neutral/**/*.dll</li>
+<li>extensions/net/1.0/**/*.dll</li>
+</ul>
+<p :="" class="bg-info"><strong>NOTE:</strong> the exact set of patterns that are used for a given runtime framework is defined in the NAnt configuration file (NAnt.exe.config).</p>
+<h3 id="project">Project</h3>
+<p>Whenever a build project is started, NAnt will scan the following directories for assemblies that match the *.dll pattern:</p>
+<pre><code>&lt;<a href="/api/NAnt.Core/Project">Project</a> Base Directory&gt;/extensions/common/neutral/
+&lt;<a href="/api/NAnt.Core/Project">Project</a> Base Directory&gt;/extensions/common/&lt;CLR version&gt;/
+&lt;<a href="/api/NAnt.Core/Project">Project</a> Base Directory&gt;/extensions/&lt;framework family&gt;/neutral/
+&lt;<a href="/api/NAnt.Core/Project">Project</a> Base Directory&gt;/tasks/&lt;framework family&gt;/&lt;framework version&gt;/
+</code></pre>
+<p><strong>Example:</strong></p>
+<p>For a project file located in "c:\projects\log4net" with NAnt running on the Microsoft .NET 2.0 runtime, NAnt would end-up scanning the following project-level directories:</p>
+<pre><code>c:\projects\log4net\extensions\common\neutral\
+c:\projects\log4net\extensions\common\2.0\
+c:\projects\log4net\extensions\net\neutral\
+c:\projects\log4net\extensions\net\2.0\
+</code></pre>
+<h2 id="forced-scan">Forced scan</h2>
+<p>To explicitly instruct NAnt to scan a certain assembly (or set of assemblies) for extensions, build authors can use the <a href="http://nant.sourceforge.net/release/latest/help/tasks/loadtasks.html">&lt;loadtasks&gt;</a> tasks.</p>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

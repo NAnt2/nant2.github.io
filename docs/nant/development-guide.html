@@ -1,0 +1,549 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" />
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - NAnt development guide</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
+        <link href="/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet" />
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"></div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/docs/overview">Overview</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/overview/why-nant">Why NAnt</a></li>
+                <li><a href="/docs/overview/system-requirements">System Requirements</a></li>
+                <li><a href="/docs/overview/installation">Installation</a></li>
+                <li><a href="/docs/overview/getting-started">Getting started</a></li>
+                <li><a href="/docs/overview/ant-users">Ant users</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/fundamentals">Fundamentals</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/fundamentals/running-nant">Running NAnt</a></li>
+                <li><a href="/docs/fundamentals/build-files">Build files</a></li>
+                <li><a href="/docs/fundamentals/projects">Projects</a></li>
+                <li><a href="/docs/fundamentals/targets">Targets</a></li>
+                <li><a href="/docs/fundamentals/tasks">Tasks</a></li>
+                <li><a href="/docs/fundamentals/properties">Properties</a></li>
+                <li><a href="/docs/fundamentals/loggers-and-listeners">Loggers and listeners</a></li>
+                <li><a href="/docs/fundamentals/expressions">Expressions</a></li>
+                <li><a href="/docs/fundamentals/functions">Functions</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/contributing">Contributing</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/contributing/development-guide">Development guide</a></li>
+                <li><a href="/docs/contributing/release-guide">Release guide</a></li>
+                <li><a href="/docs/contributing/release-plan">Release plan</a></li>
+                <li><a href="/docs/contributing/external">External resources</a></li>
+                <li><a href="/docs/contributing/contributors">Contributors</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="/docs/faq">Frequently Asked Questions</a></li>
+                <li class="treeview active">
+                    <a href="/docs/nant">NAnt - legacy</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li class="selected"><a href="/docs/nant/development-guide">NAnt development guide</a></li>
+                <li><a href="/docs/nant/release-guide">NAnt release guide</a></li>
+                <li><a href="/docs/nant/release-plan">NAnt release plan</a></li>
+                <li><a href="/docs/nant/external">NAnt external resources</a></li>
+                <li><a href="/docs/nant/contributors">NAnt/NAntContrib contributors</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>NAnt development guide</h1>
+		</section>
+	<section class="content">
+		<h2 id="introduction">Introduction</h2>
+<p>So you are interested in contributing to the NAnt/NAntContrib projects.  Fantastic, this document will describe how to set up the development environment and start working with the code.</p>
+<blockquote class="blockquote">
+<p>&quot;Here's where the fun begins.&quot; - Han Solo</p>
+</blockquote>
+<h2 id="system-requirements">System requirements</h2>
+<h3 id="operating-systems">Operating systems</h3>
+<p>NAnt is designed to run on any operating system that can run either the <a href="http://www.microsoft.com/net">Microsoft.Net</a> or <a href="http://www.mono-project.com">Mono</a> frameworks.  Because there are so many different platforms that qualify with the statement above, a list of platforms has been compiled below to help illustrate which ones we are actively testing on.  If you decide on using a platform that is not listed below (or one we have marked as inactive), we would like to hear which platform that is and the steps taken so NAnt/NAntContrib would work properly on said platform.</p>
+<h4 id="active-platforms">Active platforms</h4>
+<p>Platforms that we are actively testing/developing on.</p>
+<ul>
+<li><strong>Microsoft Windows</strong>
+<ul>
+<li>Windows XP</li>
+<li>Windows 7</li>
+</ul>
+</li>
+<li><strong>Linux/BSD</strong>
+<ul>
+<li>OpenSuSE</li>
+<li>OpenBSD (Supports both i386 and amd64 as of April 30, 2012 snapshot)</li>
+</ul>
+</li>
+<li><strong>Mac OS X</strong>
+<ul>
+<li>Snow Leopard (10.6)</li>
+</ul>
+</li>
+</ul>
+<h4 id="inactive-platforms">Inactive platforms</h4>
+<p>Platforms we have tested/developed on in the past but are not currently.</p>
+<ul>
+<li><strong>Microsoft Windows</strong>
+<ul>
+<li>Windows Vista</li>
+</ul>
+</li>
+<li><strong>Linux/BSD</strong>
+<ul>
+<li>Ubuntu</li>
+<li>Debian</li>
+</ul>
+</li>
+</ul>
+<h3 id="development-tools">Development tools</h3>
+<h4 id="ides">IDEs</h4>
+<p>One of the more important tools used in NAnt/NAntContrib development is an IDE (Integrated Development Environment).  <br />
+Starting after the release of 0.91 final, the project files in both projects have been updated to VS2010 format.  This will enable not only the use of VS2010 for NAnt/NAntContrib development but other popular open source IDEs that can read/write this format as well.  <br />
+A list of known IDEs to support this format are listed below.</p>
+<ul>
+<li><a href="http://www.microsoft.com/visualstudio/en-us">Visual Studio</a>
+<ul>
+<li>Version 2010 or later</li>
+</ul>
+</li>
+<li><a href="http://www.icsharpcode.net/OpenSource/SD/">Sharpdevelop</a>
+<ul>
+<li>Version 4.0 or later</li>
+</ul>
+</li>
+<li><a href="http://monodevelop.com/">Monodevelop</a>
+<ul>
+<li>Version 2.8 or later</li>
+</ul>
+</li>
+</ul>
+<h4 id="frameworks">Frameworks</h4>
+<p>As stated previously, NAnt can run on any operating system platform that supports either the <a href="http://www.microsoft.com/net">Microsoft.Net</a> or <a href="http://www.mono-project.com">Mono</a> frameworks. So in order to develop for the NAnt/NAntContrib projects you need one or the other (or both) frameworks installed on the desired platform.</p>
+<p><strong>Please Note:</strong> There were some changes made in Mono 3.0 that currently prevent NAnt from working properly.  If you are planning on developing NAnt on Mono, please use version 2.10 until these issues can be addressed.</p>
+<ul>
+<li><strong>Microsoft Windows</strong>
+<ul>
+<li>Microsoft .NET Framework and SDK
+<ul>
+<li>Version 2.0 or later</li>
+</ul>
+</li>
+<li>Mono
+<ul>
+<li>Version 2.10 (Preferred)</li>
+<li>Version 2.8</li>
+<li>Version 2.4 and 2.6 are known to work but with limited or no support for C# 4.0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Linux/BSD</strong>
+<ul>
+<li>Mono (only framework available on non-Windows systems)
+<ul>
+<li>Version 2.10 (Preferred)</li>
+<li>Version 2.8</li>
+<li>Version 2.4 and 2.6 are known to work but with limited or no support for C# 4.0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="other-tools">Other tools</h4>
+<p>Besides installing the necessary frameworks on the target platform NAnt currently requires make programs in order for it to bootstrap itself.  Currently two make programs are used</p>
+<ul>
+<li>nmake
+<ul>
+<li>nmake is a simple make program from Microsoft.</li>
+<li>Only available for 32-bit Microsoft Windows platforms.</li>
+<li>The latest version of nmake (1.5) can be <a href="http://support.microsoft.com/kb/132084">found here</a> in the more information section of the page.</li>
+</ul>
+</li>
+<li>GNU make
+<ul>
+<li>Referred to as gmake on some platforms.</li>
+<li>Works on most Linux/BSD and Microsoft Windows platforms.</li>
+<li>Installed by default on some Linux/BSD platforms.</li>
+<li>More details can be <a href="http://www.gnu.org/s/make/">found here</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="linuxbsd-mono-installation-commands">Linux/BSD Mono installation commands</h4>
+<p>Installing the necessary files/framework(s) on a Microsoft Windows system is relatively simple.  A user just goes to the appropriate website (<a href="http://www.microsoft.com/net">Microsoft.Net</a> or <a href="http://www.mono-project.com">Mono</a>), downloads and runs the installer(s) and is ready to go.  With *nix systems, it can be a bit more tricky depending on the porting system available for a given operating system.  Below are a list of commands separated by Linux/BSD platform that should install the necessary libs to get started on NAnt/NAntContrib development.</p>
+<p>These commands assume that you are a member on the target system that can install programs and modify the system to suite the installation instructions below.</p>
+<ul>
+<li>OpenSuSE (11.4) (from <a href="http://www.go-mono.com/mono-downloads/download.html">Mono's website</a>)
+<ul>
+<li><code>zypper addrepo http://download.mono-project.com/download-stable/openSUSE_11.4 mono-stable</code></li>
+<li><code>zypper refresh --repo mono-stable</code></li>
+<li><code>zypper dist-upgrade --repo mono-stable</code></li>
+<li><code>zypper install mono-devel</code></li>
+<li><code>zypper install mono-basic</code> (needed for regression testing)</li>
+</ul>
+</li>
+<li>OpenSuSE (12.1) (from <a href="http://www.go-mono.com/mono-downloads/download.html">Mono's website</a>)
+<ul>
+<li><code>zypper install mono-devel</code></li>
+<li><code>zypper install mono-basic</code> (needed for regression testing)</li>
+</ul>
+</li>
+<li>OpenBSD (5.1)
+<ul>
+<li>Current version of Mono in OpenBSD packages is 2.10.6</li>
+<li><code>pkg_add -i mono gmake</code></li>
+<li><code>pkg_add -i mono-basic</code> (needed for regression testing)</li>
+</ul>
+</li>
+<li>Ubuntu (Oneiric)
+<ul>
+<li>Current version of Mono in Ubuntu packages is 2.10.5</li>
+<li><code>aptitude install mono-complete</code></li>
+<li><code>aptitude install mono-vbnc</code> (needed for regression testing)</li>
+</ul>
+</li>
+<li>Debian (Squeeze)
+<ul>
+<li>Current version of Mono in Debian packages is 2.6.7</li>
+<li><code>apt-get install mono-complete</code></li>
+<li><code>apt-get install mono-vbnc</code> (needed for regression testing)</li>
+</ul>
+</li>
+</ul>
+<h2 id="working-with-the-code">Working with the code</h2>
+<h3 id="forking-the-project">Forking the project</h3>
+<p>Since moving the NAnt/NAntContrib repositories to github.com, the ideal method of contributing to the projects is by using GitHub's Fork feature into your own repo.  From there, a user can make whatever modifications he or she wishes in order to complete whatever goal that the user set out to accomplish.  More information can be <a href="http://help.github.com/fork-a-repo/">found here</a>.</p>
+<h3 id="compiling-from-source">Compiling from source</h3>
+<p>Once you clone your forked repository, you can find instructions on how to compile it in the README.txt file in the root directory of the project.</p>
+<h3 id="finding-inspiration-to-code">Finding inspiration to code</h3>
+<p>So at this point, you have a forked repo of the project you want to contribute to.  Time to start working.  If you are not sure of what you want to work on or you don't know where to begin, don't worry.  There are few areas that you can find inspiration.</p>
+<ul>
+<li>Look in the github.com issues list or the old sourceforge.net bug/feature request sections of the project you are working on.
+<ul>
+<li>NAnt
+<ul>
+<li>github.com
+<ul>
+<li><a href="https://github.com/nant/nant/issues">Issues</a></li>
+</ul>
+</li>
+<li>Sourceforge.net
+<ul>
+<li><a href="http://sourceforge.net/tracker/?group_id=31650&amp;atid=402868">Bugs</a></li>
+<li><a href="http://sourceforge.net/tracker/?group_id=31650&amp;atid=402871">Feature Requests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>NAntContrib
+<ul>
+<li>github.com
+<ul>
+<li><a href="https://github.com/nant/nantcontrib/issues">Issues</a></li>
+</ul>
+</li>
+<li>Sourceforge.net
+<ul>
+<li><a href="http://sourceforge.net/tracker/?group_id=54790&amp;atid=474851">Bugs</a></li>
+<li><a href="http://sourceforge.net/tracker/?group_id=54790&amp;atid=474854">Feature Requests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>See if there are any useful features in the <a href="http://jakarta.apache.org/ant/manual/index.html">Jakarta Ant Project</a> that NAnt/NAntContrib could benefit from.</li>
+</ul>
+<p>If you want to make a change for a bug or feature that has not been reported yet, please create a new ticket in the appropriate area.</p>
+<p>Communicate your intentions to the team members by adding a comment in the ticket. If the ticket is already assigned to a developer, please also send a mail to the developer to coordinate the activity.</p>
+<h3 id="testing">Testing</h3>
+<p>To ensure NAnt source code maintains a high level of quality, all code committed must be unit tested.  This policy applies to all code contributions to the NAnt/NAntContrib projects.</p>
+<ul>
+<li>Unit tests should be written for all new code. Existing tests should also be executed to ensure no regression problems with the existing functionality.
+<ul>
+<li>All unit tests are written using <a href="http://www.nunit.org/">NUnit</a></li>
+<li>As of March 1st, 2012, NAnt uses NUnit version 2.6 for all tests</li>
+</ul>
+</li>
+<li>To ensure cross platform compatibility, code should be compiled against both Microsoft .NET and Mono platforms. For compile with the different tools, please refer to README.txt file.</li>
+</ul>
+<h2 id="contributing-code">Contributing code</h2>
+<h3 id="nantnantcontrib-coding-convention">NAnt/NAntContrib coding convention</h3>
+<p>To ensure a consistent coding style for everyone who participates in the development, please follow the coding convention guidelines listed below. Not only does this improves readability, but also make diffing and merging much easier.  The objective of coding rules is to reduce confusion among the readers. The key to that is consistency: consistency throughout a project, between projects and between authors.</p>
+<ul>
+<li>Follow .NET naming conventions (see SDK docs, <a href="http://10rem.net/articles/net-naming-conventions-and-programming-standards---best-practices">here</a>, and <a href="http://www.dofactory.com/reference/csharp-coding-standards.aspx">here</a>)
+<ul>
+<li>Prefix private fields with an underscore character to look like: <code>int _value;</code></li>
+<li>Omit <code>private</code> scope declaration unless it makes the code clearer.</li>
+</ul>
+</li>
+<li>Use 4 space indents instead of tabs.</li>
+<li>One class one file.</li>
+<li>Start namespace with NAnt or NAntContrib (depending on project)</li>
+<li>GPL header on every source file.</li>
+<li>Class files stored in directories to match namespace.</li>
+<li>Use <a href="http://msdn.microsoft.com/en-us/library/5ast78ax%28v=vs.80%29.aspx">C# documentation tags</a> for any new classes, methods, and properties.</li>
+<li>Use &quot;The Allman Style&quot; as the indentation style (NEW!)
+<ul>
+<li>Open bracket character ({) on new line in all cases including classes and methods.</li>
+<li>Close bracket character(}) goes on a new line.</li>
+<li>Always use brackets for if statements even if statement is a single line.</li>
+<li>More information regarding this indentation style can be <a href="http://en.wikipedia.org/wiki/Indent_style#Allman_style">found here</a>.</li>
+</ul>
+</li>
+<li>Avoid ? : operations in all but the most trivial cases.</li>
+<li>Avoid assignment in conditionals.</li>
+<li>Avoid magic numbers, use a nested enum instead.</li>
+<li>Be consistent – look at the existing code and make yours fit it.</li>
+<li>Make the code so simple that its boring to read.</li>
+</ul>
+<p>Examples of good and bad coding styles:</p>
+<pre><code class="language-csharp">// good
+if (foobar) 
+{
+    DoSomething();
+} 
+else 
+{
+    DoSomethingElse();
+}
+
+// bad - ommits { } - error prone
+if (foobar)
+    DoSomething();
+
+// bad - same reason as above but requires more work to edit
+if (foobar) DoSomething();
+
+// bad - does not represent logical structure of code
+// read McConnell, Code Complete
+if (foobar) {
+    DoSomething();
+}
+else {
+    DoSomethingElse();
+}
+</code></pre>
+<h3 id="submitting-github-pull-requests">Submitting GitHub pull requests</h3>
+<p>After the user has finished with his or her batch of updates, check to make sure that what was coded coheres to the following guidelines.</p>
+<ul>
+<li>Ensure the code adheres to the coding convention (as described above).</li>
+<li>Ensure the code has the corresponding unit tests.</li>
+<li>Ensure the code is properly documented.</li>
+<li>Ensure the code is tested on at least one platform.
+<ul>
+<li>Microsoft Windows</li>
+<li>Linux/BSD</li>
+<li>Mac OS X</li>
+</ul>
+</li>
+</ul>
+<p>Once this has been verified, go ahead and proceed with making a <a href="http://help.github.com/send-pull-requests/">pull request</a>.  In the discussion section of the pull request, please include all of the necessary information (such as what your work is trying to accomplish) and any bug/feature request IDs that your work may be addressing.  You may also include additional notes in the Files Changed section or the pull request if you feel they better illustrate what your work is trying to address.  Once that is complete, send the pull request and we will evaluate your request as soon as we can.</p>
+<h2 id="requesting-help">Requesting help</h2>
+<p>If you encounter problems developing with the NAnt source code, please send your question to nant-developers mailing list. The email address is nant-developers&#64;lists.sourceforge.net.</p>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br/>
+    Copyright &copy; 2001-2021 NAnt2 contributors.
+    <br/>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

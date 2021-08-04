@@ -1,0 +1,658 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - Release Notes</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li class="active"><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#beta1-december-8-2007">0.86-beta1 - December 8, 2007</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/release/latest">Latest</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/latest/release-notes">Release Notes</a></li>
+                <li><a href="/release/latest/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.92">v0.92</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.92/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.92-rc1">v0.92-rc1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.92-rc1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92-rc1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.92-beta1">v0.92-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.92-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.92-alpha1">v0.92-alpha1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.92-alpha1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.92-alpha1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91">v0.91</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-rc1">v0.91-rc1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-rc1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-rc1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-beta1">v0.91-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-alpha2">v0.91-alpha2</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-alpha2/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-alpha2/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.91-alpha1">v0.91-alpha1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.91-alpha1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.91-alpha1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90">v0.90</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90-rc1">v0.90-rc1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90-rc1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90-rc1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90-beta1">v0.90-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.90-alpha1">v0.90-alpha1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.90-alpha1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.90-alpha1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/release/v0.86-beta1">v0.86-beta1</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li class="selected"><a href="/release/v0.86-beta1/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.86-beta1/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/release/v0.85">v0.85</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/release/v0.85/release-notes">Release Notes</a></li>
+                <li><a href="/release/v0.85/nant.xsd">XML Schema</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Release Notes</h1>
+		</section>
+	<section class="content">
+		<h1 id="beta1-december-8-2007" v0.86-beta1="">0.86-beta1 - December 8, 2007</h1>
+<h2 id="nant">NAnt</h2>
+<hr>
+<h3 id="breaking-changes"><strong>Breaking changes</strong></h3>
+<p><strong>Core</strong></p>
+<ul>
+<li><p><strong>nant.tasks properties</strong></p>
+<ul>
+<li><p>Prior to NAnt 0.85, build authors would use a "nant.tasks.*" property to check whether a given task was available.</p>
+</li>
+<li><p>With the introduction of expression support in NAnt 0.85, we provided a more powerful alternative through the <em :="" class="text-primary">task::exists</em> function.  <br>
+As of this release, the "nant.tasks.*" properties are therefore no longer set by NAnt.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>nant.failure</strong></p>
+<ul>
+<li>Removed support for the "nant.failure" property to set the target that should be executed when the build fails.  <br>
+This property was deprecated in NAnt 0.83 in favor of the "nant.onfailure" attribute.  <br>
+As of this release, setting the "nant.failure" attribute will no longer have any effect.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Expressions</strong></p>
+<ul>
+<li><p><strong>= operator</strong></p>
+<ul>
+<li>In NAnt 0.85, support for the '=' operator to check for equality was deprecated in favor of the '==' operator.  <br>
+As from this release, the '=' operator is no longer recognized.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;style&gt;</strong></p>
+<ul>
+<li>Removed support for <em :="" class="text-primary">&lt;param&gt;</em> child element, which was deprecated in NAnt 0.84 in favor of a <em :="" class="text-primary">&lt;parameters&gt;</em> element.</li>
+</ul>
+</li>
+</ul>
+<h3 id="bug-fixes"><strong>Bug fixes</strong></h3>
+<p><strong>Core</strong></p>
+<ul>
+<li><p><strong>MailLogger</strong></p>
+<ul>
+<li>If "MailLogger.smtp.username", "MailLogger.smtp.port" or "MailLogger.smtp.enablessl" are set, messages must be delivered using the SMTP protocol over the network. [.NET 1.1 or higher]</li>
+</ul>
+</li>
+<li><p><strong>Response File</strong></p>
+<ul>
+<li>Quoted arguments are not parsed correctly from response files (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1736526&amp;group_id=31650">#1736526</a>).</li>
+</ul>
+</li>
+<li><p><strong>Document Type Definition</strong></p>
+<ul>
+<li>Executing a project with a DTD can lead to an internal error. (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1809994&amp;group_id=31650">#1809994</a>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Framework support</strong></p>
+<ul>
+<li><p><strong>Mono/Cygwin</strong></p>
+<ul>
+<li>In <a href="http://www.cygwin.com/">Cygwin</a>, the directory containing the Mono configuration files was not correctly constructed from pkg-config info, leading to errors when running applications that use System.Configuration.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;call&gt;</strong></p>
+<ul>
+<li>Target is not re-executed if "cascade" is false (bug <a href="http://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1474159&amp;group_id=31650">#1474159</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;csc&gt;</strong></p>
+<ul>
+<li>Satellite assemblies are not signed when signing key is specified using "keyfile" attribute (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1587739&amp;group_id=31650&amp;atid=402868">#1587739</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;exec&gt;</strong></p>
+<ul>
+<li>Empty lines written to standard output or standard error by external program are ignored.</li>
+</ul>
+</li>
+<li><p><strong>&lt;resgen&gt;</strong></p>
+<ul>
+<li>If the embedded resource compiler for the target framework does not support assembly references, then copy both the compiler and related files (based on pattern matching) to the intermediary compile directory (bug <a href="http://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1591991&amp;group_id=31650">#1591991</a>).</li>
+</ul>
+</li>
+<li><p><strong>&lt;solution&gt;</strong></p>
+<ul>
+<li>Visual C++
+<ul>
+<li>Custom build steps are not supported (bug <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1082374&amp;group_id=31650&amp;atid=402868">#1082374</a>).</li>
+<li>Unexpected error when name of project configuration differs from solution configuration (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1607209&amp;group_id=31650&amp;atid=402868">#1607209</a>).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Third-Party</strong></p>
+<ul>
+<li><p><strong>#ziplib</strong></p>
+<ul>
+<li>Files with a compressed size of over 4GB cannot be added to zip archive (bug <a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=1698336&amp;group_id=31650&amp;atid=402868">#1698336</a>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Types</strong></p>
+<ul>
+<li><p><strong>&lt;fileset&gt;</strong></p>
+<ul>
+<li>Case differences are not always ignored on a case-insensitive filesystem (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1776101&amp;group_id=31650">#1776101</a>).</li>
+<li>Pattern mathing for files in the root directory of a volume is always case-sensitive (bug <a href="https://sourceforge.net/tracker/?func=detail&amp;atid=402868&amp;aid=1761377&amp;group_id=31650">#1761377</a>).</li>
+</ul>
+</li>
+</ul>
+<h3 id="additions"><strong>Additions</strong></h3>
+<p><strong>Expressions</strong></p>
+<ul>
+<li><p><strong>Version operators</strong></p>
+<ul>
+<li>Introduced support for <a href="/docs/fundamentals/expressions">relational operators</a> between version values.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Framework support</strong></p>
+<ul>
+<li><p><strong>Tool paths</strong></p>
+<ul>
+<li><p>Since NAnt 0.84, task authors have been able to specify the location of the command-line tool by applying a <em :="" class="text-primary">ProgramLocationAttribute</em> to classes deriving from ExternalProgramBase.  <br>
+The <em :="" class="text-primary">ProgramLocationAttribute</em> allows task authors to specify whether the tool is located in the framework directory (eg. C:\WINDOWS\Microsoft.NET\Framework\v1.1.4432) or the SDK directory (eg. C:\Program Files\Microsoft Visual Studio .NET 2003\SDK\v1.1) without actually having to deal with the complexity of knowing the actual path to these directories (for each supported framework).</p>
+<p>In NAnt 0.86, we've taken this one step further. Each defined framework now has a (ordered) list of directories that can be scanned to locate a framework tool. The list of directories can be easily tuned for each framework by modifying the <em :="" class="text-primary">&lt;tool-paths&gt;</em> nodes in the NAnt configuration file.</p>
+<p>An example of such a node for the Mono 3.5 profile:</p>
+<pre><code class="language-xml">&lt;tool-paths&gt;
+    &lt;directory name="${path::combine(prefix, 'lib/mono/3.5')}" /&gt;
+    &lt;directory name="${path::combine(prefix, 'lib/mono/2.0')}" /&gt;
+    &lt;directory name="${path::combine(prefix, 'lib/mono/1.0')}" /&gt;
+&lt;/tool-paths&gt;
+</code></pre>
+<p>The directories configured in the <em :="" class="text-primary">&lt;tool-paths&gt;</em> node of the current target framework will be scanned in the order in which they are defined.</p>
+<p>The tool paths are implicitly used when a given tool cannot be located on the location specified by the <em :="" class="text-primary">ProgramLocationAttribute</em>. As such, this only applies to tasks deriving from ExternalProgramBase.</p>
+<p>To expose this functionality to build authors, we've added a <em :="" class="text-primary">framework::get-tool-path</em> function that can be used to search for a given tool.</p>
+<p>For example:</p>
+<pre><code class="language-xml">&lt;exec program="${framework::get-tool-path('gacutil.exe')}" managed="strict"&gt;
+    &lt;arg value="/i" /&gt;
+    &lt;arg file="Cegeka.HealthFramework.dll" /&gt;
+&lt;/exec&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>Strict execution</strong></p>
+<ul>
+<li><p>Introduced support for forcing a managed application to run on the currently targeted CLR.</p>
+<p>This was previously only possible by modifying the <em :="" class="text-primary">&lt;startup&gt;</em> section of the application configuration file or by using constructs specific to each CLR (eg. using <strong>COMPLUS_VERSION</strong> environment variable for the MS CLR), which made build scripts non-portable.</p>
+<p>Developers extending NAnt, can now control this by setting the <em :="" class="text-primary">Managed</em> property for tasks deriving from <em :="" class="text-primary">ExternalProgramBase</em>.</p>
+<p>For build authors, forcing a managed application to run on a specific version of a CLR can be done by setting the "managed" attribute of <em :="" class="text-primary">&lt;exec&gt;</em> to <strong>strict</strong>.</p>
+<p>For example:</p>
+<pre><code class="language-xml">&lt;exec program="nunit-console.exe" managed="strict"&gt;
+    &lt;arg value="/noshadow" /&gt;
+    &lt;arg file="Cegeka.HealthFramework.Tests.dll" /&gt;
+&lt;/exec&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>.NET Framework 3.5</strong></p>
+<ul>
+<li><p>Support for targeting .NET Framework 3.5 and Mono 3.5 Profile is now available.</p>
+<p><strong>Note:</strong> this does not apply to the <em :="" class="text-primary">&lt;solution&gt;</em> task.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Silverlight 2.0</strong></p>
+<ul>
+<li><p>Added experimental support for targeting Silverlight 2.0 and Moonlight 2.0.</p>
+<p><strong>Note:</strong> this does not apply to the <em :="" class="text-primary">&lt;solution&gt;</em> task.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Types</strong></p>
+<ul>
+<li><p><strong>&lt;patternset&gt;</strong></p>
+<ul>
+<li><p>Defines a set of patterns, mostly used to include or exclude certain files.</p>
+</li>
+<li><p>Patterns can be grouped to sets, and later be referenced by their id.</p>
+<p>For example:</p>
+<pre><code class="language-xml">&lt;patternset id="binaries"&gt;
+    &lt;include name="bin/**/*" /&gt;
+    &lt;exclude name="bin/*.tmp" /&gt;
+&lt;/patternset&gt;
+
+&lt;patternset id="docs"&gt;
+    &lt;include name="requirements/**/*" /&gt;
+    &lt;exclude name="design/**/*.doc" /&gt;
+&lt;/patternset&gt;
+
+&lt;patternset id="client.sources"&gt;
+    &lt;include name="client/**/*.cs" /&gt;
+    &lt;exclude name="client/**/*.vb" /&gt;
+&lt;/patternset&gt;
+
+&lt;patternset id="server.sources"&gt;
+    &lt;include name="server/**/*.cs" /&gt;
+    &lt;exclude name="server/**/*.vb" /&gt;
+&lt;/patternset&gt;
+
+&lt;patternset id="sources"&gt;
+    &lt;patternset refid="client.sources" /&gt;
+    &lt;patternset refid="server.sources" /&gt;
+&lt;/patternset&gt;
+
+&lt;target name="deploy"&gt;
+    &lt;copy todir="${dist.path}"&gt;
+        &lt;fileset basedir="${build.path}"&gt;
+            &lt;patternset refid="binaries" /&gt;
+            &lt;patternset refid="docs" /&gt;
+            &lt;patternset refid="sources" /&gt;
+
+            &lt;exclude name="**/*.sdf" /&gt;
+        &lt;/fileset&gt;
+    &lt;/copy&gt;
+&lt;/target&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="changes"><strong>Changes</strong></h3>
+<p><strong>Core</strong></p>
+<ul>
+<li><p><strong>Performance</strong></p>
+<ul>
+<li>Initial start-up time and project initialization have been reduced dramatically by lazy configuration of supported target frameworks.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Framework support</strong></p>
+<ul>
+<li><p><strong>.NET Compact Framework 2.0</strong></p>
+<ul>
+<li>Compiler options that were introduced in .NET Framework 2.0 are now also available when targeting .NET Compact Framework 2.0.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Tasks</strong></p>
+<ul>
+<li><p><strong>&lt;al&gt;</strong></p>
+<ul>
+<li>Modules to compile into an assembly can now be specified using the <em :="" class="text-primary">&lt;modules&gt;</em> child element.</li>
+</ul>
+</li>
+<li><p><strong>&lt;csc&gt;</strong></p>
+<ul>
+<li>Added "delaysign" attribute which specified whether to delay sign the assembly using only the public portion of the strong name key.</li>
+</ul>
+</li>
+<li><p><strong>&lt;exec&gt;</strong></p>
+<ul>
+<li>The "useruntimeengine" attribute has been deprecated in favor of a "managed" attribute.</li>
+</ul>
+</li>
+<li><p><strong>&lt;jsc&gt;</strong></p>
+<ul>
+<li>Added "autoref" attribute to enable automatically referencing of assemblies if they have the same name as an imported namespace or as a type annotation when declaring a variable.</li>
+<li>Added "nostdlib" attribute which instructs the compiler not to import standard library.</li>
+<li>Added "versionsafe" attribute which causes the compiler to generate errors for implicit method overrides.</li>
+<li>Now uses mjs when targeting Mono.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vbc&gt;</strong></p>
+<ul>
+<li>Added "delaysign" attribute which specified whether to delay sign the assembly using only the public portion of the strong name key.</li>
+</ul>
+</li>
+<li><p><strong>&lt;vjc&gt;</strong></p>
+<ul>
+<li>Added "delaysign" attribute which specified whether to delay sign the assembly using only the public portion of the strong name key.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Third-Party</strong></p>
+<ul>
+<li><p><strong>#ziplib</strong></p>
+<ul>
+<li>Upgraded to v0.85.1 which, amongst other things, adds support for ZIP64.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Types</strong></p>
+<ul>
+<li><p><strong>&lt;assemblyfileset&gt;</strong></p>
+<ul>
+<li>The reference assemblies of a given target framework are no longer limited to the assemblies in, what is known as, the framework assembly directory.  <br>
+Instead, these are now defined using one or more <em :="" class="text-primary">&lt;reference-assemblies&gt;</em> filesets in the <em :="" class="text-primary">&lt;framework&gt;</em> node of the NAnt configuration file.</li>
+</ul>
+</li>
+<li><p><strong>&lt;fileset&gt;</strong></p>
+<ul>
+<li>Added a "casesensitive" attribute to control whether pattern matching must be case-sensitive.</li>
+<li>The default is <strong>true</strong> on Unix and <strong>false</strong> on on other platforms.</li>
+</ul>
+</li>
+</ul>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

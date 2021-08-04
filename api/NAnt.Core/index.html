@@ -1,0 +1,697 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - API - NAnt.Core Namespace</title>
+        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#ClassTypes">Class Types</a></p>
+<p><a href="#EnumTypes">Enum Types</a></p>
+<p><a href="#InterfaceTypes">Interface Types</a></p>
+<p><a href="#DelegateTypes">Delegate Types</a></p>
+<p><a href="#Namespaces">Namespaces</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+	<li class="header">Namespaces</li>   
+			<li><a href="/api/global">global</a></li>
+
+				<li class="treeview active">
+				<a href="/api/NAnt">NAnt</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview active selected">
+				<a href="/api/NAnt.Core">NAnt<wbr>.Core</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.Core.Attributes">NAnt<wbr>.Core<wbr>.Attributes</a></li>
+			<li><a href="/api/NAnt.Core.Extensibility">NAnt<wbr>.Core<wbr>.Extensibility</a></li>
+			<li><a href="/api/NAnt.Core.Filters">NAnt<wbr>.Core<wbr>.Filters</a></li>
+			<li><a href="/api/NAnt.Core.Functions">NAnt<wbr>.Core<wbr>.Functions</a></li>
+			<li><a href="/api/NAnt.Core.Tasks">NAnt<wbr>.Core<wbr>.Tasks</a></li>
+			<li><a href="/api/NAnt.Core.Types">NAnt<wbr>.Core<wbr>.Types</a></li>
+			<li><a href="/api/NAnt.Core.Util">NAnt<wbr>.Core<wbr>.Util</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.DotNet">NAnt<wbr>.DotNet</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.DotNet.Tasks">NAnt<wbr>.DotNet<wbr>.Tasks</a></li>
+			<li><a href="/api/NAnt.DotNet.Types">NAnt<wbr>.DotNet<wbr>.Types</a></li>
+</ul></li></ul></li>      
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>NAnt<wbr>.Core <small>Namespace</small></h1>
+</section>
+<section class="content">
+	
+	
+	
+
+
+			<h1 id="ClassTypes">Class Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Class</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Core/BuildEventArgs">BuildEventArgs</a></td>
+									<td>
+    Class representing an event occurring during a build.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/BuildException">BuildException</a></td>
+									<td>
+    Thrown whenever an error occurs during the build.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/BuildListenerCollection">Build<wbr>Listener<wbr>Collection</a></td>
+									<td>
+    Contains a strongly typed collection of <code class="cs">NAnt.Core.IBuildListener</code> 
+    objects.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/BuildListenerEnumerator">Build<wbr>Listener<wbr>Enumerator</a></td>
+									<td>
+    Enumerates the <code class="cs">NAnt.Core.IBuildListener</code> elements of a <code class="cs">NAnt.Core.BuildListenerCollection</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/BuildReport">BuildReport</a></td>
+									<td>
+    Used to store information about a build, to allow better reporting to 
+    the user.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/CommandLineOptions">CommandLineOptions</a></td>
+									<td>
+    Represents the set of command-line options supported by NAnt.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/ConfigurationSection">ConfigurationSection</a></td>
+									<td>
+    Custom configuration section handler for the <nantsettings> element.
+    </nantsettings></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/ConsoleDriver">ConsoleDriver</a></td>
+									<td>
+    Main entry point to NAnt that is called by the ConsoleStub.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/DataTypeBase">DataTypeBase</a></td>
+									<td>
+    Provides the abstract base class for types.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/DataTypeBaseBuilder">DataTypeBaseBuilder</a></td>
+									<td>
+    Factory to create <code class="cs">NAnt.Core.DataTypeBase</code> instances.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/DataTypeBaseBuilderCollection">Data<wbr>Type<wbr>Base<wbr>Builder<wbr>Collection</a></td>
+									<td>
+    Contains a strongly typed collection of <code class="cs">NAnt.Core.DataTypeBaseBuilder</code> objects.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/DataTypeBaseBuilderEnumerator">Data<wbr>Type<wbr>Base<wbr>Builder<wbr>Enumerator</a></td>
+									<td>
+    Enumerates the <code class="cs">NAnt.Core.DataTypeBaseBuilder</code> elements of a <code class="cs">NAnt.Core.DataTypeBaseBuilderCollection</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/DataTypeBaseDictionary">Data<wbr>Type<wbr>Base<wbr>Dictionary</a></td>
+									<td>
+    Dictionary class to manage the projects types.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/DataTypeBaseDictionaryEnumerator">Data<wbr>Type<wbr>Base<wbr>Dictionary<wbr>Enumerator</a></td>
+									<td>
+    Enumerator class for a <code class="cs">NAnt.Core.DataTypeBaseDictionary</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/DefaultLogger">DefaultLogger</a></td>
+									<td>
+    Implementation of the default logger.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/DirectoryScanner">DirectoryScanner</a></td>
+									<td>
+     Used for searching filesystem based on given include/exclude rules.
+     </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Element">Element</a></td>
+									<td>
+    Models a NAnt XML element in the build file.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/ElementContainer">ElementContainer</a></td>
+									<td>
+    Executes embedded tasks/elements in the order in which they are defined.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/ExpressionEvalBase">ExpressionEvalBase</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/ExpressionEvaluator">ExpressionEvaluator</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/ExpressionParseException">Expression<wbr>Parse<wbr>Exception</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/ExpressionTokenizer">ExpressionTokenizer</a></td>
+									<td>
+    Splits an input string into a sequence of tokens used during parsing.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/FrameworkInfo">FrameworkInfo</a></td>
+									<td>
+    Encalsulates information about installed frameworks incuding version 
+    information and directory locations for finding tools.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/FrameworkInfoDictionary">Framework<wbr>Info<wbr>Dictionary</a></td>
+									<td>
+    Dictionary to collect the available frameworks.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/FrameworkInfoDictionaryEnumerator">Framework<wbr>Info<wbr>Dictionary<wbr>Enumerator</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/FunctionSetBase">FunctionSetBase</a></td>
+									<td>
+    Base class for implementing NAnt functions.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Location">Location</a></td>
+									<td>
+    Stores the file name, line number and column number to record a position 
+    in a text file.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/LogWriter">LogWriter</a></td>
+									<td>
+    Implements a <code class="cs">System.IO.TextWriter</code> for writing information to 
+    the NAnt logging infrastructure.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/MailLogger">MailLogger</a></td>
+									<td>
+    Buffers log messages from DefaultLogger, and sends an e-mail with the
+    results.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/PathScanner">PathScanner</a></td>
+									<td>
+    Used to search for files on the PATH. 
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/PlatformHelper">PlatformHelper</a></td>
+									<td>
+    This class provides information about the plattform NAnt is currently executed on.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Project">Project</a></td>
+									<td>
+    Central representation of a NAnt project.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/PropertyDictionary">PropertyDictionary</a></td>
+									<td>
+    Dictionary to collect a projects properties.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Target">Target</a></td>
+									<td>
+    Class for handling NAnt targets.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/TargetCollection">TargetCollection</a></td>
+									<td>
+    Collection class to manage the projects targets.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Task">Task</a></td>
+									<td>
+    Provides the abstract base class for tasks.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/TaskBuilder">TaskBuilder</a></td>
+									<td>
+    Class to create NAnt tasks from an existing assembly.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/TaskBuilderCollection">Task<wbr>Builder<wbr>Collection</a></td>
+									<td>
+    Contains a strongly typed collection of <code class="cs">NAnt.Core.TaskBuilder</code> objects.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/TaskBuilderEnumerator">Task<wbr>Builder<wbr>Enumerator</a></td>
+									<td>
+    Enumerates the <code class="cs">NAnt.Core.TaskBuilder</code> elements of a <code class="cs">NAnt.Core.TaskBuilderCollection</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/TaskContainer">TaskContainer</a></td>
+									<td>
+    Executes embedded tasks in the order in which they are defined.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/TypeFactory">TypeFactory</a></td>
+									<td>
+    Comprises all of the loaded, and available, tasks. 
+    Use these static methods to register, initialize and create a task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/ValidationException">ValidationException</a></td>
+									<td>
+    Thrown whenever an error occurs during the build.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/XmlLogger">XmlLogger</a></td>
+									<td>
+    Used to wrap log messages in xml &lt;message/&gt; elements.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="EnumTypes">Enum Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Enum</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Core/ClrType">ClrType</a></td>
+									<td>
+    Enumeration of CLR types.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/FrameworkTypes">FrameworkTypes</a></td>
+									<td>
+    Defines the types of frameworks.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/Level">Level</a></td>
+									<td>
+    Defines the set of levels recognised by the NAnt logging system.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/VendorType">VendorType</a></td>
+									<td>
+    Enumeration of vendors.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="InterfaceTypes">Interface Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Interface</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Core/IBuildListener">IBuildListener</a></td>
+									<td>
+    Instances of classes that implement this interface can register to be 
+    notified when things happen during a build.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/IBuildLogger">IBuildLogger</a></td>
+									<td>
+    Interface used by NAnt to log the build output. 
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core/IConditional">IConditional</a></td>
+									<td>
+    Provides indicators to <code class="cs">NAnt.Core.Element</code> based classes that
+    tells <code class="cs">NAnt.Core.Element</code> that conditional checks should be
+    evaluated before processing.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="DelegateTypes">Delegate Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Delegate</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Core/BuildEventHandler">BuildEventHandler</a></td>
+									<td>
+    Represents the method that handles the build events.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Namespaces">Namespaces</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Namespace</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Core.Attributes">NAnt<wbr>.Core<wbr>.Attributes</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Extensibility">NAnt<wbr>.Core<wbr>.Extensibility</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Filters">NAnt<wbr>.Core<wbr>.Filters</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Functions">NAnt<wbr>.Core<wbr>.Functions</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Tasks">NAnt<wbr>.Core<wbr>.Tasks</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Types">NAnt<wbr>.Core<wbr>.Types</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Core.Util">NAnt<wbr>.Core<wbr>.Util</a></td>
+									<td></td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>
