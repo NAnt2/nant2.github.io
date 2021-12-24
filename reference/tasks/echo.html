@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - echo</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,10 +76,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -115,11 +110,33 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Writes a message to the build log or a specified file.
     </div>
 
+	<div>
+      <p>
+      The message can be specified using the <code class="cs">NAnt.Core.Tasks.EchoTask.Message</code> attribute
+      or as inline content. If neither is included - or the message contains
+      only whitespace - then an empty message will be emitted in the output.
+      </p>
+      <p>
+      Macros in the message will be expanded.
+      </p>
+      <p>
+      When writing to a file, the <code class="cs">NAnt.Core.Tasks.EchoTask.MessageLevel</code> attribute is
+      ignored.
+      </p>
+      <div class="note">
+      Since NAnt 0.86, a newline will no longer be implicitly added when
+      writing a message to a file.
+      </div>
+    </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -137,10 +154,7 @@
                         <tbody>
 									<tr>
 										<td>
-											<b>
-												append
-											</b>
-										</td>
+append										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -154,11 +168,8 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												encoding
-											</b>
-										</td>
-										<td>Encoding</td>
+encoding										</td>
+										<td></td>
 										<td>
 											<div>
     The encoding to use when writing message to a file. The default is
@@ -171,11 +182,8 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												file
-											</b>
-										</td>
-										<td>FileInfo</td>
+file										</td>
+										<td>file</td>
 										<td>
 											<div>
     The file to write the message to.
@@ -187,10 +195,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												message
-											</b>
-										</td>
+message										</td>
 										<td>string</td>
 										<td>
 											<div>
@@ -203,11 +208,8 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												level
-											</b>
-										</td>
-										<td><a href="/api/NAnt.Core/Level">Level</a></td>
+level										</td>
+										<td><a href="/api/NAnt.Core/Level"></a></td>
 										<td>
 											<div>
     The logging level with which the message should be output. The default 
@@ -220,7 +222,7 @@
 									</tr>
 																<tr>
 										<td>
-											failonerror
+											<i>failonerror</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -235,7 +237,7 @@
 									</tr>
 									<tr>
 										<td>
-											if
+											<i>if</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -250,7 +252,7 @@
 									</tr>
 									<tr>
 										<td>
-											unless
+											<i>unless</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -266,7 +268,7 @@
 									</tr>
 									<tr>
 										<td>
-											verbose
+											<i>verbose</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -286,8 +288,10 @@
 		
 
 
+
+
  
-	<h1 id="Examples">Examples</h1>
+		<h1 id="Examples">Examples</h1>
 	<div>
       <p>
       Writes a message with level <code class="cs">NAnt.Core.Level.Debug</code> to the build log.
@@ -328,25 +332,6 @@ Second line&lt;/echo&gt;</code></pre>
       <pre><code class="cs">&lt;echo file="buildmessage.txt"&gt;Base build directory = ${nant.project.basedir}&lt;/echo&gt;</code></pre>
     </div>
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-      <p>
-      The message can be specified using the <code class="cs">NAnt.Core.Tasks.EchoTask.Message</code> attribute
-      or as inline content. If neither is included - or the message contains
-      only whitespace - then an empty message will be emitted in the output.
-      </p>
-      <p>
-      Macros in the message will be expanded.
-      </p>
-      <p>
-      When writing to a file, the <code class="cs">NAnt.Core.Tasks.EchoTask.MessageLevel</code> attribute is
-      ignored.
-      </p>
-      <div class="note">
-      Since NAnt 0.86, a newline will no longer be implictly added when
-      writing a message to a file.
-      </div>
-    </div>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -363,7 +348,6 @@ Second line&lt;/echo&gt;</code></pre>
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -380,7 +364,7 @@ Second line&lt;/echo&gt;</code></pre>
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

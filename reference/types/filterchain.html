@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - filterchain</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,11 +76,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#NestedElements">Nested elements</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -116,124 +111,14 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Represent a chain of NAnt filters that can be applied to a <code class="cs">NAnt.Core.Task</code>.
     </div>
 
-
-
-				<h1 id="Parameters">Parameters</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover four-cols">
-						<thead>
-							<tr>
-								<th>Attribute</th>
-								<th>Type</th>
-								<th>Description</th>
-                                <th>Required</th>
-							</tr>
-						</thead>
-                        <tbody>
-									<tr>
-										<td>
-											<b>
-												encoding
-													<i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
-											</b>
-										</td>
-										<td>Encoding</td>
-										<td>
-											<div>
-    The encoding to assume when filter-copying files. The default is
-    system's current ANSI code page.
-    </div>
-												<div class="alert alert-warning">
-													<i>Obsolete. The input encoding should now be specified on the task.</i>
-												</div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-																<tr>
-										<td>
-											id
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The ID used to be referenced later.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											refid
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The ID to use as the reference.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-                        </tbody>
-					</table>
-				</div>
-			</div>
-		
-
-
-<h1 id="NestedElements">Nested elements</h1>    <div class="container-fluid">
-        
-
-    <div class="row">
-        <h2>
-            &lt;filter&gt; - NAnt nested collection
-        </h2>
-        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
-            
-            <p>
-    The filters to apply.
-    </p>
-                    </div>
-        <h2>&lt;filter&gt;</h2>
-    </div>
-     </div>
- 
-	<h1 id="Examples">Examples</h1>
-	<div>
-      <p>
-      Replace all occurrences of @NOW@ with the current date/time and 
-      replace tabs with spaces in all copied files.
-      </p>
-      <pre><code class="cs">    &lt;property name="NOW" value="${datetime::now()}" /&gt;
-&lt;copy todir="out"&gt;
-    &lt;fileset basedir="in"&gt;
-        &lt;include name="**/*" /&gt;
-    &lt;/fileset&gt;
-    &lt;filterchain&gt;
-        &lt;replacetokens&gt;
-            &lt;token key="NOW" value="${TODAY}" /&gt;
-        &lt;/replacetokens&gt;
-        &lt;tabstospaces /&gt;
-    &lt;/filterchain&gt;
-&lt;/copy&gt;</code></pre>
-    </div>
-
-	<h1 id="Remarks">Remarks</h1>
 	<div>
     <p>
     A FilterChain represents a collection of one or more filters that can 
-    be appled to a <code class="cs">NAnt.Core.Task</code> such as the <code class="cs">NAnt.Core.Tasks.CopyTask</code>.
+    be applied to a <code class="cs">NAnt.Core.Task</code> such as the <code class="cs">NAnt.Core.Tasks.CopyTask</code>.
     In the case of the <code class="cs">NAnt.Core.Tasks.CopyTask</code>, the contents of the copied 
     files are filtered through each filter specified in the filter chain. 
     Filtering occurs in the order the filters are specified with filtered
@@ -260,6 +145,171 @@
     </ul>
     </div>
 
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
+
+
+				<h1 id="Parameters">Parameters</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+encoding													<i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
+										</td>
+										<td></td>
+										<td>
+											<div>
+    The encoding to assume when filter-copying files. The default is
+    system's current ANSI code page.
+    </div>
+												<div class="alert alert-warning">
+													<i>Obsolete. The input encoding should now be specified on the task.</i>
+												</div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+																<tr>
+										<td>
+											<i>id</i>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The ID used to be referenced later.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>refid</i>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The ID to use as the reference.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+
+
+
+<h1 id="NestedElements">Nested elements</h1>    <div class="container-fluid">
+        
+
+    <div class="row">
+        <h2>
+            &lt;filter&gt;
+        </h2>
+        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
+            
+            <p>
+    The filters to apply.
+    </p>
+            
+                    <p></p>
+
+
+				<h3 id="FilterParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the filter will be used; otherwise, 
+    skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Filters.Filter.IfDefined</code>. If <code class="cs">false</code> 
+    then the filter will be executed; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
+        <h2>&lt;filter&gt;</h2>
+    </div>
+     </div>
+ 
+		<h1 id="Examples">Examples</h1>
+	<div>
+      <p>
+      Replace all occurrences of @NOW@ with the current date/time and 
+      replace tabs with spaces in all copied files.
+      </p>
+      <pre><code class="cs">    &lt;property name="NOW" value="${datetime::now()}" /&gt;
+&lt;copy todir="out"&gt;
+    &lt;fileset basedir="in"&gt;
+        &lt;include name="**/*" /&gt;
+    &lt;/fileset&gt;
+    &lt;filterchain&gt;
+        &lt;replacetokens&gt;
+            &lt;token key="NOW" value="${TODAY}" /&gt;
+        &lt;/replacetokens&gt;
+        &lt;tabstospaces /&gt;
+    &lt;/filterchain&gt;
+&lt;/copy&gt;</code></pre>
+    </div>
+
+
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
         <div class="panel-body">	
@@ -275,7 +325,6 @@
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -292,7 +341,7 @@
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

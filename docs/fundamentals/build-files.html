@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - Build files</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
-        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/assets/css/override.css" rel="stylesheet" />
+        <link href="/assets/css/override.css" rel="stylesheet">
         <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
@@ -24,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -162,24 +157,24 @@
 	<section class="content">
 		<p>NAnt's build files are written in XML. Each build file contains one <a href="projects">project</a> and a number of <a href="targets">targets</a>.  Each target contains a number of <a href="tasks">tasks</a>.</p>
 <p>Here is a simple build file that compiles a C# HelloWorld project.</p>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
-&lt;project name=&quot;Hello World&quot; default=&quot;build&quot; basedir=&quot;.&quot;&gt;
+<pre><code class="language-xml">&lt;?xml version="1.0"?&gt;
+&lt;project name="Hello World" default="build" basedir="."&gt;
     &lt;description&gt;The Hello World of build files.&lt;/description&gt;
-    &lt;property name=&quot;debug&quot; value=&quot;true&quot; overwrite=&quot;false&quot; /&gt;
-    &lt;target name=&quot;clean&quot; description=&quot;remove all generated files&quot;&gt;
-        &lt;delete file=&quot;HelloWorld.exe&quot; failonerror=&quot;false&quot; /&gt;
-        &lt;delete file=&quot;HelloWorld.pdb&quot; failonerror=&quot;false&quot; /&gt;
+    &lt;<a href="/api/NAnt.Contrib.Schemas.Msi/property">property</a> name="debug" value="true" overwrite="false" /&gt;
+    &lt;target name="clean" description="remove all generated files"&gt;
+        &lt;delete file="HelloWorld.exe" failonerror="false" /&gt;
+        &lt;delete file="HelloWorld.pdb" failonerror="false" /&gt;
     &lt;/target&gt;
-    &lt;target name=&quot;build&quot; description=&quot;compiles the source code&quot;&gt;
-        &lt;csc target=&quot;exe&quot; output=&quot;HelloWorld.exe&quot; debug=&quot;${debug}&quot;&gt;
+    &lt;target name="build" description="compiles the source code"&gt;
+        &lt;csc target="exe" output="HelloWorld.exe" debug="${debug}"&gt;
             &lt;sources&gt;
-                &lt;includes name=&quot;HelloWorld.cs&quot; /&gt;
+                &lt;includes name="HelloWorld.cs" /&gt;
             &lt;/sources&gt;
         &lt;/csc&gt;
     &lt;/target&gt;
 &lt;/project&gt;
 </code></pre>
-<p>In this example there are two targets, &quot;clean&quot; and &quot;build&quot;.  By default the &quot;build&quot; target will be called.</p>
+<p>In this example there are two targets, "clean" and "build".  By default the "build" target will be called.</p>
 <h2 id="examples">Examples</h2>
 <p>You can find the files you need to try out these <em :="" class="text-primary">examples</em> in the examples folder that comes with the NAnt distribution.</p>
 <ol>
@@ -190,7 +185,7 @@
 <code>nant clean</code></p>
 </li>
 <li><p>Run NAnt and builds the project in non-debug mode
-Even though the build file sets the debug property to true, the value that is set on the command line will not be touched, as the &quot;overwrite&quot; attribute on the <em :="" class="text-primary">&lt;property&gt;</em> task is set to &quot;false&quot;
+Even though the build file sets the debug property to true, the value that is set on the command line will not be touched, as the "overwrite" attribute on the <em :="" class="text-primary">&lt;property&gt;</em> task is set to "false"
 <code>nant -D:debug=false</code></p>
 </li>
 </ol>
@@ -209,10 +204,10 @@ Even though the build file sets the debug property to true, the value that is se
             <footer class="bottom-footer">
                 <p class="text-muted">
     <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
-    <br/>
-    Copyright &copy; 2001-2021 NAnt2 contributors.
-    <br/>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
 </p>
 
 <script>
@@ -291,5 +286,5 @@ Even though the build file sets the debug property to true, the value that is se
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

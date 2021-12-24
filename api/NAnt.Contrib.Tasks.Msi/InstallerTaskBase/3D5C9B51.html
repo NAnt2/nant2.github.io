@@ -1,0 +1,607 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - API - InstallerTaskBase.InstallerControlsElement Property</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+	<script src="/assets/js/anchor.min.js"></script>
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Attributes">Attributes</a></p>
+<p><a href="#Value">Value</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/NAnt.Contrib.dll">NAnt<wbr>.Contrib<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/NAnt.Contrib.Tasks.Msi">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Msi</a></li>
+		<li class="header">Type</li>
+		<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase">InstallerTaskBase</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Property Members</li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/DE58C6CF">Installer<wbr>Action<wbr>Text<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/78B5132A">Installer<wbr>App<wbr>Mappings<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/E1D8AC02">Installer<wbr>App<wbr>Roots<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/9390A425">Installer<wbr>Binaries<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/FBC5D9BB">Installer<wbr>Components<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/00C68AFA">Installer<wbr>Control<wbr>Conditions<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/721F34E9">Installer<wbr>Control<wbr>Events<wbr>Element</a></li>
+				<li class="selected"><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/3D5C9B51">Installer<wbr>Controls<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/8B528844">Installer<wbr>Custom<wbr>Actions<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/47CC9D16">Installer<wbr>Dialogs<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/83B24466">Installer<wbr>Directories<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/015234A4">Installer<wbr>Environment<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/404D6A47">Installer<wbr>Icons<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/3677BC12">Installer<wbr>I<wbr>I<wbr>S<wbr>Properties<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/A68595FD">Installer<wbr>Launch<wbr>Conditions<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/4F5AABBD">Installer<wbr>Properties<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/0F041580">Installer<wbr>Registry<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/6C305507">Installer<wbr>Search<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/DE252051">Installer<wbr>Sequences<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/6F7356B0">Installer<wbr>Shortcuts<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/37E4A302">Installer<wbr>Summary<wbr>Information<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/E68E6E8B">Installer<wbr>Tables<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/8A77E73B">Installer<wbr>Url<wbr>Properties<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/6BEBD3FD">Installer<wbr>V<wbr>Dir<wbr>Properties<wbr>Element</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/1F7D5349">MsiDebug</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/FAA0F044">MsiErrorTemplate</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/1AD94109">MsiOutput</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/EE714389">MsiSourceDir</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase/5E395A2D">MsiTemplate</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks/SchemaValidatedTask/E1D9DD78">SchemaObject</a></li>
+			<li class="header">Method Members</li>
+				<li><a href="/api/NAnt.Contrib.Tasks/SchemaValidatedTask/F8E3C810">Initialize<wbr>()<wbr></a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+			<h3><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase">InstallerTaskBase</a>.</h3>
+	<h1>Installer<wbr>Controls<wbr>Element <small>Property</small></h1>
+</section>
+<section class="content">
+	
+	
+			<h1 id="Summary">Summary</h1>
+	<div class="lead">
+     <p>
+     Creates user interface controls displayed on custom dialogs.
+     </p>
+     <h3>Parameters</h3>
+     <table class="table">
+         <tbody><tr>
+             <th>Attribute</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Required</th>
+         </tr>
+         <tr>
+                <td>name</td>
+                <td>string</td>
+                <td>Name of the control. This name must be unique within a dialog box but can be repeated on different dialog boxes.</td>
+                <td>True</td>
+            </tr>
+         <tr>
+                <td>dialog</td>
+                <td>string</td>
+                <td>Refrence to a dialog.  Used to associate the control with the dialog.</td>
+                <td>True</td>
+            </tr>
+         <tr>
+                <td>type</td>
+                <td>string</td>
+                <td>The type of the control.
+                <description>Description</description><description>Displays billboards based on progress messages.</description><description>Displays a static picture of a bitmap.</description><description>A two-state check box.</description><description>A drop-down list with an edit field.</description><description>Select all except the last segment of the path.</description><description>Displays folders below the main part of path.</description><description>A regular edit field for any string or integer.</description><description>Displays a rectangle that groups other controls together.</description><description>Displays a static picture of an icon.</description><description>Displays a horizontal line.</description><description>A drop-down list without an edit field.</description><description>Displays a column of values with icons for selection.</description><description>An edit field with a mask in the text field.</description><description>Displays folder name or entire path in an edit field.</description><description>Bar graph that changes length as it receives progress messages.</description><description>Displays a basic push button.</description><description>A group of radio buttons.</description><description>Displays a long string of text.</description><description>Displays information from the Feature table and enables the user to change their selection state.</description><description>Displays static text.</description><description>Displays costing information on different volumes.</description><description>Selects volume from an alphabetical list.</description><table class="table">
+                    <tbody><tr>
+                        <th>Control name</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>Billboard</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Bitmap</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>CheckBox</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>ComboBox</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>DirectoryCombo</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>DirectoryList</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Edit</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>GroupBox</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Icon</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Line</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>ListBox</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>ListView</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>MaskedEdit</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>PathEdit</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>ProgressBar</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>PushButton</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>RadioButtonGroup</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>ScrollableText</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>SelectionTree</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Text</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>VolumeCostList</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>VolumeSelectCombo</td>
+                        
+                    </tr>
+                </tbody></table>
+                More information found here: <a href="http://msdn.microsoft.com/library/en-us/msi/setup/controls.asp">http://msdn.microsoft.com/library/en-us/msi/setup/controls.asp</a></td>
+                <td>True</td>
+            </tr>
+         <tr>
+                <td>x</td>
+                <td>int</td>
+                <td>Horizontal coordinate of the upper-left corner of the rectangular boundary of the control. This must be a non-negative number.</td>
+                <td>True</td>
+            </tr>
+         <tr>
+                <td>y</td>
+                <td>int</td>
+                <td>Vertical coordinate of the upper-left corner of the rectangular boundary of the control. This must be a non-negative number.</td>
+                <td>True</td>
+            </tr>
+         <tr>
+                <td>width</td>
+                <td>int</td>
+                <td>Width of the rectangular boundary of the control. This must be a non-negative number.</td>
+                <td>True</td>
+            </tr>
+         <tr>
+                <td>height</td>
+                <td>int</td>
+                <td>Height of the rectangular boundary of the control. This must be a non-negative number.</td>
+                <td>True</td>
+            </tr>
+         <tr>
+                <td>attr</td>
+                <td>int</td>
+                <td>A 32-bit word that specifies the bit flags to be applied to this control. This must be a non-negative number, and the allowed values depend upon the type of control.For a list of all control attributes, and the value to enter in this field, see <a href="http://msdn.microsoft.com/library/en-us/msi/setup/control_attributes.asp">Control Attributes</a>.</td>
+                <td>True</td>
+            </tr>
+         <tr>
+                <td>property</td>
+                <td>string</td>
+                <td>The name of a defined property to be linked to this control. Radio button, list box, and combo box values are tied into a group by being linked to the same property. This column is required for active controls and is ignored by static controls.</td>
+                <td>False</td>
+            </tr>
+         <tr>
+                <td>text</td>
+                <td>string</td>
+                <td>A localizable string used to set the initial text contained in a control. The string can also contain embedded properties.</td>
+                <td>False</td>
+            </tr>
+         <tr>
+                <td>nextcontrol</td>
+                <td>string</td>
+                <td>The name of another control on the same dialog box. If the focus in the dialog box is on the control in the Control column, hitting the tab key moves the focus to the control listed here. Therefore this is used to specify the tab order of the controls on the dialog box. The links between the controls must form a closed cycle. Some controls, such as static text controls, can be left out of the cycle. In that case, this field may be left blank. </td>
+                <td>False</td>
+            </tr>
+         <tr>
+                <td>help</td>
+                <td>string</td>
+                <td>Optional, localizable text strings that are used with the Help button. The string is divided into two parts by a separator character (|). The first part of the string is used as ToolTip text. This text is used by screen readers for controls that contain a picture. The second part of the string is reserved for future use. The separator character is required even if only one of the two kinds of text is present.</td>
+                <td>False</td>
+            </tr>
+         <tr>
+                <td>remove</td>
+                <td>bool</td>
+                <td>If <code class="cs">true</code>, the control is removed.  If <code class="cs">false</code>, the control is added.</td>
+                <td>False</td>
+            </tr>
+        </tbody></table>
+     <h3>Examples</h3>
+     <example>
+         <para>Remove the Browse button from the customize dialog and add controls for a web dialog</para>
+         <code class="cs">
+     &lt;controls&gt;
+         &lt;!-- Remove the Browse button from customize dialog --&gt;
+         &lt;control dialog="CustomizeDlg" name="Browse" type="PushButton"
+             x="304" y="200" width="56" height="17" attr="3" remove="true" /&gt;
+         &lt;control dialog="CustomizeDlg" name="Tree" type="SelectionTree"
+             x="25" y="85" width="175" height="95" attr="7" remove="true" /&gt;
+    
+         &lt;!-- Re add the tree control with the proper next control --&gt;
+         &lt;control dialog="CustomizeDlg" name="Tree" type="SelectionTree"
+             x="25" y="85" width="175" height="95" attr="7" 
+             property="_BrowseProperty" text="Tree of selections" nextcontrol="Reset" /&gt;
+    
+         &lt;!-- Adds the controls associated with the webfolder dialog --&gt;
+         &lt;control dialog="WebFolderDlg" name="BannerBitmap" type="Bitmap" 
+             x="0" y="0" width="374" height="44" attr="1" 
+             text="[BannerBitmap]" nextcontrol="VDirLabel" /&gt;
+         &lt;control dialog="WebFolderDlg" name="Title" type="Text" 
+             x="15" y="6" width="200" height="15" attr="196611" 
+             text="[DlgTitleFont]Virtual Directory Information" /&gt;
+         &lt;control dialog="WebFolderDlg" name="Description" type="Text" 
+             x="25" y="23" width="280" height="15" attr="196611" 
+             text="Please enter your virtual directory and port information." /&gt;
+         &lt;control dialog="WebFolderDlg" name="BannerLine" type="Line" 
+             x="0" y="44" width="374" height="0" attr="1" /&gt;
+         &lt;control dialog="WebFolderDlg" name="VDirLabel" type="Text" 
+             x="18" y="73" width="348" height="15" attr="3" 
+             text="&amp;Virtual directory:" 
+             nextcontrol="Edit_VDir" /&gt;            
+         &lt;control dialog="WebFolderDlg" name="Edit_VDir" type="Edit" 
+             x="18" y="85" width="252" height="18" attr="7" 
+             property="TARGETVDIR" 
+             text="[TARGETVDIR]" 
+             nextcontrol="PortLabel" /&gt;
+         &lt;control dialog="WebFolderDlg" name="PortLabel" type="Text" 
+             x="18" y="110" width="348" height="15" attr="3" 
+             text="&amp;Port:" 
+             nextcontrol="Edit_Port" /&gt;            
+         &lt;control dialog="WebFolderDlg" name="Edit_Port" type="Edit" 
+             x="18" y="122" width="48" height="18" attr="7" 
+             property="TARGETPORT" 
+             text="[TARGETPORT]" 
+             nextcontrol="Back" /&gt;
+         &lt;control dialog="WebFolderDlg" name="BottomLine" type="Line" 
+             x="0" y="234" width="374" height="0" attr="1" /&gt;                
+         &lt;control dialog="WebFolderDlg" name="Back" type="PushButton" 
+             x="180" y="243" width="56" height="17" attr="3" 
+             text="[ButtonText_Back]" nextcontrol="Next" /&gt;
+         &lt;control dialog="WebFolderDlg" name="Next" type="PushButton" 
+             x="236" y="243" width="56" height="17" attr="3" 
+             text="[ButtonText_Next]" nextcontrol="Cancel" /&gt;
+         &lt;control dialog="WebFolderDlg" name="Cancel" type="PushButton" 
+             x="304" y="243" width="56" height="17" attr="3" 
+             text="[ButtonText_Cancel]" nextcontrol="BannerBitmap" /&gt;
+     &lt;/controls&gt;
+         </code>
+     </example>
+     </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<dl class="dl-horizontal">	
+						<dt>Assembly</dt>
+						<dd><a href="/api/NAnt.Contrib.dll">NAnt<wbr>.Contrib<wbr>.dll</a></dd>
+						
+						<dt>Namespace</dt>
+						<dd><a href="/api/NAnt.Contrib.Tasks.Msi">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Msi</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase">InstallerTaskBase</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>[BuildElement("controls", ProcessXml = false)]
+public SchemaElement[] InstallerControlsElement { get; set; }</code></pre>
+
+
+
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>BuildElement</td>
+						<td></td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	<h1 id="Value">Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>SchemaElement[]</td>
+					<td></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - API - FunctionSetBase Class</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -220,7 +217,7 @@
 <section class="content">
 	
 	
-		<h1 id="Summary">Summary</h1>
+			<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Base class for implementing NAnt functions.
     </div>
@@ -247,35 +244,37 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/NAnt.Core.Functions/TaskFunctions">TaskFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/OperatingSystemFunctions">Operating<wbr>System<wbr>Functions</a></li>								
+											<li><a href="/api/NAnt.Win32.Functions/CygpathFunctions">CygpathFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/AssemblyFunctions">AssemblyFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/TimeSpanFunctions">TimeSpanFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/DoubleConversionFunctions">Double<wbr>Conversion<wbr>Functions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/NAntFunctions">NAntFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/ConversionFunctions">ConversionFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/PropertyFunctions">PropertyFunctions</a></li>								
 											<li><a href="/api/NAnt.Core.Functions/TargetFunctions">TargetFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/DirectoryFunctions">DirectoryFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/FileFunctions">FileFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/Int64ConversionFunctions">Int64<wbr>Conversion<wbr>Functions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/AssemblyNameFunctions">Assembly<wbr>Name<wbr>Functions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/OperatingSystemFunctions">Operating<wbr>System<wbr>Functions</a></li>								
 											<li><a href="/api/NAnt.Core.Functions/PathFunctions">PathFunctions</a></li>								
 											<li><a href="/api/NAnt.Core.Functions/FrameworkFunctions">FrameworkFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/PkgConfigFunctions">PkgConfigFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/ProjectFunctions">ProjectFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/DateTimeConversionFunctions">Date<wbr>Time<wbr>Conversion<wbr>Functions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/DoubleConversionFunctions">Double<wbr>Conversion<wbr>Functions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/EnvironmentFunctions">EnvironmentFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/NAntFunctions">NAntFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/AssemblyFunctions">AssemblyFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/StringFunctions">StringFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/BooleanConversionFunctions">Boolean<wbr>Conversion<wbr>Functions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/TimeSpanFunctions">TimeSpanFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/DateTimeFunctions">DateTimeFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/PropertyFunctions">PropertyFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/VersionFunctions">VersionFunctions</a></li>								
 											<li><a href="/api/NAnt.Core.Functions/TimeSpanConversionFunctions">Time<wbr>Span<wbr>Conversion<wbr>Functions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/VersionFunctions">VersionFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/FileVersionInfoFunctions">File<wbr>Version<wbr>Info<wbr>Functions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/FileFunctions">FileFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/ProjectFunctions">ProjectFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/StringFunctions">StringFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/DateTimeFunctions">DateTimeFunctions</a></li>								
 											<li><a href="/api/NAnt.Core.Functions/PlatformFunctions">PlatformFunctions</a></li>								
 											<li><a href="/api/NAnt.Core.Functions/VersionConversionFunctions">Version<wbr>Conversion<wbr>Functions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/ConversionFunctions">ConversionFunctions</a></li>								
+											<li><a href="/api/NAnt.MSBuild.Functions/MSBuildFunctions">MSBuildFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/DirectoryFunctions">DirectoryFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/PkgConfigFunctions">PkgConfigFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/TaskFunctions">TaskFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/Int64ConversionFunctions">Int64<wbr>Conversion<wbr>Functions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/EnvironmentFunctions">EnvironmentFunctions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/BooleanConversionFunctions">Boolean<wbr>Conversion<wbr>Functions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/AssemblyNameFunctions">Assembly<wbr>Name<wbr>Functions</a></li>								
 											<li><a href="/api/NAnt.Core.Functions/Int32ConversionFunctions">Int32<wbr>Conversion<wbr>Functions</a></li>								
 											<li><a href="/api/NAnt.Core.Functions/MathFunctions">MathFunctions</a></li>								
-											<li><a href="/api/NAnt.Core.Functions/FileVersionInfoFunctions">File<wbr>Version<wbr>Info<wbr>Functions</a></li>								
+											<li><a href="/api/NAnt.Core.Functions/DateTimeConversionFunctions">Date<wbr>Time<wbr>Conversion<wbr>Functions</a></li>								
 									</ul>
 								</dd>			
 							
@@ -287,64 +286,68 @@
 	Type--&gt;Base0["Object"]
 	Type["FunctionSetBase"]
 class Type type-node
-	Derived0["TaskFunctions"]--&gt;Type
-	click Derived0 "/api/NAnt.Core.Functions/TaskFunctions"
-	Derived1["OperatingSystemFunctions"]--&gt;Type
-	click Derived1 "/api/NAnt.Core.Functions/OperatingSystemFunctions"
-	Derived2["TargetFunctions"]--&gt;Type
-	click Derived2 "/api/NAnt.Core.Functions/TargetFunctions"
-	Derived3["DirectoryFunctions"]--&gt;Type
-	click Derived3 "/api/NAnt.Core.Functions/DirectoryFunctions"
-	Derived4["FileFunctions"]--&gt;Type
-	click Derived4 "/api/NAnt.Core.Functions/FileFunctions"
-	Derived5["Int64ConversionFunctions"]--&gt;Type
-	click Derived5 "/api/NAnt.Core.Functions/Int64ConversionFunctions"
-	Derived6["AssemblyNameFunctions"]--&gt;Type
-	click Derived6 "/api/NAnt.Core.Functions/AssemblyNameFunctions"
-	Derived7["PathFunctions"]--&gt;Type
-	click Derived7 "/api/NAnt.Core.Functions/PathFunctions"
-	Derived8["FrameworkFunctions"]--&gt;Type
-	click Derived8 "/api/NAnt.Core.Functions/FrameworkFunctions"
-	Derived9["PkgConfigFunctions"]--&gt;Type
-	click Derived9 "/api/NAnt.Core.Functions/PkgConfigFunctions"
-	Derived10["ProjectFunctions"]--&gt;Type
-	click Derived10 "/api/NAnt.Core.Functions/ProjectFunctions"
-	Derived11["DateTimeConversionFunctions"]--&gt;Type
-	click Derived11 "/api/NAnt.Core.Functions/DateTimeConversionFunctions"
-	Derived12["DoubleConversionFunctions"]--&gt;Type
-	click Derived12 "/api/NAnt.Core.Functions/DoubleConversionFunctions"
-	Derived13["EnvironmentFunctions"]--&gt;Type
-	click Derived13 "/api/NAnt.Core.Functions/EnvironmentFunctions"
-	Derived14["NAntFunctions"]--&gt;Type
-	click Derived14 "/api/NAnt.Core.Functions/NAntFunctions"
-	Derived15["AssemblyFunctions"]--&gt;Type
-	click Derived15 "/api/NAnt.Core.Functions/AssemblyFunctions"
+	Derived0["CygpathFunctions"]--&gt;Type
+	click Derived0 "/api/NAnt.Win32.Functions/CygpathFunctions"
+	Derived1["AssemblyFunctions"]--&gt;Type
+	click Derived1 "/api/NAnt.Core.Functions/AssemblyFunctions"
+	Derived2["TimeSpanFunctions"]--&gt;Type
+	click Derived2 "/api/NAnt.Core.Functions/TimeSpanFunctions"
+	Derived3["DoubleConversionFunctions"]--&gt;Type
+	click Derived3 "/api/NAnt.Core.Functions/DoubleConversionFunctions"
+	Derived4["NAntFunctions"]--&gt;Type
+	click Derived4 "/api/NAnt.Core.Functions/NAntFunctions"
+	Derived5["ConversionFunctions"]--&gt;Type
+	click Derived5 "/api/NAnt.Core.Functions/ConversionFunctions"
+	Derived6["PropertyFunctions"]--&gt;Type
+	click Derived6 "/api/NAnt.Core.Functions/PropertyFunctions"
+	Derived7["TargetFunctions"]--&gt;Type
+	click Derived7 "/api/NAnt.Core.Functions/TargetFunctions"
+	Derived8["OperatingSystemFunctions"]--&gt;Type
+	click Derived8 "/api/NAnt.Core.Functions/OperatingSystemFunctions"
+	Derived9["PathFunctions"]--&gt;Type
+	click Derived9 "/api/NAnt.Core.Functions/PathFunctions"
+	Derived10["FrameworkFunctions"]--&gt;Type
+	click Derived10 "/api/NAnt.Core.Functions/FrameworkFunctions"
+	Derived11["TimeSpanConversionFunctions"]--&gt;Type
+	click Derived11 "/api/NAnt.Core.Functions/TimeSpanConversionFunctions"
+	Derived12["VersionFunctions"]--&gt;Type
+	click Derived12 "/api/NAnt.Core.Functions/VersionFunctions"
+	Derived13["FileVersionInfoFunctions"]--&gt;Type
+	click Derived13 "/api/NAnt.Core.Functions/FileVersionInfoFunctions"
+	Derived14["FileFunctions"]--&gt;Type
+	click Derived14 "/api/NAnt.Core.Functions/FileFunctions"
+	Derived15["ProjectFunctions"]--&gt;Type
+	click Derived15 "/api/NAnt.Core.Functions/ProjectFunctions"
 	Derived16["StringFunctions"]--&gt;Type
 	click Derived16 "/api/NAnt.Core.Functions/StringFunctions"
-	Derived17["BooleanConversionFunctions"]--&gt;Type
-	click Derived17 "/api/NAnt.Core.Functions/BooleanConversionFunctions"
-	Derived18["TimeSpanFunctions"]--&gt;Type
-	click Derived18 "/api/NAnt.Core.Functions/TimeSpanFunctions"
-	Derived19["DateTimeFunctions"]--&gt;Type
-	click Derived19 "/api/NAnt.Core.Functions/DateTimeFunctions"
-	Derived20["PropertyFunctions"]--&gt;Type
-	click Derived20 "/api/NAnt.Core.Functions/PropertyFunctions"
-	Derived21["VersionFunctions"]--&gt;Type
-	click Derived21 "/api/NAnt.Core.Functions/VersionFunctions"
-	Derived22["TimeSpanConversionFunctions"]--&gt;Type
-	click Derived22 "/api/NAnt.Core.Functions/TimeSpanConversionFunctions"
-	Derived23["PlatformFunctions"]--&gt;Type
-	click Derived23 "/api/NAnt.Core.Functions/PlatformFunctions"
-	Derived24["VersionConversionFunctions"]--&gt;Type
-	click Derived24 "/api/NAnt.Core.Functions/VersionConversionFunctions"
-	Derived25["ConversionFunctions"]--&gt;Type
-	click Derived25 "/api/NAnt.Core.Functions/ConversionFunctions"
-	Derived26["Int32ConversionFunctions"]--&gt;Type
-	click Derived26 "/api/NAnt.Core.Functions/Int32ConversionFunctions"
-	Derived27["MathFunctions"]--&gt;Type
-	click Derived27 "/api/NAnt.Core.Functions/MathFunctions"
-	Derived28["FileVersionInfoFunctions"]--&gt;Type
-	click Derived28 "/api/NAnt.Core.Functions/FileVersionInfoFunctions"
+	Derived17["DateTimeFunctions"]--&gt;Type
+	click Derived17 "/api/NAnt.Core.Functions/DateTimeFunctions"
+	Derived18["PlatformFunctions"]--&gt;Type
+	click Derived18 "/api/NAnt.Core.Functions/PlatformFunctions"
+	Derived19["VersionConversionFunctions"]--&gt;Type
+	click Derived19 "/api/NAnt.Core.Functions/VersionConversionFunctions"
+	Derived20["MSBuildFunctions"]--&gt;Type
+	click Derived20 "/api/NAnt.MSBuild.Functions/MSBuildFunctions"
+	Derived21["DirectoryFunctions"]--&gt;Type
+	click Derived21 "/api/NAnt.Core.Functions/DirectoryFunctions"
+	Derived22["PkgConfigFunctions"]--&gt;Type
+	click Derived22 "/api/NAnt.Core.Functions/PkgConfigFunctions"
+	Derived23["TaskFunctions"]--&gt;Type
+	click Derived23 "/api/NAnt.Core.Functions/TaskFunctions"
+	Derived24["Int64ConversionFunctions"]--&gt;Type
+	click Derived24 "/api/NAnt.Core.Functions/Int64ConversionFunctions"
+	Derived25["EnvironmentFunctions"]--&gt;Type
+	click Derived25 "/api/NAnt.Core.Functions/EnvironmentFunctions"
+	Derived26["BooleanConversionFunctions"]--&gt;Type
+	click Derived26 "/api/NAnt.Core.Functions/BooleanConversionFunctions"
+	Derived27["AssemblyNameFunctions"]--&gt;Type
+	click Derived27 "/api/NAnt.Core.Functions/AssemblyNameFunctions"
+	Derived28["Int32ConversionFunctions"]--&gt;Type
+	click Derived28 "/api/NAnt.Core.Functions/Int32ConversionFunctions"
+	Derived29["MathFunctions"]--&gt;Type
+	click Derived29 "/api/NAnt.Core.Functions/MathFunctions"
+	Derived30["DateTimeConversionFunctions"]--&gt;Type
+	click Derived30 "/api/NAnt.Core.Functions/DateTimeConversionFunctions"
 
 						</div>
 					</div>
@@ -430,7 +433,7 @@ class Type type-node
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
 </p>
 
 <script>

@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - API - Element Class</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -223,7 +220,7 @@
 <section class="content">
 	
 	
-		<h1 id="Summary">Summary</h1>
+			<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Models a NAnt XML element in the build file.
     </div>
@@ -250,31 +247,38 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/NAnt.DotNet.Types/Package">Package</a></li>								
-											<li><a href="/api/NAnt.Core.Types/PathElement">PathElement</a></li>								
-											<li><a href="/api/NAnt.Core.Types/Exclude">FileSet<wbr>.Exclude</a></li>								
-											<li><a href="/api/NAnt.Core.Types/ExcludesFile">FileSet<wbr>.ExcludesFile</a></li>								
-											<li><a href="/api/NAnt.Core.Types/Argument">Argument</a></li>								
+											<li><a href="/api/NAnt.NUnit1.Types/NUnitTest">NUnitTest</a></li>								
 											<li><a href="/api/NAnt.Core.Tasks/InElement">InElement</a></li>								
-											<li><a href="/api/NAnt.Core.Types/XsltExtensionObject">XsltExtensionObject</a></li>								
 											<li><a href="/api/NAnt.Core.Types/Formatter">Formatter</a></li>								
-											<li><a href="/api/NAnt.Core.Types/XmlNamespace">XmlNamespace</a></li>								
-											<li><a href="/api/NAnt.DotNet.Types/AssemblyAttribute">AssemblyAttribute</a></li>								
-											<li><a href="/api/NAnt.DotNet.Types/CompilerWarning">CompilerWarning</a></li>								
-											<li><a href="/api/NAnt.Core.Types/Pattern">Pattern</a></li>								
-											<li><a href="/api/NAnt.Core/DataTypeBase">DataTypeBase</a></li>								
-											<li><a href="/api/NAnt.Core.Types/Option">Option</a></li>								
-											<li><a href="/api/NAnt.Core/Target">Target</a></li>								
-											<li><a href="/api/NAnt.Core.Types/Token">Token</a></li>								
-											<li><a href="/api/NAnt.Core/ElementContainer">ElementContainer</a></li>								
-											<li><a href="/api/NAnt.DotNet.Types/Module">Module</a></li>								
+											<li><a href="/api/NAnt.VisualCpp.Types/Library">Library</a></li>								
+											<li><a href="/api/NAnt.Core.Types/PathElement">PathElement</a></li>								
 											<li><a href="/api/NAnt.Core.Filters/ChainableReader">ChainableReader</a></li>								
-											<li><a href="/api/NAnt.Core.Types/EnvironmentSet">EnvironmentSet</a></li>								
-											<li><a href="/api/NAnt.DotNet.Types/NamespaceImport">NamespaceImport</a></li>								
-											<li><a href="/api/NAnt.Core.Types/EnvironmentVariable">EnvironmentVariable</a></li>								
-											<li><a href="/api/NAnt.Core.Types/XsltParameter">XsltParameter</a></li>								
+											<li><a href="/api/NAnt.DotNet.Types/AssemblyAttribute">AssemblyAttribute</a></li>								
+											<li><a href="/api/NAnt.NUnit2.Types/Category">Category</a></li>								
+											<li><a href="/api/NAnt.NUnit.Types/FormatterElement">FormatterElement</a></li>								
 											<li><a href="/api/NAnt.Core/Task">Task</a></li>								
+											<li><a href="/api/NAnt.Core.Types/EnvironmentVariable">EnvironmentVariable</a></li>								
+											<li><a href="/api/NAnt.Core/DataTypeBase">DataTypeBase</a></li>								
 											<li><a href="/api/NAnt.Core.Types/RawXml">RawXml</a></li>								
+											<li><a href="/api/NAnt.Core/Target">Target</a></li>								
+											<li><a href="/api/NAnt.DotNet.Types/Module">Module</a></li>								
+											<li><a href="/api/NAnt.Core.Types/EnvironmentSet">EnvironmentSet</a></li>								
+											<li><a href="/api/NAnt.Core.Types/Argument">Argument</a></li>								
+											<li><a href="/api/NAnt.VisualCpp.Types/Symbol">Symbol</a></li>								
+											<li><a href="/api/NAnt.Core.Types/XsltParameter">XsltParameter</a></li>								
+											<li><a href="/api/NAnt.Core.Types/Token">Token</a></li>								
+											<li><a href="/api/NAnt.NUnit2.Types/NUnit2Test">NUnit2Test</a></li>								
+											<li><a href="/api/NAnt.Core.Types/ExcludesFile">FileSet<wbr>.ExcludesFile</a></li>								
+											<li><a href="/api/NAnt.Core.Types/Pattern">Pattern</a></li>								
+											<li><a href="/api/NAnt.Core.Types/XsltExtensionObject">XsltExtensionObject</a></li>								
+											<li><a href="/api/NAnt.Core.Types/XmlNamespace">XmlNamespace</a></li>								
+											<li><a href="/api/NAnt.DotNet.Types/NamespaceImport">NamespaceImport</a></li>								
+											<li><a href="/api/NAnt.DotNet.Types/Package">Package</a></li>								
+											<li><a href="/api/NAnt.Core.Types/Exclude">FileSet<wbr>.Exclude</a></li>								
+											<li><a href="/api/NAnt.Core.Types/Option">Option</a></li>								
+											<li><a href="/api/NAnt.VSNet.Types/WebMap">WebMap</a></li>								
+											<li><a href="/api/NAnt.Core/ElementContainer">ElementContainer</a></li>								
+											<li><a href="/api/NAnt.DotNet.Types/CompilerWarning">CompilerWarning</a></li>								
 									</ul>
 								</dd>			
 							
@@ -286,56 +290,70 @@
 	Type--&gt;Base0["Object"]
 	Type["Element"]
 class Type type-node
-	Derived0["Package"]--&gt;Type
-	click Derived0 "/api/NAnt.DotNet.Types/Package"
-	Derived1["PathElement"]--&gt;Type
-	click Derived1 "/api/NAnt.Core.Types/PathElement"
-	Derived2["FileSet.Exclude"]--&gt;Type
-	click Derived2 "/api/NAnt.Core.Types/Exclude"
-	Derived3["FileSet.ExcludesFile"]--&gt;Type
-	click Derived3 "/api/NAnt.Core.Types/ExcludesFile"
-	Derived4["Argument"]--&gt;Type
-	click Derived4 "/api/NAnt.Core.Types/Argument"
-	Derived5["InElement"]--&gt;Type
-	click Derived5 "/api/NAnt.Core.Tasks/InElement"
-	Derived6["XsltExtensionObject"]--&gt;Type
-	click Derived6 "/api/NAnt.Core.Types/XsltExtensionObject"
-	Derived7["Formatter"]--&gt;Type
-	click Derived7 "/api/NAnt.Core.Types/Formatter"
-	Derived8["XmlNamespace"]--&gt;Type
-	click Derived8 "/api/NAnt.Core.Types/XmlNamespace"
-	Derived9["AssemblyAttribute"]--&gt;Type
-	click Derived9 "/api/NAnt.DotNet.Types/AssemblyAttribute"
-	Derived10["CompilerWarning"]--&gt;Type
-	click Derived10 "/api/NAnt.DotNet.Types/CompilerWarning"
-	Derived11["Pattern"]--&gt;Type
-	click Derived11 "/api/NAnt.Core.Types/Pattern"
-	Derived12["DataTypeBase"]--&gt;Type
-	click Derived12 "/api/NAnt.Core/DataTypeBase"
-	Derived13["Option"]--&gt;Type
-	click Derived13 "/api/NAnt.Core.Types/Option"
-	Derived14["Target"]--&gt;Type
-	click Derived14 "/api/NAnt.Core/Target"
-	Derived15["Token"]--&gt;Type
-	click Derived15 "/api/NAnt.Core.Types/Token"
-	Derived16["ElementContainer"]--&gt;Type
-	click Derived16 "/api/NAnt.Core/ElementContainer"
-	Derived17["Module"]--&gt;Type
-	click Derived17 "/api/NAnt.DotNet.Types/Module"
-	Derived18["ChainableReader"]--&gt;Type
-	click Derived18 "/api/NAnt.Core.Filters/ChainableReader"
-	Derived19["EnvironmentSet"]--&gt;Type
-	click Derived19 "/api/NAnt.Core.Types/EnvironmentSet"
-	Derived20["NamespaceImport"]--&gt;Type
-	click Derived20 "/api/NAnt.DotNet.Types/NamespaceImport"
-	Derived21["EnvironmentVariable"]--&gt;Type
-	click Derived21 "/api/NAnt.Core.Types/EnvironmentVariable"
-	Derived22["XsltParameter"]--&gt;Type
-	click Derived22 "/api/NAnt.Core.Types/XsltParameter"
-	Derived23["Task"]--&gt;Type
-	click Derived23 "/api/NAnt.Core/Task"
-	Derived24["RawXml"]--&gt;Type
-	click Derived24 "/api/NAnt.Core.Types/RawXml"
+	Derived0["NUnitTest"]--&gt;Type
+	click Derived0 "/api/NAnt.NUnit1.Types/NUnitTest"
+	Derived1["InElement"]--&gt;Type
+	click Derived1 "/api/NAnt.Core.Tasks/InElement"
+	Derived2["Formatter"]--&gt;Type
+	click Derived2 "/api/NAnt.Core.Types/Formatter"
+	Derived3["Library"]--&gt;Type
+	click Derived3 "/api/NAnt.VisualCpp.Types/Library"
+	Derived4["PathElement"]--&gt;Type
+	click Derived4 "/api/NAnt.Core.Types/PathElement"
+	Derived5["ChainableReader"]--&gt;Type
+	click Derived5 "/api/NAnt.Core.Filters/ChainableReader"
+	Derived6["AssemblyAttribute"]--&gt;Type
+	click Derived6 "/api/NAnt.DotNet.Types/AssemblyAttribute"
+	Derived7["Category"]--&gt;Type
+	click Derived7 "/api/NAnt.NUnit2.Types/Category"
+	Derived8["FormatterElement"]--&gt;Type
+	click Derived8 "/api/NAnt.NUnit.Types/FormatterElement"
+	Derived9["Task"]--&gt;Type
+	click Derived9 "/api/NAnt.Core/Task"
+	Derived10["EnvironmentVariable"]--&gt;Type
+	click Derived10 "/api/NAnt.Core.Types/EnvironmentVariable"
+	Derived11["DataTypeBase"]--&gt;Type
+	click Derived11 "/api/NAnt.Core/DataTypeBase"
+	Derived12["RawXml"]--&gt;Type
+	click Derived12 "/api/NAnt.Core.Types/RawXml"
+	Derived13["Target"]--&gt;Type
+	click Derived13 "/api/NAnt.Core/Target"
+	Derived14["Module"]--&gt;Type
+	click Derived14 "/api/NAnt.DotNet.Types/Module"
+	Derived15["EnvironmentSet"]--&gt;Type
+	click Derived15 "/api/NAnt.Core.Types/EnvironmentSet"
+	Derived16["Argument"]--&gt;Type
+	click Derived16 "/api/NAnt.Core.Types/Argument"
+	Derived17["Symbol"]--&gt;Type
+	click Derived17 "/api/NAnt.VisualCpp.Types/Symbol"
+	Derived18["XsltParameter"]--&gt;Type
+	click Derived18 "/api/NAnt.Core.Types/XsltParameter"
+	Derived19["Token"]--&gt;Type
+	click Derived19 "/api/NAnt.Core.Types/Token"
+	Derived20["NUnit2Test"]--&gt;Type
+	click Derived20 "/api/NAnt.NUnit2.Types/NUnit2Test"
+	Derived21["FileSet.ExcludesFile"]--&gt;Type
+	click Derived21 "/api/NAnt.Core.Types/ExcludesFile"
+	Derived22["Pattern"]--&gt;Type
+	click Derived22 "/api/NAnt.Core.Types/Pattern"
+	Derived23["XsltExtensionObject"]--&gt;Type
+	click Derived23 "/api/NAnt.Core.Types/XsltExtensionObject"
+	Derived24["XmlNamespace"]--&gt;Type
+	click Derived24 "/api/NAnt.Core.Types/XmlNamespace"
+	Derived25["NamespaceImport"]--&gt;Type
+	click Derived25 "/api/NAnt.DotNet.Types/NamespaceImport"
+	Derived26["Package"]--&gt;Type
+	click Derived26 "/api/NAnt.DotNet.Types/Package"
+	Derived27["FileSet.Exclude"]--&gt;Type
+	click Derived27 "/api/NAnt.Core.Types/Exclude"
+	Derived28["Option"]--&gt;Type
+	click Derived28 "/api/NAnt.Core.Types/Option"
+	Derived29["WebMap"]--&gt;Type
+	click Derived29 "/api/NAnt.VSNet.Types/WebMap"
+	Derived30["ElementContainer"]--&gt;Type
+	click Derived30 "/api/NAnt.Core/ElementContainer"
+	Derived31["CompilerWarning"]--&gt;Type
+	click Derived31 "/api/NAnt.DotNet.Types/CompilerWarning"
 
 						</div>
 					</div>
@@ -348,7 +366,7 @@ class Type type-node
 public abstract class Element</code></pre>
 
 
-	<h1 id="Remarks">Remarks</h1>
+		<h1 id="Remarks">Remarks</h1>
 	<div>
     <p>
     Automatically validates attributes in the element based on attributes 
@@ -637,7 +655,7 @@ public abstract class Element</code></pre>
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
 </p>
 
 <script>

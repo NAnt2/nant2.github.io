@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - API - ExternalProgramBase Class</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -205,7 +202,7 @@
 <section class="content">
 	
 	
-		<h1 id="Summary">Summary</h1>
+			<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Provides the abstract base class for tasks that execute external applications.
     </div>
@@ -240,14 +237,26 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/NAnt.DotNet.Tasks/IlasmTask">IlasmTask</a></li>								
+											<li><a href="/api/NAnt.DotNet.Tasks/DelaySignTask">DelaySignTask</a></li>								
 											<li><a href="/api/NAnt.DotNet.Tasks/CompilerBase">CompilerBase</a></li>								
-											<li><a href="/api/NAnt.DotNet.Tasks/RegsvcsTask">RegsvcsTask</a></li>								
-											<li><a href="/api/NAnt.DotNet.Tasks/AssemblyLinkerTask">AssemblyLinkerTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/ExecTask">ExecTask</a></li>								
+											<li><a href="/api/NAnt.VisualCpp.Tasks/RcTask">RcTask</a></li>								
+											<li><a href="/api/NAnt.VisualCpp.Tasks/LibTask">LibTask</a></li>								
 											<li><a href="/api/NAnt.DotNet.Tasks/ResGenTask">ResGenTask</a></li>								
 											<li><a href="/api/NAnt.DotNet.Tasks/LicenseTask">LicenseTask</a></li>								
-											<li><a href="/api/NAnt.DotNet.Tasks/DelaySignTask">DelaySignTask</a></li>								
+											<li><a href="/api/NAnt.DotNet.Tasks/AssemblyLinkerTask">AssemblyLinkerTask</a></li>								
+											<li><a href="/api/NAnt.VisualCpp.Tasks/ClTask">ClTask</a></li>								
+											<li><a href="/api/NAnt.DotNet.Tasks/RegsvcsTask">RegsvcsTask</a></li>								
+											<li><a href="/api/NAnt.VisualCpp.Tasks/McTask">McTask</a></li>								
+											<li><a href="/api/NAnt.Win32.Tasks/AxImpTask">AxImpTask</a></li>								
+											<li><a href="/api/NAnt.Win32.Tasks/RegAsmTask">RegAsmTask</a></li>								
+											<li><a href="/api/NAnt.Win32.Tasks/TlbImpTask">TlbImpTask</a></li>								
+											<li><a href="/api/NAnt.Win32.Tasks/TlbExpTask">TlbExpTask</a></li>								
+											<li><a href="/api/NAnt.VisualCpp.Tasks/MidlTask">MidlTask</a></li>								
+											<li><a href="/api/NAnt.DotNet.Tasks/IlasmTask">IlasmTask</a></li>								
+											<li><a href="/api/NAnt.MSNet.Tasks/IldasmTask">IldasmTask</a></li>								
+											<li><a href="/api/NAnt.VisualCpp.Tasks/LinkTask">LinkTask</a></li>								
+											<li><a href="/api/NAnt.SourceControl.Tasks/AbstractSourceControlTask">Abstract<wbr>Source<wbr>Control<wbr>Task</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/ExecTask">ExecTask</a></li>								
 									</ul>
 								</dd>			
 							
@@ -265,22 +274,46 @@
 	click Interface0 "/api/NAnt.Core/IConditional"
 	Type["ExternalProgramBase"]
 class Type type-node
-	Derived0["IlasmTask"]--&gt;Type
-	click Derived0 "/api/NAnt.DotNet.Tasks/IlasmTask"
+	Derived0["DelaySignTask"]--&gt;Type
+	click Derived0 "/api/NAnt.DotNet.Tasks/DelaySignTask"
 	Derived1["CompilerBase"]--&gt;Type
 	click Derived1 "/api/NAnt.DotNet.Tasks/CompilerBase"
-	Derived2["RegsvcsTask"]--&gt;Type
-	click Derived2 "/api/NAnt.DotNet.Tasks/RegsvcsTask"
-	Derived3["AssemblyLinkerTask"]--&gt;Type
-	click Derived3 "/api/NAnt.DotNet.Tasks/AssemblyLinkerTask"
-	Derived4["ExecTask"]--&gt;Type
-	click Derived4 "/api/NAnt.Core.Tasks/ExecTask"
-	Derived5["ResGenTask"]--&gt;Type
-	click Derived5 "/api/NAnt.DotNet.Tasks/ResGenTask"
-	Derived6["LicenseTask"]--&gt;Type
-	click Derived6 "/api/NAnt.DotNet.Tasks/LicenseTask"
-	Derived7["DelaySignTask"]--&gt;Type
-	click Derived7 "/api/NAnt.DotNet.Tasks/DelaySignTask"
+	Derived2["RcTask"]--&gt;Type
+	click Derived2 "/api/NAnt.VisualCpp.Tasks/RcTask"
+	Derived3["LibTask"]--&gt;Type
+	click Derived3 "/api/NAnt.VisualCpp.Tasks/LibTask"
+	Derived4["ResGenTask"]--&gt;Type
+	click Derived4 "/api/NAnt.DotNet.Tasks/ResGenTask"
+	Derived5["LicenseTask"]--&gt;Type
+	click Derived5 "/api/NAnt.DotNet.Tasks/LicenseTask"
+	Derived6["AssemblyLinkerTask"]--&gt;Type
+	click Derived6 "/api/NAnt.DotNet.Tasks/AssemblyLinkerTask"
+	Derived7["ClTask"]--&gt;Type
+	click Derived7 "/api/NAnt.VisualCpp.Tasks/ClTask"
+	Derived8["RegsvcsTask"]--&gt;Type
+	click Derived8 "/api/NAnt.DotNet.Tasks/RegsvcsTask"
+	Derived9["McTask"]--&gt;Type
+	click Derived9 "/api/NAnt.VisualCpp.Tasks/McTask"
+	Derived10["AxImpTask"]--&gt;Type
+	click Derived10 "/api/NAnt.Win32.Tasks/AxImpTask"
+	Derived11["RegAsmTask"]--&gt;Type
+	click Derived11 "/api/NAnt.Win32.Tasks/RegAsmTask"
+	Derived12["TlbImpTask"]--&gt;Type
+	click Derived12 "/api/NAnt.Win32.Tasks/TlbImpTask"
+	Derived13["TlbExpTask"]--&gt;Type
+	click Derived13 "/api/NAnt.Win32.Tasks/TlbExpTask"
+	Derived14["MidlTask"]--&gt;Type
+	click Derived14 "/api/NAnt.VisualCpp.Tasks/MidlTask"
+	Derived15["IlasmTask"]--&gt;Type
+	click Derived15 "/api/NAnt.DotNet.Tasks/IlasmTask"
+	Derived16["IldasmTask"]--&gt;Type
+	click Derived16 "/api/NAnt.MSNet.Tasks/IldasmTask"
+	Derived17["LinkTask"]--&gt;Type
+	click Derived17 "/api/NAnt.VisualCpp.Tasks/LinkTask"
+	Derived18["AbstractSourceControlTask"]--&gt;Type
+	click Derived18 "/api/NAnt.SourceControl.Tasks/AbstractSourceControlTask"
+	Derived19["ExecTask"]--&gt;Type
+	click Derived19 "/api/NAnt.Core.Tasks/ExecTask"
 
 						</div>
 					</div>
@@ -293,7 +326,7 @@ class Type type-node
 public abstract class ExternalProgramBase : Task, IConditional</code></pre>
 
 
-	<h1 id="Remarks">Remarks</h1>
+		<h1 id="Remarks">Remarks</h1>
 	<div>
       <p>
       When a <code class="cs">NAnt.Core.Attributes.ProgramLocationAttribute</code> is applied to the
@@ -894,7 +927,7 @@ public abstract class ExternalProgramBase : Task, IConditional</code></pre>
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
 </p>
 
 <script>

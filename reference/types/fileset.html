@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - fileset</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,13 +76,11 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#NestedElements">Nested elements</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
-<p><a href="#Requirements">Requirements</a></p>
 <p><a href="#SeeAlso">See Also</a></p>
+<p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -117,7 +112,6 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Filesets are groups of files.  These files can be found in a directory 
     tree starting in a base directory and are matched by patterns taken 
@@ -125,337 +119,6 @@
     this feature or at the project level, i.e., as children of <code class="cs">&lt;project&gt;</code>.
     </div>
 
-
-
-				<h1 id="Parameters">Parameters</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover four-cols">
-						<thead>
-							<tr>
-								<th>Attribute</th>
-								<th>Type</th>
-								<th>Description</th>
-                                <th>Required</th>
-							</tr>
-						</thead>
-                        <tbody>
-									<tr>
-										<td>
-											<b>
-												basedir
-											</b>
-										</td>
-										<td>DirectoryInfo</td>
-										<td>
-											<div>
-    The base of the directory of this fileset. The default is the project 
-    base directory.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<b>
-												casesensitive
-											</b>
-										</td>
-										<td>bool</td>
-										<td>
-											<div>
-    Indicates whether include and exclude patterns must be treated in a
-    case-sensitive way. The default is <code class="cs">true</code> on Unix;
-    otherwise, <code class="cs">false</code>.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<b>
-												defaultexcludes
-											</b>
-										</td>
-										<td>bool</td>
-										<td>
-											<div>
-    Indicates whether default excludes should be used or not. 
-    The default is <code class="cs">true</code>.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<b>
-												failonempty
-											</b>
-										</td>
-										<td>bool</td>
-										<td>
-											<div>
-    When set to <code class="cs">true</code>, causes the fileset element to 
-    throw a <code class="cs">NAnt.Core.ValidationException</code> when no files match the 
-    includes and excludes criteria. The default is <code class="cs">false</code>.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-																<tr>
-										<td>
-											id
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The ID used to be referenced later.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											refid
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The ID to use as the reference.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-                        </tbody>
-					</table>
-				</div>
-			</div>
-		
-
-
-<h1 id="NestedElements">Nested elements</h1>    <div class="container-fluid">
-        
-
-    <div class="row">
-        <h2>
-            &lt;exclude&gt; - NAnt nested collection
-        </h2>
-        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
-            
-            <p>
-    The items to exclude from the fileset.
-    </p>
-                    </div>
-        <h2>&lt;exclude&gt;</h2>
-    </div>
- 
-
-    <div class="row">
-        <h2>
-            &lt;excludesfile&gt; - NAnt nested collection
-        </h2>
-        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
-            
-            <p>
-    The files from which a list of patterns or files to exclude should
-    be obtained.
-    </p>
-                    </div>
-        <h2>&lt;excludesfile&gt;</h2>
-    </div>
- 
-
-    <div class="row">
-        <h2>
-            &lt;include&gt; - NAnt nested collection
-        </h2>
-        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
-            
-            <p>
-    The items to include in the fileset.
-    </p>
-                    </div>
-        <h2>&lt;include&gt;</h2>
-    </div>
- 
-
-    <div class="row">
-        <h2>
-            &lt;includesfile&gt; - NAnt nested collection
-        </h2>
-        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
-            
-            <p>
-    The files from which a list of patterns or files to include should
-    be obtained.
-    </p>
-                    </div>
-        <h2>&lt;includesfile&gt;</h2>
-    </div>
- 
-
-    <div class="row">
-        <h2>
-            &lt;excludes&gt; - NAnt nested collection
-                <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
-        </h2>
-        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
-            
-            <p>
-    The items to exclude from the fileset.
-    </p>
-                <div class="alert alert-warning">
-                    <i>Obsolete. Use <exclude> element instead.</exclude></i>
-                </div>
-                    </div>
-        <h2>&lt;excludes&gt;</h2>
-    </div>
- 
-
-    <div class="row">
-        <h2>
-            &lt;includes&gt; - NAnt nested collection
-                <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
-        </h2>
-        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
-            
-            <p>
-    The items to include in the fileset.
-    </p>
-                <div class="alert alert-warning">
-                    <i>Obsolete. Use <include> element instead.</include></i>
-                </div>
-                    </div>
-        <h2>&lt;includes&gt;</h2>
-    </div>
- 
-
-    <div class="row">
-        <h2>
-            &lt;includesList&gt; - NAnt nested collection
-                <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
-        </h2>
-        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
-            
-            <p>
-    The files from which a list of patterns or files to include should 
-    be obtained.
-    </p>
-                <div class="alert alert-warning">
-                    <i>Obsolete. Use <includesfile> instead.</includesfile></i>
-                </div>
-                    </div>
-        <h2>&lt;includesList&gt;</h2>
-    </div>
-     </div>
- 
-	<h1 id="Examples">Examples</h1>
-	<div>
-    <description>Match</description><description>
-                <para>
-                Matches all files in <c>CVS</c> directories that can be 
-                located anywhere in the directory tree.
-                </para>
-                <para>Matches:</para>
-                <list type="bullet">
-                    <item>
-                        <description>CVS/Repository</description>
-                    </item>
-                    <item>
-                        <description>org/apache/CVS/Entries</description>
-                    </item>
-                    <item>
-                        <description>org/apache/jakarta/tools/ant/CVS/Entries</description>
-                    </item>
-                </list>
-                <para>But not:</para>
-                <list type="bullet">
-                    <item>
-                        <description>org/apache/CVS/foo/bar/Entries (<c>foo/bar/</c> part does not match)</description>
-                    </item>
-                </list>
-            </description><description>
-                <para>
-                Matches all files in the <c>org/apache/jakarta</c> directory 
-                tree.
-                </para>
-                <para>Matches:</para>
-                <list type="bullet">
-                    <item>
-                        <description>org/apache/jakarta/tools/ant/docs/index.html</description>
-                    </item>
-                    <item>
-                        <description>org/apache/jakarta/test.xml</description>
-                    </item>
-                </list>
-                <para>But not:</para>
-                <list type="bullet">
-                    <item>
-                        <description>org/apache/xyz.java (<c>jakarta/</c> part is missing)</description>
-                    </item>
-                </list>
-            </description><description>
-                <para>
-                Matches all files in <c>CVS</c> directories that are located 
-                anywhere in the directory tree under <c>org/apache</c>.
-                </para>
-                <para>Matches:</para>
-                <list type="bullet">
-                    <item>
-                        <description>org/apache/CVS/Entries</description>
-                    </item>
-                    <item>
-                        <description>org/apache/jakarta/tools/ant/CVS/Entries</description>
-                    </item>
-                </list>
-                <para>But not:</para>
-                <list type="bullet">
-                    <item>
-                        <description>org/apache/CVS/foo/bar/Entries (<c>foo/bar/</c> part does not match)</description>
-                    </item>
-                </list>
-            </description><description>
-                <para>
-                Matches all files that have a <c>test</c> element in their 
-                path, including <c>test</c> as a filename.
-                </para>
-            </description><table class="table">
-        <tbody><tr>
-            <th>Pattern</th>
-            
-        </tr>
-        <tr>
-            <td><code class="cs">**/CVS/*</code></td>
-            
-        </tr>
-        <tr>
-            <td><code class="cs">org/apache/jakarta/**</code></td>
-            
-        </tr>
-        <tr>
-            <td><code class="cs">org/apache/**/CVS/*</code></td>
-            
-        </tr>
-        <tr>
-            <td><code class="cs">**/test/**</code></td>
-            
-        </tr>
-    </tbody></table>
-    </div>
-
-	<h1 id="Remarks">Remarks</h1>
 	<div>
     <h3>Patterns</h3>
     <p>
@@ -557,6 +220,1122 @@
     </p>
     </div>
 
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
+
+
+				<h1 id="Parameters">Parameters</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+basedir										</td>
+										<td>directory</td>
+										<td>
+											<div>
+    The base of the directory of this fileset. The default is the project 
+    base directory.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+casesensitive										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates whether include and exclude patterns must be treated in a
+    case-sensitive way. The default is <code class="cs">true</code> on Unix;
+    otherwise, <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+defaultexcludes										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates whether default excludes should be used or not. 
+    The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+failonempty										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    When set to <code class="cs">true</code>, causes the fileset element to 
+    throw a <code class="cs">NAnt.Core.ValidationException</code> when no files match the 
+    includes and excludes criteria. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+																<tr>
+										<td>
+											<i>id</i>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The ID used to be referenced later.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>refid</i>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The ID to use as the reference.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+
+
+
+<h1 id="NestedElements">Nested elements</h1>    <div class="container-fluid">
+        
+
+    <div class="row">
+        <h2>
+            &lt;exclude&gt;
+        </h2>
+        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
+            
+            <p>
+    The items to exclude from the fileset.
+    </p>
+            
+                    <p>
+    </p><p>
+    Automatically validates attributes in the element based on attributes 
+    applied to members in derived classes.
+    </p>
+    <p></p>
+
+
+				<h3 id="ExcludeParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													name
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The pattern or file name to exclude.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the pattern will be excluded; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Types.FileSet.Exclude.IfDefined</code>. If <code class="cs">false</code> 
+    then the pattern will be excluded; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
+        <h2>&lt;exclude&gt;</h2>
+    </div>
+ 
+
+    <div class="row">
+        <h2>
+            &lt;excludesfile&gt;
+        </h2>
+        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
+            
+            <p>
+    The files from which a list of patterns or files to exclude should
+    be obtained.
+    </p>
+            
+                    <p>
+    </p><p>
+    Automatically validates attributes in the element based on attributes 
+    applied to members in derived classes.
+    </p>
+    <p></p>
+
+
+				<h3 id="ExcludesFileParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													name
+												</b>
+										</td>
+										<td>file</td>
+										<td>
+											<div>
+    The name of a file; each line of this file is taken to be a 
+    pattern.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the patterns will be excluded; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Types.FileSet.ExcludesFile.IfDefined</code>. If <code class="cs">false</code> 
+    then the patterns will be excluded; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
+        <h2>&lt;excludesfile&gt;</h2>
+    </div>
+ 
+
+    <div class="row">
+        <h2>
+            &lt;include&gt;
+        </h2>
+        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
+            
+            <p>
+    The items to include in the fileset.
+    </p>
+            
+                    <p>
+    </p><p>
+    Automatically validates attributes in the element based on attributes 
+    applied to members in derived classes.
+    </p>
+    <p></p>
+
+
+				<h3 id="IncludeParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													name
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The pattern or file name to include.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+asis										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the file name will be added to 
+    the <code class="cs">NAnt.Core.Types.FileSet</code> without pattern matching or checking 
+    if the file exists.  The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+frompath										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the file will be searched for 
+    on the path. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the pattern will be included; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Types.FileSet.Include.IfDefined</code>. If <code class="cs">false</code> 
+    then the pattern will be included; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+																<tr>
+										<td>
+											<i>if</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the pattern will be excluded; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>name</i>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The pattern or file name to exclude.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>unless</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Types.FileSet.Exclude.IfDefined</code>. If <code class="cs">false</code> 
+    then the pattern will be excluded; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
+        <h2>&lt;include&gt;</h2>
+    </div>
+ 
+
+    <div class="row">
+        <h2>
+            &lt;includesfile&gt;
+        </h2>
+        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
+            
+            <p>
+    The files from which a list of patterns or files to include should
+    be obtained.
+    </p>
+            
+                    <p>
+    </p><p>
+    Automatically validates attributes in the element based on attributes 
+    applied to members in derived classes.
+    </p>
+    <p></p>
+
+
+				<h3 id="IncludesFileParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+asis										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the patterns in the include file 
+    will be added to the <code class="cs">NAnt.Core.Types.FileSet</code> without pattern 
+    matching or checking if the file exists.  The default is 
+    <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+frompath										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the patterns in the include file
+    will be searched for on the path. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the patterns will be included;
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Types.FileSet.IncludesFile.IfDefined</code>. If <code class="cs">false</code> 
+    then the patterns will be included; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+																<tr>
+										<td>
+											<i>if</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the patterns will be excluded; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>name</i>
+										</td>
+										<td>file</td>
+										<td>
+											<div>
+    The name of a file; each line of this file is taken to be a 
+    pattern.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>unless</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Types.FileSet.ExcludesFile.IfDefined</code>. If <code class="cs">false</code> 
+    then the patterns will be excluded; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
+        <h2>&lt;includesfile&gt;</h2>
+    </div>
+ 
+
+    <div class="row">
+        <h2>
+            &lt;excludes&gt;
+                <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
+        </h2>
+        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
+            
+            <p>
+    The items to exclude from the fileset.
+    </p>
+                <div class="alert alert-warning">
+                    <i>Obsolete. Use <exclude> element instead.</exclude></i>
+                </div>
+            
+                    <p>
+    </p><p>
+    Automatically validates attributes in the element based on attributes 
+    applied to members in derived classes.
+    </p>
+    <p></p>
+
+
+				<h3 id="ExcludeParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													name
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The pattern or file name to exclude.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the pattern will be excluded; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Types.FileSet.Exclude.IfDefined</code>. If <code class="cs">false</code> 
+    then the pattern will be excluded; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
+        <h2>&lt;excludes&gt;</h2>
+    </div>
+ 
+
+    <div class="row">
+        <h2>
+            &lt;includes&gt;
+                <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
+        </h2>
+        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
+            
+            <p>
+    The items to include in the fileset.
+    </p>
+                <div class="alert alert-warning">
+                    <i>Obsolete. Use <include> element instead.</include></i>
+                </div>
+            
+                    <p>
+    </p><p>
+    Automatically validates attributes in the element based on attributes 
+    applied to members in derived classes.
+    </p>
+    <p></p>
+
+
+				<h3 id="IncludeParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													name
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The pattern or file name to include.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+asis										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the file name will be added to 
+    the <code class="cs">NAnt.Core.Types.FileSet</code> without pattern matching or checking 
+    if the file exists.  The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+frompath										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the file will be searched for 
+    on the path. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the pattern will be included; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Types.FileSet.Include.IfDefined</code>. If <code class="cs">false</code> 
+    then the pattern will be included; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+																<tr>
+										<td>
+											<i>if</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the pattern will be excluded; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>name</i>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The pattern or file name to exclude.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>unless</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Types.FileSet.Exclude.IfDefined</code>. If <code class="cs">false</code> 
+    then the pattern will be excluded; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
+        <h2>&lt;includes&gt;</h2>
+    </div>
+ 
+
+    <div class="row">
+        <h2>
+            &lt;includesList&gt;
+                <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
+        </h2>
+        <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
+            
+            <p>
+    The files from which a list of patterns or files to include should 
+    be obtained.
+    </p>
+                <div class="alert alert-warning">
+                    <i>Obsolete. Use <includesfile> instead.</includesfile></i>
+                </div>
+            
+                    <p>
+    </p><p>
+    Automatically validates attributes in the element based on attributes 
+    applied to members in derived classes.
+    </p>
+    <p></p>
+
+
+				<h3 id="IncludesFileParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+asis										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the patterns in the include file 
+    will be added to the <code class="cs">NAnt.Core.Types.FileSet</code> without pattern 
+    matching or checking if the file exists.  The default is 
+    <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+frompath										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the patterns in the include file
+    will be searched for on the path. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the patterns will be included;
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Types.FileSet.IncludesFile.IfDefined</code>. If <code class="cs">false</code> 
+    then the patterns will be included; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+																<tr>
+										<td>
+											<i>if</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the patterns will be excluded; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>name</i>
+										</td>
+										<td>file</td>
+										<td>
+											<div>
+    The name of a file; each line of this file is taken to be a 
+    pattern.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>unless</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Types.FileSet.ExcludesFile.IfDefined</code>. If <code class="cs">false</code> 
+    then the patterns will be excluded; otherwise, skipped. The default 
+    is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
+        <h2>&lt;includesList&gt;</h2>
+    </div>
+     </div>
+ 
+		<h1 id="Examples">Examples</h1>
+	<div>
+    <description>Match</description><description>
+                <para>
+                Matches all files in <c>CVS</c> directories that can be 
+                located anywhere in the directory tree.
+                </para>
+                <para>Matches:</para>
+                <list type="bullet">
+                    <item>
+                        <description>CVS/Repository</description>
+                    </item>
+                    <item>
+                        <description>org/apache/CVS/Entries</description>
+                    </item>
+                    <item>
+                        <description>org/apache/jakarta/tools/ant/CVS/Entries</description>
+                    </item>
+                </list>
+                <para>But not:</para>
+                <list type="bullet">
+                    <item>
+                        <description>org/apache/CVS/foo/bar/Entries (<c>foo/bar/</c> part does not match)</description>
+                    </item>
+                </list>
+            </description><description>
+                <para>
+                Matches all files in the <c>org/apache/jakarta</c> directory 
+                tree.
+                </para>
+                <para>Matches:</para>
+                <list type="bullet">
+                    <item>
+                        <description>org/apache/jakarta/tools/ant/docs/index.html</description>
+                    </item>
+                    <item>
+                        <description>org/apache/jakarta/test.xml</description>
+                    </item>
+                </list>
+                <para>But not:</para>
+                <list type="bullet">
+                    <item>
+                        <description>org/apache/xyz.java (<c>jakarta/</c> part is missing)</description>
+                    </item>
+                </list>
+            </description><description>
+                <para>
+                Matches all files in <c>CVS</c> directories that are located 
+                anywhere in the directory tree under <c>org/apache</c>.
+                </para>
+                <para>Matches:</para>
+                <list type="bullet">
+                    <item>
+                        <description>org/apache/CVS/Entries</description>
+                    </item>
+                    <item>
+                        <description>org/apache/jakarta/tools/ant/CVS/Entries</description>
+                    </item>
+                </list>
+                <para>But not:</para>
+                <list type="bullet">
+                    <item>
+                        <description>org/apache/CVS/foo/bar/Entries (<c>foo/bar/</c> part does not match)</description>
+                    </item>
+                </list>
+            </description><description>
+                <para>
+                Matches all files that have a <c>test</c> element in their 
+                path, including <c>test</c> as a filename.
+                </para>
+            </description><table class="table">
+        <tbody><tr>
+            <th>Pattern</th>
+            
+        </tr>
+        <tr>
+            <td><code class="cs">**/CVS/*</code></td>
+            
+        </tr>
+        <tr>
+            <td><code class="cs">org/apache/jakarta/**</code></td>
+            
+        </tr>
+        <tr>
+            <td><code class="cs">org/apache/**/CVS/*</code></td>
+            
+        </tr>
+        <tr>
+            <td><code class="cs">**/test/**</code></td>
+            
+        </tr>
+    </tbody></table>
+    </div>
+
+	<h1 id="SeeAlso">See Also</h1>
+	<ul class="list-unstyled">
+			<li>NAnt.Core.Types.PatternSet</li>
+	</ul>
+
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
         <div class="panel-body">	
@@ -572,11 +1351,6 @@
             </dl>
         </div>
     </div>
-
-	<h1 id="SeeAlso">See Also</h1>
-	<ul class="list-unstyled">
-			<li>NAnt.Core.Types.PatternSet</li>
-	</ul>
     
 </section>                
             </div>           
@@ -593,7 +1367,7 @@
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

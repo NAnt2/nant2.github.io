@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - choose</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,10 +76,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -115,7 +110,6 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
       <p>
       Executes an alternate set of task or type definition depending on
@@ -123,6 +117,31 @@
       </p>
     </div>
 
+	<div>
+      <p>
+      The <code class="cs">NAnt.Core.Tasks.ChooseTask</code> selects one among a number of possible
+      alternatives. It consists of a sequence of <code class="cs">&lt;when&gt;</code> elements
+      followed by an optional <code class="cs">&lt;otherwise&gt;</code> element.
+      </p>
+      <p>
+      Each <code class="cs">&lt;when&gt;</code> element has a single attribute, test, which 
+      specifies an expression. The content of the <code class="cs">&lt;when&gt;</code> and 
+      <code class="cs">&lt;otherwise&gt;</code> elements is a set of nested tasks.
+      </p>
+      <p>
+      The content of the first, and only the first, <code class="cs">&lt;when&gt;</code>
+      element whose test is <code class="cs">true</code> is executed. If no 
+      <code class="cs">&lt;when&gt;</code> element is <code class="cs">true</code>, the 
+      content of the <code class="cs">&lt;otherwise&gt;</code> element is executed.
+      If no <code class="cs">&lt;when&gt;</code> element is <code class="cs">true</code>, and no
+      <code class="cs">&lt;otherwise&gt;</code> element is present, nothing is done.
+      </p>
+    </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -140,7 +159,7 @@
                         <tbody>
 																<tr>
 										<td>
-											failonerror
+											<i>failonerror</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -155,7 +174,7 @@
 									</tr>
 									<tr>
 										<td>
-											if
+											<i>if</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -170,7 +189,7 @@
 									</tr>
 									<tr>
 										<td>
-											unless
+											<i>unless</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -186,7 +205,7 @@
 									</tr>
 									<tr>
 										<td>
-											verbose
+											<i>verbose</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -206,8 +225,10 @@
 		
 
 
+
+
  
-	<h1 id="Examples">Examples</h1>
+		<h1 id="Examples">Examples</h1>
 	<div>
       <p>
       Execute alternate set of tasks depending on the configuration being
@@ -250,27 +271,6 @@
 &lt;/choose&gt;</code></pre>
     </div>
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-      <p>
-      The <code class="cs">NAnt.Core.Tasks.ChooseTask</code> selects one among a number of possible
-      alternatives. It consists of a sequence of <code class="cs">&lt;when&gt;</code> elements
-      followed by an optional <code class="cs">&lt;otherwise&gt;</code> element.
-      </p>
-      <p>
-      Each <code class="cs">&lt;when&gt;</code> element has a single attribute, test, which 
-      specifies an expression. The content of the <code class="cs">&lt;when&gt;</code> and 
-      <code class="cs">&lt;otherwise&gt;</code> elements is a set of nested tasks.
-      </p>
-      <p>
-      The content of the first, and only the first, <code class="cs">&lt;when&gt;</code>
-      element whose test is <code class="cs">true</code> is executed. If no 
-      <code class="cs">&lt;when&gt;</code> element is <code class="cs">true</code>, the 
-      content of the <code class="cs">&lt;otherwise&gt;</code> element is executed.
-      If no <code class="cs">&lt;when&gt;</code> element is <code class="cs">true</code>, and no
-      <code class="cs">&lt;otherwise&gt;</code> element is present, nothing is done.
-      </p>
-    </div>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -287,7 +287,6 @@
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -304,7 +303,7 @@
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

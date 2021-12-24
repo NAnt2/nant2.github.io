@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - Functions Reference</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
         <link href="/assets/css/theme/theme.css" rel="stylesheet" />
@@ -24,10 +24,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -107,6 +104,7 @@
             <li><a href="#Environment">Environment Functions</a></li>
             <li><a href="#File">File Functions</a></li>
             <li><a href="#Math">Math Functions</a></li>
+            <li><a href="#MSBuild">MSBuild Functions</a></li>
             <li><a href="#NAnt">NAnt Functions</a></li>
             <li><a href="#Operating System">Operating System Functions</a></li>
             <li><a href="#Path">Path Functions</a></li>
@@ -128,7 +126,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assembly.get-attribute-property">assembly::get-attribute-property</a></strong>
+                            <strong><a href="/reference/functions/assembly.GetAttributeProperty(Assembly%2C+string%2C+string%2C+string)">assembly::get-attribute-property</a></strong>
                         </td>
                         <td>
                             <p>
@@ -140,7 +138,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assembly.get-full-name">assembly::get-full-name</a></strong>
+                            <strong><a href="/reference/functions/assembly.GetFullName(Assembly)">assembly::get-full-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -152,7 +150,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assembly.get-informational-version">assembly::get-informational-version</a></strong>
+                            <strong><a href="/reference/functions/assembly.GetInformationalVersion(Assembly)">assembly::get-informational-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -164,7 +162,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assembly.get-location">assembly::get-location</a></strong>
+                            <strong><a href="/reference/functions/assembly.GetLocation(Assembly)">assembly::get-location</a></strong>
                         </td>
                         <td>
                             <p>
@@ -177,7 +175,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assembly.get-name">assembly::get-name</a></strong>
+                            <strong><a href="/reference/functions/assembly.GetName(Assembly)">assembly::get-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -189,7 +187,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assembly.load">assembly::load</a></strong>
+                            <strong><a href="/reference/functions/assembly.Load(string)">assembly::load</a></strong>
                         </td>
                         <td>
                             <p>
@@ -201,7 +199,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assembly.load-from-file">assembly::load-from-file</a></strong>
+                            <strong><a href="/reference/functions/assembly.LoadFromFile(string)">assembly::load-from-file</a></strong>
                         </td>
                         <td>
                             <p>
@@ -213,7 +211,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assemblyname.get-assembly-name">assemblyname::get-assembly-name</a></strong>
+                            <strong><a href="/reference/functions/assemblyname.GetAssemblyName(string)">assemblyname::get-assembly-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -225,7 +223,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assemblyname.get-codebase">assemblyname::get-codebase</a></strong>
+                            <strong><a href="/reference/functions/assemblyname.GetCodeBase(AssemblyName)">assemblyname::get-codebase</a></strong>
                         </td>
                         <td>
                             <p>
@@ -237,7 +235,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assemblyname.get-escaped-codebase">assemblyname::get-escaped-codebase</a></strong>
+                            <strong><a href="/reference/functions/assemblyname.GetEscapedCodeBase(AssemblyName)">assemblyname::get-escaped-codebase</a></strong>
                         </td>
                         <td>
                             <p>
@@ -249,7 +247,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assemblyname.get-full-name">assemblyname::get-full-name</a></strong>
+                            <strong><a href="/reference/functions/assemblyname.GetFullName(AssemblyName)">assemblyname::get-full-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -261,7 +259,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assemblyname.get-name">assemblyname::get-name</a></strong>
+                            <strong><a href="/reference/functions/assemblyname.GetName(AssemblyName)">assemblyname::get-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -273,7 +271,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/assemblyname.get-version">assemblyname::get-version</a></strong>
+                            <strong><a href="/reference/functions/assemblyname.GetVersion(AssemblyName)">assemblyname::get-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -301,7 +299,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/bool.parse">bool::parse</a></strong>
+                            <strong><a href="/reference/functions/bool.Parse(string)">bool::parse</a></strong>
                         </td>
                         <td>
                             <p>
@@ -314,7 +312,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/bool.to-string">bool::to-string</a></strong>
+                            <strong><a href="/reference/functions/bool.ToString(bool)">bool::to-string</a></strong>
                         </td>
                         <td>
                             <p>
@@ -327,7 +325,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/convert.to-boolean">convert::to-boolean</a></strong>
+                            <strong><a href="/reference/functions/convert.ToBoolean(bool)">convert::to-boolean</a></strong>
                                 <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
                         </td>
                         <td>
@@ -343,7 +341,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/convert.to-datetime">convert::to-datetime</a></strong>
+                            <strong><a href="/reference/functions/convert.ToDateTime(DateTime)">convert::to-datetime</a></strong>
                                 <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
                         </td>
                         <td>
@@ -359,7 +357,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/convert.to-double">convert::to-double</a></strong>
+                            <strong><a href="/reference/functions/convert.ToDouble(double)">convert::to-double</a></strong>
                                 <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
                         </td>
                         <td>
@@ -375,7 +373,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/convert.to-int">convert::to-int</a></strong>
+                            <strong><a href="/reference/functions/convert.ToInt(int)">convert::to-int</a></strong>
                                 <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
                         </td>
                         <td>
@@ -391,7 +389,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/convert.to-string">convert::to-string</a></strong>
+                            <strong><a href="/reference/functions/convert.ConvertToString(string)">convert::to-string</a></strong>
                                 <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
                         </td>
                         <td>
@@ -407,7 +405,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.format-to-string">datetime::format-to-string</a></strong>
+                            <strong><a href="/reference/functions/datetime.ToString(DateTime%2C+string)">datetime::format-to-string</a></strong>
                         </td>
                         <td>
                             <p>
@@ -420,7 +418,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.parse">datetime::parse</a></strong>
+                            <strong><a href="/reference/functions/datetime.Parse(string)">datetime::parse</a></strong>
                         </td>
                         <td>
                             <p>
@@ -433,7 +431,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.to-string">datetime::to-string</a></strong>
+                            <strong><a href="/reference/functions/datetime.ToString(DateTime)">datetime::to-string</a></strong>
                         </td>
                         <td>
                             <p>
@@ -446,7 +444,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/double.parse">double::parse</a></strong>
+                            <strong><a href="/reference/functions/double.Parse(string)">double::parse</a></strong>
                         </td>
                         <td>
                             <p>
@@ -459,7 +457,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/double.to-string">double::to-string</a></strong>
+                            <strong><a href="/reference/functions/double.ToString(double)">double::to-string</a></strong>
                         </td>
                         <td>
                             <p>
@@ -472,7 +470,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/int.parse">int::parse</a></strong>
+                            <strong><a href="/reference/functions/int.Parse(string)">int::parse</a></strong>
                         </td>
                         <td>
                             <p>
@@ -485,7 +483,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/int.to-string">int::to-string</a></strong>
+                            <strong><a href="/reference/functions/int.ToString(int)">int::to-string</a></strong>
                         </td>
                         <td>
                             <p>
@@ -498,7 +496,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/long.parse">long::parse</a></strong>
+                            <strong><a href="/reference/functions/long.Parse(string)">long::parse</a></strong>
                         </td>
                         <td>
                             <p>
@@ -511,7 +509,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/long.to-string">long::to-string</a></strong>
+                            <strong><a href="/reference/functions/long.ToString(long)">long::to-string</a></strong>
                         </td>
                         <td>
                             <p>
@@ -524,7 +522,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.parse">timespan::parse</a></strong>
+                            <strong><a href="/reference/functions/timespan.Parse(string)">timespan::parse</a></strong>
                         </td>
                         <td>
                             <p>
@@ -537,7 +535,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.to-string">timespan::to-string</a></strong>
+                            <strong><a href="/reference/functions/timespan.ToString(TimeSpan)">timespan::to-string</a></strong>
                         </td>
                         <td>
                             <p>
@@ -550,7 +548,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/version.parse">version::parse</a></strong>
+                            <strong><a href="/reference/functions/version.Parse(string)">version::parse</a></strong>
                         </td>
                         <td>
                             <p>
@@ -563,7 +561,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/version.to-string">version::to-string</a></strong>
+                            <strong><a href="/reference/functions/version.ToString(Version)">version::to-string</a></strong>
                         </td>
                         <td>
                             <p>
@@ -592,7 +590,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.get-day">datetime::get-day</a></strong>
+                            <strong><a href="/reference/functions/datetime.GetDay(DateTime)">datetime::get-day</a></strong>
                         </td>
                         <td>
                             <p>
@@ -604,7 +602,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.get-day-of-week">datetime::get-day-of-week</a></strong>
+                            <strong><a href="/reference/functions/datetime.GetDayOfWeek(DateTime)">datetime::get-day-of-week</a></strong>
                         </td>
                         <td>
                             <p>
@@ -616,7 +614,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.get-day-of-year">datetime::get-day-of-year</a></strong>
+                            <strong><a href="/reference/functions/datetime.GetDayOfYear(DateTime)">datetime::get-day-of-year</a></strong>
                         </td>
                         <td>
                             <p>
@@ -628,7 +626,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.get-days-in-month">datetime::get-days-in-month</a></strong>
+                            <strong><a href="/reference/functions/datetime.GetDaysInMonth(int%2C+int)">datetime::get-days-in-month</a></strong>
                         </td>
                         <td>
                             <p>
@@ -641,7 +639,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.get-hour">datetime::get-hour</a></strong>
+                            <strong><a href="/reference/functions/datetime.GetHour(DateTime)">datetime::get-hour</a></strong>
                         </td>
                         <td>
                             <p>
@@ -653,7 +651,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.get-millisecond">datetime::get-millisecond</a></strong>
+                            <strong><a href="/reference/functions/datetime.GetMillisecond(DateTime)">datetime::get-millisecond</a></strong>
                         </td>
                         <td>
                             <p>
@@ -665,7 +663,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.get-minute">datetime::get-minute</a></strong>
+                            <strong><a href="/reference/functions/datetime.GetMinute(DateTime)">datetime::get-minute</a></strong>
                         </td>
                         <td>
                             <p>
@@ -677,7 +675,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.get-month">datetime::get-month</a></strong>
+                            <strong><a href="/reference/functions/datetime.GetMonth(DateTime)">datetime::get-month</a></strong>
                         </td>
                         <td>
                             <p>
@@ -689,7 +687,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.get-second">datetime::get-second</a></strong>
+                            <strong><a href="/reference/functions/datetime.GetSecond(DateTime)">datetime::get-second</a></strong>
                         </td>
                         <td>
                             <p>
@@ -701,7 +699,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.get-ticks">datetime::get-ticks</a></strong>
+                            <strong><a href="/reference/functions/datetime.GetTicks(DateTime)">datetime::get-ticks</a></strong>
                         </td>
                         <td>
                             <p>
@@ -713,7 +711,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.get-year">datetime::get-year</a></strong>
+                            <strong><a href="/reference/functions/datetime.GetYear(DateTime)">datetime::get-year</a></strong>
                         </td>
                         <td>
                             <p>
@@ -725,7 +723,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.is-leap-year">datetime::is-leap-year</a></strong>
+                            <strong><a href="/reference/functions/datetime.IsLeapYear(int)">datetime::is-leap-year</a></strong>
                         </td>
                         <td>
                             <p>
@@ -737,7 +735,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/datetime.now">datetime::now</a></strong>
+                            <strong><a href="/reference/functions/datetime.Now()">datetime::now</a></strong>
                         </td>
                         <td>
                             <p>
@@ -750,7 +748,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.from-days">timespan::from-days</a></strong>
+                            <strong><a href="/reference/functions/timespan.FromDays(double)">timespan::from-days</a></strong>
                         </td>
                         <td>
                             <p>
@@ -763,7 +761,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.from-hours">timespan::from-hours</a></strong>
+                            <strong><a href="/reference/functions/timespan.FromHours(double)">timespan::from-hours</a></strong>
                         </td>
                         <td>
                             <p>
@@ -777,7 +775,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.from-milliseconds">timespan::from-milliseconds</a></strong>
+                            <strong><a href="/reference/functions/timespan.FromMilliseconds(double)">timespan::from-milliseconds</a></strong>
                         </td>
                         <td>
                             <p>
@@ -790,7 +788,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.from-minutes">timespan::from-minutes</a></strong>
+                            <strong><a href="/reference/functions/timespan.FromMinutes(double)">timespan::from-minutes</a></strong>
                         </td>
                         <td>
                             <p>
@@ -804,7 +802,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.from-seconds">timespan::from-seconds</a></strong>
+                            <strong><a href="/reference/functions/timespan.FromSeconds(double)">timespan::from-seconds</a></strong>
                         </td>
                         <td>
                             <p>
@@ -818,7 +816,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.from-ticks">timespan::from-ticks</a></strong>
+                            <strong><a href="/reference/functions/timespan.FromTicks(long)">timespan::from-ticks</a></strong>
                         </td>
                         <td>
                             <p>
@@ -831,7 +829,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.get-days">timespan::get-days</a></strong>
+                            <strong><a href="/reference/functions/timespan.GetDays(TimeSpan)">timespan::get-days</a></strong>
                         </td>
                         <td>
                             <p>
@@ -844,7 +842,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.get-hours">timespan::get-hours</a></strong>
+                            <strong><a href="/reference/functions/timespan.GetHours(TimeSpan)">timespan::get-hours</a></strong>
                         </td>
                         <td>
                             <p>
@@ -857,7 +855,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.get-milliseconds">timespan::get-milliseconds</a></strong>
+                            <strong><a href="/reference/functions/timespan.GetMilliseconds(TimeSpan)">timespan::get-milliseconds</a></strong>
                         </td>
                         <td>
                             <p>
@@ -870,7 +868,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.get-minutes">timespan::get-minutes</a></strong>
+                            <strong><a href="/reference/functions/timespan.GetMinutes(TimeSpan)">timespan::get-minutes</a></strong>
                         </td>
                         <td>
                             <p>
@@ -883,7 +881,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.get-seconds">timespan::get-seconds</a></strong>
+                            <strong><a href="/reference/functions/timespan.GetSeconds(TimeSpan)">timespan::get-seconds</a></strong>
                         </td>
                         <td>
                             <p>
@@ -896,7 +894,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.get-ticks">timespan::get-ticks</a></strong>
+                            <strong><a href="/reference/functions/timespan.GetTicks(TimeSpan)">timespan::get-ticks</a></strong>
                         </td>
                         <td>
                             <p>
@@ -909,7 +907,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.get-total-days">timespan::get-total-days</a></strong>
+                            <strong><a href="/reference/functions/timespan.GetTotalDays(TimeSpan)">timespan::get-total-days</a></strong>
                         </td>
                         <td>
                             <p>
@@ -922,7 +920,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.get-total-hours">timespan::get-total-hours</a></strong>
+                            <strong><a href="/reference/functions/timespan.GetTotalHours(TimeSpan)">timespan::get-total-hours</a></strong>
                         </td>
                         <td>
                             <p>
@@ -935,7 +933,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.get-total-milliseconds">timespan::get-total-milliseconds</a></strong>
+                            <strong><a href="/reference/functions/timespan.GetTotalMilliseconds(TimeSpan)">timespan::get-total-milliseconds</a></strong>
                         </td>
                         <td>
                             <p>
@@ -948,7 +946,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.get-total-minutes">timespan::get-total-minutes</a></strong>
+                            <strong><a href="/reference/functions/timespan.GetTotalMinutes(TimeSpan)">timespan::get-total-minutes</a></strong>
                         </td>
                         <td>
                             <p>
@@ -961,7 +959,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/timespan.get-total-seconds">timespan::get-total-seconds</a></strong>
+                            <strong><a href="/reference/functions/timespan.GetTotalSeconds(TimeSpan)">timespan::get-total-seconds</a></strong>
                         </td>
                         <td>
                             <p>
@@ -990,7 +988,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/directory.exists">directory::exists</a></strong>
+                            <strong><a href="/reference/functions/directory.Exists(string)">directory::exists</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1003,7 +1001,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/directory.get-creation-time">directory::get-creation-time</a></strong>
+                            <strong><a href="/reference/functions/directory.GetCreationTime(string)">directory::get-creation-time</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1015,7 +1013,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/directory.get-current-directory">directory::get-current-directory</a></strong>
+                            <strong><a href="/reference/functions/directory.GetCurrentDirectory()">directory::get-current-directory</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1027,7 +1025,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/directory.get-directory-root">directory::get-directory-root</a></strong>
+                            <strong><a href="/reference/functions/directory.GetDirectoryRoot(string)">directory::get-directory-root</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1040,7 +1038,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/directory.get-last-access-time">directory::get-last-access-time</a></strong>
+                            <strong><a href="/reference/functions/directory.GetLastAccessTime(string)">directory::get-last-access-time</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1052,7 +1050,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/directory.get-last-write-time">directory::get-last-write-time</a></strong>
+                            <strong><a href="/reference/functions/directory.GetLastWriteTime(string)">directory::get-last-write-time</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1064,7 +1062,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/directory.get-name">directory::get-name</a></strong>
+                            <strong><a href="/reference/functions/directory.GetName(string)">directory::get-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1076,7 +1074,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/directory.get-parent-directory">directory::get-parent-directory</a></strong>
+                            <strong><a href="/reference/functions/directory.GetParentDirectory(string)">directory::get-parent-directory</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1104,7 +1102,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/environment.get-folder-path">environment::get-folder-path</a></strong>
+                            <strong><a href="/reference/functions/environment.GetFolderPath(Environment.SpecialFolder)">environment::get-folder-path</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1117,7 +1115,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/environment.get-machine-name">environment::get-machine-name</a></strong>
+                            <strong><a href="/reference/functions/environment.GetMachineName()">environment::get-machine-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1129,7 +1127,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/environment.get-operating-system">environment::get-operating-system</a></strong>
+                            <strong><a href="/reference/functions/environment.GetOperatingSystem()">environment::get-operating-system</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1142,7 +1140,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/environment.get-user-name">environment::get-user-name</a></strong>
+                            <strong><a href="/reference/functions/environment.GetUserName()">environment::get-user-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1154,7 +1152,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/environment.get-variable">environment::get-variable</a></strong>
+                            <strong><a href="/reference/functions/environment.GetVariable(string)">environment::get-variable</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1166,7 +1164,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/environment.get-version">environment::get-version</a></strong>
+                            <strong><a href="/reference/functions/environment.GetVersion()">environment::get-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1179,7 +1177,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/environment.newline">environment::newline</a></strong>
+                            <strong><a href="/reference/functions/environment.NewLine()">environment::newline</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1191,7 +1189,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/environment.variable-exists">environment::variable-exists</a></strong>
+                            <strong><a href="/reference/functions/environment.VariableExists(string)">environment::variable-exists</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1220,7 +1218,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/file.exists">file::exists</a></strong>
+                            <strong><a href="/reference/functions/file.Exists(string)">file::exists</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1232,7 +1230,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/file.get-creation-time">file::get-creation-time</a></strong>
+                            <strong><a href="/reference/functions/file.GetCreationTime(string)">file::get-creation-time</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1244,7 +1242,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/file.get-last-access-time">file::get-last-access-time</a></strong>
+                            <strong><a href="/reference/functions/file.GetLastAccessTime(string)">file::get-last-access-time</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1256,7 +1254,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/file.get-last-write-time">file::get-last-write-time</a></strong>
+                            <strong><a href="/reference/functions/file.GetLastWriteTime(string)">file::get-last-write-time</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1268,7 +1266,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/file.get-length">file::get-length</a></strong>
+                            <strong><a href="/reference/functions/file.GetLength(string)">file::get-length</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1280,7 +1278,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/file.is-assembly">file::is-assembly</a></strong>
+                            <strong><a href="/reference/functions/file.IsAssembly(string)">file::is-assembly</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1292,7 +1290,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/file.up-to-date">file::up-to-date</a></strong>
+                            <strong><a href="/reference/functions/file.UpToDate(string%2C+string)">file::up-to-date</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1321,7 +1319,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/math.abs">math::abs</a></strong>
+                            <strong><a href="/reference/functions/math.Abs(double)">math::abs</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1333,7 +1331,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/math.ceiling">math::ceiling</a></strong>
+                            <strong><a href="/reference/functions/math.Ceiling(double)">math::ceiling</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1345,7 +1343,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/math.floor">math::floor</a></strong>
+                            <strong><a href="/reference/functions/math.Floor(double)">math::floor</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1358,12 +1356,40 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/math.round">math::round</a></strong>
+                            <strong><a href="/reference/functions/math.Round(double)">math::round</a></strong>
                         </td>
                         <td>
                             <p>
                                 
     Rounds the value to the nearest whole number
+    
+                            </p>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+        <a id="MSBuild"></a>
+        <h1>MSBuild Functions</h1>
+<div class="box">
+    <div class="box-body no-padding">
+        <table class="table table-striped table-hover two-cols-alt table-responsive">
+            <thead>
+                <tr>
+                    <th>Functions</th>
+                    <th>Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/functions/msbuild.IsMsbuildProject(string)">msbuild::is-msbuild-project</a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Test whether project is VS2005 project and could be built using &lt;msbuild&gt;
     
                             </p>
                         </td>
@@ -1386,7 +1412,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.exists">framework::exists</a></strong>
+                            <strong><a href="/reference/functions/framework.Exists(string)">framework::exists</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1398,7 +1424,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-assembly-directory">framework::get-assembly-directory</a></strong>
+                            <strong><a href="/reference/functions/framework.GetAssemblyDirectory(string)">framework::get-assembly-directory</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1410,7 +1436,19 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-clr-version">framework::get-clr-version</a></strong>
+                            <strong><a href="/reference/functions/framework.GetClrVersion(string)">framework::get-clr-version</a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Gets the Common Language Runtime version of the specified framework.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/functions/framework.GetClrVersion()">framework::get-clr-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1423,31 +1461,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-clr-version">framework::get-clr-version</a></strong>
-                        </td>
-                        <td>
-                            <p>
-                                
-    Gets the Common Language Runtime version of the specified framework.
-    
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong><a href="/reference/functions/framework.get-description">framework::get-description</a></strong>
-                        </td>
-                        <td>
-                            <p>
-                                
-    Gets the description of the specified framework.
-    
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong><a href="/reference/functions/framework.get-description">framework::get-description</a></strong>
+                            <strong><a href="/reference/functions/framework.GetDescription()">framework::get-description</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1459,7 +1473,19 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-family">framework::get-family</a></strong>
+                            <strong><a href="/reference/functions/framework.GetDescription(string)">framework::get-description</a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Gets the description of the specified framework.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/functions/framework.GetFamily(string)">framework::get-family</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1471,7 +1497,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-framework-directory">framework::get-framework-directory</a></strong>
+                            <strong><a href="/reference/functions/framework.GetFrameworkDirectory(string)">framework::get-framework-directory</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1483,7 +1509,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-frameworks">framework::get-frameworks</a></strong>
+                            <strong><a href="/reference/functions/framework.GetFrameworks(FrameworkTypes)">framework::get-frameworks</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1496,7 +1522,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-runtime-engine">framework::get-runtime-engine</a></strong>
+                            <strong><a href="/reference/functions/framework.GetRuntimeEngine(string)">framework::get-runtime-engine</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1508,7 +1534,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-runtime-framework">framework::get-runtime-framework</a></strong>
+                            <strong><a href="/reference/functions/framework.GetRuntimeFramework()">framework::get-runtime-framework</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1520,7 +1546,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-sdk-directory">framework::get-sdk-directory</a></strong>
+                            <strong><a href="/reference/functions/framework.GetSdkDirectory(string)">framework::get-sdk-directory</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1532,7 +1558,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-target-framework">framework::get-target-framework</a></strong>
+                            <strong><a href="/reference/functions/framework.GetTargetFramework()">framework::get-target-framework</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1544,7 +1570,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-tool-path">framework::get-tool-path</a></strong>
+                            <strong><a href="/reference/functions/framework.GetToolPath(string)">framework::get-tool-path</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1557,19 +1583,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.get-version">framework::get-version</a></strong>
-                        </td>
-                        <td>
-                            <p>
-                                
-    Gets the version of the current target framework.
-    
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong><a href="/reference/functions/framework.get-version">framework::get-version</a></strong>
+                            <strong><a href="/reference/functions/framework.GetVersion(string)">framework::get-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1581,7 +1595,19 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/framework.sdk-exists">framework::sdk-exists</a></strong>
+                            <strong><a href="/reference/functions/framework.GetVersion()">framework::get-version</a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Gets the version of the current target framework.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/functions/framework.SdkExists(string)">framework::sdk-exists</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1593,7 +1619,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/nant.get-assembly">nant::get-assembly</a></strong>
+                            <strong><a href="/reference/functions/nant.GetAssembly()">nant::get-assembly</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1605,7 +1631,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/nant.get-base-directory">nant::get-base-directory</a></strong>
+                            <strong><a href="/reference/functions/nant.GetBaseDirectory()">nant::get-base-directory</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1617,7 +1643,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/nant.scan-probing-paths">nant::scan-probing-paths</a></strong>
+                            <strong><a href="/reference/functions/nant.ScanProbingPaths(string)">nant::scan-probing-paths</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1630,7 +1656,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/nant.scan-probing-paths">nant::scan-probing-paths</a></strong>
+                            <strong><a href="/reference/functions/nant.ScanProbingPaths(string%2C+string)">nant::scan-probing-paths</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1643,7 +1669,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/platform.get-name">platform::get-name</a></strong>
+                            <strong><a href="/reference/functions/platform.GetName()">platform::get-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1655,7 +1681,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/platform.is-unix">platform::is-unix</a></strong>
+                            <strong><a href="/reference/functions/platform.IsUnix()">platform::is-unix</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1667,7 +1693,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/platform.is-win32">platform::is-win32</a></strong>
+                            <strong><a href="/reference/functions/platform.IsWin32()">platform::is-win32</a></strong>
                                 <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
                         </td>
                         <td>
@@ -1684,7 +1710,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/platform.is-windows">platform::is-windows</a></strong>
+                            <strong><a href="/reference/functions/platform.IsWindows()">platform::is-windows</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1696,7 +1722,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/project.get-base-directory">project::get-base-directory</a></strong>
+                            <strong><a href="/reference/functions/project.GetBaseDirectory()">project::get-base-directory</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1708,7 +1734,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/project.get-buildfile-path">project::get-buildfile-path</a></strong>
+                            <strong><a href="/reference/functions/project.GetBuildFilePath()">project::get-buildfile-path</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1720,7 +1746,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/project.get-buildfile-uri">project::get-buildfile-uri</a></strong>
+                            <strong><a href="/reference/functions/project.GetBuildFileUri()">project::get-buildfile-uri</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1732,7 +1758,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/project.get-default-target">project::get-default-target</a></strong>
+                            <strong><a href="/reference/functions/project.GetDefaultTarget()">project::get-default-target</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1745,7 +1771,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/project.get-name">project::get-name</a></strong>
+                            <strong><a href="/reference/functions/project.GetName()">project::get-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1757,7 +1783,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/property.exists">property::exists</a></strong>
+                            <strong><a href="/reference/functions/property.Exists(string)">property::exists</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1769,7 +1795,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/property.get-value">property::get-value</a></strong>
+                            <strong><a href="/reference/functions/property.GetPropertyValue(string)">property::get-value</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1781,7 +1807,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/property.is-dynamic">property::is-dynamic</a></strong>
+                            <strong><a href="/reference/functions/property.IsDynamic(string)">property::is-dynamic</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1793,7 +1819,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/property.is-readonly">property::is-readonly</a></strong>
+                            <strong><a href="/reference/functions/property.IsReadOnly(string)">property::is-readonly</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1805,7 +1831,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/target.exists">target::exists</a></strong>
+                            <strong><a href="/reference/functions/target.Exists(string)">target::exists</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1817,7 +1843,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/target.get-current-target">target::get-current-target</a></strong>
+                            <strong><a href="/reference/functions/target.GetCurrentTarget()">target::get-current-target</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1829,7 +1855,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/target.has-executed">target::has-executed</a></strong>
+                            <strong><a href="/reference/functions/target.HasExecuted(string)">target::has-executed</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1841,7 +1867,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/task.exists">task::exists</a></strong>
+                            <strong><a href="/reference/functions/task.Exists(string)">task::exists</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1853,7 +1879,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/task.get-assembly">task::get-assembly</a></strong>
+                            <strong><a href="/reference/functions/task.GetAssembly(string)">task::get-assembly</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1882,7 +1908,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/operating-system.get-platform">operating-system::get-platform</a></strong>
+                            <strong><a href="/reference/functions/operating-system.GetPlatform(OperatingSystem)">operating-system::get-platform</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1895,7 +1921,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/operating-system.get-version">operating-system::get-version</a></strong>
+                            <strong><a href="/reference/functions/operating-system.GetVersion(OperatingSystem)">operating-system::get-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1908,7 +1934,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/operating-system.to-string">operating-system::to-string</a></strong>
+                            <strong><a href="/reference/functions/operating-system.ToString(OperatingSystem)">operating-system::to-string</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1937,7 +1963,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.change-extension">path::change-extension</a></strong>
+                            <strong><a href="/reference/functions/path.ChangeExtension(string%2C+string)">path::change-extension</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1949,7 +1975,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.combine">path::combine</a></strong>
+                            <strong><a href="/reference/functions/path.Combine(string%2C+string)">path::combine</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1961,7 +1987,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.get-directory-name">path::get-directory-name</a></strong>
+                            <strong><a href="/reference/functions/path.GetDirectoryName(string)">path::get-directory-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1973,7 +1999,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.get-extension">path::get-extension</a></strong>
+                            <strong><a href="/reference/functions/path.GetExtension(string)">path::get-extension</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1985,7 +2011,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.get-file-name">path::get-file-name</a></strong>
+                            <strong><a href="/reference/functions/path.GetFileName(string)">path::get-file-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -1997,7 +2023,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.get-file-name-without-extension">path::get-file-name-without-extension</a></strong>
+                            <strong><a href="/reference/functions/path.GetFileNameWithoutExtension(string)">path::get-file-name-without-extension</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2009,7 +2035,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.get-full-path">path::get-full-path</a></strong>
+                            <strong><a href="/reference/functions/path.GetFullPath(string)">path::get-full-path</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2021,7 +2047,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.get-path-root">path::get-path-root</a></strong>
+                            <strong><a href="/reference/functions/path.GetPathRoot(string)">path::get-path-root</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2033,7 +2059,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.get-temp-file-name">path::get-temp-file-name</a></strong>
+                            <strong><a href="/reference/functions/path.GetTempFileName()">path::get-temp-file-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2045,7 +2071,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.get-temp-path">path::get-temp-path</a></strong>
+                            <strong><a href="/reference/functions/path.GetTempPath()">path::get-temp-path</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2057,7 +2083,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.has-extension">path::has-extension</a></strong>
+                            <strong><a href="/reference/functions/path.HasExtension(string)">path::has-extension</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2069,7 +2095,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/path.is-path-rooted">path::is-path-rooted</a></strong>
+                            <strong><a href="/reference/functions/path.IsPathRooted(string)">path::is-path-rooted</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2097,7 +2123,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.contains">string::contains</a></strong>
+                            <strong><a href="/reference/functions/string.Contains(string%2C+string)">string::contains</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2109,7 +2135,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.ends-with">string::ends-with</a></strong>
+                            <strong><a href="/reference/functions/string.EndsWith(string%2C+string)">string::ends-with</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2122,7 +2148,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.get-length">string::get-length</a></strong>
+                            <strong><a href="/reference/functions/string.GetLength(string)">string::get-length</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2134,7 +2160,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.index-of">string::index-of</a></strong>
+                            <strong><a href="/reference/functions/string.IndexOf(string%2C+string)">string::index-of</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2147,7 +2173,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.last-index-of">string::last-index-of</a></strong>
+                            <strong><a href="/reference/functions/string.LastIndexOf(string%2C+string)">string::last-index-of</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2160,7 +2186,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.pad-left">string::pad-left</a></strong>
+                            <strong><a href="/reference/functions/string.PadLeft(string%2C+int%2C+string)">string::pad-left</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2172,7 +2198,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.pad-right">string::pad-right</a></strong>
+                            <strong><a href="/reference/functions/string.PadRight(string%2C+int%2C+string)">string::pad-right</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2184,7 +2210,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.replace">string::replace</a></strong>
+                            <strong><a href="/reference/functions/string.Replace(string%2C+string%2C+string)">string::replace</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2197,7 +2223,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.starts-with">string::starts-with</a></strong>
+                            <strong><a href="/reference/functions/string.StartsWith(string%2C+string)">string::starts-with</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2210,7 +2236,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.substring">string::substring</a></strong>
+                            <strong><a href="/reference/functions/string.Substring(string%2C+int%2C+int)">string::substring</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2222,7 +2248,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.to-lower">string::to-lower</a></strong>
+                            <strong><a href="/reference/functions/string.ToLower(string)">string::to-lower</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2234,7 +2260,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.to-upper">string::to-upper</a></strong>
+                            <strong><a href="/reference/functions/string.ToUpper(string)">string::to-upper</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2246,7 +2272,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.trim">string::trim</a></strong>
+                            <strong><a href="/reference/functions/string.Trim(string)">string::trim</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2258,7 +2284,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.trim-end">string::trim-end</a></strong>
+                            <strong><a href="/reference/functions/string.TrimEnd(string)">string::trim-end</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2270,7 +2296,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/string.trim-start">string::trim-start</a></strong>
+                            <strong><a href="/reference/functions/string.TrimStart(string)">string::trim-start</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2298,7 +2324,43 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/pkg-config.exists">pkg-config::exists</a></strong>
+                            <strong><a href="/reference/functions/cygpath.GetDosPath(string)">cygpath::get-dos-path</a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Gets the DOS (short) form of the specified path.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/functions/cygpath.GetUnixPath(string)">cygpath::get-unix-path</a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Gets the Unix form of the specified path.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/functions/cygpath.GetWindowsPath(string)">cygpath::get-windows-path</a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Gets the Windows form of the specified path.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/functions/pkg-config.Exists(string)">pkg-config::exists</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2310,7 +2372,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/pkg-config.get-compile-flags">pkg-config::get-compile-flags</a></strong>
+                            <strong><a href="/reference/functions/pkg-config.GetCompileFlags(string)">pkg-config::get-compile-flags</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2323,7 +2385,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/pkg-config.get-link-flags">pkg-config::get-link-flags</a></strong>
+                            <strong><a href="/reference/functions/pkg-config.GetLinkFlags(string)">pkg-config::get-link-flags</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2336,7 +2398,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/pkg-config.get-mod-version">pkg-config::get-mod-version</a></strong>
+                            <strong><a href="/reference/functions/pkg-config.GetModVersion(string)">pkg-config::get-mod-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2348,7 +2410,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/pkg-config.get-variable">pkg-config::get-variable</a></strong>
+                            <strong><a href="/reference/functions/pkg-config.GetVariable(string%2C+string)">pkg-config::get-variable</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2360,7 +2422,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/pkg-config.is-atleast-version">pkg-config::is-atleast-version</a></strong>
+                            <strong><a href="/reference/functions/pkg-config.IsAtLeastVersion(string%2C+string)">pkg-config::is-atleast-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2373,7 +2435,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/pkg-config.is-between-version">pkg-config::is-between-version</a></strong>
+                            <strong><a href="/reference/functions/pkg-config.IsBetweenVersion(string%2C+string%2C+string)">pkg-config::is-between-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2385,7 +2447,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/pkg-config.is-exact-version">pkg-config::is-exact-version</a></strong>
+                            <strong><a href="/reference/functions/pkg-config.IsExactVersion(string%2C+string)">pkg-config::is-exact-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2398,7 +2460,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/pkg-config.is-max-version">pkg-config::is-max-version</a></strong>
+                            <strong><a href="/reference/functions/pkg-config.IsMaxVersion(string%2C+string)">pkg-config::is-max-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2427,7 +2489,7 @@
             <tbody>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/fileversioninfo.get-company-name">fileversioninfo::get-company-name</a></strong>
+                            <strong><a href="/reference/functions/fileversioninfo.GetCompanyName(FileVersionInfo)">fileversioninfo::get-company-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2439,7 +2501,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/fileversioninfo.get-file-version">fileversioninfo::get-file-version</a></strong>
+                            <strong><a href="/reference/functions/fileversioninfo.GetFileVersion(FileVersionInfo)">fileversioninfo::get-file-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2451,7 +2513,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/fileversioninfo.get-product-name">fileversioninfo::get-product-name</a></strong>
+                            <strong><a href="/reference/functions/fileversioninfo.GetProductName(FileVersionInfo)">fileversioninfo::get-product-name</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2463,7 +2525,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/fileversioninfo.get-product-version">fileversioninfo::get-product-version</a></strong>
+                            <strong><a href="/reference/functions/fileversioninfo.GetProductVersion(FileVersionInfo)">fileversioninfo::get-product-version</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2475,7 +2537,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/fileversioninfo.get-version-info">fileversioninfo::get-version-info</a></strong>
+                            <strong><a href="/reference/functions/fileversioninfo.GetVersionInfo(string)">fileversioninfo::get-version-info</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2488,7 +2550,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/version.get-build">version::get-build</a></strong>
+                            <strong><a href="/reference/functions/version.GetBuild(Version)">version::get-build</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2500,7 +2562,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/version.get-major">version::get-major</a></strong>
+                            <strong><a href="/reference/functions/version.GetMajor(Version)">version::get-major</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2512,7 +2574,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/version.get-minor">version::get-minor</a></strong>
+                            <strong><a href="/reference/functions/version.GetMinor(Version)">version::get-minor</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2524,7 +2586,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong><a href="/reference/functions/version.get-revision">version::get-revision</a></strong>
+                            <strong><a href="/reference/functions/version.GetRevision(Version)">version::get-revision</a></strong>
                         </td>
                         <td>
                             <p>
@@ -2556,7 +2618,7 @@
     <br/>
     Copyright &copy; 2001-2021 NAnt2 contributors.
     <br/>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

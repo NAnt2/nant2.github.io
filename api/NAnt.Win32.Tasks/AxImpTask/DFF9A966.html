@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - API - AxImpTask.KeyContainer Property</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+	<script src="/assets/js/anchor.min.js"></script>
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Attributes">Attributes</a></p>
+<p><a href="#Value">Value</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/NAnt.Win32.dll">NAnt<wbr>.Win32<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/NAnt.Win32.Tasks">NAnt<wbr>.Win32<wbr>.Tasks</a></li>
+		<li class="header">Type</li>
+		<li><a href="/api/NAnt.Win32.Tasks/AxImpTask">AxImpTask</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Property Members</li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/231BDC9B">Arguments</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/6ACEC2D4">BaseDirectory</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/378306C0">CommandLine</a></li>
+				<li><a href="/api/NAnt.Core/Element/B804EFCC">CustomXmlProcessing</a></li>
+				<li><a href="/api/NAnt.Win32.Tasks/AxImpTask/FF0D7E14">DelaySign</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/C64869B2">ErrorWriter</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/7D5FFA5F">ExeName</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/426FC64D">ExitCode</a></li>
+				<li><a href="/api/NAnt.Core/Task/268D243C">FailOnError</a></li>
+				<li><a href="/api/NAnt.Win32.Tasks/AxImpTask/392172FD">GenerateSource</a></li>
+				<li><a href="/api/NAnt.Core/Task/27BC05C6">IfDefined</a></li>
+				<li class="selected"><a href="/api/NAnt.Win32.Tasks/AxImpTask/DFF9A966">KeyContainer</a></li>
+				<li><a href="/api/NAnt.Win32.Tasks/AxImpTask/BF91BD70">KeyFile</a></li>
+				<li><a href="/api/NAnt.Core/Element/FE2F272F">Location</a></li>
+				<li><a href="/api/NAnt.Core/Task/5D9B2E50">LogPrefix</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/1C0A1E7C">Managed</a></li>
+				<li><a href="/api/NAnt.Core/Task/565A7102">Name</a></li>
+				<li><a href="/api/NAnt.Core/Element/9EB6A4F0">NamespaceManager</a></li>
+				<li><a href="/api/NAnt.Win32.Tasks/AxImpTask/017FCB6F">OcxFile</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/58652325">Output</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/E6249825">OutputAppend</a></li>
+				<li><a href="/api/NAnt.Win32.Tasks/AxImpTask/372CC13C">OutputFile</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/C82B02AD">OutputWriter</a></li>
+				<li><a href="/api/NAnt.Core/Element/02090F73">Parent</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/285CC07E">ProcessId</a></li>
+				<li><a href="/api/NAnt.Win32.Tasks/AxImpTask/D2099E71">ProgramArguments</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/3BC72805">ProgramFileName</a></li>
+				<li><a href="/api/NAnt.Core/Element/AA6C9027">Project</a></li>
+				<li><a href="/api/NAnt.Core/Element/1584471A">Properties</a></li>
+				<li><a href="/api/NAnt.Win32.Tasks/AxImpTask/AFDE1F60">PublicKeyFile</a></li>
+				<li><a href="/api/NAnt.Win32.Tasks/AxImpTask/DE1592EB">RcwFile</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/E13CDA0E">Spawn</a></li>
+				<li><a href="/api/NAnt.Win32.Tasks/AxImpTask/AD7BFFD4">SupportsRcw</a></li>
+				<li><a href="/api/NAnt.Core/Task/B2350F85">Threshold</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/86A9E2CB">TimeOut</a></li>
+				<li><a href="/api/NAnt.Core/Task/0DA06887">UnlessDefined</a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/298CAD22">UseRuntimeEngine</a></li>
+				<li><a href="/api/NAnt.Core/Task/CCE4A03A">Verbose</a></li>
+				<li><a href="/api/NAnt.Core/Element/D9E369A6">XmlNode</a></li>
+			<li class="header">Method Members</li>
+				<li><a href="/api/NAnt.Core/Element/D571E875">CopyTo<wbr>(Element)<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Task/B75717A2">Execute<wbr>()<wbr></a></li>
+				<li><a href="/api/NAnt.Win32.Tasks/AxImpTask/05800C8F">ExecuteTask<wbr>()<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Task/B3C397B8">Get<wbr>Attribute<wbr>Configuration<wbr>Node<wbr>(FrameworkInfo, <wbr>string)<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Element/C0D5B3EB">Get<wbr>Attribute<wbr>Configuration<wbr>Node<wbr>(XmlNode, <wbr>FrameworkInfo, <wbr>string)<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Element/0EEC5A8E">GetLocation<wbr>()<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Task/97725B77">Initialize<wbr>()<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Element/DAE0362A">Initialize<wbr>(XmlNode)<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Element/83397033">Initialize<wbr>Build<wbr>Element<wbr>(Element, <wbr>XmlNode, <wbr>Element, <wbr>Type)<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Element/08741BFC">InitializeElement<wbr>(XmlNode)<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Task/9F2F1A7C">InitializeTask<wbr>(XmlNode)<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Task/B179B3A0">Initialize<wbr>Task<wbr>Configuration<wbr>()<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Element/83381393">InitializeXml<wbr>(XmlNode, <wbr>PropertyDictionary, <wbr>FrameworkInfo)<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Task/C3BACFA5">IsLogEnabledFor<wbr>(Level)<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Task/F09AAFBE">Log<wbr>(Level, <wbr>string)<wbr></a></li>
+				<li><a href="/api/NAnt.Core/Task/2F685047">Log<wbr>(Level, <wbr>string, <wbr>Object[])<wbr></a></li>
+				<li><a href="/api/NAnt.Win32.Tasks/AxImpTask/102241A5">NeedsCompiling<wbr>()<wbr></a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/CD82816E">PrepareProcess<wbr>(Process)<wbr></a></li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/3F5C8486">StartProcess<wbr>()<wbr></a></li>
+			<li class="header">Field Members</li>
+				<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase/058B1767">UnknownExitCode</a></li>
+			<li class="header">NamedType Members</li>
+				<li><a href="/api/NAnt.Core/AttributeConfigurator">Element<wbr>.<wbr>Attribute<wbr>Configurator</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+			<h3><a href="/api/NAnt.Win32.Tasks/AxImpTask">AxImpTask</a>.</h3>
+	<h1>KeyContainer <small>Property</small></h1>
+</section>
+<section class="content">
+	
+	
+			<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Specifies the key container in which the public/private key pair 
+    should be found that should be used to sign the resulting assembly
+    with a strong name.
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<dl class="dl-horizontal">	
+						<dt>Assembly</dt>
+						<dd><a href="/api/NAnt.Win32.dll">NAnt<wbr>.Win32<wbr>.dll</a></dd>
+						
+						<dt>Namespace</dt>
+						<dd><a href="/api/NAnt.Win32.Tasks">NAnt<wbr>.Win32<wbr>.Tasks</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/api/NAnt.Win32.Tasks/AxImpTask">AxImpTask</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>[TaskAttribute("keycontainer")]
+public string KeyContainer { get; set; }</code></pre>
+
+
+
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td><a href="/api/NAnt.Core.Attributes/TaskAttributeAttribute">Task<wbr>Attribute<wbr>Attribute</a></td>
+						<td>
+     Indicates that property should be treated as a XML attribute for the 
+     task.
+     </td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	<h1 id="Value">Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>string</td>
+					<td>
+    The key container containing a public/private key pair that should
+    be used to sign the resulting assembly.
+    </td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

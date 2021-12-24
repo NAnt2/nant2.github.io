@@ -4,7 +4,7 @@
 	<title>NAnt2</title>
 	<link rel="self" href="/" />
 	<rights>2021</rights>
-	<updated>2021-08-04T20:30:18Z</updated>
+	<updated>2021-12-24T19:51:00Z</updated>
 	<entry>
 		<id>/blog/2012/06/nant-nantcontrib-v0.92-released</id>
 		<title>Announcing NAnt/NAntContrib 0.92 Final Release</title>
@@ -582,27 +582,6 @@ platforms.&lt;/p&gt;
 		<summary>&lt;p&gt;The first beta for NAnt 0.86 is available NOW !&lt;/p&gt;</summary>
 	</entry>
 	<entry>
-		<id>/blog/2006/10/nant-v0.85-released</id>
-		<title>NAnt 0.85 available</title>
-		<author>
-			<name>Gert Driesen</name>
-		</author>
-		<link href="/blog/2006/10/nant-v0.85-released" />
-		<updated>2006-10-15T00:00:00Z</updated>
-		<content>&lt;p&gt;Announcing NAnt 0.85.&lt;/p&gt;
-&lt;p&gt;Binary and source distributions are available for immediate download from:
-&lt;a href="http://sourceforge.net/project/showfiles.php?group_id=31650"&gt;http://sourceforge.net/project/showfiles.php?group_id=31650&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;About NAnt:
-NAnt is a free .NET build tool, allowing applications to be built targeting both Microsoft .NET and Mono while supporting both Windows and Linux platforms.&lt;/p&gt;
-&lt;p&gt;Release notes and a user manual are available here:
-&lt;a href="http://nant.sourceforge.net/release/0.85/"&gt;http://nant.sourceforge.net/release/0.85/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Discussion of NAnt occurs on the mailing list at nant-users&amp;#64;lists.sourceforge.net.
-Bugs can be reported using the Bug Tracker at &lt;a href="http://sourceforge.net/projects/nant"&gt;http://sourceforge.net/projects/nant&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Check the NAnt homepage for additional info at &lt;a href="http://nant.sourceforge.net"&gt;http://nant.sourceforge.net&lt;/a&gt;.&lt;/p&gt;
-</content>
-		<summary>&lt;p&gt;Announcing NAnt 0.85.&lt;/p&gt;</summary>
-	</entry>
-	<entry>
 		<id>/blog/2006/10/nantcontrib-v0.85-released</id>
 		<title>NAntContrib 0.85 available</title>
 		<author>
@@ -622,6 +601,27 @@ Bugs can be reported using the Bug Tracker at &lt;a href="http://sourceforge.net
 Check the NAntContrib homepage for additional info at &lt;a href="http://nantcontrib.sourceforge.net"&gt;http://nantcontrib.sourceforge.net&lt;/a&gt;.&lt;/p&gt;
 </content>
 		<summary>&lt;p&gt;Announcing NAntContrib 0.85.&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<id>/blog/2006/10/nant-v0.85-released</id>
+		<title>NAnt 0.85 available</title>
+		<author>
+			<name>Gert Driesen</name>
+		</author>
+		<link href="/blog/2006/10/nant-v0.85-released" />
+		<updated>2006-10-15T00:00:00Z</updated>
+		<content>&lt;p&gt;Announcing NAnt 0.85.&lt;/p&gt;
+&lt;p&gt;Binary and source distributions are available for immediate download from:
+&lt;a href="http://sourceforge.net/project/showfiles.php?group_id=31650"&gt;http://sourceforge.net/project/showfiles.php?group_id=31650&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;About NAnt:
+NAnt is a free .NET build tool, allowing applications to be built targeting both Microsoft .NET and Mono while supporting both Windows and Linux platforms.&lt;/p&gt;
+&lt;p&gt;Release notes and a user manual are available here:
+&lt;a href="http://nant.sourceforge.net/release/0.85/"&gt;http://nant.sourceforge.net/release/0.85/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Discussion of NAnt occurs on the mailing list at nant-users&amp;#64;lists.sourceforge.net.
+Bugs can be reported using the Bug Tracker at &lt;a href="http://sourceforge.net/projects/nant"&gt;http://sourceforge.net/projects/nant&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Check the NAnt homepage for additional info at &lt;a href="http://nant.sourceforge.net"&gt;http://nant.sourceforge.net&lt;/a&gt;.&lt;/p&gt;
+</content>
+		<summary>&lt;p&gt;Announcing NAnt 0.85.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
 		<id>/blog/2006/06/nantcontrib-v0.85-rc4-released</id>
@@ -706,25 +706,23 @@ Check the NAntContrib homepage for additional info at &lt;a href="http://nantcon
 		<summary>&lt;p&gt;Announcing NAntContrib 0.85 Release Candidate 3.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
-		<id>/blog/2005/02/nantcontrib-v0.85-rc2-released</id>
-		<title>NAntContrib 0.85 Release Candidate 2 available</title>
+		<id>/blog/2005/02/nant-v0.85-rc2-released</id>
+		<title>NAnt 0.85 Release Candidate 2 available</title>
 		<author>
 			<name>Gert Driesen</name>
 		</author>
-		<link href="/blog/2005/02/nantcontrib-v0.85-rc2-released" />
+		<link href="/blog/2005/02/nant-v0.85-rc2-released" />
 		<updated>2005-02-12T00:00:00Z</updated>
-		<content>&lt;p&gt;Announcing NAntContrib 0.85 Release Candidate 2.&lt;/p&gt;
+		<content>&lt;p&gt;Announcing NAnt 0.85 Release Candidate 2.&lt;/p&gt;
 &lt;p&gt;Binary and source distributions are available for immediate download from:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://sourceforge.net/project/showfiles.php?group_id=54790"&gt;http://sourceforge.net/project/showfiles.php?group_id=54790&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;About NAntContrib:
-NAntContrib is the project for tasks and tools that haven't made it into
-the main NAnt distribution yet or for whatever reason don't belong there.&lt;/p&gt;
-&lt;p&gt;Release notes containing the changes since NAntContrib 0.85 Release Candidate 1, a user manual and SDK documentation are available here:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://nantcontrib.sourceforge.net/release/0.85-rc2/"&gt;http://nantcontrib.sourceforge.net/release/0.85-rc2/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Discussion of NAntContrib occurs on the mailing list at &lt;a href="mailto:nantcontrib-developer&amp;#64;lists.sourceforge.net"&gt;nantcontrib-developer&amp;#64;lists.sourceforge.net&lt;/a&gt;.
-Bugs can be reported using the Bug Tracker at &lt;a href="http://sourceforge.net/projects/nantcontrib"&gt;http://sourceforge.net/projects/nantcontrib&lt;/a&gt;.
-Check the NAntContrib homepage for additional info at &lt;a href="http://nantcontrib.sourceforge.net"&gt;http://nantcontrib.sourceforge.net&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://sourceforge.net/project/showfiles.php?group_id=31650"&gt;http://sourceforge.net/project/showfiles.php?group_id=31650&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;About NAnt: NAnt is a free .NET build tool, allowing applications to be built targeting both Microsoft .NET and Mono while supporting both win32 and linux.&lt;/p&gt;
+&lt;p&gt;Release notes containing the changes since NAnt 0.85 Release Candidate 1, a user manual and SDK documentation are available here:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://nant.sourceforge.net/release/0.85-rc2/"&gt;http://nant.sourceforge.net/release/0.85-rc2/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Discussion of NAnt occurs on the mailing list at nant-users&amp;#64;lists.sourceforge.net.
+Bugs can be reported using the Bug Tracker at &lt;a href="http://sourceforge.net/projects/nant"&gt;http://sourceforge.net/projects/nant&lt;/a&gt;.
+Check the NAnt homepage for additional info at &lt;a href="http://nant.sourceforge.net"&gt;http://nant.sourceforge.net&lt;/a&gt;.&lt;/p&gt;
 </content>
-		<summary>&lt;p&gt;Announcing NAntContrib 0.85 Release Candidate 2.&lt;/p&gt;</summary>
+		<summary>&lt;p&gt;Announcing NAnt 0.85 Release Candidate 2.&lt;/p&gt;</summary>
 	</entry>
 </feed>

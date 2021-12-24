@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - environment</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,8 +76,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#NestedElements">Nested elements</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#NestedElements">Nested elements</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -113,10 +109,16 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     A set of environment variables.
     </div>
+
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
+
 
 
 
@@ -127,21 +129,168 @@
 
     <div class="row">
         <h2>
-            &lt;variable&gt; - NAnt nested collection
+            &lt;variable&gt;
         </h2>
         <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
             
             <p>
     Environment variable to pass to a program.
     </p>
-                    </div>
+            
+                    <p></p>
+
+
+				<h3 id="EnvironmentVariableParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													name
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The name of the environment variable.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+dir										</td>
+										<td>directory</td>
+										<td>
+											<div>
+    The value for a directory-based environment variable. NAnt will 
+    convert it to an absolute path.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+file										</td>
+										<td>file</td>
+										<td>
+											<div>
+    The value for a file-based environment variable. NAnt will convert 
+    it to an absolute filename.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates if the environment variable should be passed to the 
+    external program.  If <code class="cs">true</code> then the environment
+    variable will be passed;  otherwise, skipped. The default is 
+    <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+value										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The literal value for the environment variable.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+path										</td>
+										<td><a href="/api/NAnt.Core.Types/PathSet"></a></td>
+										<td>
+											<div>
+    The value for a PATH like environment variable. You can use 
+    <code class="cs">:</code> or <code class="cs">;</code> as path separators and NAnt will convert it to 
+    the platform's local conventions.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates if the environment variable should not be passed to the 
+    external program.  If <code class="cs">false</code> then the environment
+    variable will be passed;  otherwise, skipped. The default is 
+    <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+<h3 id="EnvironmentVariableNestedElements">Nested elements</h3>    <div class="container-fluid">
+        
+
+    <div class="row">
+        <h2>
+            <a href="/reference/types/path">&lt;path&gt;</a>
+        </h2>
+        <div class="col-xs-10 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2">
+            <p>
+    Sets a single environment variable and treats it like a PATH - 
+    ensures the right separator for the local platform is used.
+    </p>
+            <!-- put the nested element class docs inline if the element does not derive from DataTypeBase (meaning, is not a global type) 
+                    - instead of checking base classes, we'll check if it has a link to NAnt reference types
+            -->
+        </div>
+        <h2><a href="/reference/types/path">&lt;/path&gt;</a></h2>
+    </div>
+     </div>
+ 
+        </div>
         <h2>&lt;variable&gt;</h2>
     </div>
  
 
     <div class="row">
         <h2>
-            &lt;option&gt; - NAnt nested collection
+            &lt;option&gt;
                 <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
         </h2>
         <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
@@ -152,7 +301,90 @@
                 <div class="alert alert-warning">
                     <i>Obsolete. Use <variable> element instead.</variable></i>
                 </div>
-                    </div>
+            
+                    <p></p>
+
+
+				<h3 id="OptionParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													name
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    Name of the option.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates if the option should be passed to the task. 
+    If <code class="cs">true</code> then the option will be passed; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates if the option should not be passed to the task.
+    If <code class="cs">false</code> then the option will be passed; 
+    otherwise, skipped. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+value										</td>
+										<td>string</td>
+										<td>
+											<div>
+    Value of the option. The default is <code class="cs">null</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
         <h2>&lt;option&gt;</h2>
     </div>
      </div>
@@ -174,7 +406,6 @@
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -191,7 +422,7 @@
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

@@ -1,3 +1,12 @@
+empty-override {
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
 body.layout-boxed {
   background-image: none;
   background-color: #f4f4f4;

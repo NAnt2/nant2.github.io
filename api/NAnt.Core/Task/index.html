@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - API - Task Class</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -222,7 +219,7 @@
 <section class="content">
 	
 	
-		<h1 id="Summary">Summary</h1>
+			<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Provides the abstract base class for tasks.
     </div>
@@ -256,40 +253,47 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/NAnt.DotNet.Tasks/NDocTask">NDocTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/EchoTask">EchoTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/MkDirTask">MkDirTask</a></li>								
-											<li><a href="/api/NAnt.DotNet.Tasks/AssemblyInfoTask">AssemblyInfoTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/AvailableTask">AvailableTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/CallTask">CallTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/UpToDateTask">UpToDateTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/SleepTask">SleepTask</a></li>								
-											<li><a href="/api/NAnt.DotNet.Tasks/ScriptTask">ScriptTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/XmlPokeTask">XmlPokeTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/NAntSchemaTask">NAntSchemaTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/SetEnvTask">SetEnvTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/FailTask">FailTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/StyleTask">StyleTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/CopyTask">CopyTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/TryCatchTask">TryCatchTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/XmlPeekTask">XmlPeekTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/RegexTask">RegexTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/SysInfoTask">SysInfoTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/DescriptionTask">DescriptionTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/MailTask">MailTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/ChooseTask">ChooseTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/IncludeTask">IncludeTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/NAntTask">NAntTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/AttribTask">AttribTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/TouchTask">TouchTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/TStampTask">TStampTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/PropertyTask">PropertyTask</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/GetTask">GetTask</a></li>								
-											<li><a href="/api/NAnt.Core/TaskContainer">TaskContainer</a></li>								
-											<li><a href="/api/NAnt.Core.Tasks/LoadFileTask">LoadFileTask</a></li>								
 											<li><a href="/api/NAnt.Core.Tasks/DeleteTask">DeleteTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/ChooseTask">ChooseTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/EchoTask">EchoTask</a></li>								
+											<li><a href="/api/NAnt.Core/TaskContainer">TaskContainer</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/SleepTask">SleepTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/LoadFileTask">LoadFileTask</a></li>								
+											<li><a href="/api/NAnt.Win32.Tasks/ReadRegistryTask">ReadRegistryTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/RegexTask">RegexTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/MailTask">MailTask</a></li>								
+											<li><a href="/api/NAnt.DotNet.Tasks/AssemblyInfoTask">AssemblyInfoTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/TStampTask">TStampTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/TryCatchTask">TryCatchTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/SetEnvTask">SetEnvTask</a></li>								
+											<li><a href="/api/NAnt.DotNet.Tasks/ScriptTask">ScriptTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/AvailableTask">AvailableTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/XmlPeekTask">XmlPeekTask</a></li>								
 											<li><a href="/api/NAnt.Core.Tasks/LoadTasksTask">LoadTasksTask</a></li>								
+											<li><a href="/api/NAnt.VSNet.Tasks/SolutionTask">SolutionTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/DescriptionTask">DescriptionTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/GetTask">GetTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/CopyTask">CopyTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/TouchTask">TouchTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/IncludeTask">IncludeTask</a></li>								
+											<li><a href="/api/NAnt.MSBuild/DummyTask">NAntLogger<wbr>.DummyTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/AttribTask">AttribTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/CallTask">CallTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/FailTask">FailTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/XmlPokeTask">XmlPokeTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/PropertyTask">PropertyTask</a></li>								
+											<li><a href="/api/NAnt.SourceControl.Tasks/CvsPass">CvsPass</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/UpToDateTask">UpToDateTask</a></li>								
+											<li><a href="/api/NAnt.MSNet.Tasks/ServiceControllerTask">Service<wbr>Controller<wbr>Task</a></li>								
+											<li><a href="/api/NAnt.NUnit2.Tasks/NUnit2Task">NUnit2Task</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/MkDirTask">MkDirTask</a></li>								
+											<li><a href="/api/NAnt.NUnit1.Tasks/NUnitTask">NUnitTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/NAntTask">NAntTask</a></li>								
+											<li><a href="/api/NAnt.DotNet.Tasks/NDocTask">NDocTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/SysInfoTask">SysInfoTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/NAntSchemaTask">NAntSchemaTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/StyleTask">StyleTask</a></li>								
+											<li><a href="/api/NAnt.Core.Tasks/ExternalProgramBase">ExternalProgramBase</a></li>								
 									</ul>
 								</dd>			
 							
@@ -305,74 +309,88 @@
 	click Interface0 "/api/NAnt.Core/IConditional"
 	Type["Task"]
 class Type type-node
-	Derived0["NDocTask"]--&gt;Type
-	click Derived0 "/api/NAnt.DotNet.Tasks/NDocTask"
-	Derived1["EchoTask"]--&gt;Type
-	click Derived1 "/api/NAnt.Core.Tasks/EchoTask"
-	Derived2["MkDirTask"]--&gt;Type
-	click Derived2 "/api/NAnt.Core.Tasks/MkDirTask"
-	Derived3["AssemblyInfoTask"]--&gt;Type
-	click Derived3 "/api/NAnt.DotNet.Tasks/AssemblyInfoTask"
-	Derived4["AvailableTask"]--&gt;Type
-	click Derived4 "/api/NAnt.Core.Tasks/AvailableTask"
-	Derived5["ExternalProgramBase"]--&gt;Type
-	click Derived5 "/api/NAnt.Core.Tasks/ExternalProgramBase"
-	Derived6["CallTask"]--&gt;Type
-	click Derived6 "/api/NAnt.Core.Tasks/CallTask"
-	Derived7["UpToDateTask"]--&gt;Type
-	click Derived7 "/api/NAnt.Core.Tasks/UpToDateTask"
-	Derived8["SleepTask"]--&gt;Type
-	click Derived8 "/api/NAnt.Core.Tasks/SleepTask"
-	Derived9["ScriptTask"]--&gt;Type
-	click Derived9 "/api/NAnt.DotNet.Tasks/ScriptTask"
-	Derived10["XmlPokeTask"]--&gt;Type
-	click Derived10 "/api/NAnt.Core.Tasks/XmlPokeTask"
-	Derived11["NAntSchemaTask"]--&gt;Type
-	click Derived11 "/api/NAnt.Core.Tasks/NAntSchemaTask"
+	Derived0["DeleteTask"]--&gt;Type
+	click Derived0 "/api/NAnt.Core.Tasks/DeleteTask"
+	Derived1["ChooseTask"]--&gt;Type
+	click Derived1 "/api/NAnt.Core.Tasks/ChooseTask"
+	Derived2["EchoTask"]--&gt;Type
+	click Derived2 "/api/NAnt.Core.Tasks/EchoTask"
+	Derived3["TaskContainer"]--&gt;Type
+	click Derived3 "/api/NAnt.Core/TaskContainer"
+	Derived4["SleepTask"]--&gt;Type
+	click Derived4 "/api/NAnt.Core.Tasks/SleepTask"
+	Derived5["LoadFileTask"]--&gt;Type
+	click Derived5 "/api/NAnt.Core.Tasks/LoadFileTask"
+	Derived6["ReadRegistryTask"]--&gt;Type
+	click Derived6 "/api/NAnt.Win32.Tasks/ReadRegistryTask"
+	Derived7["RegexTask"]--&gt;Type
+	click Derived7 "/api/NAnt.Core.Tasks/RegexTask"
+	Derived8["MailTask"]--&gt;Type
+	click Derived8 "/api/NAnt.Core.Tasks/MailTask"
+	Derived9["AssemblyInfoTask"]--&gt;Type
+	click Derived9 "/api/NAnt.DotNet.Tasks/AssemblyInfoTask"
+	Derived10["TStampTask"]--&gt;Type
+	click Derived10 "/api/NAnt.Core.Tasks/TStampTask"
+	Derived11["TryCatchTask"]--&gt;Type
+	click Derived11 "/api/NAnt.Core.Tasks/TryCatchTask"
 	Derived12["SetEnvTask"]--&gt;Type
 	click Derived12 "/api/NAnt.Core.Tasks/SetEnvTask"
-	Derived13["FailTask"]--&gt;Type
-	click Derived13 "/api/NAnt.Core.Tasks/FailTask"
-	Derived14["StyleTask"]--&gt;Type
-	click Derived14 "/api/NAnt.Core.Tasks/StyleTask"
-	Derived15["CopyTask"]--&gt;Type
-	click Derived15 "/api/NAnt.Core.Tasks/CopyTask"
-	Derived16["TryCatchTask"]--&gt;Type
-	click Derived16 "/api/NAnt.Core.Tasks/TryCatchTask"
-	Derived17["XmlPeekTask"]--&gt;Type
-	click Derived17 "/api/NAnt.Core.Tasks/XmlPeekTask"
-	Derived18["RegexTask"]--&gt;Type
-	click Derived18 "/api/NAnt.Core.Tasks/RegexTask"
-	Derived19["SysInfoTask"]--&gt;Type
-	click Derived19 "/api/NAnt.Core.Tasks/SysInfoTask"
-	Derived20["DescriptionTask"]--&gt;Type
-	click Derived20 "/api/NAnt.Core.Tasks/DescriptionTask"
-	Derived21["MailTask"]--&gt;Type
-	click Derived21 "/api/NAnt.Core.Tasks/MailTask"
-	Derived22["ChooseTask"]--&gt;Type
-	click Derived22 "/api/NAnt.Core.Tasks/ChooseTask"
-	Derived23["IncludeTask"]--&gt;Type
-	click Derived23 "/api/NAnt.Core.Tasks/IncludeTask"
-	Derived24["NAntTask"]--&gt;Type
-	click Derived24 "/api/NAnt.Core.Tasks/NAntTask"
-	Derived25["AttribTask"]--&gt;Type
-	click Derived25 "/api/NAnt.Core.Tasks/AttribTask"
-	Derived26["TouchTask"]--&gt;Type
-	click Derived26 "/api/NAnt.Core.Tasks/TouchTask"
-	Derived27["TStampTask"]--&gt;Type
-	click Derived27 "/api/NAnt.Core.Tasks/TStampTask"
+	Derived13["ScriptTask"]--&gt;Type
+	click Derived13 "/api/NAnt.DotNet.Tasks/ScriptTask"
+	Derived14["AvailableTask"]--&gt;Type
+	click Derived14 "/api/NAnt.Core.Tasks/AvailableTask"
+	Derived15["XmlPeekTask"]--&gt;Type
+	click Derived15 "/api/NAnt.Core.Tasks/XmlPeekTask"
+	Derived16["LoadTasksTask"]--&gt;Type
+	click Derived16 "/api/NAnt.Core.Tasks/LoadTasksTask"
+	Derived17["SolutionTask"]--&gt;Type
+	click Derived17 "/api/NAnt.VSNet.Tasks/SolutionTask"
+	Derived18["DescriptionTask"]--&gt;Type
+	click Derived18 "/api/NAnt.Core.Tasks/DescriptionTask"
+	Derived19["GetTask"]--&gt;Type
+	click Derived19 "/api/NAnt.Core.Tasks/GetTask"
+	Derived20["CopyTask"]--&gt;Type
+	click Derived20 "/api/NAnt.Core.Tasks/CopyTask"
+	Derived21["TouchTask"]--&gt;Type
+	click Derived21 "/api/NAnt.Core.Tasks/TouchTask"
+	Derived22["IncludeTask"]--&gt;Type
+	click Derived22 "/api/NAnt.Core.Tasks/IncludeTask"
+	Derived23["NAntLogger.DummyTask"]--&gt;Type
+	click Derived23 "/api/NAnt.MSBuild/DummyTask"
+	Derived24["AttribTask"]--&gt;Type
+	click Derived24 "/api/NAnt.Core.Tasks/AttribTask"
+	Derived25["CallTask"]--&gt;Type
+	click Derived25 "/api/NAnt.Core.Tasks/CallTask"
+	Derived26["FailTask"]--&gt;Type
+	click Derived26 "/api/NAnt.Core.Tasks/FailTask"
+	Derived27["XmlPokeTask"]--&gt;Type
+	click Derived27 "/api/NAnt.Core.Tasks/XmlPokeTask"
 	Derived28["PropertyTask"]--&gt;Type
 	click Derived28 "/api/NAnt.Core.Tasks/PropertyTask"
-	Derived29["GetTask"]--&gt;Type
-	click Derived29 "/api/NAnt.Core.Tasks/GetTask"
-	Derived30["TaskContainer"]--&gt;Type
-	click Derived30 "/api/NAnt.Core/TaskContainer"
-	Derived31["LoadFileTask"]--&gt;Type
-	click Derived31 "/api/NAnt.Core.Tasks/LoadFileTask"
-	Derived32["DeleteTask"]--&gt;Type
-	click Derived32 "/api/NAnt.Core.Tasks/DeleteTask"
-	Derived33["LoadTasksTask"]--&gt;Type
-	click Derived33 "/api/NAnt.Core.Tasks/LoadTasksTask"
+	Derived29["CvsPass"]--&gt;Type
+	click Derived29 "/api/NAnt.SourceControl.Tasks/CvsPass"
+	Derived30["UpToDateTask"]--&gt;Type
+	click Derived30 "/api/NAnt.Core.Tasks/UpToDateTask"
+	Derived31["ServiceControllerTask"]--&gt;Type
+	click Derived31 "/api/NAnt.MSNet.Tasks/ServiceControllerTask"
+	Derived32["NUnit2Task"]--&gt;Type
+	click Derived32 "/api/NAnt.NUnit2.Tasks/NUnit2Task"
+	Derived33["MkDirTask"]--&gt;Type
+	click Derived33 "/api/NAnt.Core.Tasks/MkDirTask"
+	Derived34["NUnitTask"]--&gt;Type
+	click Derived34 "/api/NAnt.NUnit1.Tasks/NUnitTask"
+	Derived35["NAntTask"]--&gt;Type
+	click Derived35 "/api/NAnt.Core.Tasks/NAntTask"
+	Derived36["NDocTask"]--&gt;Type
+	click Derived36 "/api/NAnt.DotNet.Tasks/NDocTask"
+	Derived37["SysInfoTask"]--&gt;Type
+	click Derived37 "/api/NAnt.Core.Tasks/SysInfoTask"
+	Derived38["NAntSchemaTask"]--&gt;Type
+	click Derived38 "/api/NAnt.Core.Tasks/NAntSchemaTask"
+	Derived39["StyleTask"]--&gt;Type
+	click Derived39 "/api/NAnt.Core.Tasks/StyleTask"
+	Derived40["ExternalProgramBase"]--&gt;Type
+	click Derived40 "/api/NAnt.Core.Tasks/ExternalProgramBase"
 
 						</div>
 					</div>
@@ -385,7 +403,7 @@ class Type type-node
 public abstract class Task : Element, IConditional</code></pre>
 
 
-	<h1 id="Remarks">Remarks</h1>
+		<h1 id="Remarks">Remarks</h1>
 	<div>
     A task is a piece of code that can be executed.
     </div>
@@ -759,7 +777,7 @@ public abstract class Task : Element, IConditional</code></pre>
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
 </p>
 
 <script>

@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - replacetokens</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,11 +76,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#NestedElements">Nested elements</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -116,11 +111,33 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Replaces tokens in the original input with user-supplied values.
     </div>
 
+	<div>
+    <p>
+    This filter replaces all token surrounded by a beginning and ending
+    token. The default beginning and ending tokens both default to '@'. The 
+    optional <code class="cs">NAnt.Core.Filters.ReplaceTokens.BeginToken</code> and <code class="cs">NAnt.Core.Filters.ReplaceTokens.EndToken</code> attributes
+    can be specified to change either token. By default string 
+    comparisons are case sensitive but this can be changed by setting the 
+    optional <code class="cs">NAnt.Core.Filters.ReplaceTokens.IgnoreCase</code> attribute to <code class="cs">true</code>.
+    </p>
+    <p>
+    Tokens are specified by using the <code class="cs">NAnt.Core.Types.Token</code> element. It is 
+    possible to specify from 1 to n tokens and replacement values. Values can 
+    be any valid NAnt expression.
+    </p>
+    <p>
+    Filters are intended to be used as a element of a <code class="cs">NAnt.Core.Filters.FilterChain</code>.
+    </p>
+    </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -138,10 +155,7 @@
                         <tbody>
 									<tr>
 										<td>
-											<b>
-												begintoken
-											</b>
-										</td>
+begintoken										</td>
 										<td>char</td>
 										<td>
 											<div>
@@ -154,10 +168,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												endtoken
-											</b>
-										</td>
+endtoken										</td>
 										<td>char</td>
 										<td>
 											<div>
@@ -170,10 +181,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												ignorecase
-											</b>
-										</td>
+ignorecase										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -187,7 +195,7 @@
 									</tr>
 																<tr>
 										<td>
-											if
+											<i>if</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -202,7 +210,7 @@
 									</tr>
 									<tr>
 										<td>
-											unless
+											<i>unless</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -223,24 +231,112 @@
 		
 
 
+
+
 <h1 id="NestedElements">Nested elements</h1>    <div class="container-fluid">
         
 
     <div class="row">
         <h2>
-            &lt;token&gt; - NAnt nested collection
+            &lt;token&gt;
         </h2>
         <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
             
             <p>
     Tokens and replacement values.
     </p>
-                    </div>
+            
+                    <p></p>
+
+
+				<h3 id="TokenParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													key
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    Token to be replaced.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+												<b>											
+													value
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    New value of token.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates if the token should be used to replace values. 
+    If <code class="cs">true</code> then the token will be used; 
+    otherwise, not. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates if the token should not be used to replace values.
+    If <code class="cs">false</code> then the token will be used;
+    otherwise, not. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
         <h2>&lt;token&gt;</h2>
     </div>
      </div>
  
-	<h1 id="Examples">Examples</h1>
+		<h1 id="Examples">Examples</h1>
 	<div>
       <p>
       Replace all occurrences of the string @DATE@ with the value of property
@@ -260,25 +356,6 @@
 &lt;/replacetokens&gt;</code></pre>
     </div>
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-    <p>
-    This filter replaces all token surrounded by a beginning and ending
-    token. The default beginning and ending tokens both default to '@'. The 
-    optional <code class="cs">NAnt.Core.Filters.ReplaceTokens.BeginToken</code> and <code class="cs">NAnt.Core.Filters.ReplaceTokens.EndToken</code> attributes
-    can be specified to change either token. By default string 
-    comparisons are case sensitive but this can be changed by setting the 
-    optional <code class="cs">NAnt.Core.Filters.ReplaceTokens.IgnoreCase</code> attribute to <code class="cs">true</code>.
-    </p>
-    <p>
-    Tokens are specified by using the <code class="cs">NAnt.Core.Types.Token</code> element. It is 
-    possible to specify from 1 to n tokens and replacement values. Values can 
-    be any valid NAnt expression.
-    </p>
-    <p>
-    Filters are intended to be used as a element of a <code class="cs">NAnt.Core.Filters.FilterChain</code>.
-    </p>
-    </div>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -295,7 +372,6 @@
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -312,7 +388,7 @@
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

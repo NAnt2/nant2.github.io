@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - include</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,10 +76,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -115,121 +110,10 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Includes an external build file.
     </div>
 
-
-
-				<h1 id="Parameters">Parameters</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover four-cols">
-						<thead>
-							<tr>
-								<th>Attribute</th>
-								<th>Type</th>
-								<th>Description</th>
-                                <th>Required</th>
-							</tr>
-						</thead>
-                        <tbody>
-									<tr>
-										<td>
-											<b>
-												buildfile
-											</b>
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    Build file to include.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-																<tr>
-										<td>
-											failonerror
-										</td>
-										<td>bool</td>
-										<td>
-											<div>
-    Determines if task failure stops the build, or is just reported. 
-    The default is <code class="cs">true</code>.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											if
-										</td>
-										<td>bool</td>
-										<td>
-											<div>
-    If <code class="cs">true</code> then the task will be executed; otherwise, 
-    skipped. The default is <code class="cs">true</code>.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											unless
-										</td>
-										<td>bool</td>
-										<td>
-											<div>
-    Opposite of <code class="cs">NAnt.Core.Task.IfDefined</code>. If <code class="cs">false</code> 
-    then the task will be executed; otherwise, skipped. The default is 
-    <code class="cs">false</code>.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											verbose
-										</td>
-										<td>bool</td>
-										<td>
-											<div>
-    Determines whether the task should report detailed build log messages. 
-    The default is <code class="cs">false</code>.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-                        </tbody>
-					</table>
-				</div>
-			</div>
-		
-
-
- 
-	<h1 id="Examples">Examples</h1>
-	<div>
-      <p>
-      Include a task that fetches the project version from the 
-      <code class="cs">GetProjectVersion.include</code> build file.
-      </p>
-      <pre><code class="cs">&lt;include buildfile="GetProjectVersion.include" /&gt;</code></pre>
-    </div>
-
-	<h1 id="Remarks">Remarks</h1>
 	<div>
       <p>
       This task is used to break your build file into smaller chunks.  You 
@@ -252,6 +136,122 @@
       </div>
     </div>
 
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
+
+
+				<h1 id="Parameters">Parameters</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													buildfile
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    Build file to include.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+																<tr>
+										<td>
+											<i>failonerror</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Determines if task failure stops the build, or is just reported. 
+    The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>if</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the task will be executed; otherwise, 
+    skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>unless</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Opposite of <code class="cs">NAnt.Core.Task.IfDefined</code>. If <code class="cs">false</code> 
+    then the task will be executed; otherwise, skipped. The default is 
+    <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<i>verbose</i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Determines whether the task should report detailed build log messages. 
+    The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+
+
+
+ 
+		<h1 id="Examples">Examples</h1>
+	<div>
+      <p>
+      Include a task that fetches the project version from the 
+      <code class="cs">GetProjectVersion.include</code> build file.
+      </p>
+      <pre><code class="cs">&lt;include buildfile="GetProjectVersion.include" /&gt;</code></pre>
+    </div>
+
+
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
         <div class="panel-body">	
@@ -267,7 +267,6 @@
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -284,7 +283,7 @@
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

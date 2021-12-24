@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - arg</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,11 +76,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#NestedElements">Nested elements</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -116,11 +111,22 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Represents a command-line argument.
     </div>
 
+	<div>
+      <p>
+      When passed to an external application, the argument will be quoted
+      when appropriate. This does not apply to the <code class="cs">NAnt.Core.Types.Argument.Line</code>
+      parameter, which is always passed as is.
+      </p>
+    </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -138,11 +144,8 @@
                         <tbody>
 									<tr>
 										<td>
-											<b>
-												dir
-											</b>
-										</td>
-										<td>DirectoryInfo</td>
+dir										</td>
+										<td>directory</td>
 										<td>
 											<div>
     The value for a directory-based command-line argument; will be
@@ -155,11 +158,8 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												file
-											</b>
-										</td>
-										<td>FileInfo</td>
+file										</td>
+										<td>file</td>
 										<td>
 											<div>
     The name of a file as a single command-line argument; will be 
@@ -172,10 +172,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												if
-											</b>
-										</td>
+if										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -190,10 +187,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												line
-											</b>
-										</td>
+line										</td>
 										<td>string</td>
 										<td>
 											<div>
@@ -207,11 +201,8 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												path
-											</b>
-										</td>
-										<td><a href="/api/NAnt.Core.Types/PathSet">PathSet</a></td>
+path										</td>
+										<td><a href="/api/NAnt.Core.Types/PathSet"></a></td>
 										<td>
 											<div>
     The value for a PATH-like command-line argument; you can use 
@@ -226,10 +217,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												unless
-											</b>
-										</td>
+unless										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -244,10 +232,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												value
-											</b>
-										</td>
+value										</td>
 										<td>string</td>
 										<td>
 											<div>
@@ -265,6 +250,8 @@
 		
 
 
+
+
 <h1 id="NestedElements">Nested elements</h1>    <div class="container-fluid">
         
 
@@ -277,69 +264,15 @@
     Sets a single command-line argument and treats it like a PATH - ensures 
     the right separator for the local platform is used.
     </p>
-            <p>
-    </p><p>
-    Paths are groups of files and/or directories that need to be passed as a single
-    unit. The order in which parts of the path are specified in the build file is 
-    retained, and duplicate parts are automatically suppressed.
-    </p>
-    <p></p>
-            <p></p>
-            
-
-				<h3 id="PathSetParameters">Parameters</h3>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover four-cols">
-						<thead>
-							<tr>
-								<th>Attribute</th>
-								<th>Type</th>
-								<th>Description</th>
-                                <th>Required</th>
-							</tr>
-						</thead>
-                        <tbody>
-																<tr>
-										<td>
-											id
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The ID used to be referenced later.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											refid
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The ID to use as the reference.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-                        </tbody>
-					</table>
-				</div>
-			</div>
-		
-
-         </div>
+            <!-- put the nested element class docs inline if the element does not derive from DataTypeBase (meaning, is not a global type) 
+                    - instead of checking base classes, we'll check if it has a link to NAnt reference types
+            -->
+        </div>
         <h2><a href="/reference/types/path">&lt;/path&gt;</a></h2>
     </div>
      </div>
  
-	<h1 id="Examples">Examples</h1>
+		<h1 id="Examples">Examples</h1>
 	<div>
       <p>
       A single command-line argument containing a space character.
@@ -360,14 +293,6 @@
       <pre><code class="cs">&lt;arg path="/dir;/dir2:\dir3" /&gt;</code></pre>
     </div>
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-      <p>
-      When passed to an external application, the argument will be quoted
-      when appropriate. This does not apply to the <code class="cs">NAnt.Core.Types.Argument.Line</code>
-      parameter, which is always passed as is.
-      </p>
-    </div>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -384,7 +309,6 @@
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -401,7 +325,7 @@
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

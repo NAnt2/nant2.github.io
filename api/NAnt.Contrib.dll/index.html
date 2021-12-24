@@ -1,0 +1,2065 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - API - NAnt.Contrib.dll Assembly</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+	<script src="/assets/js/anchor.min.js"></script>
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#ClassTypes">Class Types</a></p>
+<p><a href="#EnumTypes">Enum Types</a></p>
+<p><a href="#InterfaceTypes">Interface Types</a></p>
+<p><a href="#StructTypes">Struct Types</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+	<li class="header">Assemblies</li>   
+        <li><a href="/api/NAnt.Compression.dll">NAnt<wbr>.Compression<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.Console.dll">NAnt<wbr>.Console<wbr>.dll</a></li>
+        <li class="selected"><a href="/api/NAnt.Contrib.dll">NAnt<wbr>.Contrib<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.Core.dll">NAnt<wbr>.Core<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.DotNet.dll">NAnt<wbr>.DotNet<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.MSBuild.dll">NAnt<wbr>.MSBuild<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.MSNet.dll">NAnt<wbr>.MSNet<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.NUnit.dll">NAnt<wbr>.NUnit<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.NUnit1.dll">NAnt<wbr>.NUnit1<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.NUnit2.dll">NAnt<wbr>.NUnit2<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.SourceControl.dll">NAnt<wbr>.SourceControl<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.VisualCpp.dll">NAnt<wbr>.VisualCpp<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.VSNet.dll">NAnt<wbr>.VSNet<wbr>.dll</a></li>
+        <li><a href="/api/NAnt.Win32.dll">NAnt<wbr>.Win32<wbr>.dll</a></li>
+        <li><a href="/api/NDoc.Documenter.NAnt.dll">NDoc<wbr>.Documenter<wbr>.NAnt<wbr>.dll</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>NAnt<wbr>.Contrib<wbr>.dll <small>Assembly</small></h1>
+</section>
+<section class="content">
+	
+	
+	
+
+			<h1 id="ClassTypes">Class Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Class</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Svn/AbstractSvnTask">AbstractSvnTask</a></td>
+									<td>
+    A base class for creating tasks for executing CVS client commands on a 
+    CVS repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/actiontext">actiontext</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe/AddTask">AddTask</a></td>
+									<td>
+    Used to add files to a Visual SourceSafe database.  If the file is currently
+    in the SourceSafe database a message will be logged but files will continue to be added.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ADSIBaseTask">ADSIBaseTask</a></td>
+									<td>
+    Base NAnt task for working with ADSI.  This task contains only the path of the ADSI
+    object that you want to work with.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ADSIGetPropertyTask">ADSIGetPropertyTask</a></td>
+									<td>
+    Used to get the value of a property from an ADSI object.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ADSISetPropertyTask">ADSISetPropertyTask</a></td>
+									<td>
+    Sets a property on an ADSI object.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Web/ApplicationPool">ApplicationPool</a></td>
+									<td>
+    Allows an IIS application pool to be controlled.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/appmappings">appmappings</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/approots">approots</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Functions/ArrayFunctions">ArrayFunctions</a></td>
+									<td>
+    Provides a set of functions that deals with Arrays.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/Assembly">Assembly</a></td>
+									<td>
+    Represents a single assembly in an <code class="cs">NAnt.Contrib.Types.AssemblySet</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/AssemblySet">AssemblySet</a></td>
+									<td>
+    Represents a set of assemblies via their identity information.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/Astyle">Astyle</a></td>
+									<td>
+    Formats source code in a given directory to a specified code format.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Mks/BaseTask">BaseTask</a></td>
+									<td>
+    The base abstract class for all MKS Tasks.  
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe/BaseTask">BaseTask</a></td>
+									<td>
+    The base abstract class for all Visual Source Safe Tasks.  
+    Provides the core attributes, and functionality for opening an item 
+    in a Visual Source Safe database.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/binaries">binaries</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/BizTalkBase">BizTalkBase</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ChangeDirectory">ChangeDirectory</a></td>
+									<td>
+    Changes the current working directory.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Mks/ChangesTask">ChangesTask</a></td>
+									<td>
+    Generates an XML file containing the differences between the sandbox and
+    the project in the MKS database.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Mks/ChangeHistory">ChangesTask<wbr>.ChangeHistory</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Mks/HistoryItem">ChangesTask<wbr>.HistoryItem</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Mks/HistoryItemCollection">ChangesTask<wbr>.<wbr>History<wbr>Item<wbr>Collection</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe/CheckinTask">CheckinTask</a></td>
+									<td>
+    Used to checkin files into Visual Source Safe.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe/CheckoutTask">CheckoutTask</a></td>
+									<td>
+    Task used to checkout files from Visual Source Safe.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Mks/CheckpointTask">CheckpointTask</a></td>
+									<td>
+    Checkpoints a project in an MKS Source Integrity database.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ChecksumTask">ChecksumTask</a></td>
+									<td>
+    Calculates checksums for a set of files.
+    Loosely based on Ant's Checksum task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseBase">ClearCaseBase</a></td>
+									<td>
+    Base class for all the ClearCase tasks.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseCatCs">ClearCaseCatCs</a></td>
+									<td>
+    Displays a ClearCase config spec.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseCheckIn">ClearCaseCheckIn</a></td>
+									<td>
+    Checks files into a ClearCase VOB.
+    
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseCheckOut">ClearCaseCheckOut</a></td>
+									<td>
+    Checks files out of a ClearCase VOB.
+    
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseLock">ClearCaseLock</a></td>
+									<td>
+    Locks ClearCase elements.
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseMkElem">ClearCaseMkElem</a></td>
+									<td>
+    Creates elements in a ClearCase VOB.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseMkLabel">ClearCaseMkLabel</a></td>
+									<td>
+    Applies a ClearCase label.
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseMkLbType">ClearCaseMkLbType</a></td>
+									<td>
+    Creates a label object in a ClearCase VOB.
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseRmType">ClearCaseRmType</a></td>
+									<td>
+    Removes elements from a ClearCase VOB.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseUnCheckOut">ClearCaseUnCheckOut</a></td>
+									<td>
+    Uncheckout ClearCase elements.
+    
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseUnLock">ClearCaseUnLock</a></td>
+									<td>
+    Unlocks ClearCase elements.
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase/ClearCaseUpdate">ClearCaseUpdate</a></td>
+									<td>
+    Updates a ClearCase view.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/CodeStatsCount">CodeStatsCount</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/CodeStatsCountCollection">Code<wbr>Stats<wbr>Count<wbr>Collection</a></td>
+									<td>
+    Contains a collection of <code class="cs">NAnt.Contrib.Types.CodeStatsCount</code> elements.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/CodeStatsCountEnumerator">Code<wbr>Stats<wbr>Count<wbr>Enumerator</a></td>
+									<td>
+    Enumerates the <code class="cs">NAnt.Contrib.Types.CodeStatsCount</code> elements of a <code class="cs">NAnt.Contrib.Types.CodeStatsCountCollection</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/CodeStatsTask">CodeStatsTask</a></td>
+									<td>
+    Generates statistics from source code.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/components">components</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/COMRegisterTask">COMRegisterTask</a></td>
+									<td>
+    Register COM servers or type libraries.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ConcatTask">ConcatTask</a></td>
+									<td>
+    A task that concatenates a set of files.
+    Loosely based on Ant's Concat task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/controlconditions">controlconditions</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/controlevents">controlevents</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/controls">controls</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory">Create<wbr>Virtual<wbr>Directory</a></td>
+									<td>
+    Creates or modifies a virtual directory of a web site hosted on Internet
+    Information Server.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/customactions">customactions</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe/DeleteTask">DeleteTask</a></td>
+									<td>
+    Used to delete or Destroy files or projects in Visual Source Safe.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Web/DeleteVirtualDirectory">Delete<wbr>Virtual<wbr>Directory</a></td>
+									<td>
+    Deletes a virtual directory from a given web site hosted on Internet 
+    Information Server.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/Deploy">Deploy</a></td>
+									<td>
+    Deploys an assembly to a given BizTalk configuration database.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/dialogs">dialogs</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/DicsoTask">DicsoTask</a></td>
+									<td>
+    Discovers the URLs of XML web services on a web server and saves documents
+    related to them to the local disk. The resulting .discomap, .wsdl, and .xsd files
+    can be used with the <code class="cs">NAnt.Contrib.Tasks.WsdlTask</code> to produce web service clients and
+    and abstract web service servers using ASP.NET.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe/DiffTask">DiffTask</a></td>
+									<td>
+    Used to generate differences in a vss database. It will show all changes to a project
+    after the specified label.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/directories">directories</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types.PVCS/Entity">Entity</a></td>
+									<td>
+    Represents an entity in an <code class="cs">NAnt.Contrib.Types.PVCS.EntitySet</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types.PVCS/EntitySet">EntitySet</a></td>
+									<td>
+    Represents a set of entities to include in a PVCS project database task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/environment">environment</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/Export">Export</a></td>
+									<td>
+    Exports bindings for a BizTalk assembly to an assembly binding 
+    information file.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/features">features</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Functions/FileFunctions">FileFunctions</a></td>
+									<td>
+    Groups a set of functions for dealing with files.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Functions/FileSetFunctions">FileSetFunctions</a></td>
+									<td>
+    Provides methods for interrogating Filesets.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Util/FileUtils">FileUtils</a></td>
+									<td>
+    Groups a set of useful file manipulation methods.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/Filter">Filter</a></td>
+									<td>
+    Individual filter component of <code class="cs">NAnt.Contrib.Types.FilterSet</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/FilterCollection">FilterCollection</a></td>
+									<td>
+    Contains a collection of <code class="cs">NAnt.Contrib.Types.Filter</code> elements.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/FilterEnumerator">FilterEnumerator</a></td>
+									<td>
+    Enumerates the <code class="cs">NAnt.Contrib.Types.Filter</code> elements of a <code class="cs">NAnt.Contrib.Types.FilterCollection</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/FilterSet">FilterSet</a></td>
+									<td>
+    A set of filters to be applied to something.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/FilterSetCollection">FilterSetCollection</a></td>
+									<td>
+    Contains a collection of <code class="cs">NAnt.Contrib.Types.FilterSet</code> elements.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/FilterSetEnumerator">FilterSetEnumerator</a></td>
+									<td>
+    Enumerates the <code class="cs">NAnt.Contrib.Types.FilterSet</code> elements of a <code class="cs">NAnt.Contrib.Types.FilterSetCollection</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/FxCopTask">FxCopTask</a></td>
+									<td>
+    Analyzes managed code assemblies and reports information about the 
+    assemblies, such as possible design, localization, performance, and 
+    security improvements.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/GacInstallTask">GacInstallTask</a></td>
+									<td>
+    Installs assemblies into the Global Assembly Cache (GAC) by using the 
+    <code class="cs">gacutil</code> SDK tool.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/GacReference">GacReference</a></td>
+									<td>
+    Used to specify reference information when working with the GAC.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/GacTask">GacTask</a></td>
+									<td>
+    Manipulates the contents of the global assembly cache.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/GacTaskBase">GacTaskBase</a></td>
+									<td>
+    Base class functionality for the GAC tasks.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/GacUninstallTask">GacUninstallTask</a></td>
+									<td>
+    Uninstalls assemblies from the Global Assembly Cache (GAC) by using the 
+    <code class="cs">gacutil</code> SDK tool.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Mks/GetTask">GetTask</a></td>
+									<td>
+    Retrieves an item or project from MKS Source Integrity.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe/GetTask">GetTask</a></td>
+									<td>
+    Used to retrieve an item or project from a Visual Source Safe database.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Grep/GrepTask">GrepTask</a></td>
+									<td>
+    Searches files for a regular-expression and produces an XML report of 
+    the matches.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe/History">History</a></td>
+									<td>
+    Generates an XML file showing all changes made to a Visual SourceSafe
+    project/file between specified labels or dates (by a given user).
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/Host">Host</a></td>
+									<td>
+    Allows BizTalk (in-process) host instances to be controlled.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/HxCompTask">HxCompTask</a></td>
+									<td>
+    Compiles a Microsoft HTML Help 2.0 Project.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/HxRegTask">HxRegTask</a></td>
+									<td>
+    Registers a Microsoft HTML Help 2.0 Collection.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/icons">icons</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/iisproperties">iisproperties</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/Import">Import</a></td>
+									<td>
+    Imports bindings from a given assembly binding information file into
+    the specified BizTalk configuration database.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Util/IniFile">IniFile</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerCreationCommand">Installer<wbr>Creation<wbr>Command</a></td>
+									<td>
+    Base class for <code class="cs">NAnt.Contrib.Tasks.Msi.MsiCreationCommand</code> and <code class="cs">NAnt.Contrib.Tasks.Msi.MsmCreationCommand</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerDatabase">InstallerDatabase</a></td>
+									<td>
+    .NET wrapper for a Windows Installer database
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerRecordReader">Installer<wbr>Record<wbr>Reader</a></td>
+									<td>
+    Use to read and manipulate existing records.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerSearchClause">Installer<wbr>Search<wbr>Clause</a></td>
+									<td>
+    A simple class for a single search clause.
+    TODO: more comparison types, use of the Composite pattern, etc.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTable">InstallerTable</a></td>
+									<td>
+    Represents a single table in a Windows Installer archive
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerTaskBase">InstallerTaskBase</a></td>
+									<td>
+    Base class for msi/msm installer tasks
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/KillTask">KillTask</a></td>
+									<td>
+    Immediately stops a given process.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe/LabelTask">LabelTask</a></td>
+									<td>
+    Used to apply a label to a Visual Source Safe item.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/LabelTask">LabelTask</a></td>
+									<td>
+    Allows creation of view labels in StarTeam repositories.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/launchconditions">launchconditions</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Grep/LineCounter">LineCounter</a></td>
+									<td>
+    This purpose of this class is to get the line-numbers within 
+    a string for a specific position of a character 
+    (an index, as returned by the <code class="cs">System.Text.RegularExpressions.Regex</code> class).
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/LoadPropertiesTask">LoadPropertiesTask</a></td>
+									<td>
+    Loads a file's contents as NAnt properties.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Grep/Match">Match</a></td>
+									<td>
+    Encapsulation of a match of a regular-expression with the
+    associated named capture-groups.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Grep/MatchCollection">MatchCollection</a></td>
+									<td>
+     A strongly-typed collection of <code class="cs">NAnt.Contrib.Tasks.Grep.Match</code> instances.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/mergemodules">mergemodules</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/MgmtClassGenTask">MgmtClassGenTask</a></td>
+									<td>
+    A task that generates strongly typed WMI classes using 
+    <code class="cs">mgmtclassgen.exe</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/moduleconfigurations">moduleconfigurations</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/moduledependencies">moduledependencies</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/moduleexclusions">moduleexclusions</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/moduleignoretables">moduleignoretables</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/modulesequences">modulesequences</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/modulesubstitutions">modulesubstitutions</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/MsbuildTask">MsbuildTask</a></td>
+									<td>
+    Builds the specified targets in the project file using <code class="cs">MSBuild</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/VerbosityLevelConverter">MsbuildTask<wbr>.<wbr>Verbosity<wbr>Level<wbr>Converter</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/msi">msi</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIActionTextAction">MSIActionTextAction</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIAppMapping">MSIAppMapping</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIAppRoot">MSIAppRoot</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIBase">MSIBase</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIBinary">MSIBinary</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIComponent">MSIComponent</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIConfigurationItem">MSIConfigurationItem</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIControl">MSIControl</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIControlCondition">MSIControlCondition</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIControlEvent">MSIControlEvent</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/MsiCreationCommand">MsiCreationCommand</a></td>
+									<td>
+    Summary description for MsiTaskInfo.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSICustomAction">MSICustomAction</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIDialog">MSIDialog</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIDirectory">MSIDirectory</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIFeature">MSIFeature</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIFeatureCondition">MSIFeatureCondition</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIFileOverride">MSIFileOverride</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Functions/MsiFunctions">MsiFunctions</a></td>
+									<td>
+    Allows information on Windows Installer databases and products to be
+    retrieved.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIIcon">MSIIcon</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIIISProperty">MSIIISProperty</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIKeyFile">MSIKeyFile</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSILaunchCondition">MSILaunchCondition</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIMerge">MSIMerge</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIRegistryKey">MSIRegistryKey</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIRegistryKeyValue">MSIRegistryKeyValue</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIRootDirectory">MSIRootDirectory</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSISequence">MSISequence</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIShortcut">MSIShortcut</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSITable">MSITable</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSITableColumn">MSITableColumn</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSITableRow">MSITableRow</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSITableRowColumnData">M<wbr>S<wbr>I<wbr>Table<wbr>Row<wbr>Column<wbr>Data</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/MsiTask">MsiTask</a></td>
+									<td>
+    Creates a Windows Installer (also known as Microsoft Installer, or MSI)
+    setup database for installing software on the Windows Platform. 
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIURLProperty">MSIURLProperty</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIVariable">MSIVariable</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIVDirProperty">MSIVDirProperty</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/msm">msm</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/MsmCreationCommand">MsmCreationCommand</a></td>
+									<td>
+    Summary description for MsmTaskInfo.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSMModuleConfiguration">M<wbr>S<wbr>M<wbr>Module<wbr>Configuration</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSMModuleDependency">MSMModuleDependency</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSMModuleExclusion">MSMModuleExclusion</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSMModuleIgnoreTable">MSMModuleIgnoreTable</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSMModuleSequence">MSMModuleSequence</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSMModuleSubstitution">M<wbr>S<wbr>M<wbr>Module<wbr>Substitution</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/MsmTask">MsmTask</a></td>
+									<td>
+    Builds a Windows Installer Merge Module (MSM) database.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/NAntFileSet">NAntFileSet</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/NAntFileSetExcludesfile">N<wbr>Ant<wbr>File<wbr>Set<wbr>Excludesfile</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/NAntFileSetPattern">NAntFileSetPattern</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/NGenTask">NGenTask</a></td>
+									<td>
+    Pre-translates native code for an assembly containing IL (Intermediary 
+    Language bytecode) on the Windows platform.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.NUnit2Report/NUnit2ReportTask">NUnit2ReportTask</a></td>
+									<td>
+    A task that generates a summary HTML
+    from a set of NUnit xml report files.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/NUnitReportTask">NUnitReportTask</a></td>
+									<td>
+    A task that generates a summary HTML
+    from a set of NUnit xml report files.
+    Loosely based on Erik Hatcher JUnitReport for Ant.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/Orchestration">Orchestration</a></td>
+									<td>
+    Performs a set of actions on a given orchestration.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/EnlistOrchestrationAction">Orchestration<wbr>.<wbr>Enlist<wbr>Orchestration<wbr>Action</a></td>
+									<td>
+    Enlists the orchestration by creating its activation subscription.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/OrchestrationActionBase">Orchestration<wbr>.<wbr>Orchestration<wbr>Action<wbr>Base</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/StartOrchestrationAction">Orchestration<wbr>.<wbr>Start<wbr>Orchestration<wbr>Action</a></td>
+									<td>
+    Starts the orchestration.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/StopOrchestrationAction">Orchestration<wbr>.<wbr>Stop<wbr>Orchestration<wbr>Action</a></td>
+									<td>
+    Stops the orchestration.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/UnenlistOrchestrationAction">Orchestration<wbr>.<wbr>Unenlist<wbr>Orchestration<wbr>Action</a></td>
+									<td>
+    Unenlists the orchestration by removing its activation subscription.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Add">P4Add</a></td>
+									<td>
+    Open file(s) in a client workspace for addition to the depot.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Base">P4Base</a></td>
+									<td>
+    Base class for Perforce (P4) NAnt tasks. See individual task for example usage.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Change">P4Change</a></td>
+									<td>
+    Create or delete a changelist specification.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Client">P4Client</a></td>
+									<td>
+    Add/modify/delete a client spec in perforce.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Delete">P4Delete</a></td>
+									<td>
+    Open file(s) in a client workspace for deletion from the depot.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Edit">P4Edit</a></td>
+									<td>
+    Opens file(s) in a client workspace for edit.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Info">P4Info</a></td>
+									<td>
+    Returns information from the "p4 info" command back into variables for 
+    use within the build process.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Label">P4Label</a></td>
+									<td>
+    Create or edit a label specification and its view.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Labelsync">P4Labelsync</a></td>
+									<td>
+    Synchronize a label with the contents of the current client workspace.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Print">P4Print</a></td>
+									<td>
+    Fetch a specific file from a Perforce depot without needing a clientspec 
+    to map it.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Reopen">P4Reopen</a></td>
+									<td>
+    Move opened files between changelists or change the files� type.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Revert">P4Revert</a></td>
+									<td>
+    Discard changes made to open files.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Set">P4Set</a></td>
+									<td>
+    Set registry variables that perforce uses.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Submit">P4Submit</a></td>
+									<td>
+    Send changes made to open files to the depot.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/P4Sync">P4Sync</a></td>
+									<td>
+     Synchronize client space to a Perforce depot view.
+     </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Grep/Pattern">Pattern</a></td>
+									<td>
+    Encapsulation of a search pattern.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce/Perforce">Perforce</a></td>
+									<td>
+    Static helper class for Perforce tasks.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/properties">properties</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/property">property</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSAddFilesTask">PVCSAddFilesTask</a></td>
+									<td>
+    Adds files to a PVCS repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSAddUserTask">PVCSAddUserTask</a></td>
+									<td>
+    Adds a user to a PVCS project or project database.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSAssignGroupTask">PVCSAssignGroupTask</a></td>
+									<td>
+    Assigns a promotion group to versioned files.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSChangeGroupTask">PVCSChangeGroupTask</a></td>
+									<td>
+    Changes the promotion group for specified versioned files.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSCommandArgument">PVCSCommandArgument</a></td>
+									<td>
+    Encapsulates the details of a PVCS command argument.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSCommandArgumentCollection">P<wbr>V<wbr>C<wbr>S<wbr>Command<wbr>Argument<wbr>Collection</a></td>
+									<td>
+    Implements a type-safe collection of <code class="cs">NAnt.Contrib.Tasks.PVCS.PVCSCommandArgument</code>s.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSCreateProjectTask">P<wbr>V<wbr>C<wbr>S<wbr>Create<wbr>Project<wbr>Task</a></td>
+									<td>
+    Creates a project in a PVCS repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSDeleteGroupTask">PVCSDeleteGroupTask</a></td>
+									<td>
+    Removes a specified promotion group from versioned files.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSDeleteLabelTask">PVCSDeleteLabelTask</a></td>
+									<td>
+    Removes a label from specified versioned files or projects.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSDeleteTask">PVCSDeleteTask</a></td>
+									<td>
+    Deletes folder, projects, versioned items and workspaces in a PVCS repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSDeleteUsersTask">PVCSDeleteUsersTask</a></td>
+									<td>
+    Deletes the specified users from the PVCS access control database.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSGetTask">PVCSGetTask</a></td>
+									<td>
+    Gets files from a PVCS repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSLabelTask">PVCSLabelTask</a></td>
+									<td>
+    Assigns a version label to a revision of the specified versioned files.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSLockTask">PVCSLockTask</a></td>
+									<td>
+    Locks a revision of the specified versioned files.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSMultipleEntityTask">P<wbr>V<wbr>C<wbr>S<wbr>Multiple<wbr>Entity<wbr>Task</a></td>
+									<td>
+    Base class for all PVCS project database tasks that operate against one or more entities.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSProjectDatabaseTask">P<wbr>V<wbr>C<wbr>S<wbr>Project<wbr>Database<wbr>Task</a></td>
+									<td>
+    A base class for PVCS tasks that deal with project databases.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSPromoteGroupTask">PVCSPromoteGroupTask</a></td>
+									<td>
+    Promotes versioned files to the next promotion group.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSPutTask">PVCSPutTask</a></td>
+									<td>
+    Puts files into a PVCS repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSRenameLabelTask">PVCSRenameLabelTask</a></td>
+									<td>
+    Renames a label in a PVCS repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSSingleEntityTask">PVCSSingleEntityTask</a></td>
+									<td>
+    Base class for all PVCS project database tasks that operate against a single entity.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSTask">PVCSTask</a></td>
+									<td>
+    Base class functionality for all PVCS tasks.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSUnlockTask">PVCSUnlockTask</a></td>
+									<td>
+    Unlocks revisions of versioned files in a PVCS repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/ReceiveLocation">ReceiveLocation</a></td>
+									<td>
+    Allows BizTalk receive locations to be controlled.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/RecordTask">RecordTask</a></td>
+									<td>
+    A task that records the build's output to a file. Loosely based on Ant's 
+    <a href="http://ant.apache.org/manual/CoreTasks/recorder.html">Record</a>
+    task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/registry">registry</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/Reset">Reset</a></td>
+									<td>
+    Allows stopping, starting and resetting of BizTalk in-process host 
+    instances on the specified server.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/SchemaElement">SchemaElement</a></td>
+									<td>
+    Represents the an element based on a schema definition.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/SchemaValidatedTask">SchemaValidatedTask</a></td>
+									<td>
+    Abstract <code class="cs">Task</code> that validates inheriting classes against 
+    an XML schema of the same name.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/SchemaValidatorAttribute">Schema<wbr>Validator<wbr>Attribute</a></td>
+									<td>
+    Indicates that class should be validated by an XML Schema.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ScpTask">ScpTask</a></td>
+									<td>
+    Copies a file to a remote server using scp.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/search">search</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/searchApp">searchApp</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/searchDirfile">searchDirfile</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/searchDirfileFile">searchDirfileFile</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/searchIni">searchIni</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/searchKey">searchKey</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/searchKeyValue">searchKeyValue</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/searchRegistry">searchRegistry</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/searchRegistryValue">searchRegistryValue</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/SendPort">SendPort</a></td>
+									<td>
+    Allows BizTalk send ports to be controlled.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/sequences">sequences</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Functions/ServiceFunctions">ServiceFunctions</a></td>
+									<td>
+    Allow information on a Windows service to be retrieved.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/shortcuts">shortcuts</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/SlingshotTask">SlingshotTask</a></td>
+									<td>
+    Converts a Visual Studio.NET Solution to a NAnt build file or nmake file.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Util/SqlHelper">SqlHelper</a></td>
+									<td>
+    Helper class used to execute Sql Statements.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Util/SqlStatementAdapter">SqlStatementAdapter</a></td>
+									<td>
+    Helper class to adapt SQL statements from some
+    input into something OLEDB can consume directly
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Util/SqlStatementList">SqlStatementList</a></td>
+									<td>
+    Helper class to maintain a list of SQL Statements.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/SqlTask">SqlTask</a></td>
+									<td>
+    A task to execute arbitrary SQL statements against a OLEDB data source.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMBatch">SSCMBatch</a></td>
+									<td>
+    Processes <a href="http://www.seapine.com/surroundscm.html">Surround SCM</a> batch files.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMBranch">SSCMBranch</a></td>
+									<td>
+    Creates new branches for <a href="http://www.seapine.com/surroundscm.html">Surround SCM</a>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMCheckin">SSCMCheckin</a></td>
+									<td>
+    Checks in files in <a href="http://www.seapine.com/surroundscm.html">Surround SCM</a>
+    repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMCheckout">SSCMCheckout</a></td>
+									<td>
+    Checks out files from a <a href="http://www.seapine.com/surroundscm.html">Surround SCM</a>
+    repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMFreeze">SSCMFreeze</a></td>
+									<td>
+    Freezes branches in a <a href="http://www.seapine.com/surroundscm.html">Surround SCM</a>
+    repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet">SSCMGet</a></td>
+									<td>
+    Gets files from a <a href="http://www.seapine.com/surroundscm.html">Surround SCM</a>
+    repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMLabel">SSCMLabel</a></td>
+									<td>
+    Creates file or repository labels for a <a href="http://www.seapine.com/surroundscm.html">Surround SCM</a>
+    repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask">SSCMTask</a></td>
+									<td>
+    <a href="http://www.seapine.com/surroundscm.html">Surround SCM</a>
+    abstract task base.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMUnFreeze">SSCMUnFreeze</a></td>
+									<td>
+    Unlocks frozen branches for a <a href="http://www.seapine.com/surroundscm.html">Surround SCM</a>
+    repository.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamAutoLabel">StarTeamAutoLabel</a></td>
+									<td>
+    Task for supporting labeling of repositories with incremented version 
+    numbers. The version number calculated will be concatenated to the 
+    <code class="cs">NAnt.Contrib.Tasks.StarTeam.LabelTask.Label</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamCheckin">StarTeamCheckin</a></td>
+									<td>
+    Task to check in files to StarTeam repositories. 
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamCheckout">StarTeamCheckout</a></td>
+									<td>
+    Task to check out files from StarTeam repositories. 
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamLabel">StarTeamLabel</a></td>
+									<td>
+    Allows creation of view labels in StarTeam repositories.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamList">StarTeamList</a></td>
+									<td>
+    List items in StarTeam repositories.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask">StarTeamTask</a></td>
+									<td>
+    Base star team task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/summaryinformation">summaryinformation</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Svn/SvnCheckoutTask">SvnCheckoutTask</a></td>
+									<td>
+    Executes the svn checkout command.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Svn/SvnTask">SvnTask</a></td>
+									<td>
+    Executes the svn command specified by the command attribute.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Svn/SvnUpdateTask">SvnUpdateTask</a></td>
+									<td>
+    Executes the svn update specified by the command attribute.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/tables">tables</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></td>
+									<td>
+    Base for tree based star team tasks.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/TypedCollectionTask">TypedCollectionTask</a></td>
+									<td>Generates collection classes based on a given XML specification file. Code generation is in the specified language.</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types.ClearCase/TypeKindConverter">TypeKindConverter</a></td>
+									<td>
+    Specialized <code class="cs">System.ComponentModel.EnumConverter</code> that supports converting
+    a <code class="cs">NAnt.Contrib.Types.ClearCase.TypeKind</code> to a string value that can be used in
+    ClearCase commandline tools.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/Unbind">Unbind</a></td>
+									<td>
+    Removes all bindings for a given assembly from a BizTalk configuration
+    database.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/Undeploy">Undeploy</a></td>
+									<td>
+    Removes a given assembly from a BizTalk configuration database.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe/UndoCheckoutTask">UndoCheckoutTask</a></td>
+									<td>
+    Task is used to undo a checkout from SourceSafe
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/urlproperties">urlproperties</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ValidateXmlTask">ValidateXmlTask</a></td>
+									<td>
+    Validates a set of XML files based on a set of XML Schemas (XSD).
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/Vb6Task">Vb6Task</a></td>
+									<td>
+    Compiles Microsoft Visual Basic 6 programs.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/vdirproperties">vdirproperties</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/VersionTask">VersionTask</a></td>
+									<td>
+    Increments a four-part version number stored in a text file. The resulting 
+    version number is written back to the file and exposed using NAnt properties.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Web/VirtualDirectoryInfo">VirtualDirectoryInfo</a></td>
+									<td>
+    Lists the configuration settings of a specified virtual directory in a
+    web site hosted on Internet Information Server.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/WaitForExitTask">WaitForExitTask</a></td>
+									<td>
+    Waits for a given process on the local computer to exit.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Web/WebBase">WebBase</a></td>
+									<td>
+    Base class for all IIS-related task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/WsdlTask">WsdlTask</a></td>
+									<td>Generates code for web service clients and xml web services
+    using ASP.NET from WSDL contract files, XSD Schemas and .discomap
+    discovery documents. Can be used in conjunction with .disco files.</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/XmlSchemaReference">XmlSchemaReference</a></td>
+									<td>
+    Represents the schema collection element.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/XmlSchemaReferenceCollection">Xml<wbr>Schema<wbr>Reference<wbr>Collection</a></td>
+									<td>
+    Contains a collection of <code class="cs">NAnt.Contrib.Types.XmlSchemaReference</code> elements.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types/XmlSchemaReferenceEnumerator">Xml<wbr>Schema<wbr>Reference<wbr>Enumerator</a></td>
+									<td>
+    Enumerates the <code class="cs">NAnt.Contrib.Types.XmlSchemaReference</code> elements of a <code class="cs">NAnt.Contrib.Types.XmlSchemaReferenceCollection</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/XsdTask">XsdTask</a></td>
+									<td>
+    The <code class="cs">NAnt.Contrib.Tasks.XsdTask</code> generates XML schema or common language runtime 
+    classes from XDR, XML, and XSD files, or from classes in a runtime assembly.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="EnumTypes">Enum Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Enum</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Web/ApplicationPoolAction">ApplicationPool<wbr>.<wbr>Application<wbr>Pool<wbr>Action</a></td>
+									<td>
+    Defines the actions that can be performed on an application pool.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/Comparison">Comparison</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Web/AppType">Create<wbr>Virtual<wbr>Directory<wbr>.AppType</a></td>
+									<td>
+    The different ways a (virtual) directory in IIS can be configured 
+    as an application.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Util/DelimiterStyle">DelimiterStyle</a></td>
+									<td>
+    Determines how the delimiter is interpreted in a SQL string.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe/FileTimestamp">FileTimestamp</a></td>
+									<td>
+    Defines how the local timestamp of files retrieved from a SourceSafe
+    database should be set.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ActionTypes">GacTask<wbr>.ActionTypes</a></td>
+									<td>
+    Defines the actions that can be performed on an assembly using the
+    <code class="cs">NAnt.Contrib.Tasks.GacTask</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/HostAction">Host<wbr>.HostAction</a></td>
+									<td>
+    Defines the actions that can be performed on a host instance.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/VerbosityLevel">MsbuildTask<wbr>.VerbosityLevel</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSILocatorTypeDirFile">M<wbr>S<wbr>I<wbr>Locator<wbr>Type<wbr>Dir<wbr>File</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSILocatorTypeDirFileRaw">M<wbr>S<wbr>I<wbr>Locator<wbr>Type<wbr>Dir<wbr>File<wbr>Raw</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSILocatorTypeDirFileReg64">M<wbr>S<wbr>I<wbr>Locator<wbr>Type<wbr>Dir<wbr>File<wbr>Reg64</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSIRegistryKeyRoot">MSIRegistryKeyRoot</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSISequenceTable">MSISequenceTable</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSITableColumnCategoryType">M<wbr>S<wbr>I<wbr>Table<wbr>Column<wbr>Category<wbr>Type</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Schemas.Msi/MSMModuleConfigurationFormat">M<wbr>S<wbr>M<wbr>Module<wbr>Configuration<wbr>Format</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSCopyMode">PVCSAddFilesTask<wbr>.PVCSCopyMode</a></td>
+									<td>
+    Specifies possible copy modes for the <code class="cs">NAnt.Contrib.Tasks.PVCS.PVCSAddFilesTask</code> task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSCommandArgumentPosition">P<wbr>V<wbr>C<wbr>S<wbr>Command<wbr>Argument<wbr>Position</a></td>
+									<td>
+    Defines possible values for specifying positions for PCLI command arguments and arguments to PCLI itself.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS/PVCSUnlockMode">PVCSUnlockTask<wbr>.PVCSUnlockMode</a></td>
+									<td>
+    Specifies possible modes for the <code class="cs">NAnt.Contrib.Tasks.PVCS.PVCSUnlockTask</code> task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/ReceiveLocationAction">ReceiveLocation<wbr>.<wbr>Receive<wbr>Location<wbr>Action</a></td>
+									<td>
+    Defines the actions that can be performed on a BizTalk receive
+    location.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ActionType">RecordTask<wbr>.ActionType</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types.NUnit2Report/ReportFormat">ReportFormat</a></td>
+									<td>
+    Defines the report types supported by <code class="cs">NAnt.Contrib.Tasks.NUnit2Report.NUnit2ReportTask</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/ResetAction">Reset<wbr>.ResetAction</a></td>
+									<td>
+    Defines the possible actions that can be performed on the BizTalk 
+    in-process host instances.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/SchemeType">SchemeType</a></td>
+									<td>
+    Defines possible reference counting scheme types for the <code class="cs">NAnt.Contrib.Tasks.GacTask</code> tasks.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/SendPortAction">SendPort<wbr>.SendPortAction</a></td>
+									<td>
+    Defines the actions that can be performed on a BizTalk send port.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types.BizTalk/ServiceStatus">ServiceStatus</a></td>
+									<td>
+    Indicates the status of a service.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Types.ClearCase/TypeKind">TypeKind</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/BuildNumberAlgorithm">VersionTask<wbr>.<wbr>Build<wbr>Number<wbr>Algorithm</a></td>
+									<td>
+    Defines possible algorithms to generate the build number.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/RevisionNumberAlgorithm">VersionTask<wbr>.<wbr>Revision<wbr>Number<wbr>Algorithm</a></td>
+									<td>
+    Defines possible algorithms to generate the revision number.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Web/IISVersion">WebBase<wbr>.IISVersion</a></td>
+									<td>
+    Defines the IIS versions supported by the IIS tasks.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="InterfaceTypes">Interface Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Interface</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Util/IRecorder">IRecorder</a></td>
+									<td>
+    Recorder interface user with the Record task
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk/IOrchestrationAction">Orchestration<wbr>.<wbr>I<wbr>Orchestration<wbr>Action</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/UCOMITypeInfo2">UCOMITypeInfo2</a></td>
+									<td></td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="StructTypes">Struct Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Struct</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/CUSTDATA">CUSTDATA</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/CUSTDATAITEM">CUSTDATAITEM</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/InstallerStream">InstallerStream</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi/MSIRowColumnData">MSIRowColumnData</a></td>
+									<td></td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

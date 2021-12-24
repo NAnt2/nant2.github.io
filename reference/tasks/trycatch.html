@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - trycatch</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,11 +76,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#NestedElements">Nested elements</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -116,13 +111,43 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Executes a set of tasks, and optionally catches a build exception to
     allow recovery or rollback steps to be taken, or to define some steps
     to be taken regardless if the tasks succeed or fail, or both.
     </div>
 
+	<div>
+      <p>
+      The tasks defined in the <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.TryBlock">&gt;</see></code> block
+      will be executed in turn, as they normally would in a target.
+      </p>
+      <p>
+      If a <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.CatchBlock">&gt;</see></code> block is defined, the 
+      tasks in that block will be executed in turn only if one of the tasks 
+      in the <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.TryBlock">&gt;</see></code> block fails. This 
+      failure will then be suppressed by the <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.CatchBlock">&gt;</see></code>
+      block.
+      </p>
+      <p>
+      The message associated with the failure can also be caught in a
+      property for use within the <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.CatchBlock">&gt;</see></code>
+      block.  The original contents of the property will be restored upon 
+      exiting the <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.CatchBlock">&gt;</see></code> block.
+      </p>
+      <p>
+      If a <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.FinallyBlock">&gt;</see></code> block is defined, the 
+      tasks in that block will be executed after the tasks in both the 
+      <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.TryBlock">&gt;</see></code> and <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.CatchBlock">&gt;</see></code>
+      blocks have been executed, regardless of whether any task fails in 
+      either block.
+      </p>
+    </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -140,7 +165,7 @@
                         <tbody>
 																<tr>
 										<td>
-											failonerror
+											<i>failonerror</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -155,7 +180,7 @@
 									</tr>
 									<tr>
 										<td>
-											if
+											<i>if</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -170,7 +195,7 @@
 									</tr>
 									<tr>
 										<td>
-											unless
+											<i>unless</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -186,7 +211,7 @@
 									</tr>
 									<tr>
 										<td>
-											verbose
+											<i>verbose</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -206,6 +231,8 @@
 		
 
 
+
+
 <h1 id="NestedElements">Nested elements</h1>    <div class="container-fluid">
         
 
@@ -218,54 +245,10 @@
     The tasks in this block will be executed if any task in the try
     block fails.
     </p>
-            <p>
-    Executes embedded tasks/elements in the order in which they are defined.
-    </p>
-            <p>
-    </p><p>
-    Automatically validates attributes in the element based on attributes 
-    applied to members in derived classes.
-    </p>
-    <p></p>
-            
-
-				<h3 id="CatchElementParameters">Parameters</h3>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover four-cols">
-						<thead>
-							<tr>
-								<th>Attribute</th>
-								<th>Type</th>
-								<th>Description</th>
-                                <th>Required</th>
-							</tr>
-						</thead>
-                        <tbody>
-									<tr>
-										<td>
-											<b>
-												property
-											</b>
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    Defines the name of the property to save the message describing
-    the failure that has been caught.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-							                        </tbody>
-					</table>
-				</div>
-			</div>
-		
-
-         </div>
+            <!-- put the nested element class docs inline if the element does not derive from DataTypeBase (meaning, is not a global type) 
+                    - instead of checking base classes, we'll check if it has a link to NAnt reference types
+            -->
+        </div>
         <h2><a href="/reference/elements/NAnt.Core.Tasks.TryCatchTask.CatchElement">&lt;/catch&gt;</a></h2>
     </div>
  
@@ -279,14 +262,10 @@
     The tasks in this block will always be executed, regardless of
     what happens in the try and catch blocks.
     </p>
-            <p>
-    Executes embedded tasks/elements in the order in which they are defined.
-    </p>
-            <p></p>
-            
-
-
-         </div>
+            <!-- put the nested element class docs inline if the element does not derive from DataTypeBase (meaning, is not a global type) 
+                    - instead of checking base classes, we'll check if it has a link to NAnt reference types
+            -->
+        </div>
         <h2><a href="/reference/elements/NAnt.Core.ElementContainer">&lt;/finally&gt;</a></h2>
     </div>
  
@@ -300,19 +279,15 @@
     The tasks in this block will be executed as a normal part of
     the build script.
     </p>
-            <p>
-    Executes embedded tasks/elements in the order in which they are defined.
-    </p>
-            <p></p>
-            
-
-
-         </div>
+            <!-- put the nested element class docs inline if the element does not derive from DataTypeBase (meaning, is not a global type) 
+                    - instead of checking base classes, we'll check if it has a link to NAnt reference types
+            -->
+        </div>
         <h2><a href="/reference/elements/NAnt.Core.ElementContainer">&lt;/try&gt;</a></h2>
     </div>
      </div>
  
-	<h1 id="Examples">Examples</h1>
+		<h1 id="Examples">Examples</h1>
 	<div>
       <pre><code class="cs">    &lt;trycatch&gt;
     &lt;try&gt;
@@ -416,33 +391,6 @@ Build failed: Property 'failure' has not been set.</code></pre>
       </p>
     </div>
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-      <p>
-      The tasks defined in the <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.TryBlock">&gt;</see></code> block
-      will be executed in turn, as they normally would in a target.
-      </p>
-      <p>
-      If a <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.CatchBlock">&gt;</see></code> block is defined, the 
-      tasks in that block will be executed in turn only if one of the tasks 
-      in the <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.TryBlock">&gt;</see></code> block fails. This 
-      failure will then be suppressed by the <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.CatchBlock">&gt;</see></code>
-      block.
-      </p>
-      <p>
-      The message associated with the failure can also be caught in a
-      property for use within the <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.CatchBlock">&gt;</see></code>
-      block.  The original contents of the property will be restored upon 
-      exiting the <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.CatchBlock">&gt;</see></code> block.
-      </p>
-      <p>
-      If a <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.FinallyBlock">&gt;</see></code> block is defined, the 
-      tasks in that block will be executed after the tasks in both the 
-      <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.TryBlock">&gt;</see></code> and <code class="cs">&lt;<see cref="P:NAnt.Core.Tasks.TryCatchTask.CatchBlock">&gt;</see></code>
-      blocks have been executed, regardless of whether any task fails in 
-      either block.
-      </p>
-    </div>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -459,7 +407,6 @@ Build failed: Property 'failure' has not been set.</code></pre>
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -476,7 +423,7 @@ Build failed: Property 'failure' has not been set.</code></pre>
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

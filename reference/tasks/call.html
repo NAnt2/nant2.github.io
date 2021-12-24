@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - call</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,10 +76,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -115,11 +110,39 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
      Calls a NAnt target in the current project.
      </div>
 
+	<div>
+       <p>
+       When the <code class="cs">NAnt.Core.Tasks.CallTask</code> is used to execute a target, both that 
+       target and all its dependent targets will be re-executed.
+       </p>
+       <p>
+       To avoid dependent targets from being executed more than once, two 
+       options are available:
+       </p>
+       <ul>
+         <li>
+             <span class="description">
+             Add an "unless" attribute with value "${<a href="../functions/target.has-executed.html">target::has-executed</a>('<code class="cs">&lt;target name&gt;</code>')}"
+             to the dependent targets.
+             </span>
+         </li>
+         <li>
+             <span class="description">
+             Set the <code class="cs">NAnt.Core.Tasks.CallTask.CascadeDependencies</code> attribute on the 
+             <code class="cs">NAnt.Core.Tasks.CallTask</code> to <code class="cs">false </code> (<code class="cs">recommended</code>).
+             </span>
+         </li>
+       </ul>
+     </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -137,10 +160,23 @@
                         <tbody>
 									<tr>
 										<td>
-											<b>
-												cascade
-											</b>
+												<b>											
+													target
+												</b>
 										</td>
+										<td>string</td>
+										<td>
+											<div>
+    NAnt target to call.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+cascade										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -154,10 +190,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												force
-													<i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
-											</b>
+force													<i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -173,25 +206,9 @@
 											False
 										</td>
 									</tr>
-									<tr>
-										<td>
-											<b>
-												target
-											</b>
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    NAnt target to call.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
 																<tr>
 										<td>
-											failonerror
+											<i>failonerror</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -206,7 +223,7 @@
 									</tr>
 									<tr>
 										<td>
-											if
+											<i>if</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -221,7 +238,7 @@
 									</tr>
 									<tr>
 										<td>
-											unless
+											<i>unless</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -237,7 +254,7 @@
 									</tr>
 									<tr>
 										<td>
-											verbose
+											<i>verbose</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -257,8 +274,10 @@
 		
 
 
+
+
  
-	<h1 id="Examples">Examples</h1>
+		<h1 id="Examples">Examples</h1>
 	<div>
        <p>
        Call the target "build".
@@ -338,31 +357,6 @@
  BUILD SUCCEEDED</code></pre>
      </div>
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-       <p>
-       When the <code class="cs">NAnt.Core.Tasks.CallTask</code> is used to execute a target, both that 
-       target and all its dependent targets will be re-executed.
-       </p>
-       <p>
-       To avoid dependent targets from being executed more than once, two 
-       options are available:
-       </p>
-       <ul>
-         <li>
-             <span class="description">
-             Add an "unless" attribute with value "${<a href="../functions/target.has-executed.html">target::has-executed</a>('<code class="cs">&lt;target name&gt;</code>')}"
-             to the dependent targets.
-             </span>
-         </li>
-         <li>
-             <span class="description">
-             Set the <code class="cs">NAnt.Core.Tasks.CallTask.CascadeDependencies</code> attribute on the 
-             <code class="cs">NAnt.Core.Tasks.CallTask</code> to <code class="cs">false </code> (<code class="cs">recommended</code>).
-             </span>
-         </li>
-       </ul>
-     </div>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -379,7 +373,6 @@
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -396,7 +389,7 @@
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

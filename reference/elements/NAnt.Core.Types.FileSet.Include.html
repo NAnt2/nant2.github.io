@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - NAnt.Core.Types.FileSet.Include</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,9 +76,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
-<p><a href="#Remarks">Remarks</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -114,11 +109,21 @@ FileSet.Include             </h1>
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Models a NAnt XML element in the build file.
     </div>
 
+	<div>
+    <p>
+    Automatically validates attributes in the element based on attributes 
+    applied to members in derived classes.
+    </p>
+    </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -136,10 +141,23 @@ FileSet.Include             </h1>
                         <tbody>
 									<tr>
 										<td>
-											<b>
-												asis
-											</b>
+												<b>											
+													name
+												</b>
 										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The pattern or file name to include.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+asis										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -154,10 +172,7 @@ FileSet.Include             </h1>
 									</tr>
 									<tr>
 										<td>
-											<b>
-												frompath
-											</b>
-										</td>
+frompath										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -171,10 +186,7 @@ FileSet.Include             </h1>
 									</tr>
 									<tr>
 										<td>
-											<b>
-												if
-											</b>
-										</td>
+if										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -188,26 +200,7 @@ FileSet.Include             </h1>
 									</tr>
 									<tr>
 										<td>
-											<b>
-												name
-											</b>
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The pattern or file name to include.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<b>
-												unless
-											</b>
-										</td>
+unless										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -222,7 +215,7 @@ FileSet.Include             </h1>
 									</tr>
 																<tr>
 										<td>
-											if
+											<i>if</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -237,7 +230,7 @@ FileSet.Include             </h1>
 									</tr>
 									<tr>
 										<td>
-											name
+											<i>name</i>
 										</td>
 										<td>string</td>
 										<td>
@@ -246,12 +239,12 @@ FileSet.Include             </h1>
     </div>
 										</td>
 										<td>
-											False
+											True
 										</td>
 									</tr>
 									<tr>
 										<td>
-											unless
+											<i>unless</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -272,15 +265,10 @@ FileSet.Include             </h1>
 		
 
 
+
+
  
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-    <p>
-    Automatically validates attributes in the element based on attributes 
-    applied to members in derived classes.
-    </p>
-    </div>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -297,7 +285,6 @@ FileSet.Include             </h1>
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -314,7 +301,7 @@ FileSet.Include             </h1>
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

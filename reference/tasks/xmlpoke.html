@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - xmlpoke</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,11 +76,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#NestedElements">Nested elements</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -116,12 +111,24 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Replaces text in an XML file at the location specified by an XPath 
     expression.
     </div>
 
+	<div>
+    <p>
+    The location specified by the XPath expression must exist, it will
+    not create the parent elements for you. However, provided you have
+    a root element you could use a series of the tasks to build the
+    XML file up if necessary.
+    </p>
+    </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -139,10 +146,56 @@
                         <tbody>
 									<tr>
 										<td>
-											<b>
-												preserveWhitespace
-											</b>
+												<b>											
+													value
+												</b>
 										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The value that replaces the contents of the selected nodes.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+												<b>											
+													file
+												</b>
+										</td>
+										<td>file</td>
+										<td>
+											<div>
+    The name of the file that contains the XML document that is going 
+    to be poked.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+												<b>											
+													xpath
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The XPath expression used to select which nodes are to be modified.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+preserveWhitespace										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -155,58 +208,9 @@
 											False
 										</td>
 									</tr>
-									<tr>
-										<td>
-											<b>
-												value
-											</b>
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The value that replaces the contents of the selected nodes.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<b>
-												file
-											</b>
-										</td>
-										<td>FileInfo</td>
-										<td>
-											<div>
-    The name of the file that contains the XML document that is going 
-    to be poked.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<b>
-												xpath
-											</b>
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The XPath expression used to select which nodes are to be modified.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
 																<tr>
 										<td>
-											failonerror
+											<i>failonerror</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -221,7 +225,7 @@
 									</tr>
 									<tr>
 										<td>
-											if
+											<i>if</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -236,7 +240,7 @@
 									</tr>
 									<tr>
 										<td>
-											unless
+											<i>unless</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -252,7 +256,7 @@
 									</tr>
 									<tr>
 										<td>
-											verbose
+											<i>verbose</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -272,24 +276,112 @@
 		
 
 
+
+
 <h1 id="NestedElements">Nested elements</h1>    <div class="container-fluid">
         
 
     <div class="row">
         <h2>
-            &lt;namespaces&gt; - NAnt nested collection
+            &lt;namespaces&gt;
         </h2>
         <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
             
             <p>
     Namespace definitions to resolve prefixes in the XPath expression.
     </p>
-                    </div>
+            
+                    <p></p>
+
+
+				<h3 id="XmlNamespaceParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													prefix
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The prefix to associate with the namespace.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+												<b>											
+													uri
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The associated XML namespace URI.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates if the namespace should be added to the <code class="cs">System.Xml.XmlNamespaceManager</code>.
+    If <code class="cs">true</code> then the namespace will be added; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates if the namespace should not be added to the <code class="cs">System.Xml.XmlNamespaceManager</code>.
+    list. If <code class="cs">false</code> then the parameter will be 
+    added; otherwise, skipped. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
         <h2>&lt;namespaces&gt;</h2>
     </div>
      </div>
  
-	<h1 id="Examples">Examples</h1>
+		<h1 id="Examples">Examples</h1>
 	<div>
       <p>
       Change the <code class="cs">server</code> setting in the configuration from <code class="cs">testhost.somecompany.com</code> 
@@ -324,15 +416,6 @@ value="productionhost.somecompany.com" /&gt;</code></pre>
 &lt;/xmlpoke&gt;</code></pre>
     </div>
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-    <p>
-    The location specified by the XPath expression must exist, it will
-    not create the parent elements for you. However, provided you have
-    a root element you could use a series of the tasks to build the
-    XML file up if necessary.
-    </p>
-    </div>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -349,7 +432,6 @@ value="productionhost.somecompany.com" /&gt;</code></pre>
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -366,7 +448,7 @@ value="productionhost.somecompany.com" /&gt;</code></pre>
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

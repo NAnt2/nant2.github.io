@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - API - CreateVirtualDirectory.AccessExecute Property</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+	<script src="/assets/js/anchor.min.js"></script>
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Attributes">Attributes</a></p>
+<p><a href="#Value">Value</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/NAnt.Contrib.dll">NAnt<wbr>.Contrib<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/NAnt.Contrib.Tasks.Web">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Web</a></li>
+		<li class="header">Type</li>
+		<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory">Create<wbr>Virtual<wbr>Directory</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">NamedType Members</li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/AppType">Create<wbr>Virtual<wbr>Directory<wbr>.AppType</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/IISVersion">WebBase<wbr>.IISVersion</a></li>
+			<li class="header">Property Members</li>
+				<li class="selected"><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/99B6D8D9">AccessExecute</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/C6A60561">Access<wbr>No<wbr>Remote<wbr>Execute</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/85D6D9B4">AccessNoRemoteRead</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/3D3CA21E">AccessNoRemoteScript</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/9C774333">AccessNoRemoteWrite</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/425A6C6A">AccessRead</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/0A6C177E">AccessScript</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/43941C3D">AccessSource</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/0E63FBB0">AccessSsl</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/22AED6B7">AccesssSl128</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/C18EDFF3">AccessSslMapCert</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/254C4423">Access<wbr>Ssl<wbr>Negotiate<wbr>Cert</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/4240CA51">AccessSslRequireCert</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/03959D36">AccessWrite</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/FA9E2463">Anonymous<wbr>Password<wbr>Sync</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/9C8C3871">AppAllowClientDebug</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/F7E39529">AppAllowDebugging</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/D00B6C9C">AppCreate</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/CC260B91">AppFriendlyName</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/WebBase/43A4C988">ApplicationPath</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/C923D4FB">AppPoolId</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/950ABFC5">AspAllowSessionState</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/D997EDA9">AspBufferingOn</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/74B9E17B">Asp<wbr>Enable<wbr>Application<wbr>Restart</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/10BC83F0">Asp<wbr>Enable<wbr>Asp<wbr>Html<wbr>Fallback</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/E796FC57">Asp<wbr>Enable<wbr>Chunked<wbr>Encoding</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/D74998C4">AspEnableParentPaths</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/CFC85490">Asp<wbr>Enable<wbr>Typelib<wbr>Cache</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/1004C9D3">AspErrorsToNTLog</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/9A93954D">Asp<wbr>Exception<wbr>Catch<wbr>Enable</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/E3C9D3AE">AspLogErrorRequests</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/A5E85423">Asp<wbr>Script<wbr>Error<wbr>Message</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/C1E183B1">Asp<wbr>Script<wbr>Error<wbr>Sent<wbr>To<wbr>Browser</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/29D239DA">AspThreadGateEnabled</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/A2DFA4F5">Asp<wbr>Track<wbr>Threading<wbr>Model</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/814044A8">AuthAnonymous</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/B445466A">AuthBasic</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/F0220363">AuthNtlm</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/4768BEA7">Auth<wbr>Persist<wbr>Single<wbr>Request</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/84E0A206">Auth<wbr>Persist<wbr>Single<wbr>Request<wbr>Always<wbr>If<wbr>Proxy</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/3D4383FC">Auth<wbr>Persist<wbr>Single<wbr>Request<wbr>If<wbr>Proxy</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/03B1ECE9">CacheControlNoCache</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/B2BD492D">CacheIsapi</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/8DF57C2A">ContentIndexed</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/80016FDA">CpuAppEnabled</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/05D4CF75">CpuCgiEnabled</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/B8BD0E06">Create<wbr>Cgi<wbr>With<wbr>New<wbr>Console</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/1F498DC3">CreateProcessAsUser</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/AD4528CB">DefaultDoc</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/ABB96344">DirBrowseShowDate</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/7794455B">Dir<wbr>Browse<wbr>Show<wbr>Extension</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/476C7F3E">Dir<wbr>Browse<wbr>Show<wbr>Long<wbr>Date</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/BBAA3D19">DirBrowseShowSize</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/94166981">DirBrowseShowTime</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/3B54ABA2">DirPath</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/74F6AEF7">DontLog</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/EADFDCE9">EnableDefaultDoc</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/9EAE4705">EnableDirBrowsing</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/55F03DBE">EnableDocFooter</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/491A2458">EnableReverseDns</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/WebBase/09460B02">Server</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/WebBase/2E2283AF">ServerPath</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/E027704F">SsiExecDisable</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/A957DAFB">Unc<wbr>Authentication<wbr>Passthrough</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/50EB6FC6">UncPassword</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/CC04C1AB">UncUserName</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/WebBase/725E0DAC">VdirPath</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/WebBase/DD5A4692">Version</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/WebBase/E88C45F5">VirtualDirectory</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/WebBase/F9D4356A">Website</a></li>
+			<li class="header">Method Members</li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/WebBase/2380749C">CheckIISSettings<wbr>()<wbr></a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/WebBase/C4FB60CD">DirectoryEntryExists<wbr>(string)<wbr></a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory/466F02A3">ExecuteTask<wbr>()<wbr></a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+			<h3><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory">Create<wbr>Virtual<wbr>Directory</a>.</h3>
+	<h1>AccessExecute <small>Property</small></h1>
+</section>
+<section class="content">
+	
+	
+			<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Indicates whether the file or the contents of the folder may be 
+    executed, regardless of file type. The default is <code class="cs">false</code>.
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<dl class="dl-horizontal">	
+						<dt>Assembly</dt>
+						<dd><a href="/api/NAnt.Contrib.dll">NAnt<wbr>.Contrib<wbr>.dll</a></dd>
+						
+						<dt>Namespace</dt>
+						<dd><a href="/api/NAnt.Contrib.Tasks.Web">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Web</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/api/NAnt.Contrib.Tasks.Web/CreateVirtualDirectory">Create<wbr>Virtual<wbr>Directory</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>[TaskAttribute("accessexecute"), IisProperty]
+public bool AccessExecute { get; set; }</code></pre>
+
+
+
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>TaskAttribute</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Create<wbr>Virtual<wbr>Directory<wbr>.<wbr>Iis<wbr>Property<wbr>Attribute</td>
+						<td></td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	<h1 id="Value">Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td>bool</td>
+					<td></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

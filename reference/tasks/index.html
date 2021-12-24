@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - Tasks Reference</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
         <link href="/assets/css/theme/theme.css" rel="stylesheet" />
@@ -24,10 +24,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -116,7 +113,7 @@
                         <td>
                             <p>
                                 
-    Wraps <code class="cs">al.exe</code>, the assembly linker for the .NET Framework.
+    Wraps <a href="https://docs.microsoft.com/en-us/dotnet/framework/tools/al-exe-assembly-linker">al.exe</a>, the assembly linker for the .NET Framework.
     
                             </p>
                         </td>
@@ -163,6 +160,19 @@
                     </tr>
                     <tr>
                         <td>
+                            <strong><a href="/reference/tasks/aximp"><wbr>&lt;aximp&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Generates a Windows Forms Control that wraps ActiveX Controls defined 
+    in an OCX.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <strong><a href="/reference/tasks/call"><wbr>&lt;call&gt;<wbr></a></strong>
                         </td>
                         <td>
@@ -190,6 +200,18 @@
                     </tr>
                     <tr>
                         <td>
+                            <strong><a href="/reference/tasks/cl"><wbr>&lt;cl&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Compiles C/C++ programs using <a href="https://docs.microsoft.com/en-us/cpp/build/reference/compiler-command-line-syntax?view=msvc-160">cl.exe</a>, Microsoft's C/C++ compiler.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <strong><a href="/reference/tasks/copy"><wbr>&lt;copy&gt;<wbr></a></strong>
                         </td>
                         <td>
@@ -208,6 +230,105 @@
                             <p>
                                 
     Compiles C# programs.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/cvs"><wbr>&lt;cvs&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Executes the cvs command specified by the command attribute.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/cvs-changelog"><wbr>&lt;cvs-changelog&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Produces an XML report that represents the cvs changes from the given 
+    start day, to a given end date.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/cvs-checkout"><wbr>&lt;cvs-checkout&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Checks out a CVS module to the required directory.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/cvs-export"><wbr>&lt;cvs-export&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Exports a cvs module in preparation for a release (i.e. the CVS version
+    folders are not exported).
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/cvs-pass"><wbr>&lt;cvs-pass&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Executes the cvs login command which appends or updates an entry to the
+    specified .cvspass file.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/cvs-rtag"><wbr>&lt;cvs-rtag&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Tags all sources in the remote repository with a given tag.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/cvs-tag"><wbr>&lt;cvs-tag&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Tags all local sources with the specified tag.  
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/cvs-update"><wbr>&lt;cvs-update&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Updates a CVS module in a local working directory.
     
                             </p>
                         </td>
@@ -352,6 +473,19 @@
                     </tr>
                     <tr>
                         <td>
+                            <strong><a href="/reference/tasks/ildasm"><wbr>&lt;ildasm&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Disassembles any portable executable (PE) file that contains
+    intermediate language (IL) code.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <strong><a href="/reference/tasks/include"><wbr>&lt;include&gt;<wbr></a></strong>
                         </td>
                         <td>
@@ -376,12 +510,36 @@
                     </tr>
                     <tr>
                         <td>
+                            <strong><a href="/reference/tasks/lib"><wbr>&lt;lib&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Run <a href="https://docs.microsoft.com/en-us/cpp/build/reference/lib-reference?view=msvc-160">lib.exe</a>, Microsoft's Library Manager.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <strong><a href="/reference/tasks/license"><wbr>&lt;license&gt;<wbr></a></strong>
                         </td>
                         <td>
                             <p>
                                 
     Generates a <code class="cs">.licence</code> file from a <code class="cs">.licx</code> file.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/link"><wbr>&lt;link&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Links files using <a href="https://docs.microsoft.com/en-us/cpp/build/reference/linking?view=msvc-160">link.exe</a>, Microsoft's Incremental Linker.
     
                             </p>
                         </td>
@@ -419,6 +577,30 @@
                             <p>
                                 
     Sends an SMTP message.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/mc"><wbr>&lt;mc&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Compiles messages using mc.exe, Microsoft's Win32 message compiler.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/midl"><wbr>&lt;midl&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    This tasks allows you to run MIDL.exe.
     
                             </p>
                         </td>
@@ -485,6 +667,34 @@
                     </tr>
                     <tr>
                         <td>
+                            <strong><a href="/reference/tasks/nunit"><wbr>&lt;nunit&gt;<wbr></a></strong>
+                                <i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Runs tests using the NUnit V1.0 framework.
+    
+                            </p>
+                                <div class="alert alert-warning">
+                                    <i>Obsolete. In a future release, this task will be moved to NAntContrib. However, we strongly advise you to upgrade to NUnit 2.x.</i>
+                                </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/nunit2"><wbr>&lt;nunit2&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Runs tests using the NUnit V2.6 framework.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <strong><a href="/reference/tasks/property"><wbr>&lt;property&gt;<wbr></a></strong>
                         </td>
                         <td>
@@ -497,12 +707,50 @@
                     </tr>
                     <tr>
                         <td>
+                            <strong><a href="/reference/tasks/rc"><wbr>&lt;rc&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Compiles resources using <a href="https://docs.microsoft.com/en-us/windows/win32/menurc/using-rc-the-rc-command-line-">rc.exe</a>, Microsoft's Win32 resource 
+    compiler.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/readregistry"><wbr>&lt;readregistry&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Reads a value or set of values from the Windows Registry into one or 
+    more NAnt properties.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/regasm"><wbr>&lt;regasm&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Registers an assembly, or set of assemblies for use from COM clients.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <strong><a href="/reference/tasks/regex"><wbr>&lt;regex&gt;<wbr></a></strong>
                         </td>
                         <td>
                             <p>
                                 
-    Sets project properties based on the evaluatuion of a regular expression.
+    Sets project properties based on the evaluation of a regular expression.
     
                             </p>
                         </td>
@@ -545,6 +793,18 @@
                     </tr>
                     <tr>
                         <td>
+                            <strong><a href="/reference/tasks/servicecontroller"><wbr>&lt;servicecontroller&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Allows a Windows service to be controlled.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <strong><a href="/reference/tasks/setenv"><wbr>&lt;setenv&gt;<wbr></a></strong>
                         </td>
                         <td>
@@ -571,6 +831,19 @@
                     </tr>
                     <tr>
                         <td>
+                            <strong><a href="/reference/tasks/solution"><wbr>&lt;solution&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Compiles VS.NET solutions (or sets of projects), automatically determining 
+    project dependencies from inter-project references.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <strong><a href="/reference/tasks/style"><wbr>&lt;style&gt;<wbr></a></strong>
                         </td>
                         <td>
@@ -589,6 +862,31 @@
                             <p>
                                 
     Sets properties with system information.
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/tlbexp"><wbr>&lt;tlbexp&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Exports a .NET assembly to a type library that can be used from unmanaged 
+    code (wraps Microsoft's <a href="https://docs.microsoft.com/en-us/dotnet/framework/tools/tlbexp-exe-type-library-exporter">tlbexp.exe</a>).
+    
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong><a href="/reference/tasks/tlbimp"><wbr>&lt;tlbimp&gt;<wbr></a></strong>
+                        </td>
+                        <td>
+                            <p>
+                                
+    Imports a type library to a .NET assembly (wraps Microsoft's <a href="https://docs.microsoft.com/en-us/dotnet/framework/tools/tlbimp-exe-type-library-importer">tlbimp.exe</a>).
     
                             </p>
                         </td>
@@ -715,7 +1013,7 @@
     <br/>
     Copyright &copy; 2001-2021 NAnt2 contributors.
     <br/>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

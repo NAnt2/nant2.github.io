@@ -1,0 +1,722 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - API - NAnt.Contrib.Tasks Namespace</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+	<script src="/assets/js/anchor.min.js"></script>
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#ClassTypes">Class Types</a></p>
+<p><a href="#EnumTypes">Enum Types</a></p>
+<p><a href="#Namespaces">Namespaces</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+	<li class="header">Namespaces</li>   
+			<li><a href="/api/global">global</a></li>
+
+				<li class="treeview active">
+				<a href="/api/NAnt">NAnt</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/NAnt.Compression">NAnt<wbr>.Compression</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.Compression.Tasks">NAnt<wbr>.Compression<wbr>.Tasks</a></li>
+			<li><a href="/api/NAnt.Compression.Types">NAnt<wbr>.Compression<wbr>.Types</a></li>
+</ul></li>			<li><a href="/api/NAnt.Console">NAnt<wbr>.Console</a></li>
+
+				<li class="treeview active">
+				<a href="/api/NAnt.Contrib">NAnt<wbr>.Contrib</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.Contrib.Functions">NAnt<wbr>.Contrib<wbr>.Functions</a></li>
+
+				<li class="treeview">
+				<a href="/api/NAnt.Contrib.Schemas">NAnt<wbr>.Contrib<wbr>.Schemas</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.Contrib.Schemas.Msi">NAnt<wbr>.Contrib<wbr>.Schemas<wbr>.Msi</a></li>
+</ul></li>
+				<li class="treeview active selected">
+				<a href="/api/NAnt.Contrib.Tasks">NAnt<wbr>.Contrib<wbr>.Tasks</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.Contrib.Tasks.BizTalk">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.BizTalk</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.ClearCase">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.ClearCase</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.Grep">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Grep</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.Mks">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Mks</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.Msi">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Msi</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.NUnit2Report">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.NUnit2Report</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.Perforce">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Perforce</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.PVCS">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.PVCS</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.SourceSafe">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.SourceSafe</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.StarTeam">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.StarTeam</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.SurroundSCM">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.SurroundSCM</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.Svn">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Svn</a></li>
+			<li><a href="/api/NAnt.Contrib.Tasks.Web">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Web</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.Contrib.Types">NAnt<wbr>.Contrib<wbr>.Types</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.Contrib.Types.BizTalk">NAnt<wbr>.Contrib<wbr>.Types<wbr>.BizTalk</a></li>
+			<li><a href="/api/NAnt.Contrib.Types.ClearCase">NAnt<wbr>.Contrib<wbr>.Types<wbr>.ClearCase</a></li>
+			<li><a href="/api/NAnt.Contrib.Types.NUnit2Report">NAnt<wbr>.Contrib<wbr>.Types<wbr>.NUnit2Report</a></li>
+			<li><a href="/api/NAnt.Contrib.Types.PVCS">NAnt<wbr>.Contrib<wbr>.Types<wbr>.PVCS</a></li>
+</ul></li>			<li><a href="/api/NAnt.Contrib.Util">NAnt<wbr>.Contrib<wbr>.Util</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.Core">NAnt<wbr>.Core</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.Core.Attributes">NAnt<wbr>.Core<wbr>.Attributes</a></li>
+			<li><a href="/api/NAnt.Core.Extensibility">NAnt<wbr>.Core<wbr>.Extensibility</a></li>
+			<li><a href="/api/NAnt.Core.Filters">NAnt<wbr>.Core<wbr>.Filters</a></li>
+			<li><a href="/api/NAnt.Core.Functions">NAnt<wbr>.Core<wbr>.Functions</a></li>
+			<li><a href="/api/NAnt.Core.Tasks">NAnt<wbr>.Core<wbr>.Tasks</a></li>
+			<li><a href="/api/NAnt.Core.Types">NAnt<wbr>.Core<wbr>.Types</a></li>
+			<li><a href="/api/NAnt.Core.Util">NAnt<wbr>.Core<wbr>.Util</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.DotNet">NAnt<wbr>.DotNet</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.DotNet.Tasks">NAnt<wbr>.DotNet<wbr>.Tasks</a></li>
+			<li><a href="/api/NAnt.DotNet.Types">NAnt<wbr>.DotNet<wbr>.Types</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.MSBuild">NAnt<wbr>.MSBuild</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.MSBuild.Functions">NAnt<wbr>.MSBuild<wbr>.Functions</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.MSNet">NAnt<wbr>.MSNet</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.MSNet.Tasks">NAnt<wbr>.MSNet<wbr>.Tasks</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.NUnit">NAnt<wbr>.NUnit</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.NUnit.Types">NAnt<wbr>.NUnit<wbr>.Types</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.NUnit1">NAnt<wbr>.NUnit1</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.NUnit1.Tasks">NAnt<wbr>.NUnit1<wbr>.Tasks</a></li>
+			<li><a href="/api/NAnt.NUnit1.Types">NAnt<wbr>.NUnit1<wbr>.Types</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.NUnit2">NAnt<wbr>.NUnit2</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.NUnit2.Tasks">NAnt<wbr>.NUnit2<wbr>.Tasks</a></li>
+			<li><a href="/api/NAnt.NUnit2.Types">NAnt<wbr>.NUnit2<wbr>.Types</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.SourceControl">NAnt<wbr>.SourceControl</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.SourceControl.Tasks">NAnt<wbr>.SourceControl<wbr>.Tasks</a></li>
+			<li><a href="/api/NAnt.SourceControl.Types">NAnt<wbr>.SourceControl<wbr>.Types</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.VisualCpp">NAnt<wbr>.VisualCpp</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.VisualCpp.Tasks">NAnt<wbr>.VisualCpp<wbr>.Tasks</a></li>
+			<li><a href="/api/NAnt.VisualCpp.Types">NAnt<wbr>.VisualCpp<wbr>.Types</a></li>
+			<li><a href="/api/NAnt.VisualCpp.Util">NAnt<wbr>.VisualCpp<wbr>.Util</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.VSNet">NAnt<wbr>.VSNet</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.VSNet.Extensibility">NAnt<wbr>.VSNet<wbr>.Extensibility</a></li>
+			<li><a href="/api/NAnt.VSNet.Tasks">NAnt<wbr>.VSNet<wbr>.Tasks</a></li>
+			<li><a href="/api/NAnt.VSNet.Types">NAnt<wbr>.VSNet<wbr>.Types</a></li>
+</ul></li>
+				<li class="treeview">
+				<a href="/api/NAnt.Win32">NAnt<wbr>.Win32</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NAnt.Win32.Functions">NAnt<wbr>.Win32<wbr>.Functions</a></li>
+			<li><a href="/api/NAnt.Win32.Tasks">NAnt<wbr>.Win32<wbr>.Tasks</a></li>
+</ul></li></ul></li>
+				<li class="treeview">
+				<a href="/api/NDoc">NDoc</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview">
+				<a href="/api/NDoc.Documenter">NDoc<wbr>.Documenter</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/api/NDoc.Documenter.NAnt">NDoc<wbr>.Documenter<wbr>.NAnt</a></li>
+</ul></li></ul></li>      
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>NAnt<wbr>.Contrib<wbr>.Tasks <small>Namespace</small></h1>
+</section>
+<section class="content">
+	
+	
+	
+
+
+			<h1 id="ClassTypes">Class Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Class</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ADSIBaseTask">ADSIBaseTask</a></td>
+									<td>
+    Base NAnt task for working with ADSI.  This task contains only the path of the ADSI
+    object that you want to work with.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ADSIGetPropertyTask">ADSIGetPropertyTask</a></td>
+									<td>
+    Used to get the value of a property from an ADSI object.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ADSISetPropertyTask">ADSISetPropertyTask</a></td>
+									<td>
+    Sets a property on an ADSI object.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/Astyle">Astyle</a></td>
+									<td>
+    Formats source code in a given directory to a specified code format.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ChangeDirectory">ChangeDirectory</a></td>
+									<td>
+    Changes the current working directory.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ChecksumTask">ChecksumTask</a></td>
+									<td>
+    Calculates checksums for a set of files.
+    Loosely based on Ant's Checksum task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/CodeStatsTask">CodeStatsTask</a></td>
+									<td>
+    Generates statistics from source code.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/COMRegisterTask">COMRegisterTask</a></td>
+									<td>
+    Register COM servers or type libraries.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ConcatTask">ConcatTask</a></td>
+									<td>
+    A task that concatenates a set of files.
+    Loosely based on Ant's Concat task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/DicsoTask">DicsoTask</a></td>
+									<td>
+    Discovers the URLs of XML web services on a web server and saves documents
+    related to them to the local disk. The resulting .discomap, .wsdl, and .xsd files
+    can be used with the <code class="cs">NAnt.Contrib.Tasks.WsdlTask</code> to produce web service clients and
+    and abstract web service servers using ASP.NET.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/FxCopTask">FxCopTask</a></td>
+									<td>
+    Analyzes managed code assemblies and reports information about the 
+    assemblies, such as possible design, localization, performance, and 
+    security improvements.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/GacInstallTask">GacInstallTask</a></td>
+									<td>
+    Installs assemblies into the Global Assembly Cache (GAC) by using the 
+    <code class="cs">gacutil</code> SDK tool.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/GacTask">GacTask</a></td>
+									<td>
+    Manipulates the contents of the global assembly cache.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/GacTaskBase">GacTaskBase</a></td>
+									<td>
+    Base class functionality for the GAC tasks.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/GacUninstallTask">GacUninstallTask</a></td>
+									<td>
+    Uninstalls assemblies from the Global Assembly Cache (GAC) by using the 
+    <code class="cs">gacutil</code> SDK tool.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/HxCompTask">HxCompTask</a></td>
+									<td>
+    Compiles a Microsoft HTML Help 2.0 Project.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/HxRegTask">HxRegTask</a></td>
+									<td>
+    Registers a Microsoft HTML Help 2.0 Collection.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/KillTask">KillTask</a></td>
+									<td>
+    Immediately stops a given process.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/LoadPropertiesTask">LoadPropertiesTask</a></td>
+									<td>
+    Loads a file's contents as NAnt properties.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/MgmtClassGenTask">MgmtClassGenTask</a></td>
+									<td>
+    A task that generates strongly typed WMI classes using 
+    <code class="cs">mgmtclassgen.exe</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/MsbuildTask">MsbuildTask</a></td>
+									<td>
+    Builds the specified targets in the project file using <code class="cs">MSBuild</code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/NGenTask">NGenTask</a></td>
+									<td>
+    Pre-translates native code for an assembly containing IL (Intermediary 
+    Language bytecode) on the Windows platform.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/NUnitReportTask">NUnitReportTask</a></td>
+									<td>
+    A task that generates a summary HTML
+    from a set of NUnit xml report files.
+    Loosely based on Erik Hatcher JUnitReport for Ant.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/RecordTask">RecordTask</a></td>
+									<td>
+    A task that records the build's output to a file. Loosely based on Ant's 
+    <a href="http://ant.apache.org/manual/CoreTasks/recorder.html">Record</a>
+    task.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/SchemaValidatedTask">SchemaValidatedTask</a></td>
+									<td>
+    Abstract <code class="cs">Task</code> that validates inheriting classes against 
+    an XML schema of the same name.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/SchemaValidatorAttribute">Schema<wbr>Validator<wbr>Attribute</a></td>
+									<td>
+    Indicates that class should be validated by an XML Schema.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ScpTask">ScpTask</a></td>
+									<td>
+    Copies a file to a remote server using scp.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/SlingshotTask">SlingshotTask</a></td>
+									<td>
+    Converts a Visual Studio.NET Solution to a NAnt build file or nmake file.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/SqlTask">SqlTask</a></td>
+									<td>
+    A task to execute arbitrary SQL statements against a OLEDB data source.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/TypedCollectionTask">TypedCollectionTask</a></td>
+									<td>Generates collection classes based on a given XML specification file. Code generation is in the specified language.</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/ValidateXmlTask">ValidateXmlTask</a></td>
+									<td>
+    Validates a set of XML files based on a set of XML Schemas (XSD).
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/Vb6Task">Vb6Task</a></td>
+									<td>
+    Compiles Microsoft Visual Basic 6 programs.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/VersionTask">VersionTask</a></td>
+									<td>
+    Increments a four-part version number stored in a text file. The resulting 
+    version number is written back to the file and exposed using NAnt properties.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/WaitForExitTask">WaitForExitTask</a></td>
+									<td>
+    Waits for a given process on the local computer to exit.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/WsdlTask">WsdlTask</a></td>
+									<td>Generates code for web service clients and xml web services
+    using ASP.NET from WSDL contract files, XSD Schemas and .discomap
+    discovery documents. Can be used in conjunction with .disco files.</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/XsdTask">XsdTask</a></td>
+									<td>
+    The <code class="cs">NAnt.Contrib.Tasks.XsdTask</code> generates XML schema or common language runtime 
+    classes from XDR, XML, and XSD files, or from classes in a runtime assembly.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="EnumTypes">Enum Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Enum</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks/SchemeType">SchemeType</a></td>
+									<td>
+    Defines possible reference counting scheme types for the <code class="cs">NAnt.Contrib.Tasks.GacTask</code> tasks.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Namespaces">Namespaces</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Namespace</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.BizTalk">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.BizTalk</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.ClearCase">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.ClearCase</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Grep">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Grep</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Mks">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Mks</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Msi">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Msi</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.NUnit2Report">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.NUnit2Report</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Perforce">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Perforce</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.PVCS">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.PVCS</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SourceSafe">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.SourceSafe</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.StarTeam</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.SurroundSCM</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Svn">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Svn</a></td>
+									<td></td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.Web">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.Web</a></td>
+									<td></td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

@@ -1,0 +1,794 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - API - StarTeamCheckout Class</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+	<script src="/assets/js/anchor.min.js"></script>
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
+<p><a href="#Remarks">Remarks</a></p>
+<p><a href="#Attributes">Attributes</a></p>
+<p><a href="#Constructors">Constructors</a></p>
+<p><a href="#fields">Fields</a></p>
+<p><a href="#Properties">Properties</a></p>
+<p><a href="#Methods">Methods</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/NAnt.Contrib.dll">NAnt<wbr>.Contrib<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/NAnt.Contrib.Tasks.StarTeam">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.StarTeam</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/api/NAnt.Contrib.Tasks.StarTeam/LabelTask">LabelTask</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamAutoLabel">StarTeamAutoLabel</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamCheckin">StarTeamCheckin</a></li>
+				<li class="selected"><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamCheckout">StarTeamCheckout</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamLabel">StarTeamLabel</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamList">StarTeamList</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask">StarTeamTask</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>StarTeamCheckout <small>Class</small></h1>
+</section>
+<section class="content">
+	
+	
+			<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Task to check out files from StarTeam repositories. 
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/api/NAnt.Contrib.dll">NAnt<wbr>.Contrib<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/api/NAnt.Contrib.Tasks.StarTeam">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.StarTeam</a></dd>
+											
+							
+								<dt>Base Types</dt>
+								<dd>
+									<ul class="list-unstyled">										
+											<li>Core<wbr>.Task</li>								
+											<li><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask">StarTeamTask</a></li>								
+											<li><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></li>								
+									</ul>
+								</dd>				
+							
+							
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph BT
+	Type--&gt;Base0["TreeBasedTask"]
+	click Base0 "/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask"
+	Base0--&gt;Base1["StarTeamTask"]
+	click Base1 "/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask"
+	Base1--&gt;Base2["Core.Task"]
+	Type["StarTeamCheckout"]
+class Type type-node
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>[TaskName("stcheckout")]
+public class StarTeamCheckout : TreeBasedTask</code></pre>
+
+		<h1 id="Examples">Examples</h1>
+	<div>
+      <p>Recursively checks out all files in the project with an exclusive lock.</p>
+      <pre><code class="cs">    &lt;!-- 
+  constructs a 'url' containing connection information to pass to the task 
+  alternatively you can set each attribute manually 
+--&gt;
+&lt;property name="ST.url" value="user:pass@serverhost:49201/projectname/viewname" /&gt;
+&lt;stcheckout locktype="exclusive" rootstarteamfolder="/" recursive="true" url="${ST.url}" /&gt;</code></pre>
+    </div>
+
+		<h1 id="Remarks">Remarks</h1>
+	<div>
+    <p>You can check out by <code class="cs">NAnt.Contrib.Tasks.StarTeam.TreeBasedTask.Label</code> and control the type of lock with <code class="cs">NAnt.Contrib.Tasks.StarTeam.StarTeamCheckout.locktype</code>.</p>
+    <p>You can delete files that are not in source control by setting <code class="cs">NAnt.Contrib.Tasks.StarTeam.StarTeamCheckout.deleteuncontrolled</code>.</p>
+    <p>This task was ported from the Ant task http://jakarta.apache.org/ant/manual/OptionalTasks/starteam.html#stcheckout </p>
+    <p>You need to have the StarTeam SDK installed for this task to function correctly.</p>
+    </div>
+
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>TaskName</td>
+						<td></td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+
+
+			<h1 id="Constructors">Constructors</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamCheckout/8DCACCBB">StarTeamCheckout<wbr>()<wbr></a></td>
+									<td></td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+			<h1 id="fields">Fields</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Constant Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/D0407EC3">_exclude</a></td>
+								<td></td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/59425035">_excludePatterns</a></td>
+								<td></td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/BFB1B9F2">_filesAffected</a></td>
+								<td></td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/145DCB80">_forced</a></td>
+								<td></td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/22CB51D1">_include</a></td>
+								<td></td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/679CD5EE">_includePatterns</a></td>
+								<td></td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/177C9F38">_label</a></td>
+								<td></td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/EA0CB28F">_recursive</a></td>
+								<td></td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/BEDA5D26">_rootLocalFolder</a></td>
+								<td></td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/56B2A3CC">_rootStarTeamFolder</a></td>
+								<td></td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask/60E4BE16">_server</a></td>
+								<td></td>
+								<td>
+									<div></div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask">StarTeamTask</a></em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Properties">Properties</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamCheckout/A947203B">createworkingdirs</a></td>
+								<td>bool</td>
+								<td>
+									<div> 
+    Default : true - Create directories that are in the Starteam repository even if they are empty.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamCheckout/92AC6DDE">deleteuncontrolled</a></td>
+								<td>bool</td>
+								<td>
+									<div> 
+    <strong>Not fully tested CAREFUL</strong> Default : false - Should all local files <strong>NOT</strong> in StarTeam be deleted?
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/0C71D69B">Excludes</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Accepts comma de-limited list of expressions to exclude from tree operations. 
+    If nothing is specified. NO filespecs are excluded.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/19A53B96">Forced</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Default : false - force check in/out actions regardless of the status that StarTeam is maintaining for the file. 
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/B7CD77C8">Includes</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Accepts comma de-limited list of expressions to include in tree operations. 
+    If nothing is set ALL filespecs are included.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/C834A8A4">Label</a></td>
+								<td>string</td>
+								<td>
+									<div> 
+    Label used for checkout. If no label is set latest state of repository is checked out.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamCheckout/83F44029">locktype</a></td>
+								<td>string</td>
+								<td>
+									<div> 
+    What type of lock to apply to files checked out.
+    <ul>
+      <li>
+        <span class="term">LockType</span>
+      </li>
+      <li>
+        <span class="term">unchanged</span>
+        <span class="description">default: do not make any changes to the lock state of items.</span>
+      </li>
+      <li>
+        <span class="term">exclusive</span>
+        <span class="description">Exclusively lock items. No other users can update the object while it is exclusively locked.</span>
+      </li>
+      <li>
+        <span class="term">nonexclusive</span>
+        <span class="description">Put a non-exclusive lock on the item.</span>
+      </li>
+      <li>
+        <span class="term">unlocked</span>
+        <span class="description">Remove locks from all items checked out. This accompanied by force would effectively override a lock and replace local contents with the current version.</span>
+      </li>
+    </ul>
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask/BA604B9C">password</a></td>
+								<td>string</td>
+								<td>
+									<div> 
+    The password used for login.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask">StarTeamTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask/0B890295">projectname</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The name of the StarTeam project to be acted on
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask">StarTeamTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/A5844364">recursive</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Default : true - should tasks recurse through tree.
+     </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/49E96D4A">RootLocalFolder</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Root Local folder where files are to be checkout/in or manipulated. Defaults to the StarTeam default folder. 
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/FD444976">rootstarteamfolder</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Root StarTeam folder to begin operations on. Defaults to the root of the view.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask/BA36E91D">servername</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Name of StarTeamServer.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask">StarTeamTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask/70155B00">serverport</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Port number of the StarTeam connection.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask">StarTeamTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask/2A5D0ACE">url</a></td>
+								<td>string</td>
+								<td>
+									<div> 
+    One stop to set all parameters needed to connect to a StarTeam server.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask">StarTeamTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask/1820D751">username</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The StarTeam user name used for login.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask">StarTeamTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask/0B6B16D4">viewname</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The name of the StarTeam view to be acted on.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamTask">StarTeamTask</a></em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/E59C8E4F">delistLocalFile<wbr>(Hashtable, <wbr>FileInfo)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div> 
+    Removes file being worked with from the <code class="cs">NAnt.Contrib.Tasks.StarTeam.TreeBasedTask.listLocalFiles(System.IO.FileInfo)</code> generated hashtable.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/21086880">ExecuteTask<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Does the work of opening the supplied Starteam view and calling 
+    the <code class="cs">NAnt.Contrib.Tasks.StarTeam.TreeBasedTask.visit(StarTeam.StFolder,System.IO.FileInfo)</code> method setting the pattern in motion to perform the task.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/FF1ACFE0">getLabelID<wbr>(StView)<wbr></a></td>
+								<td>IStLabel</td>
+								<td>
+									<div> 
+    Helper method calls on the StarTeam API to retrieve an ID number for the specified view, corresponding to this.label.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/E42DFF5C">IsIncluded<wbr>(string)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Evaluates defined <code class="cs">NAnt.Contrib.Tasks.StarTeam.TreeBasedTask.Includes</code> and <code class="cs">NAnt.Contrib.Tasks.StarTeam.TreeBasedTask.Excludes</code> patterns against a filename. 
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/085D6611">listLocalFiles<wbr>(FileInfo)<wbr></a></td>
+								<td>Hashtable</td>
+								<td>
+									<div> 
+    Gets the collection of the local file names in the supplied directory.
+    We need to check this collection against what we find in Starteam to
+    understand what we need to do in order to synch with the repository.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask/0A4F6942">populatePatterns<wbr>(StringCollection, <wbr>StringCollection)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Convert path patterns to regularexpression patterns. Stored in the given string collection.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.StarTeam/TreeBasedTask">TreeBasedTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamCheckout/3737AAC8">testPreconditions<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div> Implements base-class abstract function to define tests for any preconditons required by the task</div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.StarTeam/StarTeamCheckout/9C07B38E">visit<wbr>(StFolder, <wbr>FileInfo)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div> 
+    Implements base-class abstract function to perform the checkout operation on the files in each folder of the tree.
+    </div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

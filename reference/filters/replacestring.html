@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - replacestring</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,10 +76,8 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -115,12 +110,32 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Replaces all occurrences of a given string in the original input with 
     user-supplied replacement string.
     </div>
 
+	<div>
+    <p>
+    This filter replaces all occurrences of a given string in the original 
+    input stream with a user-supplied replacement string. By default string 
+    comparisons are case sensitive but this can be changed by setting the 
+    optional <code class="cs">NAnt.Core.Filters.ReplaceString.IgnoreCase</code> attribute to <code class="cs">true</code>.
+    </p>
+    <p>
+    To use this filter specify the string to be replaced with the 
+    <code class="cs">NAnt.Core.Filters.ReplaceString.From</code> attribute and the string to replace it with using the 
+    <code class="cs">NAnt.Core.Filters.ReplaceString.To</code> attribute. 
+    </p>
+    <p>
+    Filters are intended to be used as a element of a <code class="cs">NAnt.Core.Filters.FilterChain</code>.
+    </p>
+    </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -138,9 +153,9 @@
                         <tbody>
 									<tr>
 										<td>
-											<b>
-												from
-											</b>
+												<b>											
+													from
+												</b>
 										</td>
 										<td>string</td>
 										<td>
@@ -149,15 +164,12 @@
     </div>
 										</td>
 										<td>
-											False
+											True
 										</td>
 									</tr>
 									<tr>
 										<td>
-											<b>
-												ignorecase
-											</b>
-										</td>
+ignorecase										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -171,10 +183,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												to
-											</b>
-										</td>
+to										</td>
 										<td>string</td>
 										<td>
 											<div>
@@ -188,7 +197,7 @@
 									</tr>
 																<tr>
 										<td>
-											if
+											<i>if</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -203,7 +212,7 @@
 									</tr>
 									<tr>
 										<td>
-											unless
+											<i>unless</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -224,8 +233,10 @@
 		
 
 
+
+
  
-	<h1 id="Examples">Examples</h1>
+		<h1 id="Examples">Examples</h1>
 	<div>
       <p>
       Replace all occurrences of "3.14" with "PI".
@@ -239,23 +250,6 @@
       <pre><code class="cs">&lt;replacestring from="String" to="System.String" ignorecase="true" /&gt;</code></pre>
     </div>
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-    <p>
-    This filter replaces all occurrences of a given string in the original 
-    input stream with a user-supplied replacement string. By default string 
-    comparisons are case sensitive but this can be changed by setting the 
-    optional <code class="cs">NAnt.Core.Filters.ReplaceString.IgnoreCase</code> attribute to <code class="cs">true</code>.
-    </p>
-    <p>
-    To use this filter specify the string to be replaced with the 
-    <code class="cs">NAnt.Core.Filters.ReplaceString.From</code> attribute and the string to replace it with using the 
-    <code class="cs">NAnt.Core.Filters.ReplaceString.To</code> attribute. 
-    </p>
-    <p>
-    Filters are intended to be used as a element of a <code class="cs">NAnt.Core.Filters.FilterChain</code>.
-    </p>
-    </div>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -272,7 +266,6 @@
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -289,7 +282,7 @@
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

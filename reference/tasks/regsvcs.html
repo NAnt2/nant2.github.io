@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - regsvcs</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,11 +76,10 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
+<p><a href="#Parameters">Framework-configurable parameters</a></p>
 <p><a href="#NestedElements">Nested elements</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -116,11 +112,38 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Installs or removes .NET Services.
     </div>
 
+	<div>
+    <p>
+    This tasks provides the same functionality as the <code class="cs">regsvcs</code> tool 
+    provided in the .NET SDK.
+    </p>
+    <p>
+    It performs the following actions: 
+    </p>
+    <ul>
+      <li>
+        <span class="description">Loads and registers an assembly.</span>
+      </li>
+      <li>
+        <span class="description">Generates, registers, and installs a type library into a specified COM+ application.</span>
+      </li>
+      <li>
+        <span class="description">Configures services that are added programmatically to your class.</span>
+      </li>
+    </ul>
+    <p>
+    Refer to the <a href="ms-help://MS.NETFrameworkSDK/cptools/html/cpgrfnetservicesinstallationutilityregsvcsexe.htm">.NET Services Installation Tool (Regsvcs.exe)</a> for more information.
+    </p>
+    </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -138,11 +161,24 @@
                         <tbody>
 									<tr>
 										<td>
-											<b>
-												action
-											</b>
+												<b>											
+													assembly
+												</b>
 										</td>
-										<td><a href="/api/NAnt.DotNet.Tasks/ActionType">RegsvcsTask<wbr>.ActionType</a></td>
+										<td>file</td>
+										<td>
+											<div>
+    The source assembly file.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+action										</td>
+										<td><a href="/api/NAnt.DotNet.Tasks/ActionType"></a></td>
 										<td>
 											<div>
     Defines the action to take with the assembly. The default is 
@@ -155,10 +191,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												application
-											</b>
-										</td>
+application										</td>
 										<td>string</td>
 										<td>
 											<div>
@@ -171,26 +204,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												assembly
-											</b>
-										</td>
-										<td>FileInfo</td>
-										<td>
-											<div>
-    The source assembly file.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<b>
-												componentsonly
-											</b>
-										</td>
+componentsonly										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -204,10 +218,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												existingapp
-											</b>
-										</td>
+existingapp										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -220,10 +231,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												existingtlb
-											</b>
-										</td>
+existingtlb										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -236,10 +244,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												noreconfig
-											</b>
-										</td>
+noreconfig										</td>
 										<td>bool</td>
 										<td>
 											<div>
@@ -253,10 +258,7 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												partition
-											</b>
-										</td>
+partition										</td>
 										<td>string</td>
 										<td>
 											<div>
@@ -270,11 +272,8 @@
 									</tr>
 									<tr>
 										<td>
-											<b>
-												tlb
-											</b>
-										</td>
-										<td>FileInfo</td>
+tlb										</td>
+										<td>file</td>
 										<td>
 											<div>
     Specifies the type library file to install.
@@ -286,7 +285,7 @@
 									</tr>
 																<tr>
 										<td>
-											failonerror
+											<i>failonerror</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -301,7 +300,7 @@
 									</tr>
 									<tr>
 										<td>
-											if
+											<i>if</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -316,7 +315,7 @@
 									</tr>
 									<tr>
 										<td>
-											timeout
+											<i>timeout</i>
 										</td>
 										<td>int</td>
 										<td>
@@ -331,7 +330,7 @@
 									</tr>
 									<tr>
 										<td>
-											unless
+											<i>unless</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -347,7 +346,7 @@
 									</tr>
 									<tr>
 										<td>
-											verbose
+											<i>verbose</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -367,24 +366,262 @@
 		
 
 
+				<h1 id="Parameters">Framework-configurable parameters</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+exename										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The name of the executable that should be used to launch the 
+    external program.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+managed										</td>
+										<td><a href="/api/NAnt.Core.Types/ManagedExecution"></a></td>
+										<td>
+											<div>
+    Specifies whether the external program should be treated as a managed
+    application, possibly forcing it to be executed under the currently
+    targeted version of the CLR.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+useruntimeengine													<i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
+										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Specifies whether the external program is a managed application
+    which should be executed using a runtime engine, if configured. 
+    The default is <code class="cs">false</code>.
+    </div>
+												<div class="alert alert-warning">
+													<i>Obsolete. Use the managed attribute and Managed property instead.</i>
+												</div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+
 <h1 id="NestedElements">Nested elements</h1>    <div class="container-fluid">
         
 
     <div class="row">
         <h2>
-            &lt;arg&gt; - NAnt nested collection
+            &lt;arg&gt;
         </h2>
         <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
             
             <p>
     The command-line arguments for the external program.
     </p>
-                    </div>
+            
+                    <p>
+      </p><p>
+      When passed to an external application, the argument will be quoted
+      when appropriate. This does not apply to the <code class="cs">NAnt.Core.Types.Argument.Line</code>
+      parameter, which is always passed as is.
+      </p>
+    <p></p>
+
+
+				<h3 id="ArgumentParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+dir										</td>
+										<td>directory</td>
+										<td>
+											<div>
+    The value for a directory-based command-line argument; will be
+    replaced with the absolute path of the directory.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+file										</td>
+										<td>file</td>
+										<td>
+											<div>
+    The name of a file as a single command-line argument; will be 
+    replaced with the absolute filename of the file.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates if the argument should be passed to the external program. 
+    If <code class="cs">true</code> then the argument will be passed; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+line										</td>
+										<td>string</td>
+										<td>
+											<div>
+    List of command-line arguments; will be passed to the executable
+    as is.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+path										</td>
+										<td><a href="/api/NAnt.Core.Types/PathSet"></a></td>
+										<td>
+											<div>
+    The value for a PATH-like command-line argument; you can use 
+    <code class="cs">:</code> or <code class="cs">;</code> as path separators and NAnt will convert it 
+    to the platform's local conventions, while resolving references to 
+    environment variables.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    Indicates if the argument should not be passed to the external 
+    program. If <code class="cs">false</code> then the argument will be 
+    passed; otherwise, skipped. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+value										</td>
+										<td>string</td>
+										<td>
+											<div>
+    A single command-line argument; can contain space characters.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+<h3 id="ArgumentNestedElements">Nested elements</h3>    <div class="container-fluid">
+        
+
+    <div class="row">
+        <h2>
+            <a href="/reference/types/path">&lt;path&gt;</a>
+        </h2>
+        <div class="col-xs-10 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2">
+            <p>
+    Sets a single command-line argument and treats it like a PATH - ensures 
+    the right separator for the local platform is used.
+    </p>
+            <!-- put the nested element class docs inline if the element does not derive from DataTypeBase (meaning, is not a global type) 
+                    - instead of checking base classes, we'll check if it has a link to NAnt reference types
+            -->
+        </div>
+        <h2><a href="/reference/types/path">&lt;/path&gt;</a></h2>
+    </div>
+     </div>
+ 		<h3 id="Examples">Examples</h3>
+	<div>
+      <p>
+      A single command-line argument containing a space character.
+      </p>
+      <pre><code class="cs">&lt;arg value="-l -a" /&gt;</code></pre>
+    
+
+      <p>
+      Two separate command-line arguments.
+      </p>
+      <pre><code class="cs">&lt;arg line="-l -a" /&gt;</code></pre>
+    
+
+      <p>
+      A single command-line argument with the value <code class="cs">\dir;\dir2;\dir3</code>
+      on DOS-based systems and <code class="cs">/dir:/dir2:/dir3</code> on Unix-like systems.
+      </p>
+      <pre><code class="cs">&lt;arg path="/dir;/dir2:\dir3" /&gt;</code></pre>
+    </div>
+
+        </div>
         <h2>&lt;arg&gt;</h2>
     </div>
      </div>
  
-	<h1 id="Examples">Examples</h1>
+		<h1 id="Examples">Examples</h1>
 	<div>
       <p>
       Adds all public classes contained in <code class="cs">myTest.dll</code> to a COM+ 
@@ -416,30 +653,6 @@
       <pre><code class="cs">&lt;regsvcs action="Uninstall" assembly="myTest.dll" /&gt;</code></pre>
     </div>
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-    <p>
-    This tasks provides the same functionality as the <code class="cs">regsvcs</code> tool 
-    provided in the .NET SDK.
-    </p>
-    <p>
-    It performs the following actions: 
-    </p>
-    <ul>
-      <li>
-        <span class="description">Loads and registers an assembly.</span>
-      </li>
-      <li>
-        <span class="description">Generates, registers, and installs a type library into a specified COM+ application.</span>
-      </li>
-      <li>
-        <span class="description">Configures services that are added programmatically to your class.</span>
-      </li>
-    </ul>
-    <p>
-    Refer to the <a href="ms-help://MS.NETFrameworkSDK/cptools/html/cpgrfnetservicesinstallationutilityregsvcsexe.htm">.NET Services Installation Tool (Regsvcs.exe)</a> for more information.
-    </p>
-    </div>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -456,7 +669,6 @@
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -473,7 +685,7 @@
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

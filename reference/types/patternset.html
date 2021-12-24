@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - patternset</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,13 +76,11 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#NestedElements">Nested elements</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
-<p><a href="#Requirements">Requirements</a></p>
 <p><a href="#SeeAlso">See Also</a></p>
+<p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -117,11 +112,52 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     A set of patterns, mostly used to include or exclude certain files.
     </div>
 
+	<div>
+      <p>
+      The individual patterns support <code class="cs">if</code> and <code class="cs">unless</code> attributes
+      to specify that the element should only be used if or unless a given
+      condition is met.
+      </p>
+      <p>
+      The <code class="cs">NAnt.Core.Types.PatternSet.IncludesFile</code> and <code class="cs">NAnt.Core.Types.PatternSet.ExcludesFile</code>
+      elements load patterns from a file. When the file is a relative path,
+      it will be resolved relative to the project base directory in which
+      the patternset is defined. Each line of this file is taken to be a
+      pattern.
+      </p>
+      <p>
+      The number sign (#) as the first non-blank character in a line denotes
+      that all text following it is a comment:
+      </p>
+      <pre><code class="cs">EventLog.cs
+   # requires Mono.Posix
+   SysLogEventLogImpl.cs
+   # uses the win32 eventlog API
+   Win32EventLogImpl.cs</code></pre>
+      <p>
+      Patterns can be grouped to sets, and later be referenced by their
+      <code class="cs">NAnt.Core.DataTypeBase.ID</code>.
+      </p>
+      <p>
+      When used as a standalone element (global type), any properties that
+      are referenced will be resolved when the definition is processed, not
+      when it actually used. Passing a reference to a nested build file 
+      will not cause the properties to be re-evaluated.
+      </p>
+      <p>
+      To improve reuse of globally defined patternsets, avoid referencing
+      any properties altogether.
+      </p>
+    </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -139,7 +175,7 @@
                         <tbody>
 																<tr>
 										<td>
-											id
+											<i>id</i>
 										</td>
 										<td>string</td>
 										<td>
@@ -153,7 +189,7 @@
 									</tr>
 									<tr>
 										<td>
-											refid
+											<i>refid</i>
 										</td>
 										<td>string</td>
 										<td>
@@ -172,26 +208,96 @@
 		
 
 
+
+
 <h1 id="NestedElements">Nested elements</h1>    <div class="container-fluid">
         
 
     <div class="row">
         <h2>
-            &lt;exclude&gt; - NAnt nested collection
+            &lt;exclude&gt;
         </h2>
         <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
             
             <p>
     Defines a single pattern for files to exclude.
     </p>
-                    </div>
+            
+                    <p></p>
+
+
+				<h3 id="PatternParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													name
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The name pattern to include/exclude.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the pattern will be used; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">false</code> then the pattern will be used;
+    otherwise, skipped. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
         <h2>&lt;exclude&gt;</h2>
     </div>
  
 
     <div class="row">
         <h2>
-            &lt;excludesfile&gt; - NAnt nested collection
+            &lt;excludesfile&gt;
         </h2>
         <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
             
@@ -199,28 +305,164 @@
     Loads multiple patterns of files to exclude from a given file, set
     using the <code class="cs">NAnt.Core.Types.Pattern.PatternName</code> parameter.
     </p>
-                    </div>
+            
+                    <p></p>
+
+
+				<h3 id="PatternParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													name
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The name pattern to include/exclude.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the pattern will be used; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">false</code> then the pattern will be used;
+    otherwise, skipped. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
         <h2>&lt;excludesfile&gt;</h2>
     </div>
  
 
     <div class="row">
         <h2>
-            &lt;include&gt; - NAnt nested collection
+            &lt;include&gt;
         </h2>
         <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
             
             <p>
     Defines a single pattern for files to include.
     </p>
-                    </div>
+            
+                    <p></p>
+
+
+				<h3 id="PatternParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													name
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The name pattern to include/exclude.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the pattern will be used; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">false</code> then the pattern will be used;
+    otherwise, skipped. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
         <h2>&lt;include&gt;</h2>
     </div>
  
 
     <div class="row">
         <h2>
-            &lt;includesfile&gt; - NAnt nested collection
+            &lt;includesfile&gt;
         </h2>
         <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-sm-offset-1 col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
             
@@ -228,12 +470,80 @@
     Loads multiple patterns of files to include from a given file, set
     using the <code class="cs">NAnt.Core.Types.Pattern.PatternName</code> parameter.
     </p>
-                    </div>
+            
+                    <p></p>
+
+
+				<h3 id="PatternParameters">Parameters</h3>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover four-cols">
+						<thead>
+							<tr>
+								<th>Attribute</th>
+								<th>Type</th>
+								<th>Description</th>
+                                <th>Required</th>
+							</tr>
+						</thead>
+                        <tbody>
+									<tr>
+										<td>
+												<b>											
+													name
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The name pattern to include/exclude.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+if										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">true</code> then the pattern will be used; 
+    otherwise, skipped. The default is <code class="cs">true</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+									<tr>
+										<td>
+unless										</td>
+										<td>bool</td>
+										<td>
+											<div>
+    If <code class="cs">false</code> then the pattern will be used;
+    otherwise, skipped. The default is <code class="cs">false</code>.
+    </div>
+										</td>
+										<td>
+											False
+										</td>
+									</tr>
+							                        </tbody>
+					</table>
+				</div>
+			</div>
+		
+
+ 
+        </div>
         <h2>&lt;includesfile&gt;</h2>
     </div>
      </div>
  
-	<h1 id="Examples">Examples</h1>
+		<h1 id="Examples">Examples</h1>
 	<div>
       <p>
       Define a set of patterns that matches all .cs files that do not contain
@@ -350,44 +660,10 @@
       </ul>
     </div>
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-      <p>
-      The individual patterns support <code class="cs">if</code> and <code class="cs">unless</code> attributes
-      to specify that the element should only be used if or unless a given
-      condition is met.
-      </p>
-      <p>
-      The <code class="cs">NAnt.Core.Types.PatternSet.IncludesFile</code> and <code class="cs">NAnt.Core.Types.PatternSet.ExcludesFile</code>
-      elements load patterns from a file. When the file is a relative path,
-      it will be resolved relative to the project base directory in which
-      the patternset is defined. Each line of this file is taken to be a
-      pattern.
-      </p>
-      <p>
-      The number sign (#) as the first non-blank character in a line denotes
-      that all text following it is a comment:
-      </p>
-      <pre><code class="cs">EventLog.cs
-   # requires Mono.Posix
-   SysLogEventLogImpl.cs
-   # uses the win32 eventlog API
-   Win32EventLogImpl.cs</code></pre>
-      <p>
-      Patterns can be grouped to sets, and later be referenced by their
-      <code class="cs">NAnt.Core.DataTypeBase.ID</code>.
-      </p>
-      <p>
-      When used as a standalone element (global type), any properties that
-      are referenced will be resolved when the definition is processed, not
-      when it actually used. Passing a reference to a nested build file 
-      will not cause the properties to be re-evaluated.
-      </p>
-      <p>
-      To improve reuse of globally defined patternsets, avoid referencing
-      any properties altogether.
-      </p>
-    </div>
+	<h1 id="SeeAlso">See Also</h1>
+	<ul class="list-unstyled">
+			<li>NAnt.Core.Types.FileSet</li>
+	</ul>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -404,11 +680,6 @@
             </dl>
         </div>
     </div>
-
-	<h1 id="SeeAlso">See Also</h1>
-	<ul class="list-unstyled">
-			<li>NAnt.Core.Types.FileSet</li>
-	</ul>
     
 </section>                
             </div>           
@@ -425,7 +696,7 @@
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>

@@ -1,0 +1,647 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>NAnt2 - API - SSCMGet Class</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+	<script src="/assets/js/anchor.min.js"></script>
+
+        <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo-dark.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo-dark.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/docs">Documentation</a></li>
+        <li><a href="/reference">Reference</a></li>
+        <li><a href="/release">Releases</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/api">API</a></li>
+        <li><a href="https://github.com/NAnt2/NAnt2"><i class="fa fa-github" aria-hidden="true"></i> Source</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
+<p><a href="#Remarks">Remarks</a></p>
+<p><a href="#Attributes">Attributes</a></p>
+<p><a href="#Properties">Properties</a></p>
+<p><a href="#Methods">Methods</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/NAnt.Contrib.dll">NAnt<wbr>.Contrib<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/NAnt.Contrib.Tasks.SurroundSCM">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.SurroundSCM</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMBatch">SSCMBatch</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMBranch">SSCMBranch</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMCheckin">SSCMCheckin</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMCheckout">SSCMCheckout</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMFreeze">SSCMFreeze</a></li>
+				<li class="selected"><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet">SSCMGet</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMLabel">SSCMLabel</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask">SSCMTask</a></li>
+				<li><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMUnFreeze">SSCMUnFreeze</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>SSCMGet <small>Class</small></h1>
+</section>
+<section class="content">
+	
+	
+			<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Gets files from a <a href="http://www.seapine.com/surroundscm.html">Surround SCM</a>
+    repository.
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/api/NAnt.Contrib.dll">NAnt<wbr>.Contrib<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/api/NAnt.Contrib.Tasks.SurroundSCM">NAnt<wbr>.Contrib<wbr>.Tasks<wbr>.SurroundSCM</a></dd>
+											
+							
+								<dt>Base Types</dt>
+								<dd>
+									<ul class="list-unstyled">										
+											<li>ExternalProgramBase</li>								
+											<li><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask">SSCMTask</a></li>								
+									</ul>
+								</dd>				
+							
+							
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph BT
+	Type--&gt;Base0["SSCMTask"]
+	click Base0 "/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask"
+	Base0--&gt;Base1["ExternalProgramBase"]
+	Type["SSCMGet"]
+class Type type-node
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>[TaskName("sscmget")]
+public class SSCMGet : SSCMTask</code></pre>
+
+		<h1 id="Examples">Examples</h1>
+	<div>
+      <p>
+      Get all files and repositories from repository 'Mainline/Widget' 
+      recursively from the 'Widget 1.0' branch to the working directory 
+      setup for user 'administrator'. This call forces the file retrieval 
+      from the server even if the local file is current and overwrites any 
+      local files that are writable with the server copy.
+      </p>
+      <pre><code class="cs">&lt;sscmget
+    serverconnect="localhost:4900"
+    serverlogin="administrator:"
+    file="/"
+    branch="Widget 1.0"
+    repository="Mainline/Widget"
+    recursive="true"
+    force="true"
+    overwrite="true"
+/&gt;</code></pre>
+    
+
+      <p>
+      Get version 1 of the file 'Mainline/Widget/Widget.java' from the 
+      'Widget 1.0' branch to the working directory setup for user 'administrator'.
+      Writable local files are not overwritten, even if they are out of date.
+      </p>
+      <pre><code class="cs">&lt;sscmget
+    serverconnect="localhost:4900"
+    serverlogin="administrator:"
+    quiet="true"
+    file="Widget.java"
+    branch="Widget 1.0"
+    repository="Mainline/Widget"
+    overwrite="false"
+    writable="true"
+    version="1"
+/&gt;</code></pre>
+    
+
+      <p>
+      Get all files and repositories labeled with 'Release 1.0.0' (even those 
+      removed from Surround) from repository 'Mainline/Widget' recursively 
+      from the 'Widget 1.0' branch to the '${build}/src' directory. Writable 
+      local files are overwritten with the server copy.
+      </p>
+      <pre><code class="cs">&lt;sscmget
+    serverconnect="localhost:4900"
+    serverlogin="administrator:"
+    quiet="true"
+    file="/"
+    branch="Widget 1.0"
+    repository="Mainline/Widget"
+    recursive="true"
+    label="Release 1.0.1"
+    destdir="${build}/src"
+    overwrite="true"
+/&gt;</code></pre>
+    </div>
+
+		<h1 id="Remarks">Remarks</h1>
+	<div>
+    You can get a single file, multiple files, or a repository. A read-only 
+    copy of the file is created in the specified directory.
+    </div>
+
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>TaskName</td>
+						<td></td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+
+
+
+
+
+			<h1 id="Properties">Properties</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/CFE268CE">Branch</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Surround SCM branch name. The default is pulled from the local 
+    working directory.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/676A8A22">ByLabel</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Label to search for when getting a file. If a file version is 
+    specified, this parameter is ignored.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/1916E22B">ByTimestamp</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Timestamp to use when getting files. Format is yyyymmddhh:mm:ss. 
+    If <code class="cs">NAnt.Contrib.Tasks.SurroundSCM.SSCMGet.ByLabel</code> is specified, this parameter is ignored. 
+    Requires Surround SCM 3.0 or later.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/6B1A5BA3">DestinationDirectory</a></td>
+								<td>DirectoryInfo</td>
+								<td>
+									<div>
+    The local directory you want to get the files to. If 
+    <code class="cs">NAnt.Contrib.Tasks.SurroundSCM.SSCMGet.File</code> is a repository, a subrepository with the same 
+    name as the repository is created and files are copied to it. If 
+    <code class="cs">NAnt.Contrib.Tasks.SurroundSCM.SSCMGet.File</code> is specified as / or not set, files are copied to 
+    the local directory. If not specified, files are copied to the 
+    working directory.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask/C605B2F7">ExeName</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Override ExeName paramater to sscm.exe for Surround SCM.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask">SSCMTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/032A9268">File</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    File or repository name. Can be / or empty, which means the repository 
+    specified by the <code class="cs">NAnt.Contrib.Tasks.SurroundSCM.SSCMGet.Repository</code> attribute or the default 
+    repository.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/EACF3213">Force</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Force file retrieval from server regardless of the local copy status.
+    The default is <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/2855F98D">IncludeRemoved</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Include removed files when getting files by label or timestamp. 
+    The default is <code class="cs">true</code>. Ignored if a label or 
+    timestamp is not specified.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/C8208424">Overwrite</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Specifies whether to overwrite local writable files. The default is
+    <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask/245E813A">ProgramArguments</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Gets the command line arguments for the external program.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask">SSCMTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/66F8CFD2">Quiet</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Do not list repository and local full path of files. The default is 
+    <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/333C80B7">Recursive</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Recursively get files and sub-repositories. The default is 
+    <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/DAFD2D20">Repository</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Surround SCM repository path. The default is pulled from the local 
+    working directory.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask/9BB838C4">ServerConnect</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The address and port number of the Surround SCM server host computer. 
+    Format is server:port. If not entered, the last saved connection 
+    parameters are used.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask">SSCMTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask/611BEF71">ServerLogin</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The username and password used to login to the Surround SCM server. 
+    Format is username:password. If not entered, the last saved login 
+    parameters are used.
+    </div>
+											<div><small><em>Inherited from <a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMTask">SSCMTask</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/F04693AA">Timestamp</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Specifies how to set the local file's date/time. Possible values are
+    <code class="cs">current</code>, <code class="cs">modify</code> or <code class="cs">checkin</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/EEEFBA39">Version</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    The file version to get. Ignored if a filename is not specified in 
+    the <code class="cs">NAnt.Contrib.Tasks.SurroundSCM.SSCMGet.File</code> attribute.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/625AE9E2">Writable</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Make local file editable or writable. The default is 
+    <code class="cs">false</code>.
+    </div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/NAnt.Contrib.Tasks.SurroundSCM/SSCMGet/19BDCBE8">Write<wbr>Command<wbr>Line<wbr>Arguments<wbr>(StringBuilder)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Writes the task-specific arguments to the specified 
+    <code class="cs">System.Text.StringBuilder</code>.
+    </div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                <p class="text-muted">
+    <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
+</p>
+
+<script>
+    anchors.add();
+</script>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - Frequently Asked Questions</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
-        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/assets/css/override.css" rel="stylesheet" />
+        <link href="/assets/css/override.css" rel="stylesheet">
         <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
@@ -24,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -190,12 +185,12 @@
 <h2 id="running-nant">Running NAnt</h2>
 <h3 id="security-exception">Security exception</h3>
 <p>Q: I am getting the following security exception when I try to run NAnt:</p>
-<p><img src="https://cloud.githubusercontent.com/assets/7837837/3226348/10083990-f06b-11e3-8955-263c885a5ffa.jpg" class="img-fluid" alt="error msg" /></p>
+<p><img src="https://cloud.githubusercontent.com/assets/7837837/3226348/10083990-f06b-11e3-8955-263c885a5ffa.jpg" class="img-fluid" alt="error msg"></p>
 <p>A: This issue is well documented on <a href="http://surfjungle.blogspot.com/2011/11/tip-running-nant-091-on-windows-7.html">Surfjungle's Build &amp; Release Management Blog</a> and other places online. The summary of this issue is that zip files downloaded from the internet are saved as blocked files on Windows machines starting with Vista/7. When you unzip a blocked zip file and try to run any binary program that was extracted, this kind of error can appear.  To prevent this error from happening, perform the following steps:</p>
 <ol>
 <li>Right-click on the zip file</li>
-<li>Select &quot;Properties&quot;</li>
-<li>Click the &quot;Unblock&quot; button in the zip file properties window and hit ok</li>
+<li>Select "Properties"</li>
+<li>Click the "Unblock" button in the zip file properties window and hit ok</li>
 <li>Unzip the zip file and run NAnt as normal</li>
 </ol>
 <p>NAnt should now run as normal without the above exception.</p>
@@ -227,30 +222,30 @@ $ mono bin/NAnt.exe clean build
 <p><code>   NAnt.exe -t:net-1.0</code></p>
 <p>By changing the default target framework in the NAnt configuration file:</p>
 <pre><code class="language-xml">    &lt;frameworks&gt;
-        &lt;platform name=&quot;win32&quot; default=&quot;net-1.0&quot;&gt;
+        &lt;platform name="win32" default="net-1.0"&gt;
             ...
         &lt;/platform&gt;
     &lt;/frameworks&gt;
 </code></pre>
 <p>By changing the value of the system property <code>nant.settings.currentframework</code>:</p>
-<pre><code class="language-xml">&lt;property name=&quot;nant.settings.currentframework&quot; value=&quot;net-1.0&quot; /&gt; 
+<pre><code class="language-xml">&lt;<a href="/api/NAnt.Contrib.Schemas.Msi/property">property</a> name="nant.settings.currentframework" value="net-1.0" /&gt; 
 </code></pre>
 <h3 id="configure-visual-studio-to-recognize-build-files-as-xml-files">Configure Visual Studio to recognize .build files as XML files</h3>
 <ol>
-<li>In &quot;Solution Explorer&quot;, right-click a .build file and choose &quot;Open With&quot;.</li>
-<li>In the &quot;Open With&quot; dialog, select &quot;HTML/XML Editor&quot; and click the &quot;Set as Default&quot; button.</li>
+<li>In "Solution Explorer", right-click a .build file and choose "Open With".</li>
+<li>In the "Open With" dialog, select "HTML/XML Editor" and click the "Set as Default" button.</li>
 </ol>
 <h3 id="enable-intellisense-for-build-files">Enable intellisense for .build files</h3>
 <p>Copy the schema for your version of NAnt from the schema folder in the NAnt distribution to:</p>
 <ul>
 <li>Visual Studio .NET 2003
 <ul>
-<li>The &quot;Common7\Packages\schemas\xml&quot; subdirectory of your Visual Studio.NET installation.</li>
+<li>The "Common7\Packages\schemas\xml" subdirectory of your Visual Studio.NET installation.</li>
 </ul>
 </li>
 <li>Visual Studio 2005
 <ul>
-<li>The &quot;Xml\Schemas&quot; subdirectory of your Visual Studio 2005 installation.</li>
+<li>The "Xml\Schemas" subdirectory of your Visual Studio 2005 installation.</li>
 </ul>
 </li>
 </ul>
@@ -268,10 +263,10 @@ $ mono bin/NAnt.exe clean build
             <footer class="bottom-footer">
                 <p class="text-muted">
     <a href="https://github.com/savornicesei/NAnt2"><i class="fa fa-github"></i> GitHub</a>
-    <br/>
-    Copyright &copy; 2001-2021 NAnt2 contributors.
-    <br/>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    <br>
+    Copyright © 2001-2021 NAnt2 contributors.
+    <br>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:51 PM
 </p>
 
 <script>
@@ -350,5 +345,5 @@ $ mono bin/NAnt.exe clean build
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

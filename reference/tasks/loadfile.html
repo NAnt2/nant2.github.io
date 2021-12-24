@@ -7,7 +7,7 @@
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>NAnt2 - loadfile</title>
-        <link href="/assets/css/highlight-darcula.css" rel="stylesheet">
+        <link href="/assets/css/highlight.css" rel="stylesheet">
         <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
         <link href="/assets/css/theme/theme.css" rel="stylesheet">
@@ -22,10 +22,7 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
+	<script src="/assets/js/anchor.min.js"></script>
 
         <script type="text/javascript" src="/assets/js/anchor.min.js"></script>
     </head>
@@ -79,11 +76,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
-<p><a href="#Parameters">Parameters</a></p>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Parameters">Parameters</a></p>
 <p><a href="#NestedElements">Nested elements</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Remarks">Remarks</a></p>
 <p><a href="#Requirements">Requirements</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -116,11 +111,26 @@
 </section>
 <section class="content">
  
-	<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Load a text file into a single property.
     </div>
 
+	<div>
+      <p>
+      Unless an encoding is specified, the encoding associated with the 
+      system's current ANSI code page is used.
+      </p>
+      <p>
+      An UTF-8, little-endian Unicode, and big-endian Unicode encoded text 
+      file is automatically recognized, if the file starts with the appropriate 
+      byte order marks.
+      </p>
+    </div>
+
+<!-- There are 2 types of parameters: 
+        -   normal ones (decorated with TaskAttribute)
+        -   framework ones (decorated with FrameworkConfigurableAttribute) 
+-->
 
 
 				<h1 id="Parameters">Parameters</h1>
@@ -138,11 +148,40 @@
                         <tbody>
 									<tr>
 										<td>
-											<b>
-												encoding
-											</b>
+												<b>											
+													file
+												</b>
 										</td>
-										<td>Encoding</td>
+										<td>file</td>
+										<td>
+											<div>
+    The file to load.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+												<b>											
+													property
+												</b>
+										</td>
+										<td>string</td>
+										<td>
+											<div>
+    The name of the property to save the content to.
+    </div>
+										</td>
+										<td>
+											True
+										</td>
+									</tr>
+									<tr>
+										<td>
+encoding										</td>
+										<td></td>
 										<td>
 											<div>
     The encoding to use when loading the file. The default is the encoding
@@ -153,41 +192,9 @@
 											False
 										</td>
 									</tr>
-									<tr>
-										<td>
-											<b>
-												file
-											</b>
-										</td>
-										<td>FileInfo</td>
-										<td>
-											<div>
-    The file to load.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<b>
-												property
-											</b>
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The name of the property to save the content to.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
 																<tr>
 										<td>
-											failonerror
+											<i>failonerror</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -202,7 +209,7 @@
 									</tr>
 									<tr>
 										<td>
-											if
+											<i>if</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -217,7 +224,7 @@
 									</tr>
 									<tr>
 										<td>
-											unless
+											<i>unless</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -233,7 +240,7 @@
 									</tr>
 									<tr>
 										<td>
-											verbose
+											<i>verbose</i>
 										</td>
 										<td>bool</td>
 										<td>
@@ -253,6 +260,8 @@
 		
 
 
+
+
 <h1 id="NestedElements">Nested elements</h1>    <div class="container-fluid">
         
 
@@ -264,130 +273,15 @@
             <p>
     The filterchain definition to use.
     </p>
-            <p>
-    Represent a chain of NAnt filters that can be applied to a <code class="cs">NAnt.Core.Task</code>.
-    </p>
-            <p>
-    </p><p>
-    A FilterChain represents a collection of one or more filters that can 
-    be appled to a <code class="cs">NAnt.Core.Task</code> such as the <code class="cs">NAnt.Core.Tasks.CopyTask</code>.
-    In the case of the <code class="cs">NAnt.Core.Tasks.CopyTask</code>, the contents of the copied 
-    files are filtered through each filter specified in the filter chain. 
-    Filtering occurs in the order the filters are specified with filtered
-    output of one filter feeding into another.
-    </p>
-    <p>
-       :--------:---&gt;:----------:---&gt;:----------: ... :----------:---&gt;:--------:<br>
-       :.Source.:---&gt;:.Filter 1.:---&gt;:.Filter 2.: ... :.Filter n.:---&gt;:.target.:<br>
-       :--------:---&gt;:----------:---&gt;:----------: ... :----------:---&gt;:--------:<br>
-    </p>
-    <p>
-    A list of all filters that come with NAnt is available <a href="../filters/index.html">here</a>.
-    </p>
-    <p>
-    The following tasks support filtering with a FilterChain:
-    </p>
-    <ul>
-      <li>
-        <span class="description"><code class="cs">NAnt.Core.Tasks.CopyTask</code></span>
-      </li>
-      <li>
-        <span class="description"><code class="cs">NAnt.Core.Tasks.MoveTask</code></span>
-      </li>
-    </ul>
-    <p></p>
-            
-
-				<h3 id="FilterChainParameters">Parameters</h3>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover four-cols">
-						<thead>
-							<tr>
-								<th>Attribute</th>
-								<th>Type</th>
-								<th>Description</th>
-                                <th>Required</th>
-							</tr>
-						</thead>
-                        <tbody>
-									<tr>
-										<td>
-											<b>
-												encoding
-													<i class="fa fa-exclamation-triangle text-warning" aria-hidden="true"></i>
-											</b>
-										</td>
-										<td>Encoding</td>
-										<td>
-											<div>
-    The encoding to assume when filter-copying files. The default is
-    system's current ANSI code page.
-    </div>
-												<div class="alert alert-warning">
-													<i>Obsolete. The input encoding should now be specified on the task.</i>
-												</div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-																<tr>
-										<td>
-											id
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The ID used to be referenced later.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-									<tr>
-										<td>
-											refid
-										</td>
-										<td>string</td>
-										<td>
-											<div>
-    The ID to use as the reference.
-    </div>
-										</td>
-										<td>
-											False
-										</td>
-									</tr>
-                        </tbody>
-					</table>
-				</div>
-			</div>
-		
-
-<h3 id="FilterChainNestedElements">Nested elements</h3>    <div class="container-fluid">
-        
-
-    <div class="row">
-        <h2>
-            &lt;filter&gt; - NAnt nested collection
-        </h2>
-        <div class="col-xs-10 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2">
-            
-            <p>
-    The filters to apply.
-    </p>
-                    </div>
-        <h2>&lt;filter&gt;</h2>
-    </div>
-     </div>
-         </div>
+            <!-- put the nested element class docs inline if the element does not derive from DataTypeBase (meaning, is not a global type) 
+                    - instead of checking base classes, we'll check if it has a link to NAnt reference types
+            -->
+        </div>
         <h2><a href="/reference/types/filterchain">&lt;/filterchain&gt;</a></h2>
     </div>
      </div>
  
-	<h1 id="Examples">Examples</h1>
+		<h1 id="Examples">Examples</h1>
 	<div>
       <p>
       Load file <code class="cs">message.txt</code> into property "message".
@@ -419,18 +313,6 @@ encoding="iso-8859-1" /&gt;</code></pre>
 &lt;/loadfile&gt;</code></pre>
     </div>
 
-	<h1 id="Remarks">Remarks</h1>
-	<div>
-      <p>
-      Unless an encoding is specified, the encoding associated with the 
-      system's current ANSI code page is used.
-      </p>
-      <p>
-      An UTF-8, little-endian Unicode, and big-endian Unicode encoded text 
-      file is automatically recognized, if the file starts with the appropriate 
-      byte order marks.
-      </p>
-    </div>
 
 <h1 id="Requirements">Requirements</h1>
     <div class="panel panel-default">
@@ -447,7 +329,6 @@ encoding="iso-8859-1" /&gt;</code></pre>
             </dl>
         </div>
     </div>
-
     
 </section>                
             </div>           
@@ -464,7 +345,7 @@ encoding="iso-8859-1" /&gt;</code></pre>
     <br>
     Copyright © 2001-2021 NAnt2 contributors.
     <br>
-    Generated by <a href="http://wyam2.github.io">Wyam2</a>
+    Generated by <a href="https://wyam2.github.io">Wyam2</a> at Friday, December 24, 2021 9:50 PM
 </p>
 
 <script>
